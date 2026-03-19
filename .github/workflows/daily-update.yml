@@ -30,7 +30,10 @@ jobs:
 
       - name: Build data JSON
         run: node scripts/build-data.js
-
+       - name: Build fixtures JSON (SportsDB)
+        env:
+          SPORTSDB_KEY: ${{ secrets.SPORTSDB_KEY }}
+        run: node scripts/build-fixtures-sportsdb.js
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
