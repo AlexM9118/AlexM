@@ -1,0 +1,18 @@
+{
+  "leagues": [
+    { "id": "epl", "name": "Premier League", "sportsDbLeagueId": "4328" },
+    { "id": "champ", "name": "Championship", "sportsDbLeagueId": "P4329" },
+
+    { "id": "seriea", "name": "Serie A", "sportsDbLeagueId": "4332" },
+    { "id": "serieb", "name": "Serie B", "sportsDbLeagueId": "4394" },
+
+    { "id": "bundesliga", "name": "Bundesliga", "sportsDbLeagueId": "4331" },
+    { "id": "bund2", "name": "Bundesliga 2", "sportsDbLeagueId": "4399" },
+
+    { "id": "laliga", "name": "La Liga", "sportsDbLeagueId": "4335" },
+    { "id": "laliga2", "name": "La Liga 2", "sportsDbLeagueId": "4401" },
+
+    { "id": "ligue1", "name": "Ligue 1", "sportsDbLeagueId": "4334" },
+    { "id": "ligue2", "name": "Ligue 2", "sportsDbLeagueId": "4336" }
+  ]
+}
