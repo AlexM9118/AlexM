@@ -8,10 +8,12 @@ function parseISODate(s){
   const t = String(s).trim();
   return /^\d{4}-\d{2}-\d{2}$/.test(t) ? t : null;
 }
+
 function todayUTC(){
   const now = new Date();
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 }
+
 function withinNextDays(dateStr, days){
   const dt = new Date(dateStr + "T00:00:00Z");
   const t0 = todayUTC();
@@ -36,7 +38,7 @@ async function main(){
   ensureDir(outDir);
 
   for (const l of leagues){
-    if (!l.sportsDbLeagueId || l.sportsDbLeagueId === "PUT_ID_HERE") {
+    if (!l.sportsDbLeagueId || l.sportsDbLeagueId === "PUT_ID_HERE"){
       console.log(`[SKIP] ${l.id}: sportsDbLeagueId not set`);
       continue;
     }
@@ -46,8 +48,8 @@ async function main(){
 
     const data = await getJson(url);
     const events = data?.events || data?.event || [];
-
     const matches = [];
+
     for (const ev of events){
       const date = parseISODate(ev.dateEvent || ev.strDate);
       const home = (ev.strHomeTeam || "").trim();
@@ -67,7 +69,7 @@ async function main(){
     );
   }
 
-  console.log("Done fixtures.");
+  console.log("Fixtures done.");
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
