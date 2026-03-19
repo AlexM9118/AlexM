@@ -9,7 +9,6 @@ async function fetchText(url){
 
 function ensureDir(p){ fs.mkdirSync(p, { recursive: true }); }
 
-// CSV parser simplu (suportă ghilimele)
 function parseCSV(text){
   const rows = [];
   let i=0, field="", row=[], inQuotes=false;
@@ -78,14 +77,18 @@ function friendlyName(div){
     "e3": "England - League Two",
     "ec": "England - National League",
     "sp1": "Spain - La Liga",
+    "sp2": "Spain - La Liga 2",
     "i1": "Italy - Serie A",
     "i2": "Italy - Serie B",
     "d1": "Germany - Bundesliga",
+    "d2": "Germany - 2. Bundesliga",
     "f1": "France - Ligue 1",
+    "f2": "France - Ligue 2",
     "b1": "Belgium - First Division A",
     "n1": "Netherlands - Eredivisie",
     "p1": "Portugal - Primeira Liga",
     "sc0": "Scotland - Premiership",
+    "sc1": "Scotland - Championship (alt code)",
     "sc2": "Scotland - Championship",
     "sc3": "Scotland - League One",
     "t1": "Turkey - Super Lig",
@@ -93,9 +96,6 @@ function friendlyName(div){
     "s1": "Switzerland - Super League",
     "a1": "Austria - Bundesliga"
   };
-  const id = leagueIdFromDiv(div);
-  return map[id] || `League ${div}`;
-}
   const id = leagueIdFromDiv(div);
   return map[id] || `League ${div}`;
 }
@@ -129,15 +129,6 @@ function buildLeagueHistory(rows, div){
 
   hist.sort((a,b)=>a.date.localeCompare(b.date));
   return hist;
-}
-
-function buildMatchesForDropdown(leagueId, history){
-  return history.map((m, idx) => ({
-    id: `${leagueId}_${idx}_${m.date}_${m.home}_vs_${m.away}`.replace(/\s+/g,"_"),
-    date: m.date,
-    home: m.home,
-    away: m.away
-  }));
 }
 
 function buildCornersAndCardsTeamAverages(history){
@@ -210,13 +201,11 @@ async function main(){
 
   const dataDir = path.join(process.cwd(), "data");
   const outLeaguesDir = path.join(dataDir, "leagues");
-  const outMatchesDir = path.join(dataDir, "matches");
   const outHistoryDir = path.join(dataDir, "history");
   const outCornersDir = path.join(dataDir, "corners");
   const outCardsDir   = path.join(dataDir, "cards");
 
   ensureDir(outLeaguesDir);
-  ensureDir(outMatchesDir);
   ensureDir(outHistoryDir);
   ensureDir(outCornersDir);
   ensureDir(outCardsDir);
@@ -230,12 +219,6 @@ async function main(){
     console.log(`Building ${div} -> ${leagueId}`);
 
     const history = buildLeagueHistory(rows, div);
-    const matches = buildMatchesForDropdown(leagueId, history);
-
-    fs.writeFileSync(
-      path.join(outMatchesDir, `${leagueId}.json`),
-      JSON.stringify({ leagueId, matches }, null, 2)
-    );
 
     const historySlim = history.map(m => ({
       date: m.date, home: m.home, away: m.away,
