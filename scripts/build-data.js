@@ -72,21 +72,30 @@ function leagueIdFromDiv(div){
 
 function friendlyName(div){
   const map = {
-    ...
+    "e0": "England - Premier League",
+    "e1": "England - Championship",
+    "e2": "England - League One",
+    "e3": "England - League Two",
+    "ec": "England - National League",
+    "sp1": "Spain - La Liga",
+    "i1": "Italy - Serie A",
+    "i2": "Italy - Serie B",
+    "d1": "Germany - Bundesliga",
+    "f1": "France - Ligue 1",
+    "b1": "Belgium - First Division A",
+    "n1": "Netherlands - Eredivisie",
+    "p1": "Portugal - Primeira Liga",
+    "sc0": "Scotland - Premiership",
+    "sc2": "Scotland - Championship",
+    "sc3": "Scotland - League One",
+    "t1": "Turkey - Super Lig",
+    "g1": "Greece - Super League",
+    "s1": "Switzerland - Super League",
+    "a1": "Austria - Bundesliga"
   };
   const id = leagueIdFromDiv(div);
   return map[id] || `League ${div}`;
 }
-  const map = {
-  "e1": "England - Championship",
-  "e2": "England - League One",
-  "e3": "England - League Two",
-  "ec": "England - National League",
-  "i2": "Italy - Serie B",
-  "sc2": "Scotland - Championship",
-  "sc3": "Scotland - League One",
-  "t1": "Turkey - Super Lig"
-};
   const id = leagueIdFromDiv(div);
   return map[id] || `League ${div}`;
 }
