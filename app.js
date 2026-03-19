@@ -131,7 +131,7 @@ function probHandicapHome(m, handicap){
 
 // ---------- Data loading ----------
 async function loadIndex(){
-  return getJson("../data/index.json");
+  return getJson("./data/index.json");
 }
 
 async function loadLeagueFiles(leagueId){
@@ -140,17 +140,17 @@ async function loadLeagueFiles(leagueId){
   if (!league) throw new Error(`League not found: ${leagueId}`);
 
   const [leagueMeta, matches, history] = await Promise.all([
-    getJson(`../data/leagues/${leagueId}.json`),
-    getJson(`../data/matches/${leagueId}.json`),
-    getJson(`../data/history/${leagueId}.json`)
+    getJson(`./data/leagues/${leagueId}.json`),
+    getJson(`./data/matches/${leagueId}.json`),
+    getJson(`./data/history/${leagueId}.json`)
   ]);
 
   let corners = null, cards = null;
   if (leagueMeta.features?.corners){
-    try { corners = await getJson(`../data/corners/${leagueId}.json`); } catch {}
+    try { corners = await getJson(`./data/corners/${leagueId}.json`); } catch {}
   }
   if (leagueMeta.features?.cards){
-    try { cards = await getJson(`../data/cards/${leagueId}.json`); } catch {}
+    try { cards = await getJson(`./data/cards/${leagueId}.json`); } catch {}
   }
 
   return { idx, leagueMeta, matches, history, corners, cards };
