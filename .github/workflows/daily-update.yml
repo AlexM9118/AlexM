@@ -14,7 +14,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      - name: Debug list files
+        run: |
+          echo "BRANCH: $GITHUB_REF"
+          pwd
+          ls -la
+          echo "---- scripts ----"
+          ls -la scripts || true
+          echo "---- find ----"
+          find . -maxdepth 4 -type f | sort
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
