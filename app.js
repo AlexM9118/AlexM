@@ -1,6 +1,7 @@
-// CPS-ORACLE PRO (Web) — static JSON-driven dashboard
-// Poisson model. HT derived from FT via k=0.45 when HT data missing.
-// Corners/cards optional (computed from team averages in data/corners|cards).
+// CPS-ORACLE PRO (Web)
+// - History/results: ./data/history/<league>.json  (from football-data)
+// - Fixtures upcoming: ./data/fixtures/<league>.json (from TheSportsDB, active leagues only)
+// - Corners/cards optional: ./data/corners|cards/<league>.json (from football-data)
 
 const HT_FACTOR = 0.45;
 
@@ -115,7 +116,7 @@ function prob1X2(m){
   return { pH, pD, pA };
 }
 function probTotalOver(m, line){
-  const threshold = Math.floor(line + 0.5) + 1; // 2.5 -> 3 etc
+  const threshold = Math.floor(line + 0.5) + 1;
   return sumWhere(m, (i,j)=>(i+j)>=threshold);
 }
 function probBTS(m){
@@ -139,9 +140,8 @@ async function loadLeagueFiles(leagueId){
   const league = idx.leagues.find(x=>x.id===leagueId);
   if (!league) throw new Error(`League not found: ${leagueId}`);
 
-  const [leagueMeta, matches, history] = await Promise.all([
+  const [leagueMeta, history] = await Promise.all([
     getJson(`./data/leagues/${leagueId}.json`),
-    getJson(`./data/matches/${leagueId}.json`),
     getJson(`./data/history/${leagueId}.json`)
   ]);
 
@@ -153,7 +153,7 @@ async function loadLeagueFiles(leagueId){
     try { cards = await getJson(`./data/cards/${leagueId}.json`); } catch {}
   }
 
-  return { idx, leagueMeta, matches, history, corners, cards };
+  return { idx, leagueMeta, history, corners, cards };
 }
 
 function unique(arr){ return Array.from(new Set(arr)); }
@@ -190,7 +190,7 @@ function buildTeamStats(historyMatches, lookback){
     const AwayGF = avg(awayArr, x=>x.ftag);
     const AwayGA = avg(awayArr, x=>x.fthg);
 
-    // HT if present
+    // HT if present, else 0 (still gives stable output)
     const HomeGF_HT = avg(homeArr, x=> (Number.isFinite(x.hthg) ? x.hthg : 0));
     const HomeGA_HT = avg(homeArr, x=> (Number.isFinite(x.htag) ? x.htag : 0));
     const AwayGF_HT = avg(awayArr, x=> (Number.isFinite(x.htag) ? x.htag : 0));
@@ -214,7 +214,6 @@ function estimateLambdasFT(teamStats, home, away){
 }
 
 function estimateLambdasHT(teamStats, home, away, lamHomeFT, lamAwayFT){
-  // We have HT goals in the dataset; still keep fallback via factor
   const hs = teamStats.get(home);
   const as = teamStats.get(away);
   const hasHT = hs && as && isFinite(hs.HomeGF_HT) && isFinite(as.AwayGA_HT) && isFinite(as.AwayGF_HT) && isFinite(hs.HomeGA_HT);
@@ -233,13 +232,11 @@ function estimateLambdasHT(teamStats, home, away, lamHomeFT, lamAwayFT){
 }
 
 function estimateLambdaTotalOptional(optData, home, away){
-  // optData format: { teams: { "Team": { for, against } } }
   if (!optData?.teams) return NaN;
   const h = optData.teams[home];
   const a = optData.teams[away];
   if (!h || !a) return NaN;
 
-  // total lambda = expected corners/cards for both teams combined
   const lamHomePart = (h.for + a.against) / 2;
   const lamAwayPart = (a.for + h.against) / 2;
   return lamHomePart + lamAwayPart;
@@ -387,12 +384,43 @@ async function onLeagueChange(){
   const rangeMode = el("rangeSel").value;
   const windowDays = parseInt(el("windowSel").value, 10);
 
-  const all = bundle.matches.matches;
+  let all = [];
+
+  if (rangeMode === "upcoming") {
+    // fixtures from SportsDB (only for active leagues)
+    try {
+      const fx = await getJson(`./data/fixtures/${leagueId}.json`);
+      all = fx.matches || [];
+    } catch (e) {
+      all = [];
+    }
+  } else {
+    // past list from history
+    all = (bundle.history.matches || []).map((m, idx) => ({
+      id: `${leagueId}_hist_${idx}_${m.date}_${m.home}_vs_${m.away}`.replace(/\s+/g,"_"),
+      date: m.date,
+      home: m.home,
+      away: m.away
+    }));
+  }
+
   const filtered = all.filter(m => withinRange(m.date, rangeMode, windowDays));
   const list = filtered.length ? filtered : all;
 
   const matchSel = el("matchSel");
   matchSel.innerHTML = "";
+
+  if (!list.length) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = (rangeMode === "upcoming")
+      ? "No upcoming fixtures available"
+      : "No past matches available";
+    matchSel.appendChild(opt);
+    setStatus("No matches found for selected range", false);
+    return;
+  }
+
   for (const m of list){
     const opt = document.createElement("option");
     opt.value = m.id;
@@ -412,7 +440,25 @@ async function onMatchChange(){
   const bundle = cache[leagueId] || await loadLeagueFiles(leagueId);
 
   const matchId = el("matchSel").value;
-  const match = bundle.matches.matches.find(x=>x.id===matchId);
+  const rangeMode = el("rangeSel").value;
+
+  let match = null;
+
+  if (rangeMode === "upcoming") {
+    try {
+      const fx = await getJson(`./data/fixtures/${leagueId}.json`);
+      match = (fx.matches || []).find(x => x.id === matchId);
+    } catch {}
+  } else {
+    const hist = (bundle.history.matches || []).map((m, idx) => ({
+      id: `${leagueId}_hist_${idx}_${m.date}_${m.home}_vs_${m.away}`.replace(/\s+/g,"_"),
+      date: m.date,
+      home: m.home,
+      away: m.away
+    }));
+    match = hist.find(x => x.id === matchId);
+  }
+
   if (!match){
     setStatus("Match not found", false);
     return;
