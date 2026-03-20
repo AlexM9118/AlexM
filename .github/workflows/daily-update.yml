@@ -2,8 +2,8 @@ name: Daily data update
 
 on:
   schedule:
-    - cron: "15 3 * * *"   # daily 03:15 UTC
-  workflow_dispatch: {}
+    - cron: "15 3 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -19,11 +19,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-       - name: Clean generated data folders
+
+      - name: Clean generated data folders
         run: |
-          rm -rf data/index.json
-          rm -rf data/leagues data/history data/corners data/cards data/fixtures
+          rm -f data/index.json || true
+          rm -rf data/leagues data/history data/corners data/cards data/fixtures || true
           mkdir -p data/leagues data/history data/corners data/cards data/fixtures
+
       - name: Build history/results JSON (football-data)
         run: node scripts/build-data.js
 
@@ -33,8 +35,7 @@ jobs:
         run: node scripts/build-fixtures-sportsdb.js
 
       - name: Commit changes
-        run: 
-          node scripts/build-data.js
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/index.json data/leagues data/history data/corners data/cards data/fixtures
