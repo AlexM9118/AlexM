@@ -1,19 +1,11 @@
 {
   "leagueId": "laliga2",
   "leagueName": "Spain - La Liga 2",
-  "generatedAtUTC": "2026-03-20T13:45:14.623Z",
+  "generatedAtUTC": "2026-03-20T13:51:37.055Z",
   "daysAhead": 5,
   "source": {
     "provider": "TheSportsDB",
-    "endpoint": "eventsnextleague.php",
-    "idLeague": "4401"
+    "endpoint": "eventsday.php"
   },
-  "matches": [
-    {
-      "id": "laliga2_2026-03-20_Rodez_AF_vs_Bastia",
-      "date": "2026-03-20",
-      "home": "Rodez AF",
-      "away": "Bastia"
-    }
-  ]
+  "matches": []
 }

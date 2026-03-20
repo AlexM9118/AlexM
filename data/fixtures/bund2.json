@@ -1,19 +1,11 @@
 {
   "leagueId": "bund2",
   "leagueName": "Germany - 2. Bundesliga",
-  "generatedAtUTC": "2026-03-20T13:45:14.393Z",
+  "generatedAtUTC": "2026-03-20T13:51:37.054Z",
   "daysAhead": 5,
   "source": {
     "provider": "TheSportsDB",
-    "endpoint": "eventsnextleague.php",
-    "idLeague": "4399"
+    "endpoint": "eventsday.php"
   },
-  "matches": [
-    {
-      "id": "bund2_2026-03-20_Hannover_vs_Eintracht_Braunschweig",
-      "date": "2026-03-20",
-      "home": "Hannover",
-      "away": "Eintracht Braunschweig"
-    }
-  ]
+  "matches": []
 }

@@ -1,12 +1,11 @@
 {
   "leagueId": "seriea",
   "leagueName": "Italy - Serie A",
-  "generatedAtUTC": "2026-03-20T13:45:14.049Z",
+  "generatedAtUTC": "2026-03-20T13:51:37.054Z",
   "daysAhead": 5,
   "source": {
     "provider": "TheSportsDB",
-    "endpoint": "eventsnextleague.php",
-    "idLeague": "4332"
+    "endpoint": "eventsday.php"
   },
   "matches": [
     {
@@ -14,6 +13,60 @@
       "date": "2026-03-20",
       "home": "Cagliari",
       "away": "Napoli"
+    },
+    {
+      "id": "seriea_2026-03-20_Genoa_vs_Udinese",
+      "date": "2026-03-20",
+      "home": "Genoa",
+      "away": "Udinese"
+    },
+    {
+      "id": "seriea_2026-03-21_AC_Milan_vs_Torino",
+      "date": "2026-03-21",
+      "home": "AC Milan",
+      "away": "Torino"
+    },
+    {
+      "id": "seriea_2026-03-21_Juventus_vs_Sassuolo",
+      "date": "2026-03-21",
+      "home": "Juventus",
+      "away": "Sassuolo"
+    },
+    {
+      "id": "seriea_2026-03-21_Parma_vs_Cremonese",
+      "date": "2026-03-21",
+      "home": "Parma",
+      "away": "Cremonese"
+    },
+    {
+      "id": "seriea_2026-03-22_Atalanta_vs_Hellas_Verona",
+      "date": "2026-03-22",
+      "home": "Atalanta",
+      "away": "Hellas Verona"
+    },
+    {
+      "id": "seriea_2026-03-22_Bologna_vs_Lazio",
+      "date": "2026-03-22",
+      "home": "Bologna",
+      "away": "Lazio"
+    },
+    {
+      "id": "seriea_2026-03-22_Como_vs_Pisa",
+      "date": "2026-03-22",
+      "home": "Como",
+      "away": "Pisa"
+    },
+    {
+      "id": "seriea_2026-03-22_Fiorentina_vs_Inter_Milan",
+      "date": "2026-03-22",
+      "home": "Fiorentina",
+      "away": "Inter Milan"
+    },
+    {
+      "id": "seriea_2026-03-22_Roma_vs_Lecce",
+      "date": "2026-03-22",
+      "home": "Roma",
+      "away": "Lecce"
     }
   ]
 }

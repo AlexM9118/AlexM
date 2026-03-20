@@ -1,19 +1,11 @@
 {
   "leagueId": "ligue2",
   "leagueName": "France - Ligue 2",
-  "generatedAtUTC": "2026-03-20T13:45:14.846Z",
+  "generatedAtUTC": "2026-03-20T13:51:37.055Z",
   "daysAhead": 5,
   "source": {
     "provider": "TheSportsDB",
-    "endpoint": "eventsnextleague.php",
-    "idLeague": "4336"
+    "endpoint": "eventsday.php"
   },
-  "matches": [
-    {
-      "id": "ligue2_2026-03-22_Asteras_Tripolis_vs_Panathinaikos",
-      "date": "2026-03-22",
-      "home": "Asteras Tripolis",
-      "away": "Panathinaikos"
-    }
-  ]
+  "matches": []
 }

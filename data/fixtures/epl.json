@@ -1,12 +1,11 @@
 {
   "leagueId": "epl",
   "leagueName": "England - Premier League",
-  "generatedAtUTC": "2026-03-20T13:45:13.831Z",
+  "generatedAtUTC": "2026-03-20T13:51:37.046Z",
   "daysAhead": 5,
   "source": {
     "provider": "TheSportsDB",
-    "endpoint": "eventsnextleague.php",
-    "idLeague": "4328"
+    "endpoint": "eventsday.php"
   },
   "matches": [
     {
