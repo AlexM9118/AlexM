@@ -1,37 +1,45 @@
 {
-  "defaultLeagueId": "e1",
+  "defaultLeagueId": "epl",
   "leagues": [
     {
-      "id": "e1",
+      "id": "epl",
+      "name": "England - Premier League"
+    },
+    {
+      "id": "champ",
       "name": "England - Championship"
     },
     {
-      "id": "e2",
-      "name": "England - League One"
+      "id": "seriea",
+      "name": "Italy - Serie A"
     },
     {
-      "id": "e3",
-      "name": "England - League Two"
-    },
-    {
-      "id": "ec",
-      "name": "England - National League"
-    },
-    {
-      "id": "i2",
+      "id": "serieb",
       "name": "Italy - Serie B"
     },
     {
-      "id": "sc2",
-      "name": "Scotland - Championship"
+      "id": "bundesliga",
+      "name": "Germany - Bundesliga"
     },
     {
-      "id": "sc3",
-      "name": "Scotland - League One"
+      "id": "bund2",
+      "name": "Germany - 2. Bundesliga"
     },
     {
-      "id": "t1",
-      "name": "Turkey - Super Lig"
+      "id": "laliga",
+      "name": "Spain - La Liga"
+    },
+    {
+      "id": "laliga2",
+      "name": "Spain - La Liga 2"
+    },
+    {
+      "id": "ligue1",
+      "name": "France - Ligue 1"
+    },
+    {
+      "id": "ligue2",
+      "name": "France - Ligue 2"
     }
   ]
 }
