@@ -2,17 +2,8 @@ name: Daily data update
 
 on:
   workflow_dispatch:
-    inputs:
-      dump_leagues:
-        description: "Also dump API-Football leagues to data/apifootball_leagues_dump.json (uses API calls)"
-        required: false
-        default: "false"
-        type: choice
-        options:
-          - "false"
-          - "true"
   schedule:
-    - cron: "15 03 * * *" # daily at 03:15 UTC
+    - cron: "15 03 * * *"  # daily 03:15 UTC
 
 permissions:
   contents: write
@@ -40,6 +31,19 @@ jobs:
           rm -rf data/leagues data/history data/corners data/cards data/fixtures || true
           mkdir -p data/leagues data/history data/corners data/cards data/fixtures
 
+      # ---- DEBUG (temporary) ----
+      # Requires scripts/apifootball-check-league.js
+      - name: Check API-Football league id 1039 (temporary)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: node scripts/apifootball-check-league.js 1039
+
+      - name: Check API-Football league id 283 (temporary)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: node scripts/apifootball-check-league.js 283
+      # ---- END DEBUG ----
+
       - name: Build history/leagues (football-data)
         run: node scripts/build-data.js
 
@@ -48,21 +52,12 @@ jobs:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: node scripts/apifootball-build-fixtures.js
 
-      - name: Dump API-Football leagues (optional)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dump_leagues == 'true' }}
-        env:
-          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
-        run: node scripts/apifootball-dump-leagues.js
-
       - name: Commit & push data changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add data/index.json data/leagues data/history data/corners data/cards data/fixtures
-          if [ -f data/apifootball_leagues_dump.json ]; then
-            git add data/apifootball_leagues_dump.json
-          fi
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
