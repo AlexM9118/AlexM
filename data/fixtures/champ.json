@@ -1,5 +1,12 @@
 {
   "leagueId": "champ",
-  "leagueName": "Championship",
-  "matches": []
+  "leagueName": "England - Championship",
+  "matches": [
+    {
+      "id": "champ_2026-03-20_Preston_North_End_vs_Stoke_City",
+      "date": "2026-03-20",
+      "home": "Preston North End",
+      "away": "Stoke City"
+    }
+  ]
 }
