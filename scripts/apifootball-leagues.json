@@ -2,21 +2,21 @@
   "windowDays": 5,
   "season": 2025,
   "leagues": [
-    { "id": "epl", "name": "England - Premier League", "apiLeagueId": 0 },
-    { "id": "champ", "name": "England - Championship", "apiLeagueId": 0 },
+    { "id": "epl", "name": "England - Premier League", "apiLeagueId": 1039 },
+    { "id": "champ", "name": "England - Championship", "apiLeagueId": 190 },
 
-    { "id": "seriea", "name": "Italy - Serie A", "apiLeagueId": 0 },
-    { "id": "serieb", "name": "Italy - Serie B", "apiLeagueId": 0 },
+    { "id": "seriea", "name": "Italy - Serie A", "apiLeagueId": 71 },
+    { "id": "serieb", "name": "Italy - Serie B", "apiLeagueId": 72 },
 
-    { "id": "bundesliga", "name": "Germany - Bundesliga", "apiLeagueId": 0 },
-    { "id": "bund2", "name": "Germany - 2. Bundesliga", "apiLeagueId": 0 },
+    { "id": "bundesliga", "name": "Germany - Bundesliga", "apiLeagueId": 82 },
+    { "id": "bund2", "name": "Germany - 2. Bundesliga", "apiLeagueId": 79 },
 
-    { "id": "laliga", "name": "Spain - La Liga", "apiLeagueId": 0 },
-    { "id": "laliga2", "name": "Spain - La Liga 2", "apiLeagueId": 0 },
+    { "id": "laliga", "name": "Spain - La Liga", "apiLeagueId": 140 },
+    { "id": "laliga2", "name": "Spain - La Liga 2", "apiLeagueId": 141 },
 
-    { "id": "ligue1", "name": "France - Ligue 1", "apiLeagueId": 0 },
-    { "id": "ligue2", "name": "France - Ligue 2", "apiLeagueId": 0 },
+    { "id": "ligue1", "name": "France - Ligue 1", "apiLeagueId": 386 },
+    { "id": "ligue2", "name": "France - Ligue 2", "apiLeagueId": 828 },
 
-    { "id": "ro1", "name": "Romania - Liga 1", "apiLeagueId": 0 }
+    { "id": "ro1", "name": "Romania - Liga 1", "apiLeagueId": 283 }
   ]
 }
