@@ -1,0 +1,213 @@
+{
+  "generatedAtUTC": "2026-03-20T16:54:14.077Z",
+  "preferredSeason": 2025,
+  "resolved": [
+    {
+      "id": "epl",
+      "requested": {
+        "country": "England",
+        "name": "Premier League"
+      },
+      "resolved": {
+        "apiLeagueId": 39,
+        "apiLeagueName": "Premier League",
+        "apiCountry": "England",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "champ",
+      "requested": {
+        "country": "England",
+        "name": "Championship"
+      },
+      "resolved": {
+        "apiLeagueId": 40,
+        "apiLeagueName": "Championship",
+        "apiCountry": "England",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "seriea",
+      "requested": {
+        "country": "Italy",
+        "name": "Serie A"
+      },
+      "resolved": {
+        "apiLeagueId": 135,
+        "apiLeagueName": "Serie A",
+        "apiCountry": "Italy",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "serieb",
+      "requested": {
+        "country": "Italy",
+        "name": "Serie B"
+      },
+      "resolved": {
+        "apiLeagueId": 136,
+        "apiLeagueName": "Serie B",
+        "apiCountry": "Italy",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "bundesliga",
+      "requested": {
+        "country": "Germany",
+        "name": "Bundesliga"
+      },
+      "resolved": {
+        "apiLeagueId": 78,
+        "apiLeagueName": "Bundesliga",
+        "apiCountry": "Germany",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "bund2",
+      "requested": {
+        "country": "Germany",
+        "name": "2. Bundesliga"
+      },
+      "resolved": {
+        "apiLeagueId": 79,
+        "apiLeagueName": "2. Bundesliga",
+        "apiCountry": "Germany",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "laliga",
+      "requested": {
+        "country": "Spain",
+        "name": "La Liga"
+      },
+      "resolved": {
+        "apiLeagueId": 140,
+        "apiLeagueName": "La Liga",
+        "apiCountry": "Spain",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "ligue1",
+      "requested": {
+        "country": "France",
+        "name": "Ligue 1"
+      },
+      "resolved": {
+        "apiLeagueId": 61,
+        "apiLeagueName": "Ligue 1",
+        "apiCountry": "France",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    },
+    {
+      "id": "ligue2",
+      "requested": {
+        "country": "France",
+        "name": "Ligue 2"
+      },
+      "resolved": {
+        "apiLeagueId": 62,
+        "apiLeagueName": "Ligue 2",
+        "apiCountry": "France",
+        "season": 2025,
+        "seasonYearsTail": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ]
+      }
+    }
+  ]
+}
