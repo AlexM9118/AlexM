@@ -14,7 +14,7 @@ function todayUTC(){
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
 }
 
-function withinNextDays(dateStr, days){
+function withinNextDays(date, 14){
   const dt = new Date(dateStr + "T00:00:00Z");
   const t0 = todayUTC();
   const t1 = new Date(t0.getTime() + days*24*60*60*1000);
