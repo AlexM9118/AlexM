@@ -19,6 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
+       - name: Dump API-Football leagues (temporary)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: node scripts/apifootball-dump-leagues.js
+
+      - name: Build fixtures JSON (API-Football)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: node scripts/apifootball-build-fixtures.js
 
       - name: Clean generated data folders
         run: |
@@ -36,6 +45,7 @@ jobs:
 
       - name: Commit changes
         run: |
+          git add data/fixtures data/apifootball_leagues_dump.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/index.json data/leagues data/history data/corners data/cards data/fixtures
