@@ -1,18 +1,64 @@
 {
   "leagues": [
-    { "id": "epl", "name": "Premier League", "sportsDbLeagueId": "4328" },
-    { "id": "champ", "name": "Championship", "sportsDbLeagueId": "P4329" },
-
-    { "id": "seriea", "name": "Serie A", "sportsDbLeagueId": "4332" },
-    { "id": "serieb", "name": "Serie B", "sportsDbLeagueId": "4394" },
-
-    { "id": "bundesliga", "name": "Bundesliga", "sportsDbLeagueId": "4331" },
-    { "id": "bund2", "name": "Bundesliga 2", "sportsDbLeagueId": "4399" },
-
-    { "id": "laliga", "name": "La Liga", "sportsDbLeagueId": "4335" },
-    { "id": "laliga2", "name": "La Liga 2", "sportsDbLeagueId": "4401" },
-
-    { "id": "ligue1", "name": "Ligue 1", "sportsDbLeagueId": "4334" },
-    { "id": "ligue2", "name": "Ligue 2", "sportsDbLeagueId": "4336" }
+    {
+      "id": "epl",
+      "name": "England - Premier League",
+      "footballDataDiv": "E0",
+      "sportsDbLeagueId": "4328"
+    },
+    {
+      "id": "champ",
+      "name": "England - Championship",
+      "footballDataDiv": "E1",
+      "sportsDbLeagueId": "4329"
+    },
+    {
+      "id": "seriea",
+      "name": "Italy - Serie A",
+      "footballDataDiv": "I1",
+      "sportsDbLeagueId": "4332"
+    },
+    {
+      "id": "serieb",
+      "name": "Italy - Serie B",
+      "footballDataDiv": "I2",
+      "sportsDbLeagueId": "4394"
+    },
+    {
+      "id": "bundesliga",
+      "name": "Germany - Bundesliga",
+      "footballDataDiv": "D1",
+      "sportsDbLeagueId": "4331"
+    },
+    {
+      "id": "bund2",
+      "name": "Germany - 2. Bundesliga",
+      "footballDataDiv": "D2",
+      "sportsDbLeagueId": "4399"
+    },
+    {
+      "id": "laliga",
+      "name": "Spain - La Liga",
+      "footballDataDiv": "SP1",
+      "sportsDbLeagueId": "4335"
+    },
+    {
+      "id": "laliga2",
+      "name": "Spain - La Liga 2",
+      "footballDataDiv": "SP2",
+      "sportsDbLeagueId": "4401"
+    },
+    {
+      "id": "ligue1",
+      "name": "France - Ligue 1",
+      "footballDataDiv": "F1",
+      "sportsDbLeagueId": "4334"
+    },
+    {
+      "id": "ligue2",
+      "name": "France - Ligue 2",
+      "footballDataDiv": "F2",
+      "sportsDbLeagueId": "4336"
+    }
   ]
 }
