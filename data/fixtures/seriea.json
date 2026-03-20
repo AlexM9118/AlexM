@@ -1,6 +1,13 @@
 {
   "leagueId": "seriea",
   "leagueName": "Italy - Serie A",
+  "generatedAtUTC": "2026-03-20T13:45:14.049Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4332"
+  },
   "matches": [
     {
       "id": "seriea_2026-03-20_Cagliari_vs_Napoli",

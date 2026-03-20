@@ -1,6 +1,13 @@
 {
   "leagueId": "serieb",
   "leagueName": "Italy - Serie B",
+  "generatedAtUTC": "2026-03-20T13:45:14.156Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4394"
+  },
   "matches": [
     {
       "id": "serieb_2026-03-21_Padova_vs_Palermo",

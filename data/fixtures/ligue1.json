@@ -1,6 +1,13 @@
 {
   "leagueId": "ligue1",
   "leagueName": "France - Ligue 1",
+  "generatedAtUTC": "2026-03-20T13:45:14.732Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4334"
+  },
   "matches": [
     {
       "id": "ligue1_2026-03-20_Lens_vs_Angers",

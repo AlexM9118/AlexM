@@ -1,6 +1,13 @@
 {
   "leagueId": "champ",
   "leagueName": "England - Championship",
+  "generatedAtUTC": "2026-03-20T13:45:13.941Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4329"
+  },
   "matches": [
     {
       "id": "champ_2026-03-20_Preston_North_End_vs_Stoke_City",

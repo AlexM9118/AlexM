@@ -1,6 +1,13 @@
 {
   "leagueId": "laliga",
   "leagueName": "Spain - La Liga",
+  "generatedAtUTC": "2026-03-20T13:45:14.515Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4335"
+  },
   "matches": [
     {
       "id": "laliga_2026-03-20_Villarreal_vs_Real_Sociedad",

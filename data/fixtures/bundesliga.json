@@ -1,6 +1,13 @@
 {
   "leagueId": "bundesliga",
   "leagueName": "Germany - Bundesliga",
+  "generatedAtUTC": "2026-03-20T13:45:14.265Z",
+  "daysAhead": 5,
+  "source": {
+    "provider": "TheSportsDB",
+    "endpoint": "eventsnextleague.php",
+    "idLeague": "4331"
+  },
   "matches": [
     {
       "id": "bundesliga_2026-03-20_RB_Leipzig_vs_Hoffenheim",
