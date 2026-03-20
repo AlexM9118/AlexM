@@ -1,0 +1,16 @@
+{
+  "windowDays": 5,
+  "leagues": [
+    { "id": "epl", "name": "EPL", "apiLeagueId": 0 },
+    { "id": "champ", "name": "Championship", "apiLeagueId": 0 },
+    { "id": "seriea", "name": "Serie A", "apiLeagueId": 0 },
+    { "id": "serieb", "name": "Serie B", "apiLeagueId": 0 },
+    { "id": "bundesliga", "name": "Bundesliga", "apiLeagueId": 0 },
+    { "id": "bund2", "name": "Bundesliga 2", "apiLeagueId": 0 },
+    { "id": "laliga", "name": "LaLiga", "apiLeagueId": 0 },
+    { "id": "laliga2", "name": "LaLiga 2", "apiLeagueId": 0 },
+    { "id": "ligue1", "name": "Ligue 1", "apiLeagueId": 0 },
+    { "id": "ligue2", "name": "Ligue 2", "apiLeagueId": 0 },
+    { "id": "ro1", "name": "Romania Liga 1", "apiLeagueId": 0 }
+  ]
+}
