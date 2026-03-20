@@ -155,3 +155,111 @@ function buildCornersAndCardsTeamAverages(history){
 
   return { corners, cards };
 }
+
+async function main(){
+  // inputs
+  const sources = JSON.parse(fs.readFileSync(path.join("scripts","sources.json"), "utf8"));
+  const csvUrl = sources.global.csvUrl;
+
+  const active = JSON.parse(fs.readFileSync(path.join("scripts","active-leagues.json"), "utf8"));
+  const leagues = active.leagues || [];
+
+  if (!leagues.length) throw new Error("active-leagues.json has no leagues.");
+
+  console.log(`Downloading CSV: ${csvUrl}`);
+  const text = await fetchText(csvUrl);
+  const rows = parseCSV(text);
+
+  // outputs
+  const dataDir = path.join(process.cwd(), "data");
+  const outLeaguesDir = path.join(dataDir, "leagues");
+  const outHistoryDir = path.join(dataDir, "history");
+  const outCornersDir = path.join(dataDir, "corners");
+  const outCardsDir   = path.join(dataDir, "cards");
+
+  ensureDir(outLeaguesDir);
+  ensureDir(outHistoryDir);
+  ensureDir(outCornersDir);
+  ensureDir(outCardsDir);
+
+  const leaguesIndex = [];
+
+  for (const l of leagues){
+    const leagueId = l.id;
+    const name = l.name;
+    const div = l.footballDataDiv;
+
+    if (!leagueId || !name || !div){
+      console.log(`[SKIP] Missing id/name/footballDataDiv: ${JSON.stringify(l)}`);
+      continue;
+    }
+
+    console.log(`Building history: ${leagueId} (${name}) from Div=${div}`);
+    const history = buildLeagueHistory(rows, div);
+
+    // slim history used by the model
+    const historySlim = history.map(m => ({
+      date: m.date,
+      home: m.home,
+      away: m.away,
+      fthg: m.fthg,
+      ftag: m.ftag,
+      hthg: m.hthg,
+      htag: m.htag
+    }));
+
+    fs.writeFileSync(
+      path.join(outHistoryDir, `${leagueId}.json`),
+      JSON.stringify({ leagueId, matches: historySlim }, null, 2)
+    );
+
+    // optional corners/cards averages
+    const { corners, cards } = buildCornersAndCardsTeamAverages(history);
+    const cornersCount = Object.keys(corners.teams).length;
+    const cardsCount = Object.keys(cards.teams).length;
+
+    if (cornersCount > 0){
+      fs.writeFileSync(
+        path.join(outCornersDir, `${leagueId}.json`),
+        JSON.stringify({ leagueId, teams: corners.teams }, null, 2)
+      );
+    } else {
+      const p = path.join(outCornersDir, `${leagueId}.json`);
+      if (fs.existsSync(p)) fs.unlinkSync(p);
+    }
+
+    if (cardsCount > 0){
+      fs.writeFileSync(
+        path.join(outCardsDir, `${leagueId}.json`),
+        JSON.stringify({ leagueId, teams: cards.teams }, null, 2)
+      );
+    } else {
+      const p = path.join(outCardsDir, `${leagueId}.json`);
+      if (fs.existsSync(p)) fs.unlinkSync(p);
+    }
+
+    const features = { corners: cornersCount > 0, cards: cardsCount > 0 };
+
+    fs.writeFileSync(
+      path.join(outLeaguesDir, `${leagueId}.json`),
+      JSON.stringify({ id: leagueId, name, features }, null, 2)
+    );
+
+    leaguesIndex.push({ id: leagueId, name });
+  }
+
+  // index.json used by UI (must match fixtures leagueIds)
+  const defaultLeagueId = leaguesIndex.find(x => x.id === "epl")?.id || leaguesIndex[0]?.id || null;
+
+  fs.writeFileSync(
+    path.join(dataDir, "index.json"),
+    JSON.stringify({ defaultLeagueId, leagues: leaguesIndex }, null, 2)
+  );
+
+  console.log("Done.");
+}
+
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
