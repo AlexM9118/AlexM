@@ -19,7 +19,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
+       - name: Clean generated data folders
+        run: |
+          rm -rf data/index.json
+          rm -rf data/leagues data/history data/corners data/cards data/fixtures
+          mkdir -p data/leagues data/history data/corners data/cards data/fixtures
       - name: Build history/results JSON (football-data)
         run: node scripts/build-data.js
 
