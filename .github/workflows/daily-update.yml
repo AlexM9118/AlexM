@@ -246,6 +246,7 @@ jobs:
             const url = `${API}/fixtures?league=${league}&season=${season}&from=${from}&to=${to}`;
             const r = await fetch(url, { headers: {"x-apisports-key": key} });
             const data = await r.json();
+            console.log("status fields:", { results: data.results, errors: data.errors, message: data.message });
             console.log("url:", url);
             console.log("results:", data.results);
             console.log("errors:", data.errors);
