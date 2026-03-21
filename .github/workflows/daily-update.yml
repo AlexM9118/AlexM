@@ -41,7 +41,7 @@ jobs:
           const path = require("path");
 
           const API_BASE = "https://v3.football.api-sports.io";
-          const WINDOW_DAYS = 5;
+          const WINDOW_DAYS = 14;
           const PREFERRED_SEASON = 2025; // try 2025 first, fallback to latest available
 
           const TARGET_LEAGUES = [
