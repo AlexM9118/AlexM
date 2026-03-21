@@ -3,7 +3,7 @@ name: Daily data update
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 03 * * *"  # daily 03:15 UTC
+    - cron: "15 03 * * *" # daily 03:15 UTC
 
 permissions:
   contents: write
@@ -31,9 +31,6 @@ jobs:
           rm -rf data/leagues data/history data/corners data/cards data/fixtures data/apifootball_resolved_leagues.json || true
           mkdir -p data/leagues data/history data/corners data/cards data/fixtures scripts
 
-      # ---------------------------
-      # Write the fixtures script (embedded)
-      # ---------------------------
       - name: Write API-Football fixtures script
         run: |
           cat > scripts/apifootball-build-fixtures-auto.js <<'EOF'
@@ -42,25 +39,25 @@ jobs:
 
           const API_BASE = "https://v3.football.api-sports.io";
           const WINDOW_DAYS = 14;
-          const PREFERRED_SEASON = 2025; // try 2025 first, fallback to latest available
+          const PREFERRED_SEASON = 2025;
 
           const TARGET_LEAGUES = [
-            { id: "epl",      name: "Premier League", country: "England" },
-            { id: "champ",    name: "Championship",   country: "England" },
+            { id: "epl",        name: "Premier League", country: "England" },
+            { id: "champ",      name: "Championship",   country: "England" },
 
-            { id: "seriea",   name: "Serie A",        country: "Italy" },
-            { id: "serieb",   name: "Serie B",        country: "Italy" },
+            { id: "seriea",     name: "Serie A",        country: "Italy" },
+            { id: "serieb",     name: "Serie B",        country: "Italy" },
 
             { id: "bundesliga", name: "Bundesliga",     country: "Germany" },
             { id: "bund2",      name: "2. Bundesliga",  country: "Germany" },
 
-            { id: "laliga",   name: "La Liga",        country: "Spain" },
-            { id: "laliga2",  name: "La Liga 2",       country: "Spain" },
+            { id: "laliga",     name: "La Liga",        country: "Spain" },
+            { id: "laliga2",    name: "La Liga 2",      country: "Spain" },
 
-            { id: "ligue1",   name: "Ligue 1",        country: "France" },
-            { id: "ligue2",   name: "Ligue 2",        country: "France" },
+            { id: "ligue1",     name: "Ligue 1",        country: "France" },
+            { id: "ligue2",     name: "Ligue 2",        country: "France" },
 
-            { id: "ro1",      name: "Liga I",         country: "Romania" }
+            { id: "ro1",        name: "Liga I",         country: "Romania" }
           ];
 
           function ensureDir(p){ fs.mkdirSync(p, { recursive: true }); }
@@ -87,7 +84,6 @@ jobs:
           }
 
           function pickLeagueCandidate(resp, leagueName, country){
-            // Prefer exact name match and type=League, else first
             const lcName = leagueName.toLowerCase();
             const lcCountry = country.toLowerCase();
 
@@ -95,18 +91,17 @@ jobs:
               (x?.country?.name || "").toLowerCase() === lcCountry
             );
 
-            const exact = candidates.find(x =>
+            const exactLeague = candidates.find(x =>
               (x?.league?.name || "").toLowerCase() === lcName &&
               (x?.league?.type || "").toLowerCase() === "league"
             );
-            if (exact) return exact;
+            if (exactLeague) return exactLeague;
 
             const exactAnyType = candidates.find(x =>
               (x?.league?.name || "").toLowerCase() === lcName
             );
             if (exactAnyType) return exactAnyType;
 
-            // fallback: any candidate in that country
             return candidates[0] || resp?.[0] || null;
           }
 
@@ -120,7 +115,6 @@ jobs:
           function chooseSeason(seasonYears){
             if (!seasonYears.length) return null;
             if (seasonYears.includes(PREFERRED_SEASON)) return PREFERRED_SEASON;
-            // fallback to latest available
             return seasonYears[seasonYears.length - 1];
           }
 
@@ -153,13 +147,13 @@ jobs:
             for (const t of TARGET_LEAGUES){
               const leaguesUrl = `${API_BASE}/leagues?name=${encodeURIComponent(t.name)}&country=${encodeURIComponent(t.country)}`;
               console.log(`Resolve league: ${t.id} -> ${t.country} / ${t.name}`);
+
               const leaguesData = await fetchJson(leaguesUrl, key);
               const resp = leaguesData.response || [];
 
               const picked = pickLeagueCandidate(resp, t.name, t.country);
               if (!picked){
                 console.log(`  [WARN] no league found for ${t.id}`);
-                // write empty fixtures file
                 fs.writeFileSync(
                   path.join("data","fixtures",`${t.id}.json`),
                   JSON.stringify({ leagueId: t.id, leagueName: `${t.country} - ${t.name}`, from, to, matches: [] }, null, 2)
@@ -229,23 +223,43 @@ jobs:
           main().catch(e => { console.error(e); process.exit(1); });
           EOF
 
-      # ---------------------------
-      # Build history/leagues (football-data)
-      # ---------------------------
       - name: Build history/leagues (football-data)
         run: node scripts/build-data.js
 
-      # ---------------------------
-      # Build fixtures (API-Football)
-      # ---------------------------
       - name: Build fixtures (API-Football)
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: node scripts/apifootball-build-fixtures-auto.js
 
-      # ---------------------------
-      # Commit changes
-      # ---------------------------
+      - name: Debug EPL fixtures (temporary)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: |
+          node -e '
+          (async () => {
+            const key = process.env.APIFOOTBALL_KEY;
+            const API = "https://v3.football.api-sports.io";
+            const from = "2026-03-20";
+            const to   = "2026-04-10"; // extinde mult ca să fim siguri
+            const league = 39;
+            const season = 2025;
+            const url = `${API}/fixtures?league=${league}&season=${season}&from=${from}&to=${to}`;
+            const r = await fetch(url, { headers: {"x-apisports-key": key} });
+            const data = await r.json();
+            console.log("url:", url);
+            console.log("results:", data.results);
+            console.log("errors:", data.errors);
+            console.log("paging:", data.paging);
+            const first = data.response?.[0];
+            if (first) {
+              console.log("first fixture date:", first.fixture?.date);
+              console.log("first teams:", first.teams?.home?.name, "vs", first.teams?.away?.name);
+            } else {
+              console.log("first: null");
+            }
+          })().catch(e => { console.error(e); process.exit(1); });
+          '
+
       - name: Commit & push data changes
         run: |
           git config user.name "github-actions[bot]"
