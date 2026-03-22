@@ -1,0 +1,32 @@
+name: OddsPapi smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Smoke test OddsPapi
+        env:
+          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+        run: node scripts/oddspapi-smoke-test.js
+
+      - name: Commit smoke output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/oddspapi_smoke_raw.txt data/oddspapi_smoke.json || true
+          git diff --cached --quiet || git commit -m "OddsPapi smoke output"
+          git push
