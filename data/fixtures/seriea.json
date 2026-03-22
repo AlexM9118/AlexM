@@ -1,11 +1,17 @@
 {
   "leagueId": "seriea",
-  "leagueName": "Italy - Serie A",
-  "apiLeagueId": 135,
-  "apiLeagueName": "Serie A",
-  "season": 2025,
-  "generatedAtUTC": "2026-03-22T05:02:10.869Z",
-  "from": "2026-03-22",
-  "to": "2026-04-05",
-  "matches": []
+  "leagueName": "seriea",
+  "generatedAtUTC": "2026-03-22T16:30:18.155Z",
+  "source": {
+    "type": "manual_csv",
+    "file": "data/fixtures_manual/all.csv"
+  },
+  "matches": [
+    {
+      "id": "seriea_2026-03-21_Inter_vs_Juventus",
+      "date": "2026-03-21",
+      "home": "Inter",
+      "away": "Juventus"
+    }
+  ]
 }

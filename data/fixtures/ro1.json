@@ -1,7 +1,17 @@
 {
   "leagueId": "ro1",
-  "leagueName": "Romania - Liga I",
-  "from": "2026-03-22",
-  "to": "2026-04-05",
-  "matches": []
+  "leagueName": "ro1",
+  "generatedAtUTC": "2026-03-22T16:30:18.155Z",
+  "source": {
+    "type": "manual_csv",
+    "file": "data/fixtures_manual/all.csv"
+  },
+  "matches": [
+    {
+      "id": "ro1_2026-03-23_FCSB_vs_CFR_Cluj",
+      "date": "2026-03-23",
+      "home": "FCSB",
+      "away": "CFR Cluj"
+    }
+  ]
 }
