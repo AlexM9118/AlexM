@@ -1,0 +1,32 @@
+name: API-SPORTS smoke test (fixtures by date)
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_date:
+        description: "Date to test (YYYY-MM-DD)"
+        required: true
+        default: "2026-03-20"
+  schedule:
+    - cron: "30 03 * * *" # daily 03:30 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Test fixtures by date
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+          TEST_DATE: ${{ inputs.test_date }}
+        run: node scripts/apisports-date-test.js
