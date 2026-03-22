@@ -3,162 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CPS-ORACLE PRO (Web)</title>
+  <title>SportsDB Coverage Browser</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="title">CPS-ORACLE PRO</div>
-      <div class="subtitle">FT + HT Probability Dashboard (Poisson)</div>
+      <div class="title">Coverage Browser</div>
+      <div class="subtitle">TheSportsDB eventsday → validate data coverage</div>
     </div>
 
     <div class="controls">
+      <div class="control">
+        <label for="daySel">Day</label>
+        <select id="daySel"></select>
+      </div>
+
+      <div class="control">
+        <label for="filterSel">Filter</label>
+        <select id="filterSel">
+          <option value="upcoming" selected>Upcoming</option>
+          <option value="finished">Finished</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
       <div class="control">
         <label for="leagueSel">League</label>
         <select id="leagueSel"></select>
       </div>
 
       <div class="control">
-        <label for="rangeSel">Range</label>
-        <select id="rangeSel">
-          <option value="upcoming">Upcoming</option>
-          <option value="past" selected>Past</option>
-        </select>
-      </div>
-
-      <div class="control">
-        <label for="windowSel">Window</label>
-        <select id="windowSel"></select>
-      </div>
-
-      <div class="control">
-        <label for="matchSel">Match</label>
-        <select id="matchSel"></select>
-      </div>
-
-      <div class="control">
-        <label for="modeSel">Mode</label>
-        <select id="modeSel">
-          <option value="safe">SAFE</option>
-          <option value="agg">AGGRESSIVE</option>
-        </select>
-      </div>
-
-      <div class="control">
-        <label for="lookbackSel">Lookback</label>
-        <select id="lookbackSel">
-          <option>10</option>
-          <option selected>20</option>
-          <option>30</option>
-          <option>40</option>
-        </select>
+        <label>&nbsp;</label>
+        <button id="reloadBtn">Reload</button>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="status" id="statusBox">
+    <section class="status">
       <span class="dot" id="statusDot"></span>
       <span id="statusText">Ready</span>
     </section>
 
-    <section class="hero card">
-      <div class="hero-left">
-        <div class="match-title" id="matchTitle">—</div>
-        <div class="meta">
-          <div>Model: <b>Poisson</b></div>
-          <div>HT factor k: <b id="htFactor">0.45</b></div>
+    <section class="card">
+      <div class="card-title">Day Summary</div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="k">Total events</div>
+          <div class="v" id="totalEvents">—</div>
+        </div>
+        <div class="summary-item">
+          <div class="k">Unique leagues</div>
+          <div class="v" id="uniqueLeagues">—</div>
+        </div>
+        <div class="summary-item">
+          <div class="k">Shown events</div>
+          <div class="v" id="shownEvents">—</div>
         </div>
       </div>
-
-      <div class="hero-right">
-        <div class="lambda">
-          <div class="lambda-item">
-            <div class="k">λ Home (FT)</div>
-            <div class="v" id="lamHomeFT">—</div>
-          </div>
-          <div class="lambda-item">
-            <div class="k">λ Away (FT)</div>
-            <div class="v" id="lamAwayFT">—</div>
-          </div>
-          <div class="lambda-item">
-            <div class="k">λ Home (HT)</div>
-            <div class="v" id="lamHomeHT">—</div>
-          </div>
-          <div class="lambda-item">
-            <div class="k">λ Away (HT)</div>
-            <div class="v" id="lamAwayHT">—</div>
-          </div>
-        </div>
-      </div>
+      <div class="hint" id="hint"></div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <div class="card-title">Recommend Tips</div>
-        <div class="tips" id="tips"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">1X2 (FT)</div>
-        <div class="rows" id="ft1x2"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">1X2 (HT)</div>
-        <div class="rows" id="ht1x2"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Double Chance (FT)</div>
-        <div class="rows" id="ftDC"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Double Chance (HT)</div>
-        <div class="rows" id="htDC"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Over/Under Goals (FT)</div>
-        <div class="rows" id="ftOU"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Over/Under Goals (HT)</div>
-        <div class="rows" id="htOU"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">BTS (FT)</div>
-        <div class="rows" id="ftBTS"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">BTS (HT)</div>
-        <div class="rows" id="htBTS"></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Handicap (FT)</div>
-        <div class="rows" id="ftHcap"></div>
-      </div>
-
-      <div class="card opt" id="cornersCard">
-        <div class="card-title">Corners (FT) — optional</div>
-        <div class="rows" id="ftCorners"></div>
-      </div>
-
-      <div class="card opt" id="cardsCard">
-        <div class="card-title">Yellow Cards (FT) — optional</div>
-        <div class="rows" id="ftCards"></div>
-      </div>
+    <section class="card">
+      <div class="card-title">Matches</div>
+      <div id="matches" class="matches"></div>
     </section>
   </main>
 
   <footer class="footer">
-    History: football-data.co.uk CSV → JSON. Fixtures: TheSportsDB → JSON (GitHub Actions daily).
+    Data source: <code>data/events_by_day/YYYY-MM-DD.json</code> (generated by GitHub Actions)
   </footer>
 
   <script src="./app.js"></script>
