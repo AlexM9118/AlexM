@@ -10,60 +10,79 @@
   <header class="topbar">
     <div class="brand">
       <div class="title">Alex AI Bet</div>
-      <div class="subtitle">Dashboard de pariuri (în lucru) + tool-uri</div>
+      <div class="subtitle">Odds dashboard (OddsPapi → Superbet)</div>
     </div>
-    <nav class="nav">
-      <a class="navlink" href="./tools/coverage/">Coverage Browser</a>
-      <a class="navlink" href="https://github.com/" target="_blank" rel="noreferrer">Repo</a>
-    </nav>
+
+    <div class="top-actions">
+      <a class="toplink" href="./tools/coverage/">Coverage Browser</a>
+      <button class="iconbtn" id="refreshBtn" title="Reload data">Reload</button>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="card hero">
-      <h1>Alex AI Bet</h1>
-      <p class="muted">
-        Construim un dashboard nou (UI ca în mockup-ul tău) pe baza datelor din OddsPapi
-        (odds-by-tournaments, verbosity=2).
-      </p>
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar card">
+      <div class="side-title">Selectează liga</div>
+      <select id="leagueSel"></select>
 
-      <div class="cta-row">
-        <a class="btn" href="./tools/coverage/">Deschide Coverage Browser (tool)</a>
-        <button class="btn secondary" id="statusBtn">Verifică status data</button>
+      <div class="side-row">
+        <div class="side-title">Zi</div>
+        <select id="daySel"></select>
       </div>
 
-      <div class="status" id="statusBox">
-        <span class="dot" id="statusDot"></span>
-        <span id="statusText">Ready</span>
-      </div>
+      <div class="side-title">Meciuri</div>
+      <div id="matchesList" class="matches"></div>
 
-      <div class="grid">
-        <div class="mini">
-          <div class="k">Odds (fixtures)</div>
-          <div class="v" id="fxCount">—</div>
-        </div>
-        <div class="mini">
-          <div class="k">Bookmaker</div>
-          <div class="v" id="bookmaker">—</div>
-        </div>
-        <div class="mini">
-          <div class="k">Generated</div>
-          <div class="v" id="generatedAt">—</div>
-        </div>
-        <div class="mini">
-          <div class="k">Tournament IDs</div>
-          <div class="v" id="tIds">—</div>
-        </div>
+      <div class="side-footer muted">
+        Sursă: <code>data/ui/*</code> (cache din OddsPapi)
       </div>
+    </aside>
 
-      <p class="muted small">
-        Notă: Coverage Browser folosește SportsDB și poate avea lipsuri. Alex AI Bet va folosi OddsPapi ca sursă
-        principală pentru meciuri viitoare + cote.
-      </p>
+    <!-- Main -->
+    <section class="main">
+      <section class="card header-card">
+        <div class="match-head">
+          <div>
+            <div class="match-title" id="matchTitle">Alege un meci</div>
+            <div class="match-meta muted" id="matchMeta">—</div>
+          </div>
+          <div class="match-actions">
+            <a class="btn" id="openBookBtn" href="#" target="_blank" rel="noreferrer">Deschide pe Superbet</a>
+          </div>
+        </div>
+
+        <div class="status" id="statusBox">
+          <span class="dot" id="statusDot"></span>
+          <span id="statusText">Ready</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-title">1X2 (dacă este disponibil)</div>
+          <div id="market1x2" class="rows"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">BTTS (dacă este disponibil)</div>
+          <div id="marketBtts" class="rows"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Total goals O/U (dacă este disponibil)</div>
+          <div id="marketOu" class="rows"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Alte piețe (raw)</div>
+          <div id="marketOther" class="other"></div>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer class="footer">
-    <span>Tools: <a href="./tools/coverage/">/tools/coverage/</a></span>
+    Alex AI Bet • Data cached in repo via GitHub Actions • Atenție la ToS/redistribuire date.
   </footer>
 
   <script src="./app.js"></script>
