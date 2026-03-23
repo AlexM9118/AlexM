@@ -35,14 +35,28 @@ function renderRows(containerId, rows) {
   box.innerHTML = "";
 
   if (!rows || !rows.length) {
-    box.innerHTML = `<div class="muted">—</div>`;
+    const d = document.createElement("div");
+    d.className = "muted";
+    d.textContent = "—";
+    box.appendChild(d);
     return;
   }
 
   for (const r of rows) {
     const div = document.createElement("div");
     div.className = "row";
-    div.innerHTML = `<div class="k">${r.label}</div><div class="v">${r.value}</div>`;
+
+    const k = document.createElement("div");
+    k.className = "k";
+    k.textContent = r.label;
+
+    const v = document.createElement("div");
+    v.className = "v";
+    v.textContent = r.value;
+
+    div.appendChild(k);
+    div.appendChild(v);
+
     box.appendChild(div);
   }
 }
@@ -59,7 +73,11 @@ function renderOtherMarkets(markets, usedMarketIds) {
   const lines = [];
   for (const m of rest.slice(0, 60)) {
     const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
-    const prices = uniqOuts.slice(0, 6).map((o) => o.price).filter((x) => x != null);
+    const prices = uniqOuts
+      .slice(0, 6)
+      .map((o) => o.price)
+      .filter((x) => x != null);
+
     lines.push(`Market ${m.marketId}: [${prices.join(", ")}]`);
   }
   if (rest.length > 60) lines.push(`… plus ${rest.length - 60} more markets`);
@@ -67,8 +85,7 @@ function renderOtherMarkets(markets, usedMarketIds) {
 }
 
 /**
- * Config manual (opțional):
- * Dacă identifici un marketId care e mereu Total Goals O/U, îl poți seta aici.
+ * Dacă identifici un marketId care e mereu Total Goals O/U, setează aici.
  * Exemplu: const PREFERRED_OU_MARKET_ID = "1012";
  */
 const PREFERRED_OU_MARKET_ID = null;
@@ -82,7 +99,7 @@ function pickLikely1X2(markets) {
   return null;
 }
 
-// BTTS (heuristic): piață 2-way cu cote “normale” (nu extreme)
+// BTTS (heuristic): piață 2-way cu cote ne-extreme
 function pickLikelyBTTS(markets, excludeIds = new Set()) {
   for (const m of markets || []) {
     if (excludeIds.has(String(m.marketId))) continue;
@@ -96,13 +113,12 @@ function pickLikelyBTTS(markets, excludeIds = new Set()) {
 
     const min = Math.min(...prices);
     const max = Math.max(...prices);
-
     if (min >= 1.15 && max <= 3.8) return m;
   }
   return null;
 }
 
-// Toate piețele 2-way
+// Toate piețele 2-way (candidates pentru O/U)
 function twoWayMarkets(markets, excludeIds = new Set()) {
   const out = [];
 
@@ -119,7 +135,6 @@ function twoWayMarkets(markets, excludeIds = new Set()) {
     out.push({ market: m, prices });
   }
 
-  // Preferăm piețe mai “balanced”
   out.sort((a, b) => {
     const ra = Math.max(...a.prices) / Math.min(...a.prices);
     const rb = Math.max(...b.prices) / Math.min(...b.prices);
@@ -216,9 +231,11 @@ function renderMatchesList() {
   box.innerHTML = "";
 
   const list = filteredMatches();
-
   if (!list.length) {
-    box.innerHTML = `<div class="muted">Nu există meciuri pentru liga/ziua selectată.</div>`;
+    const d = document.createElement("div");
+    d.className = "muted";
+    d.textContent = "Nu există meciuri pentru liga/ziua selectată.";
+    box.appendChild(d);
     return;
   }
 
@@ -231,10 +248,16 @@ function renderMatchesList() {
       loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
     });
 
-    div.innerHTML = `
-      <div class="teams">${m.home} vs ${m.away}</div>
-      <div class="meta">${m.tournamentName} • ${fmtTime(m.startTime)}</div>
-    `;
+    const teams = document.createElement("div");
+    teams.className = "teams";
+    teams.textContent = `${m.home} vs ${m.away}`;
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.textContent = `${m.tournamentName} • ${fmtTime(m.startTime)}`;
+
+    div.appendChild(teams);
+    div.appendChild(meta);
     box.appendChild(div);
   }
 
@@ -259,17 +282,17 @@ async function loadAndRenderMatch() {
   setStatus("Loading match...");
 
   const m = UI.matches.find((x) => x.fixtureId === current.fixtureId);
-  const data = await getJson(`./data/ui/match/${current.fixtureId}.json`);
+  const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
 
-  el("matchTitle").textContent = `${data.home || m.home} vs ${data.away || m.away}`;
+  el("matchTitle").textContent = `${matchData.home || m.home} vs ${matchData.away || m.away}`;
   el("matchMeta").textContent =
-    `${data.categoryName || m.categoryName} • ${data.tournamentName || m.tournamentName} • ${fmtTime(data.startTime || m.startTime)}`;
+    `${matchData.categoryName || m.categoryName} • ${matchData.tournamentName || m.tournamentName} • ${fmtTime(matchData.startTime || m.startTime)}`;
 
-  const href = data.fixturePath || "#";
+  const href = matchData.fixturePath || "#";
   el("openBookBtn").setAttribute("href", href);
   el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
 
-  const markets = data.markets || [];
+  const markets = matchData.markets || [];
   const used = new Set();
 
   // 1X2
@@ -299,7 +322,7 @@ async function loadAndRenderMatch() {
     renderRows("marketBtts", []);
   }
 
-  // O/U candidate
+  // O/U candidate (fără label-uri -> Option A/B)
   let ouMarket = null;
   if (PREFERRED_OU_MARKET_ID) {
     ouMarket = markets.find((x) => String(x.marketId) === String(PREFERRED_OU_MARKET_ID)) || null;
