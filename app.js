@@ -5,186 +5,27 @@ function setStatus(text, ok=true){
   el("statusDot").style.background = ok ? "var(--accent)" : "var(--bad)";
 }
 
-async function getJson(url){
-  const r = await fetch(url, { cache: "no-store" });
-  if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
+async function getJson(path){
+  const r = await fetch(path, { cache: "no-store" });
+  if (!r.ok) throw new Error(`HTTP ${r.status} for ${path}`);
   return r.json();
 }
 
-function uniqLeagues(events){
-  const m = new Map();
-  for (const e of events){
-    if (!e.idLeague) continue;
-    if (!m.has(e.idLeague)) m.set(e.idLeague, e.strLeague || e.idLeague);
-  }
-  return m;
+function shortDate(iso){
+  if (!iso) return "—";
+  // show only YYYY-MM-DD HH:mm if possible
+  return String(iso).replace("T", " ").replace(".000Z","Z");
 }
 
-function statusType(e){
-  const st = (e.strStatus || "").toLowerCase();
-  const postponed = (e.strPostponed || "").toLowerCase() === "yes";
+async function loadStatus(){
+  try{
+    setStatus("Loading data status...");
+    const idx = await getJson("./data/oddspapi_odds_index.json");
 
-  if (postponed || st.includes("postponed")) return "postponed";
-  if (st.includes("not started")) return "upcoming";
-  if (st.includes("finished")) return "finished";
-
-  // fallback: if scores are null -> upcoming-ish
-  if (e.intHomeScore == null && e.intAwayScore == null) return "upcoming";
-  return "finished";
-}
-
-function renderLeaguesSelect(leagueMap){
-  const sel = el("leagueSel");
-  sel.innerHTML = "";
-
-  // add "All leagues"
-  const optAll = document.createElement("option");
-  optAll.value = "__all__";
-  optAll.textContent = "All leagues";
-  sel.appendChild(optAll);
-
-  const entries = [...leagueMap.entries()]
-    .map(([id, name]) => ({id, name}))
-    .sort((a,b)=>a.name.localeCompare(b.name));
-
-  for (const x of entries){
-    const o = document.createElement("option");
-    o.value = x.id;
-    o.textContent = `${x.name} (${x.id})`;
-    sel.appendChild(o);
-  }
-
-  sel.value = "__all__";
-}
-
-function renderMatches(events, filterMode, leagueId){
-  const box = el("matches");
-  box.innerHTML = "";
-
-  let list = events;
-
-  // filter by league
-  if (leagueId && leagueId !== "__all__"){
-    list = list.filter(e => String(e.idLeague) === String(leagueId));
-  }
-
-  // filter by status
-  if (filterMode === "upcoming"){
-    list = list.filter(e => statusType(e) === "upcoming");
-  } else if (filterMode === "finished"){
-    list = list.filter(e => statusType(e) === "finished");
-  }
-
-  // sort by time
-  list = list.slice().sort((a,b) => {
-    const ta = (a.strTimestamp || (a.dateEvent || "") + "T" + (a.strTime || "")).toString();
-    const tb = (b.strTimestamp || (b.dateEvent || "") + "T" + (b.strTime || "")).toString();
-    return ta.localeCompare(tb);
-  });
-
-  el("shownEvents").textContent = String(list.length);
-
-  if (!list.length){
-    box.innerHTML = `<div class="hint">No matches for the selected filters.</div>`;
-    return;
-  }
-
-  for (const e of list){
-    const typ = statusType(e);
-    const badgeText =
-      typ === "upcoming" ? "UPCOMING" :
-      typ === "finished" ? "FINISHED" :
-      "POSTPONED";
-
-    const teams = `${e.strHomeTeam || "?"} vs ${e.strAwayTeam || "?"}`;
-    const league = `${e.strLeague || ""}`.trim();
-    const date = e.dateEvent || "";
-    const time = (e.strTime || "").slice(0,5);
-    const ts = time ? `${date} ${time}` : date;
-
-    const score =
-      (e.intHomeScore != null && e.intAwayScore != null)
-        ? ` | ${e.intHomeScore}-${e.intAwayScore}`
-        : "";
-
-    const meta = `${league} | ${ts}${score}`;
-
-    const div = document.createElement("div");
-    div.className = "match";
-    div.innerHTML = `
-      <div class="left">
-        <div class="teams">${teams}</div>
-        <div class="meta">${meta}</div>
-      </div>
-      <div class="badge ${typ}">${badgeText}</div>
-    `;
-    box.appendChild(div);
-  }
-}
-
-async function loadDay(day){
-  setStatus(`Loading ${day}...`);
-  const data = await getJson(`./data/events_by_day/${day}.json`);
-  const events = data.events || [];
-
-  el("totalEvents").textContent = String(events.length);
-
-  const leagueMap = uniqLeagues(events);
-  el("uniqueLeagues").textContent = String(leagueMap.size);
-
-  renderLeaguesSelect(leagueMap);
-
-  const filterMode = el("filterSel").value;
-  const leagueId = el("leagueSel").value;
-  renderMatches(events, filterMode, leagueId);
-
-  // hint text
-  el("hint").textContent =
-    `This file contains ${events.length} soccer events for ${day}. Use filters to validate coverage.`;
-
-  setStatus("Ready");
-  return { events };
-}
-
-async function init(){
-  try {
-    setStatus("Loading day index...");
-    const idx = await getJson("./data/events_by_day/index.json");
-
-    const daySel = el("daySel");
-    daySel.innerHTML = "";
-
-    for (const d of (idx.days || [])){
-      const opt = document.createElement("option");
-      opt.value = d;
-      opt.textContent = d;
-      daySel.appendChild(opt);
-    }
-
-    if (!idx.days || !idx.days.length){
-      setStatus("No days in index.json", false);
-      return;
-    }
-
-    daySel.value = idx.days[0];
-
-    let current = await loadDay(daySel.value);
-
-    el("reloadBtn").addEventListener("click", async () => {
-      current = await loadDay(daySel.value);
-    });
-
-    el("daySel").addEventListener("change", async () => {
-      current = await loadDay(daySel.value);
-    });
-
-    el("filterSel").addEventListener("change", () => {
-      renderMatches(current.events || [], el("filterSel").value, el("leagueSel").value);
-    });
-
-    el("leagueSel").addEventListener("change", () => {
-      renderMatches(current.events || [], el("filterSel").value, el("leagueSel").value);
-    });
+    el("fxCount").textContent = String(idx.fixturesTotal ?? "—");
+    el("bookmaker").textContent = String(idx.bookmaker ?? "—");
+    el("generatedAt").textContent = shortDate(idx.generatedAtUTC);
+    el("tIds").textContent = Array.isArray(idx.tournamentIds) ? String(idx.tournamentIds.length) : "—";
 
     setStatus("Ready");
   } catch (e){
@@ -192,4 +33,9 @@ async function init(){
   }
 }
 
-init();
+document.getElementById("statusBtn").addEventListener("click", () => {
+  loadStatus().catch(() => {});
+});
+
+// auto-load
+loadStatus().catch(() => {});
