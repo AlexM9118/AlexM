@@ -6,9 +6,10 @@ on:
       job:
         description: "What to run"
         required: true
-        default: "tournaments"
+        default: "bookmakers"
         type: choice
         options:
+          - bookmakers
           - tournaments
           - odds
       tournament_ids:
@@ -16,7 +17,7 @@ on:
         required: false
         default: "17"
       bookmaker:
-        description: "Bookmaker slug"
+        description: "Bookmaker slug (for odds job)"
         required: false
         default: "pinnacle"
       verbosity:
@@ -43,6 +44,12 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Run bookmakers
+        if: ${{ inputs.job == 'bookmakers' }}
+        env:
+          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+        run: node scripts/oddspapi-fetch-bookmakers.js
+
       - name: Run tournaments
         if: ${{ inputs.job == 'tournaments' }}
         env:
@@ -64,8 +71,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add data/oddspapi_tournaments.json data/oddspapi_tournaments_raw.txt || true
-          git add data/oddspapi_odds.json data/oddspapi_odds_raw.txt || true
+          git add data/oddspapi_bookmakers_raw.txt data/oddspapi_bookmakers.json || true
+          git add data/oddspapi_tournaments_raw.txt data/oddspapi_tournaments.json || true
+          git add data/oddspapi_odds_raw.txt data/oddspapi_odds.json || true
 
           git diff --cached --quiet || git commit -m "OddsPapi data update"
           git push
