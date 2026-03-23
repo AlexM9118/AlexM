@@ -1,41 +1,45 @@
 const el = (id) => document.getElementById(id);
 
-function setStatus(text, ok=true){
+function setStatus(text, ok = true) {
   el("statusText").textContent = text;
   el("statusDot").style.background = ok ? "var(--accent)" : "var(--bad)";
 }
 
-async function getJson(path){
+async function getJson(path) {
   const r = await fetch(path, { cache: "no-store" });
   if (!r.ok) throw new Error(`HTTP ${r.status} for ${path}`);
   return r.json();
 }
 
-function fmtTime(iso){
+function fmtTime(iso) {
   if (!iso) return "—";
   const d = String(iso).replace(".000Z", "Z");
   return d.replace("T", " ").replace("Z", " UTC");
 }
 
-function uniqBy(arr, keyFn){
+function uniqBy(arr, keyFn) {
   const m = new Map();
-  for (const x of arr){
+  for (const x of arr || []) {
     const k = keyFn(x);
     if (!m.has(k)) m.set(k, x);
   }
   return Array.from(m.values());
 }
 
-function byStr(a,b){ return String(a).localeCompare(String(b)); }
+function byStr(a, b) {
+  return String(a).localeCompare(String(b));
+}
 
-function renderRows(containerId, rows){
+function renderRows(containerId, rows) {
   const box = el(containerId);
   box.innerHTML = "";
-  if (!rows || !rows.length){
+
+  if (!rows || !rows.length) {
     box.innerHTML = `<div class="muted">—</div>`;
     return;
   }
-  for (const r of rows){
+
+  for (const r of rows) {
     const div = document.createElement("div");
     div.className = "row";
     div.innerHTML = `<div class="k">${r.label}</div><div class="v">${r.value}</div>`;
@@ -43,18 +47,19 @@ function renderRows(containerId, rows){
   }
 }
 
-function renderOtherMarkets(markets, usedMarketIds){
+function renderOtherMarkets(markets, usedMarketIds) {
   const box = el("marketOther");
-  const rest = (markets || []).filter(m => !usedMarketIds.has(String(m.marketId)));
-  if (!rest.length){
+  const rest = (markets || []).filter((m) => !usedMarketIds.has(String(m.marketId)));
+
+  if (!rest.length) {
     box.textContent = "—";
     return;
   }
 
   const lines = [];
-  for (const m of rest.slice(0, 60)){
-    const uniqOuts = uniqBy(m.outcomes || [], o => o.outcomeId);
-    const prices = uniqOuts.slice(0, 6).map(o => o.price).filter(x => x != null);
+  for (const m of rest.slice(0, 60)) {
+    const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
+    const prices = uniqOuts.slice(0, 6).map((o) => o.price).filter((x) => x != null);
     lines.push(`Market ${m.marketId}: [${prices.join(", ")}]`);
   }
   if (rest.length > 60) lines.push(`… plus ${rest.length - 60} more markets`);
@@ -62,66 +67,60 @@ function renderOtherMarkets(markets, usedMarketIds){
 }
 
 /**
- * === IMPORTANT CONFIG (manual mapping) ===
- * În OddsPapi/Superbet, nu primim label-uri ("Over/Under", linia 2.5 etc.) în payload-ul normalizat.
- * De aceea, pentru "Total goals O/U" putem seta manual un marketId preferat.
- *
- * Exemplu: după ce inspectezi un meci și decizi că marketId=1012 e O/U goals, setezi:
- *   const PREFERRED_OU_MARKET_ID = "1012";
- *
- * Dacă îl lași null, UI alege automat un "candidate" din piețele 2-way.
+ * Config manual (opțional):
+ * Dacă identifici un marketId care e mereu Total Goals O/U, îl poți seta aici.
+ * Exemplu: const PREFERRED_OU_MARKET_ID = "1012";
  */
-const PREFERRED_OU_MARKET_ID = 1012; // ex: "1012" sau "1014"
+const PREFERRED_OU_MARKET_ID = null;
 
-// Heuristic: 1X2 is usually the ONLY market with 3 distinct outcomes (home/draw/away)
-function pickLikely1X2(markets){
-  for (const m of markets){
-    const uniqOutcomeIds = Array.from(new Set((m.outcomes || []).map(o => o.outcomeId)));
+// 1X2: piață cu 3 outcomes unice
+function pickLikely1X2(markets) {
+  for (const m of markets || []) {
+    const uniqOutcomeIds = Array.from(new Set((m.outcomes || []).map((o) => o.outcomeId)));
     if (uniqOutcomeIds.length === 3) return m;
   }
   return null;
 }
 
-// Heuristic BTTS: a 2-way market where odds often look like ~1.4-3.5 range.
-// We still can’t be 100% sure without labels, but it works in practice.
-function pickLikelyBTTS(markets, excludeIds = new Set()){
-  for (const m of markets){
+// BTTS (heuristic): piață 2-way cu cote “normale” (nu extreme)
+function pickLikelyBTTS(markets, excludeIds = new Set()) {
+  for (const m of markets || []) {
     if (excludeIds.has(String(m.marketId))) continue;
-    const uniqOuts = uniqBy(m.outcomes || [], o => o.outcomeId);
-    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map(o => o.outcomeId)));
+
+    const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
+    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map((o) => o.outcomeId)));
     if (uniqOutcomeIds.length !== 2) continue;
 
-    const prices = uniqOuts.map(o => o.price).filter(x => typeof x === "number");
+    const prices = uniqOuts.map((o) => o.price).filter((x) => typeof x === "number");
     if (prices.length !== 2) continue;
 
-    // heuristic window
     const min = Math.min(...prices);
     const max = Math.max(...prices);
 
-    // avoid extreme markets like 1.04 vs 12.0
     if (min >= 1.15 && max <= 3.8) return m;
   }
   return null;
 }
 
-// Collect all 2-way markets (for O/U display)
-function twoWayMarkets(markets, excludeIds = new Set()){
+// Toate piețele 2-way
+function twoWayMarkets(markets, excludeIds = new Set()) {
   const out = [];
-  for (const m of (markets || [])){
+
+  for (const m of markets || []) {
     if (excludeIds.has(String(m.marketId))) continue;
 
-    const uniqOuts = uniqBy(m.outcomes || [], o => o.outcomeId);
-    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map(o => o.outcomeId)));
+    const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
+    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map((o) => o.outcomeId)));
     if (uniqOutcomeIds.length !== 2) continue;
 
-    const prices = uniqOuts.map(o => o.price).filter(x => typeof x === "number");
+    const prices = uniqOuts.map((o) => o.price).filter((x) => typeof x === "number");
     if (prices.length !== 2) continue;
 
     out.push({ market: m, prices });
   }
 
-  // Sort: prefer markets that are not extremely skewed (closer odds)
-  out.sort((a,b) => {
+  // Preferăm piețe mai “balanced”
+  out.sort((a, b) => {
     const ra = Math.max(...a.prices) / Math.min(...a.prices);
     const rb = Math.max(...b.prices) / Math.min(...b.prices);
     return ra - rb;
@@ -142,7 +141,7 @@ let current = {
   fixtureId: null
 };
 
-async function loadUiData(){
+async function loadUiData() {
   setStatus("Loading UI data...");
 
   const idx = await getJson("./data/ui/index.json");
@@ -150,13 +149,14 @@ async function loadUiData(){
   const matchesObj = await getJson("./data/ui/matches.json");
 
   UI.index = idx;
-  UI.leagues = (leaguesObj.leagues || []).map(l => ({
+
+  UI.leagues = (leaguesObj.leagues || []).map((l) => ({
     id: String(l.id),
     name: l.name || l.id,
     categoryName: l.categoryName || ""
   }));
 
-  UI.matches = (matchesObj.matches || []).map(m => ({
+  UI.matches = (matchesObj.matches || []).map((m) => ({
     fixtureId: String(m.fixtureId),
     tournamentId: m.tournamentId != null ? String(m.tournamentId) : null,
     tournamentName: m.tournamentName || "",
@@ -173,11 +173,12 @@ async function loadUiData(){
   setStatus("Ready");
 }
 
-function renderLeagueSelect(){
+function renderLeagueSelect() {
   const sel = el("leagueSel");
   sel.innerHTML = "";
 
-  for (const l of UI.leagues.sort((a,b)=>byStr(a.categoryName + a.name, b.categoryName + b.name))){
+  const list = UI.leagues.slice().sort((a, b) => byStr(a.categoryName + a.name, b.categoryName + b.name));
+  for (const l of list) {
     const opt = document.createElement("option");
     opt.value = l.id;
     opt.textContent = l.categoryName ? `${l.categoryName} - ${l.name}` : l.name;
@@ -187,12 +188,12 @@ function renderLeagueSelect(){
   if (current.leagueId) sel.value = current.leagueId;
 }
 
-function renderDaySelect(){
+function renderDaySelect() {
   const sel = el("daySel");
   sel.innerHTML = "";
 
   const days = UI.index?.days || [];
-  for (const d of days){
+  for (const d of days) {
     const opt = document.createElement("option");
     opt.value = d;
     opt.textContent = d;
@@ -202,32 +203,32 @@ function renderDaySelect(){
   if (current.day) sel.value = current.day;
 }
 
-function filteredMatches(){
-  return UI.matches.filter(m => {
+function filteredMatches() {
+  return UI.matches.filter((m) => {
     if (current.leagueId && String(m.tournamentId) !== String(current.leagueId)) return false;
     if (current.day && String(m.day) !== String(current.day)) return false;
     return true;
   });
 }
 
-function renderMatchesList(){
+function renderMatchesList() {
   const box = el("matchesList");
   box.innerHTML = "";
 
   const list = filteredMatches();
 
-  if (!list.length){
+  if (!list.length) {
     box.innerHTML = `<div class="muted">Nu există meciuri pentru liga/ziua selectată.</div>`;
     return;
   }
 
-  for (const m of list){
+  for (const m of list) {
     const div = document.createElement("div");
     div.className = "match-item" + (m.fixtureId === current.fixtureId ? " active" : "");
     div.addEventListener("click", () => {
       current.fixtureId = m.fixtureId;
       renderMatchesList();
-      loadAndRenderMatch().catch(e => setStatus(e.message || String(e), false));
+      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
     });
 
     div.innerHTML = `
@@ -237,116 +238,11 @@ function renderMatchesList(){
     box.appendChild(div);
   }
 
-  if (!current.fixtureId && list[0]?.fixtureId){
+  if (!current.fixtureId && list[0]?.fixtureId) {
     current.fixtureId = list[0].fixtureId;
     renderMatchesList();
   }
 }
 
-async function loadAndRenderMatch(){
-  if (!current.fixtureId){
-    el("matchTitle").textContent = "Alege un meci";
-    el("matchMeta").textContent = "—";
-    el("openBookBtn").setAttribute("href", "#");
-    renderRows("market1x2", []);
-    renderRows("marketBtts", []);
-    renderRows("marketOu", []);
-    el("marketOther").textContent = "—";
-    return;
-  }
-
-  setStatus("Loading match...");
-
-  const m = UI.matches.find(x => x.fixtureId === current.fixtureId);
-  const data = await getJson(`./data/ui/match/${current.fixtureId}.json`);
-
-  el("matchTitle").textContent = `${data.home || m.home} vs ${data.away || m.away}`;
-  el("matchMeta").textContent =
-    `${data.categoryName || m.categoryName} • ${data.tournamentName || m.tournamentName} • ${fmtTime(data.startTime || m.startTime)}`;
-
-  const href = data.fixturePath || "#";
-  el("openBookBtn").setAttribute("href", href);
-  el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
-
-  const markets = data.markets || [];
-  const used = new Set();
-
-  // 1X2
-  const m1x2 = pickLikely1X2(markets);
-  if (m1x2){
-    used.add(String(m1x2.marketId));
-    const outs = uniqBy(m1x2.outcomes || [], o => o.outcomeId).slice(0,3);
-    renderRows("market1x2", outs.map((o, idx) => ({
-      label: idx === 0 ? "Home" : idx === 1 ? "Draw" : "Away",
-      value: o.price != null ? String(o.price) : "—"
-    })));
-  } else {
-    renderRows("market1x2", []);
-  }
-
-  // BTTS (heuristic)
-  const mbtts = pickLikelyBTTS(markets, used);
-  if (mbtts){
-    used.add(String(mbtts.marketId));
-    const outs = uniqBy(mbtts.outcomes || [], o => o.outcomeId).slice(0,2);
-
-    // We don't know which is YES/NO; pick lower price as "Yes" (usually favored)
-    outs.sort((a,b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-    renderRows("marketBtts", [
-      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: "No",  value: outs[1]?.price != null ? String(outs[1].price) : "—" }
-    ]);
-  } else {
-    renderRows("marketBtts", []);
-  }
-
-  // O/U candidate: prefer manual mapping; else choose a 2-way market not used yet
-  let ouMarket = null;
-  if (PREFERRED_OU_MARKET_ID){
-    ouMarket = markets.find(x => String(x.marketId) === String(PREFERRED_OU_MARKET_ID)) || null;
-  }
-  if (!ouMarket){
-    const candidates = twoWayMarkets(markets, used);
-    ouMarket = candidates[0]?.market || null;
-  }
-
-  if (ouMarket){
-    used.add(String(ouMarket.marketId));
-    const outs = uniqBy(ouMarket.outcomes || [], o => o.outcomeId).slice(0,2);
-
-    // For O/U we also don't know which is Over/Under. We can present as "Option A/B".
-    // If you want, we can later map which is Over/Under once we know labels/line.
-    outs.sort((a,b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-    renderRows("marketOu", [
-      { label: `Market ${ouMarket.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: `Market ${ouMarket.marketId} • Option B`, value: outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />?.price != null ? String(outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />.price) : "—" }
-    ]);
-  } else {
-    renderRows("marketOu", []);
-  }
-
-  renderOtherMarkets(markets, used);
-
-  setStatus("Ready");
-}
-
-async function init(){
-  try{
-    await loadUiData();
-
-    renderLeagueSelect();
-    renderDaySelect();
-    renderMatchesList();
-    await loadAndRenderMatch();
-
-    el("leagueSel").addEventListener("change", () => {
-      current.leagueId = el("leagueSel").value;
-      current.fixtureId = null;
-      renderMatchesList();
-      loadAndRenderMatch().catch(e => setStatus(e.message || String(e), false));
-    });
-
-    el("daySel").addEventListener("change", () => {
-      current.day = el("daySel").value;
-      current.fixtureId = null;
-      renderMatchesList();
+async function loadAndRenderMatch() {
+  if (!current.fixture
