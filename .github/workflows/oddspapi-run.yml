@@ -1,5 +1,4 @@
 name: OddsPapi - run jobs
-
 on:
   workflow_dispatch:
     inputs:
@@ -69,12 +68,16 @@ jobs:
           ODDS_FORMAT: ${{ inputs.odds_format }}
         run: node scripts/oddspapi-fetch-odds-by-tournaments.js
 
+      - name: Build UI data (normalize OddsPapi)
+        if: ${{ inputs.job == 'odds' }}
+        run: node scripts/build-ui-data-from-oddspapi.js
+
       - name: List generated files (debug)
         run: |
           echo "---- data/ ----"
           ls -la data || true
-          echo "---- data/oddspapi_odds_parts ----"
-          ls -la data/oddspapi_odds_parts || true
+          echo "---- data/ui ----"
+          ls -la data/ui || true
 
       - name: Commit outputs
         run: |
@@ -83,9 +86,11 @@ jobs:
 
           git add data/oddspapi_bookmakers_raw.txt data/oddspapi_bookmakers.json || true
           git add data/oddspapi_tournaments_raw.txt data/oddspapi_tournaments.json || true
-
           git add data/oddspapi_odds.json data/oddspapi_odds_index.json || true
           git add data/oddspapi_odds_parts || true
+
+          # new UI normalized outputs
+          git add data/ui || true
 
           git diff --cached --quiet || git commit -m "OddsPapi data update"
           git push
