@@ -1,0 +1,71 @@
+name: OddsPapi - run jobs
+
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "What to run"
+        required: true
+        default: "tournaments"
+        type: choice
+        options:
+          - tournaments
+          - odds
+      tournament_ids:
+        description: "Comma-separated tournamentIds (for odds job)"
+        required: false
+        default: "17"
+      bookmaker:
+        description: "Bookmaker slug"
+        required: false
+        default: "pinnacle"
+      verbosity:
+        description: "Verbosity level"
+        required: false
+        default: "1"
+      odds_format:
+        description: "decimal or american"
+        required: false
+        default: "decimal"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Run tournaments
+        if: ${{ inputs.job == 'tournaments' }}
+        env:
+          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+        run: node scripts/oddspapi-fetch-tournaments.js
+
+      - name: Run odds-by-tournaments
+        if: ${{ inputs.job == 'odds' }}
+        env:
+          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+          TOURNAMENT_IDS: ${{ inputs.tournament_ids }}
+          BOOKMAKER: ${{ inputs.bookmaker }}
+          VERBOSITY: ${{ inputs.verbosity }}
+          ODDS_FORMAT: ${{ inputs.odds_format }}
+        run: node scripts/oddspapi-fetch-odds-by-tournaments.js
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/oddspapi_tournaments.json data/oddspapi_tournaments_raw.txt || true
+          git add data/oddspapi_odds.json data/oddspapi_odds_raw.txt || true
+
+          git diff --cached --quiet || git commit -m "OddsPapi data update"
+          git push
