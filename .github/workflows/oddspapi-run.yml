@@ -23,7 +23,7 @@ on:
       verbosity:
         description: "Verbosity level"
         required: false
-        default: "1"
+        default: "2"
       odds_format:
         description: "decimal or american"
         required: false
