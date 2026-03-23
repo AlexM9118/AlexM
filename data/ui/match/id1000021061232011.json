@@ -1,0 +1,896 @@
+{
+  "fixtureId": "id1000021061232011",
+  "startTime": "2026-04-04T08:00:00.000Z",
+  "day": "2026-04-04",
+  "tournamentId": 210,
+  "tournamentName": "Superliga",
+  "categoryName": "Serbia",
+  "home": "FK IMT Novi Beograd",
+  "away": "FK Vojvodina Novi Sad",
+  "bookmakerKey": "superbet.ro",
+  "fixturePath": "https://superbet.com/offer-event/e-11654046",
+  "markets": [
+    {
+      "marketId": "104",
+      "bookmakerMarketId": "846c618d-1b43-53c1-8353-c77c658f6ac0",
+      "outcomes": [
+        {
+          "outcomeId": "104",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.66,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "558020f3-36ea-5764-8825-9f3ad928d883"
+        },
+        {
+          "outcomeId": "105",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "6a119f3d-7f91-571c-8c77-c3c8e1979f96"
+        }
+      ]
+    },
+    {
+      "marketId": "106",
+      "bookmakerMarketId": "cdb21211-f210-5b28-9f67-14cf56448c44",
+      "outcomes": [
+        {
+          "outcomeId": "106",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.03,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "2c6e3a1b-2358-5b25-a64a-14dd307c7bc7"
+        },
+        {
+          "outcomeId": "107",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 10,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "a206d18f-56ae-5f0a-9ba5-ec76b456af45"
+        }
+      ]
+    },
+    {
+      "marketId": "108",
+      "bookmakerMarketId": "15823221-4b89-5e63-a8df-f6e409636549",
+      "outcomes": [
+        {
+          "outcomeId": "108",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.2,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "1b7bc459-b4a8-5ded-a65c-8600b9e5f429"
+        },
+        {
+          "outcomeId": "109",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "1e91f73e-a7a3-5de9-aa18-d30aa80c65ee"
+        }
+      ]
+    },
+    {
+      "marketId": "1010",
+      "bookmakerMarketId": "8c286fe2-7197-5f59-88c5-07f71b6c8a72",
+      "outcomes": [
+        {
+          "outcomeId": "1010",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.69,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9ddc4307-f9fe-57a0-ae6a-585ca70e25aa"
+        },
+        {
+          "outcomeId": "1011",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.05,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e4c6db8d-3c5f-5a3a-9c1f-cd00768004f5"
+        }
+      ]
+    },
+    {
+      "marketId": "1012",
+      "bookmakerMarketId": "831cd67c-8fa3-5d12-b9b7-45f22e4a0fec",
+      "outcomes": [
+        {
+          "outcomeId": "1013",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.43,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "171f7052-a092-5e15-8456-a816403675a7"
+        },
+        {
+          "outcomeId": "1012",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.62,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "83e49c40-9575-599a-8d36-4642b8b1bc78"
+        }
+      ]
+    },
+    {
+      "marketId": "1014",
+      "bookmakerMarketId": "f98a6e61-364b-54f6-a9ff-376d2345e875",
+      "outcomes": [
+        {
+          "outcomeId": "1015",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.15,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "c73575c3-08d1-52ae-90e6-9ac03362cbe1"
+        },
+        {
+          "outcomeId": "1014",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.75,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "dab56df0-e80c-527a-9116-b77c9ff2279d"
+        }
+      ]
+    },
+    {
+      "marketId": "1016",
+      "bookmakerMarketId": "c1004c73-61a5-56a2-a845-8429be2adb57",
+      "outcomes": [
+        {
+          "outcomeId": "1017",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.04,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "ef35af86-1680-57aa-abd7-b67e6b1f67cb"
+        },
+        {
+          "outcomeId": "1016",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 8.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "cd32155e-c893-5c1f-905a-13fc5857c28f"
+        }
+      ]
+    },
+    {
+      "marketId": "1018",
+      "bookmakerMarketId": "c8156562-0614-5c78-b845-cb193ee97b2a",
+      "outcomes": [
+        {
+          "outcomeId": "1019",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.007,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "8da08c22-d737-5067-a14e-c3f1202663e8"
+        },
+        {
+          "outcomeId": "1018",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 18,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "96bb7148-0e0f-551b-a17b-4053df9d0168"
+        }
+      ]
+    },
+    {
+      "marketId": "1068",
+      "bookmakerMarketId": "5b9740fc-b0d8-53b9-8001-5c54aa524480",
+      "outcomes": [
+        {
+          "outcomeId": "1069",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.15,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "55786a89-9de3-5c92-afbc-5dfb7b0b86e7"
+        },
+        {
+          "outcomeId": "1068",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.8,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "98d7f767-37dc-5fca-957b-fc10f6e5ace4"
+        }
+      ]
+    },
+    {
+      "marketId": "1076",
+      "bookmakerMarketId": "644db8f1-001a-53f5-be0d-18bca4588929",
+      "outcomes": [
+        {
+          "outcomeId": "1077",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.64,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "bc11723d-cc07-576e-9d93-fab496f92b34"
+        },
+        {
+          "outcomeId": "1076",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.12,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "8526cc70-02f1-5061-b3d0-424ad7b567a8"
+        }
+      ]
+    },
+    {
+      "marketId": "1084",
+      "bookmakerMarketId": "a6542c6a-5631-56cd-9d5c-84e08cee6747",
+      "outcomes": [
+        {
+          "outcomeId": "1084",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.41,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "5780553c-553d-58bc-b6a9-079968b5a493"
+        },
+        {
+          "outcomeId": "1085",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.7,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "f53137f4-50fa-548e-a0eb-aacd2019cd8a"
+        }
+      ]
+    },
+    {
+      "marketId": "10134",
+      "bookmakerMarketId": "728d6a05-a7f9-54ff-8418-63d67a93a272",
+      "outcomes": [
+        {
+          "outcomeId": "10134",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.41,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "4e5eb16a-5232-5584-9abd-1e3ec8d428e6"
+        },
+        {
+          "outcomeId": "10135",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.65,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "7044970a-ccdd-5973-9958-7922726df981"
+        },
+        {
+          "outcomeId": "10136",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 5.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "808e34e9-fa56-56c2-bb2b-290b2e1ad2d3"
+        }
+      ]
+    },
+    {
+      "marketId": "10137",
+      "bookmakerMarketId": "33215797-fd90-5f30-a92b-502fecee4273",
+      "outcomes": [
+        {
+          "outcomeId": "10137",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.12,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "637c7927-5200-5a81-9f63-e31e75f1d0bc"
+        },
+        {
+          "outcomeId": "10139",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.7,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "7e6bd21e-6b60-5cb7-908e-c0ed9949a371"
+        },
+        {
+          "outcomeId": "10138",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 3.6,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "feaf0ed1-f0a1-5fc5-92fa-408b675c0707"
+        }
+      ]
+    },
+    {
+      "marketId": "10146",
+      "bookmakerMarketId": "e368c17f-4474-5000-8640-ef933956511c",
+      "outcomes": [
+        {
+          "outcomeId": "10148",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.002,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e19d52a1-c9d1-5b3c-92d3-ef28bccdbefb"
+        },
+        {
+          "outcomeId": "10147",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 31,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "5b914db5-089c-57af-8633-05f2da36bb59"
+        },
+        {
+          "outcomeId": "10146",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 65,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "778eda90-cdca-54d4-a5c2-0deea9c4351e"
+        }
+      ]
+    },
+    {
+      "marketId": "10208",
+      "bookmakerMarketId": "b15ea541-f02d-51d4-91e6-3ac29c0aa330",
+      "outcomes": [
+        {
+          "outcomeId": "10210",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.2,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "14ca8f82-a9eb-5877-a41a-4eac30a91c74"
+        },
+        {
+          "outcomeId": "10209",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.32,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "f4e9bc70-1a6c-5b6a-be31-74567b0dbd5a"
+        },
+        {
+          "outcomeId": "10208",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9a3f4698-eaa3-5ea5-ba77-ff8e4e5015e4"
+        }
+      ]
+    },
+    {
+      "marketId": "10211",
+      "bookmakerMarketId": "96683727-c6ec-5671-b44a-f8ffe5fdd9cf",
+      "outcomes": [
+        {
+          "outcomeId": "10213",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "86174499-092a-584f-908b-96218d81efbd"
+        },
+        {
+          "outcomeId": "10212",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.65,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "fa5ce2b2-55bb-5b25-a93f-9c2014da8d7b"
+        },
+        {
+          "outcomeId": "10211",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.35,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "55c1c824-d737-5170-980f-55d16d827119"
+        }
+      ]
+    },
+    {
+      "marketId": "10224",
+      "bookmakerMarketId": "f09e7506-0b27-5c34-93a0-a2363b77e897",
+      "outcomes": [
+        {
+          "outcomeId": "10224",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.47,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "347fca29-b57e-5190-82f6-8bd276841ab9"
+        },
+        {
+          "outcomeId": "10225",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.52,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "46f08a4c-3340-5b63-9e5a-9ad85561cb2f"
+        }
+      ]
+    },
+    {
+      "marketId": "10226",
+      "bookmakerMarketId": "b6095219-9d76-55fc-b2b1-d6bc6eef3510",
+      "outcomes": [
+        {
+          "outcomeId": "10227",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.29,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "90b07aff-e25f-5c83-ba01-51f05f11e533"
+        },
+        {
+          "outcomeId": "10226",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 3.25,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "ca0a77d9-b2fb-5278-a9d0-aac3dffddb55"
+        }
+      ]
+    },
+    {
+      "marketId": "10228",
+      "bookmakerMarketId": "fd8f230d-3194-5461-8b27-308169716c16",
+      "outcomes": [
+        {
+          "outcomeId": "10229",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.05,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "dad970ba-8ebe-595a-88a2-5d17c3741170"
+        },
+        {
+          "outcomeId": "10228",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 8.3,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "8ff9dd28-f4c1-55ce-bfe6-cda8f45649ef"
+        }
+      ]
+    },
+    {
+      "marketId": "10230",
+      "bookmakerMarketId": "932c3d2e-e40f-5ed8-8fae-12f7ee4a2a2b",
+      "outcomes": [
+        {
+          "outcomeId": "10231",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.002,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "bb713fbd-0d55-5f56-bf8d-d30bddf6cc92"
+        },
+        {
+          "outcomeId": "10230",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 24,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "5ca59e7b-488f-5b96-b851-ddd2043d2fff"
+        }
+      ]
+    },
+    {
+      "marketId": "10232",
+      "bookmakerMarketId": "946f51b9-0be1-5984-b331-91e4cd78edcb",
+      "outcomes": [
+        {
+          "outcomeId": "10232",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 50,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "bb582527-42ac-505a-83fd-22989f480ee0"
+        }
+      ]
+    },
+    {
+      "marketId": "10240",
+      "bookmakerMarketId": "0e10c4c3-fac7-54b3-8672-70714ee8c937",
+      "outcomes": [
+        {
+          "outcomeId": "10240",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.11,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "5e01604f-33c9-5e23-921f-70d3bc498a5b"
+        },
+        {
+          "outcomeId": "10241",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 5.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9a8c2a7f-fa6d-5336-ba33-01b068c3d587"
+        }
+      ]
+    },
+    {
+      "marketId": "10242",
+      "bookmakerMarketId": "430d35de-00f5-584f-bc71-973807132a8c",
+      "outcomes": [
+        {
+          "outcomeId": "10242",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.64,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9b228c04-4541-5516-ae7a-f029531817d6"
+        },
+        {
+          "outcomeId": "10243",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.12,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "c193d3b6-6b88-5de0-8a37-7c8bb795183d"
+        }
+      ]
+    },
+    {
+      "marketId": "10244",
+      "bookmakerMarketId": "577371d7-79a1-53e8-8c76-14add635aaec",
+      "outcomes": [
+        {
+          "outcomeId": "10245",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.34,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "c96acfd0-96e9-5629-b7c1-861159b1f60c"
+        },
+        {
+          "outcomeId": "10244",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 3,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "46dda8f3-5729-533b-ac02-c4514a77f4da"
+        }
+      ]
+    },
+    {
+      "marketId": "10246",
+      "bookmakerMarketId": "1d088f95-5089-5b10-a58e-9b1949bb41bc",
+      "outcomes": [
+        {
+          "outcomeId": "10247",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.09,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e33c3aa2-48c4-56b7-a1d8-90897e40c534"
+        },
+        {
+          "outcomeId": "10246",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 6.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "76bf3101-4450-5ea5-b015-b6ec1c3a38d3"
+        }
+      ]
+    },
+    {
+      "marketId": "10248",
+      "bookmakerMarketId": "659355e1-3a7d-5d4d-a672-2411642f83d1",
+      "outcomes": [
+        {
+          "outcomeId": "10249",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.01,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "fe444e80-ada1-5322-8822-46b9f68021d9"
+        },
+        {
+          "outcomeId": "10248",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 14,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "384d22db-b354-595f-96c6-a37a9b035685"
+        }
+      ]
+    },
+    {
+      "marketId": "10256",
+      "bookmakerMarketId": "efef9e6e-0259-56b8-acbc-944faf791dd0",
+      "outcomes": [
+        {
+          "outcomeId": "10256",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.32,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9c5b5fad-626c-5d27-b932-90530f42d150"
+        },
+        {
+          "outcomeId": "10257",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 3.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "d9750fc2-dc9c-581e-83f7-e4ff74bdf798"
+        }
+      ]
+    },
+    {
+      "marketId": "10258",
+      "bookmakerMarketId": "5aaa9f12-8c46-5a68-bd3b-b14b08726c5f",
+      "outcomes": [
+        {
+          "outcomeId": "10259",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.47,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e65a60f3-5f68-5687-beb2-8ba44a72502c"
+        },
+        {
+          "outcomeId": "10258",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "57b36dfe-4666-51c6-a623-01bab1affc93"
+        }
+      ]
+    },
+    {
+      "marketId": "10260",
+      "bookmakerMarketId": "94d2c3e6-a697-51ee-872c-7981a2c22c49",
+      "outcomes": [
+        {
+          "outcomeId": "10261",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.1,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "4a3018d6-b87d-5934-8df9-a382d8c517ff"
+        },
+        {
+          "outcomeId": "10260",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 5.75,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "ace52a08-6f1c-5d4c-ad0b-b4d9bcf05143"
+        }
+      ]
+    },
+    {
+      "marketId": "10262",
+      "bookmakerMarketId": "8a000a3f-1dd3-5272-9168-fec44f5e4fc7",
+      "outcomes": [
+        {
+          "outcomeId": "10263",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.01,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "201bbc23-8fd9-5d25-84d9-43b7aba8e448"
+        },
+        {
+          "outcomeId": "10262",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 15,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "4fa5e15d-ea9b-5d67-832f-114b05470054"
+        }
+      ]
+    },
+    {
+      "marketId": "10264",
+      "bookmakerMarketId": "8007cfee-60b4-5ae2-a7fd-087ba660be79",
+      "outcomes": [
+        {
+          "outcomeId": "10264",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 40,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e7b5be59-bf7a-5108-be77-836c91e667fd"
+        }
+      ]
+    },
+    {
+      "marketId": "10284",
+      "bookmakerMarketId": "062752e7-37b4-5c30-8baa-8220a1e665bd",
+      "outcomes": [
+        {
+          "outcomeId": "10284",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.47,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "efa93df9-d233-55e2-844d-156b4e301422"
+        },
+        {
+          "outcomeId": "10285",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.52,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "994c84b6-8343-50ee-86f9-a911dbd9b533"
+        }
+      ]
+    },
+    {
+      "marketId": "10286",
+      "bookmakerMarketId": "49846920-d673-5225-ba83-64b51e593f28",
+      "outcomes": [
+        {
+          "outcomeId": "10286",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.11,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "9e7e9e97-c246-57a7-9b0e-c0ce78fcdc41"
+        },
+        {
+          "outcomeId": "10287",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 5.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "e27af4b6-1f08-5463-859f-4ee86e11e659"
+        }
+      ]
+    },
+    {
+      "marketId": "10288",
+      "bookmakerMarketId": "583589cd-d3a1-5700-9f45-014bc2ca1218",
+      "outcomes": [
+        {
+          "outcomeId": "10289",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.47,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "ce6ae36a-f93d-5a25-96c3-0a275bed85d2"
+        },
+        {
+          "outcomeId": "10288",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.5,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "ed2348db-3e64-5d73-95d3-b3da4408e27e"
+        }
+      ]
+    },
+    {
+      "marketId": "10290",
+      "bookmakerMarketId": "bdca6252-31f2-51a0-8269-b7c2d3ac4f5d",
+      "outcomes": [
+        {
+          "outcomeId": "10290",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.67,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "576c86ba-aed5-5750-a626-f1f30a833961"
+        },
+        {
+          "outcomeId": "10291",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.07,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "5f110f26-f835-54d4-b489-185e4a21cbeb"
+        }
+      ]
+    },
+    {
+      "marketId": "10292",
+      "bookmakerMarketId": "d2bd9024-d75a-558c-9942-df7f8b4b0662",
+      "outcomes": [
+        {
+          "outcomeId": "10293",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.67,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "7f522ecd-dc95-541a-a2a5-07e08b6082e4"
+        },
+        {
+          "outcomeId": "10292",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.07,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "17c0ddad-5cb1-53ce-a390-43d729b26d28"
+        }
+      ]
+    },
+    {
+      "marketId": "10294",
+      "bookmakerMarketId": "c511da5c-2a80-51cf-9f0c-1ec0bde65815",
+      "outcomes": [
+        {
+          "outcomeId": "10294",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.44,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "556a5894-af9a-5a61-af6e-5f3b3c9b2aba"
+        },
+        {
+          "outcomeId": "10295",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 2.6,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "533d1eae-c355-5ecf-88af-20dd348c8f16"
+        }
+      ]
+    },
+    {
+      "marketId": "10300",
+      "bookmakerMarketId": "62650072-896d-5c68-87b9-661ee4afda76",
+      "outcomes": [
+        {
+          "outcomeId": "10301",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.19,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "6a8402c7-2b08-5d30-b82f-da562132f648"
+        },
+        {
+          "outcomeId": "10300",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 4.15,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "d5149731-aed4-5907-af4a-f658d4fea6de"
+        }
+      ]
+    },
+    {
+      "marketId": "10302",
+      "bookmakerMarketId": "c34b5e71-d3ea-53e2-b8ad-891e1a013074",
+      "outcomes": [
+        {
+          "outcomeId": "10303",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.34,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "f2a5989b-810e-501e-b179-056fc54789c4"
+        },
+        {
+          "outcomeId": "10302",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 3,
+          "changedAt": "2026-03-20T13:35:45.500418+00:00",
+          "bookmakerOutcomeId": "c506759a-2395-5262-aa59-c93998b91ee5"
+        }
+      ]
+    }
+  ]
+}
