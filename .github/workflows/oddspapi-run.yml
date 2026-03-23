@@ -6,7 +6,7 @@ on:
       job:
         description: "What to run"
         required: true
-        default: "bookmakers"
+        default: "odds"
         type: choice
         options:
           - bookmakers
@@ -19,7 +19,7 @@ on:
       bookmaker:
         description: "Bookmaker slug (for odds job)"
         required: false
-        default: "pinnacle"
+        default: "superbet"
       verbosity:
         description: "Verbosity level"
         required: false
@@ -44,6 +44,9 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Ensure data folder exists
+        run: mkdir -p data
+
       - name: Run bookmakers
         if: ${{ inputs.job == 'bookmakers' }}
         env:
@@ -56,7 +59,7 @@ jobs:
           ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
         run: node scripts/oddspapi-fetch-tournaments.js
 
-      - name: Run odds-by-tournaments
+      - name: Run odds-by-tournaments (batched)
         if: ${{ inputs.job == 'odds' }}
         env:
           ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
@@ -66,6 +69,13 @@ jobs:
           ODDS_FORMAT: ${{ inputs.odds_format }}
         run: node scripts/oddspapi-fetch-odds-by-tournaments.js
 
+      - name: List generated files (debug)
+        run: |
+          echo "---- data/ ----"
+          ls -la data || true
+          echo "---- data/oddspapi_odds_parts ----"
+          ls -la data/oddspapi_odds_parts || true
+
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
@@ -73,7 +83,9 @@ jobs:
 
           git add data/oddspapi_bookmakers_raw.txt data/oddspapi_bookmakers.json || true
           git add data/oddspapi_tournaments_raw.txt data/oddspapi_tournaments.json || true
-          git add data/oddspapi_odds_raw.txt data/oddspapi_odds.json || true
+
+          git add data/oddspapi_odds.json data/oddspapi_odds_index.json || true
+          git add data/oddspapi_odds_parts || true
 
           git diff --cached --quiet || git commit -m "OddsPapi data update"
           git push
