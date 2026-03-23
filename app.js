@@ -245,4 +245,121 @@ function renderMatchesList() {
 }
 
 async function loadAndRenderMatch() {
-  if (!current.fixture
+  if (!current.fixtureId) {
+    el("matchTitle").textContent = "Alege un meci";
+    el("matchMeta").textContent = "—";
+    el("openBookBtn").setAttribute("href", "#");
+    renderRows("market1x2", []);
+    renderRows("marketBtts", []);
+    renderRows("marketOu", []);
+    el("marketOther").textContent = "—";
+    return;
+  }
+
+  setStatus("Loading match...");
+
+  const m = UI.matches.find((x) => x.fixtureId === current.fixtureId);
+  const data = await getJson(`./data/ui/match/${current.fixtureId}.json`);
+
+  el("matchTitle").textContent = `${data.home || m.home} vs ${data.away || m.away}`;
+  el("matchMeta").textContent =
+    `${data.categoryName || m.categoryName} • ${data.tournamentName || m.tournamentName} • ${fmtTime(data.startTime || m.startTime)}`;
+
+  const href = data.fixturePath || "#";
+  el("openBookBtn").setAttribute("href", href);
+  el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
+
+  const markets = data.markets || [];
+  const used = new Set();
+
+  // 1X2
+  const m1x2 = pickLikely1X2(markets);
+  if (m1x2) {
+    used.add(String(m1x2.marketId));
+    const outs = uniqBy(m1x2.outcomes || [], (o) => o.outcomeId).slice(0, 3);
+    renderRows("market1x2", outs.map((o, idx) => ({
+      label: idx === 0 ? "Home" : idx === 1 ? "Draw" : "Away",
+      value: o.price != null ? String(o.price) : "—"
+    })));
+  } else {
+    renderRows("market1x2", []);
+  }
+
+  // BTTS
+  const mbtts = pickLikelyBTTS(markets, used);
+  if (mbtts) {
+    used.add(String(mbtts.marketId));
+    const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
+    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
+    renderRows("marketBtts", [
+      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
+      { label: "No", value: outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />?.price != null ? String(outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />.price) : "—" }
+    ]);
+  } else {
+    renderRows("marketBtts", []);
+  }
+
+  // O/U candidate
+  let ouMarket = null;
+  if (PREFERRED_OU_MARKET_ID) {
+    ouMarket = markets.find((x) => String(x.marketId) === String(PREFERRED_OU_MARKET_ID)) || null;
+  }
+  if (!ouMarket) {
+    const candidates = twoWayMarkets(markets, used);
+    ouMarket = candidates[0]?.market || null;
+  }
+
+  if (ouMarket) {
+    used.add(String(ouMarket.marketId));
+    const outs = uniqBy(ouMarket.outcomes || [], (o) => o.outcomeId).slice(0, 2);
+    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
+
+    renderRows("marketOu", [
+      { label: `Market ${ouMarket.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" },
+      { label: `Market ${ouMarket.marketId} • Option B`, value: outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />?.price != null ? String(outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />.price) : "—" }
+    ]);
+  } else {
+    renderRows("marketOu", []);
+  }
+
+  renderOtherMarkets(markets, used);
+  setStatus("Ready");
+}
+
+async function init() {
+  try {
+    await loadUiData();
+
+    renderLeagueSelect();
+    renderDaySelect();
+    renderMatchesList();
+    await loadAndRenderMatch();
+
+    el("leagueSel").addEventListener("change", () => {
+      current.leagueId = el("leagueSel").value;
+      current.fixtureId = null;
+      renderMatchesList();
+      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+    });
+
+    el("daySel").addEventListener("change", () => {
+      current.day = el("daySel").value;
+      current.fixtureId = null;
+      renderMatchesList();
+      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+    });
+
+    el("refreshBtn").addEventListener("click", async () => {
+      current.fixtureId = null;
+      await loadUiData();
+      renderLeagueSelect();
+      renderDaySelect();
+      renderMatchesList();
+      await loadAndRenderMatch();
+    });
+  } catch (e) {
+    setStatus(e.message || String(e), false);
+  }
+}
+
+init();
