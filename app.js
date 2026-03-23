@@ -71,7 +71,7 @@ function renderOtherMarkets(markets, usedMarketIds){
  *
  * Dacă îl lași null, UI alege automat un "candidate" din piețele 2-way.
  */
-const PREFERRED_OU_MARKET_ID = null; // ex: "1012" sau "1014"
+const PREFERRED_OU_MARKET_ID = 1012; // ex: "1012" sau "1014"
 
 // Heuristic: 1X2 is usually the ONLY market with 3 distinct outcomes (home/draw/away)
 function pickLikely1X2(markets){
