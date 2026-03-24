@@ -1,8 +1,10 @@
 const el = (id) => document.getElementById(id);
 
 function setStatus(text, ok = true) {
-  el("statusText").textContent = text;
-  el("statusDot").style.background = ok ? "var(--accent)" : "var(--bad)";
+  const t = el("statusText");
+  const d = el("statusDot");
+  if (t) t.textContent = text;
+  if (d) d.style.background = ok ? "var(--accent)" : "var(--bad)";
 }
 
 async function getJson(path) {
@@ -32,8 +34,9 @@ function byStr(a, b) {
 
 function renderRows(containerId, rows) {
   const box = el(containerId);
-  box.innerHTML = "";
+  if (!box) return;
 
+  box.innerHTML = "";
   if (!rows || !rows.length) {
     const d = document.createElement("div");
     d.className = "muted";
@@ -43,8 +46,8 @@ function renderRows(containerId, rows) {
   }
 
   for (const r of rows) {
-    const div = document.createElement("div");
-    div.className = "row";
+    const row = document.createElement("div");
+    row.className = "row";
 
     const k = document.createElement("div");
     k.className = "k";
@@ -54,17 +57,17 @@ function renderRows(containerId, rows) {
     v.className = "v";
     v.textContent = r.value;
 
-    div.appendChild(k);
-    div.appendChild(v);
-
-    box.appendChild(div);
+    row.appendChild(k);
+    row.appendChild(v);
+    box.appendChild(row);
   }
 }
 
 function renderOtherMarkets(markets, usedMarketIds) {
   const box = el("marketOther");
-  const rest = (markets || []).filter((m) => !usedMarketIds.has(String(m.marketId)));
+  if (!box) return;
 
+  const rest = (markets || []).filter((m) => !usedMarketIds.has(String(m.marketId)));
   if (!rest.length) {
     box.textContent = "—";
     return;
@@ -85,8 +88,8 @@ function renderOtherMarkets(markets, usedMarketIds) {
 }
 
 /**
- * Dacă identifici un marketId care e mereu Total Goals O/U, setează aici.
- * Exemplu: const PREFERRED_OU_MARKET_ID = "1012";
+ * Opțional: dacă descoperi că Total Goals O/U e mereu un marketId (ex: "1012"),
+ * setează aici ca să fie stabil.
  */
 const PREFERRED_OU_MARKET_ID = null;
 
@@ -113,12 +116,14 @@ function pickLikelyBTTS(markets, excludeIds = new Set()) {
 
     const min = Math.min(...prices);
     const max = Math.max(...prices);
+
+    // evită piețe extreme gen 1.04 vs 12
     if (min >= 1.15 && max <= 3.8) return m;
   }
   return null;
 }
 
-// Toate piețele 2-way (candidates pentru O/U)
+// 2-way candidates: potrivite pentru O/U (fără label-uri -> Option A/B)
 function twoWayMarkets(markets, excludeIds = new Set()) {
   const out = [];
 
@@ -135,6 +140,7 @@ function twoWayMarkets(markets, excludeIds = new Set()) {
     out.push({ market: m, prices });
   }
 
+  // prefer piețe “balanced”
   out.sort((a, b) => {
     const ra = Math.max(...a.prices) / Math.min(...a.prices);
     const rb = Math.max(...b.prices) / Math.min(...b.prices);
@@ -190,9 +196,11 @@ async function loadUiData() {
 
 function renderLeagueSelect() {
   const sel = el("leagueSel");
-  sel.innerHTML = "";
+  if (!sel) return;
 
+  sel.innerHTML = "";
   const list = UI.leagues.slice().sort((a, b) => byStr(a.categoryName + a.name, b.categoryName + b.name));
+
   for (const l of list) {
     const opt = document.createElement("option");
     opt.value = l.id;
@@ -205,9 +213,11 @@ function renderLeagueSelect() {
 
 function renderDaySelect() {
   const sel = el("daySel");
-  sel.innerHTML = "";
+  if (!sel) return;
 
+  sel.innerHTML = "";
   const days = UI.index?.days || [];
+
   for (const d of days) {
     const opt = document.createElement("option");
     opt.value = d;
@@ -228,6 +238,8 @@ function filteredMatches() {
 
 function renderMatchesList() {
   const box = el("matchesList");
+  if (!box) return;
+
   box.innerHTML = "";
 
   const list = filteredMatches();
@@ -240,9 +252,9 @@ function renderMatchesList() {
   }
 
   for (const m of list) {
-    const div = document.createElement("div");
-    div.className = "match-item" + (m.fixtureId === current.fixtureId ? " active" : "");
-    div.addEventListener("click", () => {
+    const item = document.createElement("div");
+    item.className = "match-item" + (m.fixtureId === current.fixtureId ? " active" : "");
+    item.addEventListener("click", () => {
       current.fixtureId = m.fixtureId;
       renderMatchesList();
       loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
@@ -256,9 +268,9 @@ function renderMatchesList() {
     meta.className = "meta";
     meta.textContent = `${m.tournamentName} • ${fmtTime(m.startTime)}`;
 
-    div.appendChild(teams);
-    div.appendChild(meta);
-    box.appendChild(div);
+    item.appendChild(teams);
+    item.appendChild(meta);
+    box.appendChild(item);
   }
 
   if (!current.fixtureId && list[0]?.fixtureId) {
@@ -269,28 +281,42 @@ function renderMatchesList() {
 
 async function loadAndRenderMatch() {
   if (!current.fixtureId) {
-    el("matchTitle").textContent = "Alege un meci";
-    el("matchMeta").textContent = "—";
-    el("openBookBtn").setAttribute("href", "#");
+    const t = el("matchTitle");
+    const m = el("matchMeta");
+    const b = el("openBookBtn");
+    if (t) t.textContent = "Alege un meci";
+    if (m) m.textContent = "—";
+    if (b) b.setAttribute("href", "#");
+
     renderRows("market1x2", []);
     renderRows("marketBtts", []);
     renderRows("marketOu", []);
-    el("marketOther").textContent = "—";
+    const other = el("marketOther");
+    if (other) other.textContent = "—";
     return;
   }
 
   setStatus("Loading match...");
 
-  const m = UI.matches.find((x) => x.fixtureId === current.fixtureId);
+  const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
   const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
 
-  el("matchTitle").textContent = `${matchData.home || m.home} vs ${matchData.away || m.away}`;
-  el("matchMeta").textContent =
-    `${matchData.categoryName || m.categoryName} • ${matchData.tournamentName || m.tournamentName} • ${fmtTime(matchData.startTime || m.startTime)}`;
+  const title = el("matchTitle");
+  const meta = el("matchMeta");
+  if (title) title.textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
+  if (meta) {
+    meta.textContent =
+      `${matchData.categoryName || baseMatch.categoryName} • ` +
+      `${matchData.tournamentName || baseMatch.tournamentName} • ` +
+      `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
+  }
 
+  const btn = el("openBookBtn");
   const href = matchData.fixturePath || "#";
-  el("openBookBtn").setAttribute("href", href);
-  el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
+  if (btn) {
+    btn.setAttribute("href", href);
+    btn.style.opacity = href === "#" ? "0.5" : "1";
+  }
 
   const markets = matchData.markets || [];
   const used = new Set();
@@ -314,15 +340,15 @@ async function loadAndRenderMatch() {
     used.add(String(mbtts.marketId));
     const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
     outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-  renderRows("marketBtts", [
-  { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-  { label: "No",  value: outs[1]?.price != null ? String(outs[1].price) : "—" }
-]);
+    renderRows("marketBtts", [
+      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
+      { label: "No", value: outs[1]?.price != null ? String(outs[1].price) : "—" }
+    ]);
   } else {
     renderRows("marketBtts", []);
   }
 
-  // O/U candidate (fără label-uri -> Option A/B)
+  // O/U candidate
   let ouMarket = null;
   if (PREFERRED_OU_MARKET_ID) {
     ouMarket = markets.find((x) => String(x.marketId) === String(PREFERRED_OU_MARKET_ID)) || null;
@@ -339,7 +365,7 @@ async function loadAndRenderMatch() {
 
     renderRows("marketOu", [
       { label: `Market ${ouMarket.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: `Market ${ouMarket.marketId} • Option B`, value: outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />?.price != null ? String(outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />.price) : "—" }
+      { label: `Market ${ouMarket.marketId} • Option B`, value: outs[1]?.price != null ? String(outs[1].price) : "—" }
     ]);
   } else {
     renderRows("marketOu", []);
@@ -352,34 +378,43 @@ async function loadAndRenderMatch() {
 async function init() {
   try {
     await loadUiData();
-
     renderLeagueSelect();
     renderDaySelect();
     renderMatchesList();
     await loadAndRenderMatch();
 
-    el("leagueSel").addEventListener("change", () => {
-      current.leagueId = el("leagueSel").value;
-      current.fixtureId = null;
-      renderMatchesList();
-      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-    });
+    const leagueSel = el("leagueSel");
+    const daySel = el("daySel");
+    const refreshBtn = el("refreshBtn");
 
-    el("daySel").addEventListener("change", () => {
-      current.day = el("daySel").value;
-      current.fixtureId = null;
-      renderMatchesList();
-      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-    });
+    if (leagueSel) {
+      leagueSel.addEventListener("change", () => {
+        current.leagueId = leagueSel.value;
+        current.fixtureId = null;
+        renderMatchesList();
+        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+      });
+    }
 
-    el("refreshBtn").addEventListener("click", async () => {
-      current.fixtureId = null;
-      await loadUiData();
-      renderLeagueSelect();
-      renderDaySelect();
-      renderMatchesList();
-      await loadAndRenderMatch();
-    });
+    if (daySel) {
+      daySel.addEventListener("change", () => {
+        current.day = daySel.value;
+        current.fixtureId = null;
+        renderMatchesList();
+        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+      });
+    }
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async () => {
+        current.fixtureId = null;
+        await loadUiData();
+        renderLeagueSelect();
+        renderDaySelect();
+        renderMatchesList();
+        await loadAndRenderMatch();
+      });
+    }
   } catch (e) {
     setStatus(e.message || String(e), false);
   }
