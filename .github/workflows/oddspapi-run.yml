@@ -12,6 +12,7 @@ on:
           - bookmakers
           - tournaments
           - odds
+          - build_ui
           - report
       tournament_ids:
         description: "Comma-separated tournamentIds (for odds job)"
@@ -71,8 +72,12 @@ jobs:
           ODDS_FORMAT: ${{ inputs.odds_format }}
         run: node scripts/oddspapi-fetch-odds-by-tournaments.js
 
-      - name: Build UI data (normalize OddsPapi)
+      - name: Build UI data (normalize OddsPapi) - after odds
         if: ${{ inputs.job == 'odds' }}
+        run: node scripts/build-ui-data-from-oddspapi.js
+
+      - name: Build UI data (normalize OddsPapi) - NO API (rebuild from existing oddspapi_odds.json)
+        if: ${{ inputs.job == 'build_ui' }}
         run: node scripts/build-ui-data-from-oddspapi.js
 
       - name: Build 2-way report (no API calls)
@@ -81,10 +86,10 @@ jobs:
 
       - name: List generated files (debug)
         run: |
-          echo "---- data/ ----"
-          ls -la data || true
           echo "---- data/ui ----"
           ls -la data/ui || true
+          echo "---- data/ui/match ----"
+          ls -la data/ui/match | head -n 20 || true
 
       - name: Commit outputs
         run: |
@@ -102,7 +107,7 @@ jobs:
           # UI normalized outputs
           git add data/ui || true
 
-          # report output (inside data/ui)
+          # report output
           git add data/ui/two_way_report.json || true
 
           if git diff --cached --quiet; then
