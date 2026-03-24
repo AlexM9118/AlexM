@@ -314,10 +314,10 @@ async function loadAndRenderMatch() {
     used.add(String(mbtts.marketId));
     const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
     outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-    renderRows("marketBtts", [
-      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: "No", value: outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />?.price != null ? String(outs<source_id data="1" title="chat-️ Interfață fișier Excel.txt" />.price) : "—" }
-    ]);
+  renderRows("marketBtts", [
+  { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
+  { label: "No",  value: outs[1]?.price != null ? String(outs[1].price) : "—" }
+]);
   } else {
     renderRows("marketBtts", []);
   }
