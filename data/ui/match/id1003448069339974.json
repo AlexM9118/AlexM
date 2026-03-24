@@ -321,24 +321,7 @@
     {
       "marketId": "1092",
       "bookmakerMarketId": "89e1c4aa-11fb-5f18-88ee-9ec057ac783f",
-      "outcomes": [
-        {
-          "outcomeId": "1092",
-          "playerKey": "0",
-          "playerName": null,
-          "price": 1.004,
-          "changedAt": "2026-03-23T17:56:29.642927+00:00",
-          "bookmakerOutcomeId": "7714b950-36eb-522d-9fc7-2dfff79b5780"
-        },
-        {
-          "outcomeId": "1093",
-          "playerKey": "0",
-          "playerName": null,
-          "price": 29,
-          "changedAt": "2026-03-23T17:56:29.642927+00:00",
-          "bookmakerOutcomeId": "25445a74-94dc-5442-84dc-4db56d25b109"
-        }
-      ]
+      "outcomes": []
     },
     {
       "marketId": "10137",
