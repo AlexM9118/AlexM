@@ -1,0 +1,146 @@
+{
+  "generatedAtUTC": "2026-03-24T02:04:58.288Z",
+  "keyUsed": "123",
+  "teamQueries": [
+    "Liverpool",
+    "Arsenal",
+    "Real Madrid"
+  ],
+  "results": [
+    {
+      "teamQuery": "Liverpool",
+      "search": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Liverpool",
+        "http": 200,
+        "ok": true,
+        "teamsCount": 1
+      },
+      "team": {
+        "idTeam": "133602",
+        "strTeam": "Liverpool",
+        "strSport": "Soccer",
+        "strCountry": "England",
+        "strLeague": "English Premier League"
+      },
+      "eventslast": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/eventslast.php?id=133602",
+        "http": 200,
+        "ok": true,
+        "eventsCount": 1
+      },
+      "summary": {
+        "soccerCount": 1,
+        "scoredCount": 1,
+        "sampleEvents": [
+          {
+            "dateEvent": "2026-03-18",
+            "strSport": "Soccer",
+            "strHomeTeam": "Liverpool",
+            "strAwayTeam": "Galatasaray",
+            "intHomeScore": "4",
+            "intAwayScore": "0",
+            "strStatus": "Match Finished"
+          }
+        ],
+        "last5": {
+          "homeMatches": 1,
+          "awayMatches": 0,
+          "homeGF": 4,
+          "homeGA": 0,
+          "awayGF": null,
+          "awayGA": null
+        }
+      }
+    },
+    {
+      "teamQuery": "Arsenal",
+      "search": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Arsenal",
+        "http": 200,
+        "ok": true,
+        "teamsCount": 1
+      },
+      "team": {
+        "idTeam": "133604",
+        "strTeam": "Arsenal",
+        "strSport": "Soccer",
+        "strCountry": "England",
+        "strLeague": "English Premier League"
+      },
+      "eventslast": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/eventslast.php?id=133604",
+        "http": 200,
+        "ok": true,
+        "eventsCount": 1
+      },
+      "summary": {
+        "soccerCount": 1,
+        "scoredCount": 1,
+        "sampleEvents": [
+          {
+            "dateEvent": "2026-03-22",
+            "strSport": "Soccer",
+            "strHomeTeam": "Arsenal",
+            "strAwayTeam": "Manchester City",
+            "intHomeScore": "0",
+            "intAwayScore": "2",
+            "strStatus": "Match Finished"
+          }
+        ],
+        "last5": {
+          "homeMatches": 1,
+          "awayMatches": 0,
+          "homeGF": 0,
+          "homeGA": 2,
+          "awayGF": null,
+          "awayGA": null
+        }
+      }
+    },
+    {
+      "teamQuery": "Real Madrid",
+      "search": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=Real%20Madrid",
+        "http": 200,
+        "ok": true,
+        "teamsCount": 2
+      },
+      "team": {
+        "idTeam": "133738",
+        "strTeam": "Real Madrid",
+        "strSport": "Soccer",
+        "strCountry": "Spain",
+        "strLeague": "Spanish La Liga"
+      },
+      "eventslast": {
+        "url": "https://www.thesportsdb.com/api/v1/json/123/eventslast.php?id=133738",
+        "http": 200,
+        "ok": true,
+        "eventsCount": 1
+      },
+      "summary": {
+        "soccerCount": 1,
+        "scoredCount": 1,
+        "sampleEvents": [
+          {
+            "dateEvent": "2026-03-22",
+            "strSport": "Soccer",
+            "strHomeTeam": "Real Madrid",
+            "strAwayTeam": "Atlético Madrid",
+            "intHomeScore": "3",
+            "intAwayScore": "2",
+            "strStatus": "Match Finished"
+          }
+        ],
+        "last5": {
+          "homeMatches": 1,
+          "awayMatches": 0,
+          "homeGF": 3,
+          "homeGA": 2,
+          "awayGF": null,
+          "awayGA": null
+        }
+      }
+    }
+  ]
+}
