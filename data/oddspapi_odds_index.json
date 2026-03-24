@@ -1,109 +1,20 @@
 {
-  "generatedAtUTC": "2026-03-23T22:43:01.319Z",
+  "generatedAtUTC": "2026-03-24T00:27:08.330Z",
   "bookmaker": "superbet",
   "oddsFormat": "decimal",
-  "verbosity": "2",
+  "verbosity": "3",
   "tournamentIds": [
-    "17",
-    "18",
-    "34",
-    "182",
-    "35",
-    "44",
-    "53",
-    "8",
-    "54",
-    "152",
-    "37",
-    "38",
-    "36",
-    "52",
-    "45",
-    "185",
-    "203",
-    "7",
-    "679",
-    "34480",
-    "40",
-    "20",
-    "242",
-    "247",
-    "266",
-    "210",
-    "215",
-    "238"
+    "17"
   ],
   "batches": [
     {
       "batch": 1,
       "tournamentIds": [
-        "17",
-        "18",
-        "34",
-        "182",
-        "35"
+        "17"
       ],
-      "fixtures": 65,
+      "fixtures": 9,
       "file": "data/oddspapi_odds_parts/part_01.json"
-    },
-    {
-      "batch": 2,
-      "tournamentIds": [
-        "44",
-        "53",
-        "8",
-        "54",
-        "152"
-      ],
-      "fixtures": 47,
-      "file": "data/oddspapi_odds_parts/part_02.json"
-    },
-    {
-      "batch": 3,
-      "tournamentIds": [
-        "37",
-        "38",
-        "36",
-        "52",
-        "45"
-      ],
-      "fixtures": 36,
-      "file": "data/oddspapi_odds_parts/part_03.json"
-    },
-    {
-      "batch": 4,
-      "tournamentIds": [
-        "185",
-        "203",
-        "7",
-        "679",
-        "34480"
-      ],
-      "fixtures": 20,
-      "file": "data/oddspapi_odds_parts/part_04.json"
-    },
-    {
-      "batch": 5,
-      "tournamentIds": [
-        "40",
-        "20",
-        "242",
-        "247",
-        "266"
-      ],
-      "fixtures": 38,
-      "file": "data/oddspapi_odds_parts/part_05.json"
-    },
-    {
-      "batch": 6,
-      "tournamentIds": [
-        "210",
-        "215",
-        "238"
-      ],
-      "fixtures": 23,
-      "file": "data/oddspapi_odds_parts/part_06.json"
     }
   ],
-  "fixturesTotal": 229
+  "fixturesTotal": 9
 }
