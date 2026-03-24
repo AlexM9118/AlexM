@@ -1,0 +1,46 @@
+name: TheSportsDB smoke test (history)
+
+on:
+  workflow_dispatch:
+    inputs:
+      teams:
+        description: "Comma-separated team names to test (e.g. Liverpool,Arsenal)"
+        required: true
+        default: "Liverpool,Arsenal,Real Madrid"
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Run SportsDB smoke test
+        env:
+          # optional; if not set, script uses "123"
+          SPORTSDB_V1_KEY: ${{ secrets.SPORTSDB_V1_KEY }}
+          TEAMS: ${{ inputs.teams }}
+        run: node scripts/sportsdb-smoke-test.js
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/sportsdb_smoke/sportsdb_smoke.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "SportsDB smoke test output"
+          git push
