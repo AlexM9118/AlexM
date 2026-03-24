@@ -1,4 +1,5 @@
 name: OddsPapi - run jobs
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,6 +12,7 @@ on:
           - bookmakers
           - tournaments
           - odds
+          - report
       tournament_ids:
         description: "Comma-separated tournamentIds (for odds job)"
         required: false
@@ -20,11 +22,11 @@ on:
         required: false
         default: "superbet"
       verbosity:
-        description: "Verbosity level"
+        description: "Verbosity level (for odds job)"
         required: false
         default: "2"
       odds_format:
-        description: "decimal or american"
+        description: "decimal or american (for odds job)"
         required: false
         default: "decimal"
 
@@ -34,6 +36,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,6 +75,10 @@ jobs:
         if: ${{ inputs.job == 'odds' }}
         run: node scripts/build-ui-data-from-oddspapi.js
 
+      - name: Build 2-way report (no API calls)
+        if: ${{ inputs.job == 'report' }}
+        run: node scripts/build-two-way-report.js
+
       - name: List generated files (debug)
         run: |
           echo "---- data/ ----"
@@ -84,13 +91,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # bookmakers / tournaments
           git add data/oddspapi_bookmakers_raw.txt data/oddspapi_bookmakers.json || true
           git add data/oddspapi_tournaments_raw.txt data/oddspapi_tournaments.json || true
+
+          # odds outputs
           git add data/oddspapi_odds.json data/oddspapi_odds_index.json || true
           git add data/oddspapi_odds_parts || true
 
-          # new UI normalized outputs
+          # UI normalized outputs
           git add data/ui || true
 
-          git diff --cached --quiet || git commit -m "OddsPapi data update"
+          # report output (inside data/ui)
+          git add data/ui/two_way_report.json || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "OddsPapi data update"
           git push
