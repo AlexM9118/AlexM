@@ -1,0 +1,28 @@
+{
+  "lookback": 5,
+  "sources": [
+    { "id": "E0",  "name": "England - Premier League",         "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv" },
+    { "id": "E1",  "name": "England - Championship",           "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv" },
+
+    { "id": "SC0", "name": "Scotland - Premiership",           "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv" },
+    { "id": "SC1", "name": "Scotland - Division 1",            "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv" },
+
+    { "id": "D1",  "name": "Germany - Bundesliga",             "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv" },
+    { "id": "D2",  "name": "Germany - Bundesliga 2",           "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv" },
+
+    { "id": "I1",  "name": "Italy - Serie A",                  "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv" },
+    { "id": "I2",  "name": "Italy - Serie B",                  "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv" },
+
+    { "id": "SP1", "name": "Spain - LaLiga",                   "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv" },
+    { "id": "SP2", "name": "Spain - LaLiga 2",                 "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv" },
+
+    { "id": "F1",  "name": "France - Ligue 1",                 "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv" },
+    { "id": "F2",  "name": "France - Ligue 2",                 "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv" },
+
+    { "id": "B1",  "name": "Belgium - First Division A",       "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv" },
+    { "id": "P1",  "name": "Portugal - Primeira Liga",         "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv" },
+
+    { "id": "T1",  "name": "Turkey - Super Lig",               "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv" },
+    { "id": "G1",  "name": "Greece - Super League",            "type": "csv",  "url": "https://www.football-data.co.uk/mmz4281/2526/G1.csv" }
+  ]
+}
