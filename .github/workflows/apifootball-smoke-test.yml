@@ -1,0 +1,48 @@
+name: API-Football smoke test
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "YYYY-MM-DD"
+        required: true
+        default: "2026-04-12"
+      league:
+        description: "League ID to test (API-Sports). Example EPL is often 39."
+        required: true
+        default: "39"
+      season:
+        description: "Season year (e.g. 2025)"
+        required: true
+        default: "2025"
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Run API-Football smoke test
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+          DATE: ${{ inputs.date }}
+          LEAGUE: ${{ inputs.league }}
+          SEASON: ${{ inputs.season }}
+        run: node scripts/apifootball-smoke-test.js
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/apifootball_smoke_fixtures_by_date.json data/apifootball_smoke_fixtures_by_league.json || true
+          git diff --cached --quiet || git commit -m "API-Football smoke test"
+          git push
