@@ -2,16 +2,16 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8" />
-<link rel="icon" href="data:," />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alex AI Bet</title>
+  <link rel="icon" href="data:," />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
       <div class="title">Alex AI Bet</div>
-      <div class="subtitle">Odds dashboard (OddsPapi → Superbet)</div>
+      <div class="subtitle">Odds dashboard (OddsPapi → Superbet) + History stats (football-data)</div>
     </div>
 
     <div class="top-actions">
@@ -21,7 +21,6 @@
   </header>
 
   <main class="layout">
-    <!-- Sidebar -->
     <aside class="sidebar card">
       <div class="side-title">Selectează liga</div>
       <select id="leagueSel"></select>
@@ -35,11 +34,10 @@
       <div id="matchesList" class="matches"></div>
 
       <div class="side-footer muted">
-        Sursă: <code>data/ui/*</code> (cache din OddsPapi)
+        Odds: <code>data/ui/*</code> • History: <code>data/stats/*</code>
       </div>
     </aside>
 
-    <!-- Main -->
     <section class="main">
       <section class="card header-card">
         <div class="match-head">
@@ -70,7 +68,7 @@
         </div>
 
         <div class="card">
-          <div class="card-title">Total goals O/U (dacă este disponibil)</div>
+          <div class="card-title">2-way markets (Top)</div>
           <div id="marketOu" class="rows"></div>
         </div>
 
@@ -79,11 +77,25 @@
           <div id="marketOther" class="other"></div>
         </div>
       </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-title">History (last 5) — Home team (acasă)</div>
+          <div id="histHome" class="rows"></div>
+          <div class="muted small" id="histHomeNote"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">History (last 5) — Away team (deplasare)</div>
+          <div id="histAway" class="rows"></div>
+          <div class="muted small" id="histAwayNote"></div>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer class="footer">
-    Alex AI Bet • Data cached in repo via GitHub Actions • Atenție la ToS/redistribuire date.
+    Alex AI Bet • Odds cached via GitHub Actions • History cached weekly via CSV
   </footer>
 
   <script src="./app.js"></script>
