@@ -301,4 +301,161 @@ function renderHistoryForFixture(fixtureId) {
     { label: "Corners For (home)", value: fmtNum(hs.homeCornersFor, 2) },
     { label: "Corners Against (home)", value: fmtNum(hs.homeCornersAgainst, 2) },
     { label: "YC For (home)", value: fmtNum(hs.homeYCFor, 2) },
-    { label: "YC Against (home)", value: fmtNum(hs.homeYCAgainst, 2)
+    { label: "YC Against (home)", value: fmtNum(hs.homeYCAgainst, 2) }
+  ]);
+
+  // Away (awayMatches are away fixtures in last N)
+  renderRows("histAway", [
+    { label: `Away matches (last ${HIST.lookback || 5})`, value: String(as.awayMatches ?? "—") },
+    { label: "GF (away)", value: fmtNum(as.awayGF, 2) },
+    { label: "GA (away)", value: fmtNum(as.awayGA, 2) },
+    { label: "Corners For (away)", value: fmtNum(as.awayCornersFor, 2) },
+    { label: "Corners Against (away)", value: fmtNum(as.awayCornersAgainst, 2) },
+    { label: "YC For (away)", value: fmtNum(as.awayYCFor, 2) },
+    { label: "YC Against (away)", value: fmtNum(as.awayYCAgainst, 2) }
+  ]);
+
+  if (homeNote) homeNote.textContent = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
+  if (awayNote) awayNote.textContent = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
+}
+
+async function loadAndRenderMatch() {
+  if (!current.fixtureId) {
+    const t = el("matchTitle");
+    const m = el("matchMeta");
+    const b = el("openBookBtn");
+    if (t) t.textContent = "Alege un meci";
+    if (m) m.textContent = "—";
+    if (b) b.setAttribute("href", "#");
+
+    renderRows("market1x2", []);
+    renderRows("marketBtts", []);
+    renderRows("marketOu", []);
+    const other = el("marketOther");
+    if (other) other.textContent = "—";
+
+    renderRows("histHome", []);
+    renderRows("histAway", []);
+    return;
+  }
+
+  setStatus("Loading match...");
+
+  const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
+  const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
+
+  const title = el("matchTitle");
+  const meta = el("matchMeta");
+  if (title) title.textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
+  if (meta) meta.textContent =
+    `${matchData.categoryName || baseMatch.categoryName} • ` +
+    `${matchData.tournamentName || baseMatch.tournamentName} • ` +
+    `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
+
+  const btn = el("openBookBtn");
+  const href = matchData.fixturePath || "#";
+  if (btn) {
+    btn.setAttribute("href", href);
+    btn.style.opacity = href === "#" ? "0.5" : "1";
+  }
+
+  const markets = matchData.markets || [];
+  const used = new Set();
+
+  // 1X2
+  const m1x2 = pickLikely1X2(markets);
+  if (m1x2) {
+    used.add(String(m1x2.marketId));
+    const outs = uniqBy(m1x2.outcomes || [], (o) => o.outcomeId).slice(0, 3);
+    renderRows("market1x2", outs.map((o, idx) => ({
+      label: idx === 0 ? "Home" : idx === 1 ? "Draw" : "Away",
+      value: o.price != null ? String(o.price) : "—"
+    })));
+  } else {
+    renderRows("market1x2", []);
+  }
+
+  // BTTS
+  const mbtts = pickLikelyBTTS(markets, used);
+  if (mbtts) {
+    used.add(String(mbtts.marketId));
+    const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
+    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
+    renderRows("marketBtts", [
+      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
+      { label: "No", value: outs[1]?.price != null ? String(outs[1].price) : "—" }
+    ]);
+  } else {
+    renderRows("marketBtts", []);
+  }
+
+  // 2-way markets top
+  const candidates = twoWayMarkets(markets, used).slice(0, 6);
+  if (candidates.length) {
+    const rows = [];
+    for (const c of candidates) {
+      used.add(String(c.market.marketId));
+      const outs = uniqBy(c.market.outcomes || [], (o) => o.outcomeId).slice(0, 2);
+      outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
+      rows.push({ label: `Market ${c.market.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" });
+      rows.push({ label: `Market ${c.market.marketId} • Option B`, value: outs[1]?.price != null ? String(outs[1].price) : "—" });
+    }
+    renderRows("marketOu", rows);
+  } else {
+    renderRows("marketOu", []);
+  }
+
+  renderOtherMarkets(markets, used);
+
+  // history stats
+  renderHistoryForFixture(current.fixtureId);
+
+  setStatus("Ready");
+}
+
+async function init() {
+  try {
+    await loadUiData();
+    renderLeagueSelect();
+    renderDaySelect();
+    renderMatchesList();
+    await loadAndRenderMatch();
+
+    const leagueSel = el("leagueSel");
+    const daySel = el("daySel");
+    const refreshBtn = el("refreshBtn");
+
+    if (leagueSel) {
+      leagueSel.addEventListener("change", () => {
+        current.leagueId = leagueSel.value;
+        current.fixtureId = null;
+        renderMatchesList();
+        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+      });
+    }
+
+    if (daySel) {
+      daySel.addEventListener("change", () => {
+        current.day = daySel.value;
+        current.fixtureId = null;
+        renderMatchesList();
+        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+      });
+    }
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async () => {
+        current.fixtureId = null;
+        await loadUiData();
+        renderLeagueSelect();
+        renderDaySelect();
+        renderMatchesList();
+        await loadAndRenderMatch();
+      });
+    }
+  } catch (e) {
+    setStatus(e.message || String(e), false);
+  }
+}
+
+init();
