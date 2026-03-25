@@ -18,12 +18,26 @@ function findFootballDataId(mapCfg, categoryName, tournamentName){
   return null;
 }
 
+function loadAliases(){
+  const p = path.join("scripts", "team-aliases.json");
+  if (!fs.existsSync(p)) return { aliases: {} };
+  const obj = readJson(p);
+  return obj && obj.aliases ? obj : { aliases: {} };
+}
+
+function normTeamName(name, aliases){
+  const n = String(name || "").trim();
+  return aliases[n] || n;
+}
+
 function pickTeamStats(statsFile, teamName){
   const teamStats = statsFile?.teamStats || {};
+  if (!teamName) return null;
+
   // exact match first
   if (teamStats[teamName]) return teamStats[teamName];
 
-  // fallback: case-insensitive key match
+  // case-insensitive key match
   const key = Object.keys(teamStats).find(k => lc(k) === lc(teamName));
   return key ? teamStats[key] : null;
 }
@@ -39,9 +53,12 @@ function main(){
   const matchesObj = readJson(matchesPath);
   const matches = matchesObj.matches || [];
 
+  const { aliases } = loadAliases();
+
   const out = {
     generatedAtUTC: new Date().toISOString(),
     lookback: null,
+    aliasesUsed: Object.keys(aliases).length,
     byFixtureId: {}
   };
 
@@ -52,12 +69,25 @@ function main(){
     const fixtureId = String(m.fixtureId);
     const categoryName = m.categoryName || "";
     const tournamentName = m.tournamentName || "";
-    const home = m.home || "";
-    const away = m.away || "";
+
+    // Normalize team names using aliases (OddsPapi -> football-data)
+    const homeRaw = m.home || "";
+    const awayRaw = m.away || "";
+    const home = normTeamName(homeRaw, aliases);
+    const away = normTeamName(awayRaw, aliases);
 
     const fdId = findFootballDataId(mapCfg, categoryName, tournamentName);
     if (!fdId){
-      out.byFixtureId[fixtureId] = { footballDataId: null, note: "No league mapping", home, away };
+      out.byFixtureId[fixtureId] = {
+        footballDataId: null,
+        note: "No league mapping",
+        categoryName,
+        tournamentName,
+        homeRaw,
+        awayRaw,
+        home,
+        away
+      };
       continue;
     }
 
@@ -74,21 +104,41 @@ function main(){
 
     const statsFile = statsCache.get(fdId);
     if (!statsFile){
-      out.byFixtureId[fixtureId] = { footballDataId: fdId, note: "Missing data/stats file", home, away };
+      out.byFixtureId[fixtureId] = {
+        footballDataId: fdId,
+        note: "Missing data/stats file",
+        categoryName,
+        tournamentName,
+        homeRaw,
+        awayRaw,
+        home,
+        away
+      };
       continue;
     }
 
     const homeStats = pickTeamStats(statsFile, home);
     const awayStats = pickTeamStats(statsFile, away);
 
+    let note = null;
+    if (!homeStats || !awayStats){
+      const miss = [];
+      if (!homeStats) miss.push(`home team not found in stats: "${home}"`);
+      if (!awayStats) miss.push(`away team not found in stats: "${away}"`);
+      note = miss.join(" | ");
+    }
+
     out.byFixtureId[fixtureId] = {
       footballDataId: fdId,
       categoryName,
       tournamentName,
+      homeRaw,
+      awayRaw,
       home,
       away,
       homeStats: homeStats || null,
-      awayStats: awayStats || null
+      awayStats: awayStats || null,
+      note
     };
   }
 
