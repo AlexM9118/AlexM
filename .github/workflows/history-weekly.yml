@@ -21,7 +21,7 @@ jobs:
           node-version: "24"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         # npm ci requires package-lock.json; if you don't have it yet, use npm install
         # We'll fix below.
 
