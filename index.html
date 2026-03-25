@@ -11,7 +11,7 @@
   <header class="topbar">
     <div class="brand">
       <div class="title">Alex AI Bet</div>
-      <div class="subtitle">Odds dashboard (OddsPapi → Superbet) + History stats (football-data)</div>
+      <div class="subtitle">Odds (OddsPapi) + Model (Poisson from last 5)</div>
     </div>
 
     <div class="top-actions">
@@ -34,7 +34,8 @@
       <div id="matchesList" class="matches"></div>
 
       <div class="side-footer muted">
-        Odds: <code>data/ui/*</code> • History: <code>data/stats/*</code>
+        Odds: <code>data/ui/*</code><br/>
+        History stats: <code>data/ui/history_stats.json</code>
       </div>
     </aside>
 
@@ -58,18 +59,19 @@
 
       <section class="grid">
         <div class="card">
-          <div class="card-title">1X2 (dacă este disponibil)</div>
+          <div class="card-title">1X2 (odds)</div>
           <div id="market1x2" class="rows"></div>
         </div>
 
         <div class="card">
-          <div class="card-title">BTTS (dacă este disponibil)</div>
+          <div class="card-title">BTTS (odds)</div>
           <div id="marketBtts" class="rows"></div>
         </div>
 
         <div class="card">
-          <div class="card-title">2-way markets (Top)</div>
-          <div id="marketOu" class="rows"></div>
+          <div class="card-title">Total Goals (MODEL – Poisson, last 5)</div>
+          <div id="modelTotals" class="rows"></div>
+          <div class="muted small" id="modelTotalsNote"></div>
         </div>
 
         <div class="card">
@@ -80,13 +82,13 @@
 
       <section class="grid">
         <div class="card">
-          <div class="card-title">History (last 5) — Home team (acasă)</div>
+          <div class="card-title">History (last 5) — Home (acasă)</div>
           <div id="histHome" class="rows"></div>
           <div class="muted small" id="histHomeNote"></div>
         </div>
 
         <div class="card">
-          <div class="card-title">History (last 5) — Away team (deplasare)</div>
+          <div class="card-title">History (last 5) — Away (deplasare)</div>
           <div id="histAway" class="rows"></div>
           <div class="muted small" id="histAwayNote"></div>
         </div>
@@ -95,7 +97,7 @@
   </main>
 
   <footer class="footer">
-    Alex AI Bet • Odds cached via GitHub Actions • History cached weekly via CSV
+    Alex AI Bet • Model uses last-5 averages (GF/GA) • Probabilities are indicative.
   </footer>
 
   <script src="./app.js"></script>
