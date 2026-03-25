@@ -1,6 +1,5 @@
 // scripts/oddspapi-fixtures-smoke.js
 // Smoke test OddsPapi /v4/fixtures for FINISHED events (statusId=2)
-// Saves raw + parsed JSON in data/ for inspection.
 
 const fs = require("fs");
 const path = require("path");
@@ -8,6 +7,31 @@ const path = require("path");
 const API_BASE = "https://api.oddspapi.io";
 
 function ensureDir(p){ fs.mkdirSync(p, { recursive: true }); }
+
+function normalizeIso(x, fallback){
+  // Accept:
+  // - YYYY-MM-DDTHH:MM:SSZ  (ok)
+  // - YYYY-MM-DD            (convert to T00:00:00Z)
+  // - empty/undefined       (use fallback)
+  let s = String(x || "").trim();
+  if (!s) s = fallback;
+
+  // If only date, convert
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+    return `${s}T00:00:00Z`;
+  }
+
+  // If missing Z but looks like full timestamp, try add Z
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(s)) {
+    return `${s}Z`;
+  }
+
+  return s;
+}
+
+function isIso8601Z(s){
+  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(String(s||"").trim());
+}
 
 async function fetchText(url){
   const r = await fetch(url, { headers: { "user-agent": "alex-ai-bet/1.0" }});
@@ -19,14 +43,15 @@ async function main(){
   const key = process.env.ODDSPAPI_KEY;
   if (!key) throw new Error("Missing ODDSPAPI_KEY");
 
-  // Pick ONE tournamentId from your list (default: 17 EPL)
   const tournamentId = process.env.TOURNAMENT_ID || "17";
 
-  // Keep the range small (docs say constraints around from/to). We’ll try 48 hours.
-  const from = process.env.FROM || "2026-03-20T00:00:00Z";
-  const to   = process.env.TO   || "2026-03-22T00:00:00Z";
+  // Robust defaults
+  const from = normalizeIso(process.env.FROM, "2026-03-20T00:00:00Z");
+  const to   = normalizeIso(process.env.TO,   "2026-03-22T00:00:00Z");
 
-  // Finished only
+  if (!isIso8601Z(from)) throw new Error(`FROM is not ISO8601 (YYYY-MM-DDTHH:MM:SSZ): ${from}`);
+  if (!isIso8601Z(to))   throw new Error(`TO is not ISO8601 (YYYY-MM-DDTHH:MM:SSZ): ${to}`);
+
   const statusId = process.env.STATUS_ID || "2";
 
   const url =
@@ -37,6 +62,9 @@ async function main(){
     `&statusId=${encodeURIComponent(statusId)}` +
     `&apiKey=${encodeURIComponent(key)}`;
 
+  console.log("tournamentId:", tournamentId);
+  console.log("from:", from);
+  console.log("to:", to);
   console.log("Request:", url.replace(key, "***"));
 
   const { status, ok, text } = await fetchText(url);
@@ -51,13 +79,7 @@ async function main(){
     throw new Error(`Fixtures request failed HTTP ${status}`);
   }
 
-  let data;
-  try {
-    data = JSON.parse(text);
-  } catch {
-    throw new Error("Response is not JSON");
-  }
-
+  const data = JSON.parse(text);
   fs.writeFileSync(path.join("data", "oddspapi_fixtures_smoke.json"), JSON.stringify(data, null, 2), "utf8");
 
   const first = Array.isArray(data) ? data[0] : null;
@@ -72,7 +94,7 @@ async function main(){
       participant1Name: first.participant1Name,
       participant2Name: first.participant2Name,
 
-      // These are what we hope exist (may be undefined):
+      // possible score fields (may be undefined):
       homeScore: first.homeScore,
       awayScore: first.awayScore,
       participant1Score: first.participant1Score,
