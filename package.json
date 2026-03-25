@@ -1,0 +1,10 @@
+{
+  "name": "alex-ai-bet-data",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Data builders for Alex AI Bet (CSV/XLSX -> history + stats)",
+  "type": "commonjs",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
