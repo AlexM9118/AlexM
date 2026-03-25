@@ -37,6 +37,11 @@ function fmtNum(x, digits = 2) {
   return Number(x).toFixed(digits);
 }
 
+function pct01(x) {
+  if (x == null || !Number.isFinite(Number(x))) return "—";
+  return `${(Number(x) * 100).toFixed(1)}%`;
+}
+
 function renderRows(containerId, rows) {
   const box = el(containerId);
   if (!box) return;
@@ -92,7 +97,9 @@ function renderOtherMarkets(markets, usedMarketIds) {
   box.textContent = lines.join("\n");
 }
 
-// 1X2: piață cu 3 outcomes unice
+/* -----------------------------
+   Odds heuristics (unchanged)
+------------------------------ */
 function pickLikely1X2(markets) {
   for (const m of markets || []) {
     const uniqOutcomeIds = Array.from(new Set((m.outcomes || []).map((o) => o.outcomeId)));
@@ -101,7 +108,6 @@ function pickLikely1X2(markets) {
   return null;
 }
 
-// BTTS (heuristic): piață 2-way cu cote ne-extreme
 function pickLikelyBTTS(markets, excludeIds = new Set()) {
   for (const m of markets || []) {
     if (excludeIds.has(String(m.marketId))) continue;
@@ -121,33 +127,62 @@ function pickLikelyBTTS(markets, excludeIds = new Set()) {
   return null;
 }
 
-// 2-way candidates list
-function twoWayMarkets(markets, excludeIds = new Set()) {
-  const out = [];
-
-  for (const m of markets || []) {
-    if (excludeIds.has(String(m.marketId))) continue;
-
-    const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
-    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map((o) => o.outcomeId)));
-    if (uniqOutcomeIds.length !== 2) continue;
-
-    const prices = uniqOuts.map((o) => o.price).filter((x) => typeof x === "number");
-    if (prices.length !== 2) continue;
-
-    out.push({ market: m, prices });
-  }
-
-  // Prefer piețe “balanced”
-  out.sort((a, b) => {
-    const ra = Math.max(...a.prices) / Math.min(...a.prices);
-    const rb = Math.max(...b.prices) / Math.min(...b.prices);
-    return ra - rb;
-  });
-
-  return out;
+/* -----------------------------
+   Poisson model helpers
+------------------------------ */
+function factorial(n) {
+  let f = 1;
+  for (let i = 2; i <= n; i++) f *= i;
+  return f;
+}
+function poissonPMF(k, lambda) {
+  return Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);
+}
+function poissonCDF(k, lambda) {
+  // P(X <= k)
+  let s = 0;
+  for (let i = 0; i <= k; i++) s += poissonPMF(i, lambda);
+  return s;
+}
+function probTotalOver(line, lambdaTotal) {
+  // Over 2.5 => total >= 3
+  const threshold = Math.floor(line) + 1; // 1.5->2, 2.5->3, 3.5->4...
+  return 1 - poissonCDF(threshold - 1, lambdaTotal);
 }
 
+function safeAvg(a, b) {
+  const x = Number(a), y = Number(b);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return (x + y) / 2;
+}
+
+/**
+ * Estimate lambdas from last5 stats:
+ * home expected goals ≈ avg(home homeGF, away awayGA)
+ * away expected goals ≈ avg(away awayGF, home homeGA)
+ */
+function estimateLambdasFromLast5(entry) {
+  const hs = entry?.homeStats;
+  const as = entry?.awayStats;
+  if (!hs || !as) return null;
+
+  // require some minimal sample
+  const minHome = Number(hs.homeMatches || 0);
+  const minAway = Number(as.awayMatches || 0);
+
+  if (minHome < 1 || minAway < 1) return null;
+
+  const lamHome = safeAvg(hs.homeGF, as.awayGA);
+  const lamAway = safeAvg(as.awayGF, hs.homeGA);
+
+  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
+
+  return { lamHome, lamAway, lamTotal: lamHome + lamAway, minHome, minAway };
+}
+
+/* -----------------------------
+   Data + UI state
+------------------------------ */
 let UI = { index: null, leagues: [], matches: [] };
 let HIST = null;
 
@@ -159,8 +194,6 @@ async function loadUiData() {
   const idx = await getJson("./data/ui/index.json");
   const leaguesObj = await getJson("./data/ui/leagues.json");
   const matchesObj = await getJson("./data/ui/matches.json");
-
-  // history stats (generated from football-data stats)
   HIST = await getJson("./data/ui/history_stats.json");
 
   UI.index = idx;
@@ -272,28 +305,24 @@ function renderMatchesList() {
   }
 }
 
-function renderHistoryForFixture(fixtureId) {
-  const homeBox = el("histHome");
-  const awayBox = el("histAway");
+function renderHistoryPanels(fixtureId) {
+  const entry = HIST?.byFixtureId?.[String(fixtureId)] || null;
+
   const homeNote = el("histHomeNote");
   const awayNote = el("histAwayNote");
-
-  if (!homeBox || !awayBox) return;
-
-  const entry = HIST?.byFixtureId?.[String(fixtureId)] || null;
 
   if (!entry || !entry.homeStats || !entry.awayStats) {
     renderRows("histHome", []);
     renderRows("histAway", []);
-    if (homeNote) homeNote.textContent = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team name mismatch).";
-    if (awayNote) awayNote.textContent = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team name mismatch).";
-    return;
+    const msg = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team mismatch).";
+    if (homeNote) homeNote.textContent = msg;
+    if (awayNote) awayNote.textContent = msg;
+    return null;
   }
 
   const hs = entry.homeStats;
   const as = entry.awayStats;
 
-  // Home (homeMatches are home fixtures in last N)
   renderRows("histHome", [
     { label: `Home matches (last ${HIST.lookback || 5})`, value: String(hs.homeMatches ?? "—") },
     { label: "GF (home)", value: fmtNum(hs.homeGF, 2) },
@@ -304,7 +333,6 @@ function renderHistoryForFixture(fixtureId) {
     { label: "YC Against (home)", value: fmtNum(hs.homeYCAgainst, 2) }
   ]);
 
-  // Away (awayMatches are away fixtures in last N)
   renderRows("histAway", [
     { label: `Away matches (last ${HIST.lookback || 5})`, value: String(as.awayMatches ?? "—") },
     { label: "GF (away)", value: fmtNum(as.awayGF, 2) },
@@ -315,25 +343,62 @@ function renderHistoryForFixture(fixtureId) {
     { label: "YC Against (away)", value: fmtNum(as.awayYCAgainst, 2) }
   ]);
 
-  if (homeNote) homeNote.textContent = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
-  if (awayNote) awayNote.textContent = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
+  const mapInfo = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
+  if (homeNote) homeNote.textContent = mapInfo;
+  if (awayNote) awayNote.textContent = mapInfo;
+
+  return entry;
+}
+
+function renderModelTotals(entry) {
+  const noteEl = el("modelTotalsNote");
+
+  if (!entry) {
+    renderRows("modelTotals", []);
+    if (noteEl) noteEl.textContent = "";
+    return;
+  }
+
+  const est = estimateLambdasFromLast5(entry);
+  if (!est) {
+    renderRows("modelTotals", []);
+    if (noteEl) noteEl.textContent = "Not enough history samples to compute model (need at least 1 home + 1 away in last 5).";
+    return;
+  }
+
+  const lines = [1.5, 2.5, 3.5, 4.5];
+  const rows = [];
+
+  for (const L of lines) {
+    const pOver = probTotalOver(L, est.lamTotal);
+    const pUnder = 1 - pOver;
+    const rec = (pOver >= pUnder) ? "OVER" : "UNDER";
+    const conf = Math.max(pOver, pUnder);
+
+    rows.push({
+      label: `Total Goals ${L} — ${rec}`,
+      value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
+    });
+  }
+
+  renderRows("modelTotals", rows);
+
+  if (noteEl) {
+    noteEl.textContent = `λHome≈${est.lamHome.toFixed(2)}  λAway≈${est.lamAway.toFixed(2)}  λTotal≈${est.lamTotal.toFixed(2)} (based on last5: homeHome=${est.minHome}, awayAway=${est.minAway})`;
+  }
 }
 
 async function loadAndRenderMatch() {
   if (!current.fixtureId) {
-    const t = el("matchTitle");
-    const m = el("matchMeta");
-    const b = el("openBookBtn");
-    if (t) t.textContent = "Alege un meci";
-    if (m) m.textContent = "—";
-    if (b) b.setAttribute("href", "#");
+    if (el("matchTitle")) el("matchTitle").textContent = "Alege un meci";
+    if (el("matchMeta")) el("matchMeta").textContent = "—";
+    if (el("openBookBtn")) el("openBookBtn").setAttribute("href", "#");
 
     renderRows("market1x2", []);
     renderRows("marketBtts", []);
-    renderRows("marketOu", []);
-    const other = el("marketOther");
-    if (other) other.textContent = "—";
-
+    renderRows("modelTotals", []);
+    if (el("modelTotalsNote")) el("modelTotalsNote").textContent = "";
+    if (el("marketOther")) el("marketOther").textContent = "—";
     renderRows("histHome", []);
     renderRows("histAway", []);
     return;
@@ -344,25 +409,24 @@ async function loadAndRenderMatch() {
   const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
   const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
 
-  const title = el("matchTitle");
-  const meta = el("matchMeta");
-  if (title) title.textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
-  if (meta) meta.textContent =
-    `${matchData.categoryName || baseMatch.categoryName} • ` +
-    `${matchData.tournamentName || baseMatch.tournamentName} • ` +
-    `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
+  if (el("matchTitle")) el("matchTitle").textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
+  if (el("matchMeta")) {
+    el("matchMeta").textContent =
+      `${matchData.categoryName || baseMatch.categoryName} • ` +
+      `${matchData.tournamentName || baseMatch.tournamentName} • ` +
+      `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
+  }
 
-  const btn = el("openBookBtn");
   const href = matchData.fixturePath || "#";
-  if (btn) {
-    btn.setAttribute("href", href);
-    btn.style.opacity = href === "#" ? "0.5" : "1";
+  if (el("openBookBtn")) {
+    el("openBookBtn").setAttribute("href", href);
+    el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
   }
 
   const markets = matchData.markets || [];
   const used = new Set();
 
-  // 1X2
+  // 1X2 odds
   const m1x2 = pickLikely1X2(markets);
   if (m1x2) {
     used.add(String(m1x2.marketId));
@@ -375,7 +439,7 @@ async function loadAndRenderMatch() {
     renderRows("market1x2", []);
   }
 
-  // BTTS
+  // BTTS odds
   const mbtts = pickLikelyBTTS(markets, used);
   if (mbtts) {
     used.add(String(mbtts.marketId));
@@ -389,26 +453,11 @@ async function loadAndRenderMatch() {
     renderRows("marketBtts", []);
   }
 
-  // 2-way markets top
-  const candidates = twoWayMarkets(markets, used).slice(0, 6);
-  if (candidates.length) {
-    const rows = [];
-    for (const c of candidates) {
-      used.add(String(c.market.marketId));
-      const outs = uniqBy(c.market.outcomes || [], (o) => o.outcomeId).slice(0, 2);
-      outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-      rows.push({ label: `Market ${c.market.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" });
-      rows.push({ label: `Market ${c.market.marketId} • Option B`, value: outs[1]?.price != null ? String(outs[1].price) : "—" });
-    }
-    renderRows("marketOu", rows);
-  } else {
-    renderRows("marketOu", []);
-  }
-
   renderOtherMarkets(markets, used);
 
-  // history stats
-  renderHistoryForFixture(current.fixtureId);
+  // history + model
+  const entry = renderHistoryPanels(current.fixtureId);
+  renderModelTotals(entry);
 
   setStatus("Ready");
 }
