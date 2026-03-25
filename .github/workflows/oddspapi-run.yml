@@ -18,7 +18,7 @@ on:
       tournament_ids:
         description: "Comma-separated tournamentIds (for odds job)"
         required: false
-        default: "17"
+        default: "17,18,34,182,35,44,53,8,54,152,37,38,36,52,45,185,203,7,679,34480,40,20,242,247,266,210,215,238"
       bookmaker:
         description: "Bookmaker slug (for odds job)"
         required: false
@@ -63,9 +63,6 @@ jobs:
       - name: Ensure data folder exists
         run: mkdir -p data
 
-      # ----------------------------
-      # OddsPapi jobs
-      # ----------------------------
       - name: Run bookmakers
         if: ${{ inputs.job == 'bookmakers' }}
         env:
@@ -88,38 +85,22 @@ jobs:
           ODDS_FORMAT: ${{ inputs.odds_format }}
         run: node scripts/oddspapi-fetch-odds-by-tournaments.js
 
-      # ----------------------------
-      # Build UI data (normalize odds) — no API calls
-      # ----------------------------
       - name: Build UI data (normalize OddsPapi) - after odds
         if: ${{ inputs.job == 'odds' }}
         run: node scripts/build-ui-data-from-oddspapi.js
 
-      - name: Build UI data (normalize OddsPapi) - NO API (rebuild from existing oddspapi_odds.json)
+      - name: Build UI data (normalize OddsPapi) - NO API
         if: ${{ inputs.job == 'build_ui' }}
         run: node scripts/build-ui-data-from-oddspapi.js
 
-      # ----------------------------
-      # Build UI history stats (from football-data stats) — no API calls
-      # Requires:
-      # - scripts/league-map.json
-      # - data/stats/*.json
-      # - data/ui/matches.json
-      # ----------------------------
       - name: Build UI history stats (from football-data stats)
         if: ${{ inputs.job == 'odds' || inputs.job == 'build_ui' }}
         run: node scripts/build-ui-history-stats.js
 
-      # ----------------------------
-      # Report job (no API calls)
-      # ----------------------------
       - name: Build 2-way report (no API calls)
         if: ${{ inputs.job == 'report' }}
         run: node scripts/build-two-way-report.js
 
-      # ----------------------------
-      # Fixtures smoke test (finished) - optional
-      # ----------------------------
       - name: Fixtures smoke test (finished)
         if: ${{ inputs.job == 'fixtures_smoke' }}
         env:
@@ -130,44 +111,18 @@ jobs:
           STATUS_ID: "2"
         run: node scripts/oddspapi-fixtures-smoke.js
 
-      # ----------------------------
-      # Debug
-      # ----------------------------
-      - name: List generated files (debug)
-        run: |
-          echo "---- data/ui ----"
-          ls -la data/ui || true
-          echo "---- data/stats ----"
-          ls -la data/stats || true
-          echo "---- data/history ----"
-          ls -la data/history || true
-
-      # ----------------------------
-      # Commit outputs
-      # ----------------------------
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # bookmakers / tournaments
           git add data/oddspapi_bookmakers_raw.txt data/oddspapi_bookmakers.json || true
           git add data/oddspapi_tournaments_raw.txt data/oddspapi_tournaments.json || true
-
-          # odds outputs
           git add data/oddspapi_odds.json data/oddspapi_odds_index.json || true
           git add data/oddspapi_odds_parts || true
-
-          # UI normalized outputs
           git add data/ui || true
-
-          # report output
           git add data/ui/two_way_report.json || true
-
-          # fixtures smoke outputs
           git add data/oddspapi_fixtures_smoke_raw.txt data/oddspapi_fixtures_smoke.json || true
-
-          # history stats output (explicit add, redundant with data/ui but safe)
           git add data/ui/history_stats.json || true
 
           if git diff --cached --quiet; then
