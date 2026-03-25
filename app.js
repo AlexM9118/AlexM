@@ -32,6 +32,11 @@ function byStr(a, b) {
   return String(a).localeCompare(String(b));
 }
 
+function fmtNum(x, digits = 2) {
+  if (x == null || !Number.isFinite(Number(x))) return "—";
+  return Number(x).toFixed(digits);
+}
+
 function renderRows(containerId, rows) {
   const box = el(containerId);
   if (!box) return;
@@ -87,12 +92,6 @@ function renderOtherMarkets(markets, usedMarketIds) {
   box.textContent = lines.join("\n");
 }
 
-/**
- * Opțional: dacă descoperi că Total Goals O/U e mereu un marketId (ex: "1012"),
- * setează aici ca să fie stabil.
- */
-const PREFERRED_OU_MARKET_ID = null;
-
 // 1X2: piață cu 3 outcomes unice
 function pickLikely1X2(markets) {
   for (const m of markets || []) {
@@ -117,13 +116,12 @@ function pickLikelyBTTS(markets, excludeIds = new Set()) {
     const min = Math.min(...prices);
     const max = Math.max(...prices);
 
-    // evită piețe extreme gen 1.04 vs 12
     if (min >= 1.15 && max <= 3.8) return m;
   }
   return null;
 }
 
-// 2-way candidates: potrivite pentru O/U (fără label-uri -> Option A/B)
+// 2-way candidates list
 function twoWayMarkets(markets, excludeIds = new Set()) {
   const out = [];
 
@@ -140,7 +138,7 @@ function twoWayMarkets(markets, excludeIds = new Set()) {
     out.push({ market: m, prices });
   }
 
-  // prefer piețe “balanced”
+  // Prefer piețe “balanced”
   out.sort((a, b) => {
     const ra = Math.max(...a.prices) / Math.min(...a.prices);
     const rb = Math.max(...b.prices) / Math.min(...b.prices);
@@ -150,17 +148,10 @@ function twoWayMarkets(markets, excludeIds = new Set()) {
   return out;
 }
 
-let UI = {
-  index: null,
-  leagues: [],
-  matches: []
-};
+let UI = { index: null, leagues: [], matches: [] };
+let HIST = null;
 
-let current = {
-  leagueId: null,
-  day: null,
-  fixtureId: null
-};
+let current = { leagueId: null, day: null, fixtureId: null };
 
 async function loadUiData() {
   setStatus("Loading UI data...");
@@ -168,6 +159,9 @@ async function loadUiData() {
   const idx = await getJson("./data/ui/index.json");
   const leaguesObj = await getJson("./data/ui/leagues.json");
   const matchesObj = await getJson("./data/ui/matches.json");
+
+  // history stats (generated from football-data stats)
+  HIST = await getJson("./data/ui/history_stats.json");
 
   UI.index = idx;
 
@@ -217,7 +211,6 @@ function renderDaySelect() {
 
   sel.innerHTML = "";
   const days = UI.index?.days || [];
-
   for (const d of days) {
     const opt = document.createElement("option");
     opt.value = d;
@@ -241,8 +234,8 @@ function renderMatchesList() {
   if (!box) return;
 
   box.innerHTML = "";
-
   const list = filteredMatches();
+
   if (!list.length) {
     const d = document.createElement("div");
     d.className = "muted";
@@ -279,145 +272,33 @@ function renderMatchesList() {
   }
 }
 
-async function loadAndRenderMatch() {
-  if (!current.fixtureId) {
-    const t = el("matchTitle");
-    const m = el("matchMeta");
-    const b = el("openBookBtn");
-    if (t) t.textContent = "Alege un meci";
-    if (m) m.textContent = "—";
-    if (b) b.setAttribute("href", "#");
+function renderHistoryForFixture(fixtureId) {
+  const homeBox = el("histHome");
+  const awayBox = el("histAway");
+  const homeNote = el("histHomeNote");
+  const awayNote = el("histAwayNote");
 
-    renderRows("market1x2", []);
-    renderRows("marketBtts", []);
-    renderRows("marketOu", []);
-    const other = el("marketOther");
-    if (other) other.textContent = "—";
+  if (!homeBox || !awayBox) return;
+
+  const entry = HIST?.byFixtureId?.[String(fixtureId)] || null;
+
+  if (!entry || !entry.homeStats || !entry.awayStats) {
+    renderRows("histHome", []);
+    renderRows("histAway", []);
+    if (homeNote) homeNote.textContent = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team name mismatch).";
+    if (awayNote) awayNote.textContent = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team name mismatch).";
     return;
   }
 
-  setStatus("Loading match...");
+  const hs = entry.homeStats;
+  const as = entry.awayStats;
 
-  const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
-  const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
-
-  const title = el("matchTitle");
-  const meta = el("matchMeta");
-  if (title) title.textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
-  if (meta) {
-    meta.textContent =
-      `${matchData.categoryName || baseMatch.categoryName} • ` +
-      `${matchData.tournamentName || baseMatch.tournamentName} • ` +
-      `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
-  }
-
-  const btn = el("openBookBtn");
-  const href = matchData.fixturePath || "#";
-  if (btn) {
-    btn.setAttribute("href", href);
-    btn.style.opacity = href === "#" ? "0.5" : "1";
-  }
-
-  const markets = matchData.markets || [];
-  const used = new Set();
-
-  // 1X2
-  const m1x2 = pickLikely1X2(markets);
-  if (m1x2) {
-    used.add(String(m1x2.marketId));
-    const outs = uniqBy(m1x2.outcomes || [], (o) => o.outcomeId).slice(0, 3);
-    renderRows("market1x2", outs.map((o, idx) => ({
-      label: idx === 0 ? "Home" : idx === 1 ? "Draw" : "Away",
-      value: o.price != null ? String(o.price) : "—"
-    })));
-  } else {
-    renderRows("market1x2", []);
-  }
-
-  // BTTS
-  const mbtts = pickLikelyBTTS(markets, used);
-  if (mbtts) {
-    used.add(String(mbtts.marketId));
-    const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
-    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-    renderRows("marketBtts", [
-      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: "No", value: outs[1]?.price != null ? String(outs[1].price) : "—" }
-    ]);
-  } else {
-    renderRows("marketBtts", []);
-  }
-
-  // O/U candidate
-  let ouMarket = null;
-  if (PREFERRED_OU_MARKET_ID) {
-    ouMarket = markets.find((x) => String(x.marketId) === String(PREFERRED_OU_MARKET_ID)) || null;
-  }
-  if (!ouMarket) {
-    const candidates = twoWayMarkets(markets, used);
-    ouMarket = candidates[0]?.market || null;
-  }
-
-  if (ouMarket) {
-    used.add(String(ouMarket.marketId));
-    const outs = uniqBy(ouMarket.outcomes || [], (o) => o.outcomeId).slice(0, 2);
-    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
-
-    renderRows("marketOu", [
-      { label: `Market ${ouMarket.marketId} • Option A`, value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: `Market ${ouMarket.marketId} • Option B`, value: outs[1]?.price != null ? String(outs[1].price) : "—" }
-    ]);
-  } else {
-    renderRows("marketOu", []);
-  }
-
-  renderOtherMarkets(markets, used);
-  setStatus("Ready");
-}
-
-async function init() {
-  try {
-    await loadUiData();
-    renderLeagueSelect();
-    renderDaySelect();
-    renderMatchesList();
-    await loadAndRenderMatch();
-
-    const leagueSel = el("leagueSel");
-    const daySel = el("daySel");
-    const refreshBtn = el("refreshBtn");
-
-    if (leagueSel) {
-      leagueSel.addEventListener("change", () => {
-        current.leagueId = leagueSel.value;
-        current.fixtureId = null;
-        renderMatchesList();
-        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-      });
-    }
-
-    if (daySel) {
-      daySel.addEventListener("change", () => {
-        current.day = daySel.value;
-        current.fixtureId = null;
-        renderMatchesList();
-        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-      });
-    }
-
-    if (refreshBtn) {
-      refreshBtn.addEventListener("click", async () => {
-        current.fixtureId = null;
-        await loadUiData();
-        renderLeagueSelect();
-        renderDaySelect();
-        renderMatchesList();
-        await loadAndRenderMatch();
-      });
-    }
-  } catch (e) {
-    setStatus(e.message || String(e), false);
-  }
-}
-
-init();
+  // Home (homeMatches are home fixtures in last N)
+  renderRows("histHome", [
+    { label: `Home matches (last ${HIST.lookback || 5})`, value: String(hs.homeMatches ?? "—") },
+    { label: "GF (home)", value: fmtNum(hs.homeGF, 2) },
+    { label: "GA (home)", value: fmtNum(hs.homeGA, 2) },
+    { label: "Corners For (home)", value: fmtNum(hs.homeCornersFor, 2) },
+    { label: "Corners Against (home)", value: fmtNum(hs.homeCornersAgainst, 2) },
+    { label: "YC For (home)", value: fmtNum(hs.homeYCFor, 2) },
+    { label: "YC Against (home)", value: fmtNum(hs.homeYCAgainst, 2)
