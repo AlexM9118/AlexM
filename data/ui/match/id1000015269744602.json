@@ -1,0 +1,44 @@
+{
+  "fixtureId": "id1000015269744602",
+  "startTime": "2026-04-11T14:15:00.000Z",
+  "day": "2026-04-11",
+  "tournamentId": 152,
+  "tournamentName": "Superliga",
+  "categoryName": "Romania",
+  "home": "FC Uta Arad",
+  "away": "FC Botosani",
+  "bookmakerKey": "superbet.ro",
+  "fixturePath": "https://superbet.com/offer-event/e-12286170",
+  "markets": [
+    {
+      "marketId": "10143",
+      "bookmakerMarketId": "13fed710-427b-581a-9471-42e56a128518",
+      "outcomes": [
+        {
+          "outcomeId": "10145",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 1.19,
+          "changedAt": "2026-03-25T07:58:48.821425+00:00",
+          "bookmakerOutcomeId": "dbce1e67-b4ea-578a-b58a-a29fa0d2376f"
+        },
+        {
+          "outcomeId": "10144",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 6.5,
+          "changedAt": "2026-03-25T07:58:48.821425+00:00",
+          "bookmakerOutcomeId": "b4ac879c-7de7-5f3f-878c-f18298056b13"
+        },
+        {
+          "outcomeId": "10143",
+          "playerKey": "0",
+          "playerName": null,
+          "price": 11,
+          "changedAt": "2026-03-25T07:58:48.821425+00:00",
+          "bookmakerOutcomeId": "858cdbda-02b4-5434-9a84-ef7abf285ad2"
+        }
+      ]
+    }
+  ]
+}

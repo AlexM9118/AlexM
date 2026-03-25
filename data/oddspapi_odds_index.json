@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-24T01:13:33.917Z",
+  "generatedAtUTC": "2026-03-25T23:46:13.307Z",
   "bookmaker": "superbet",
   "oddsFormat": "decimal",
   "verbosity": "2",
@@ -43,7 +43,7 @@
         "182",
         "35"
       ],
-      "fixtures": 65,
+      "fixtures": 66,
       "file": "data/oddspapi_odds_parts/part_01.json"
     },
     {
@@ -55,7 +55,7 @@
         "54",
         "152"
       ],
-      "fixtures": 47,
+      "fixtures": 58,
       "file": "data/oddspapi_odds_parts/part_02.json"
     },
     {
@@ -67,7 +67,7 @@
         "52",
         "45"
       ],
-      "fixtures": 36,
+      "fixtures": 44,
       "file": "data/oddspapi_odds_parts/part_03.json"
     },
     {
@@ -79,7 +79,7 @@
         "679",
         "34480"
       ],
-      "fixtures": 20,
+      "fixtures": 35,
       "file": "data/oddspapi_odds_parts/part_04.json"
     },
     {
@@ -91,7 +91,7 @@
         "247",
         "266"
       ],
-      "fixtures": 38,
+      "fixtures": 39,
       "file": "data/oddspapi_odds_parts/part_05.json"
     },
     {
@@ -105,5 +105,5 @@
       "file": "data/oddspapi_odds_parts/part_06.json"
     }
   ],
-  "fixturesTotal": 229
+  "fixturesTotal": 265
 }

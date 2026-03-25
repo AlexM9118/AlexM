@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-25T23:38:41.985Z",
+  "generatedAtUTC": "2026-03-25T23:46:13.581Z",
   "lookback": 5,
   "aliasesUsed": 1,
   "byFixtureId": {
@@ -150,95 +150,41 @@
       "awayStats": null,
       "note": "home team not found in stats: \"UD Almeria\" | away team not found in stats: \"Real Sociedad San Sebastian B\""
     },
-    "id1000023861731440": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Moreirense FC",
-      "awayRaw": "SC Braga",
-      "home": "Moreirense FC",
-      "away": "SC Braga"
+    "id1000005461623746": {
+      "footballDataId": "SP2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "homeRaw": "CD Mirandes",
+      "awayRaw": "Albacete Balompie",
+      "home": "CD Mirandes",
+      "away": "Albacete Balompie",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"CD Mirandes\" | away team not found in stats: \"Albacete Balompie\""
     },
-    "id1000023861731442": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Casa Pia Lisbon",
-      "awayRaw": "SL Benfica",
-      "home": "Casa Pia Lisbon",
-      "away": "SL Benfica"
+    "id1000005461623750": {
+      "footballDataId": "SP2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "homeRaw": "RC Deportivo De La Coruna",
+      "awayRaw": "Cordoba CF",
+      "home": "RC Deportivo De La Coruna",
+      "away": "Cordoba CF",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"RC Deportivo De La Coruna\" | away team not found in stats: \"Cordoba CF\""
     },
-    "id1000023861731430": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Gil Vicente Barcelos",
-      "awayRaw": "AVS Futebol SAD",
-      "home": "Gil Vicente Barcelos",
-      "away": "AVS Futebol SAD"
-    },
-    "id1000023861731434": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Rio Ave FC",
-      "awayRaw": "FC Alverca SAD",
-      "home": "Rio Ave FC",
-      "away": "FC Alverca SAD"
-    },
-    "id1000023861731438": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Sporting CP",
-      "awayRaw": "Santa Clara Azores",
-      "home": "Sporting CP",
-      "away": "Santa Clara Azores"
-    },
-    "id1000023861731444": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "FC Arouca",
-      "awayRaw": "Estoril Praia",
-      "home": "FC Arouca",
-      "away": "Estoril Praia"
-    },
-    "id1000023861731436": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "FC Porto",
-      "awayRaw": "FC Famalicao",
-      "home": "FC Porto",
-      "away": "FC Famalicao"
-    },
-    "id1000023861731446": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Vitoria SC Guimaraes",
-      "awayRaw": "CD Tondela",
-      "home": "Vitoria SC Guimaraes",
-      "away": "CD Tondela"
-    },
-    "id1000023861731432": {
-      "footballDataId": null,
-      "note": "No league mapping",
-      "categoryName": "Portugal",
-      "tournamentName": "Liga Portugal",
-      "homeRaw": "Nacional da Madeira",
-      "awayRaw": "Estrela Amadora",
-      "home": "Nacional da Madeira",
-      "away": "Estrela Amadora"
+    "id1000005461623748": {
+      "footballDataId": "SP2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "homeRaw": "Real Valladolid",
+      "awayRaw": "Cadiz CF",
+      "home": "Real Valladolid",
+      "away": "Cadiz CF",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Real Valladolid\" | away team not found in stats: \"Cadiz CF\""
     },
     "id1000001861491249": {
       "footballDataId": "E1",
@@ -390,6 +336,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Leicester City\" | away team not found in stats: \"Preston North End\""
     },
+    "id1000023861731430": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Gil Vicente Barcelos",
+      "awayRaw": "AVS Futebol SAD",
+      "home": "Gil Vicente Barcelos",
+      "away": "AVS Futebol SAD"
+    },
     "id1000024763465911": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -399,6 +355,16 @@
       "awayRaw": "FC Lokomotiv 1929 Sofia",
       "home": "PFC Lokomotiv Plovdiv",
       "away": "FC Lokomotiv 1929 Sofia"
+    },
+    "id1000023861731446": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Vitoria SC Guimaraes",
+      "awayRaw": "CD Tondela",
+      "home": "Vitoria SC Guimaraes",
+      "away": "CD Tondela"
     },
     "id1000015269744590": {
       "footballDataId": null,
@@ -432,18 +398,6 @@
       "awayStats": null,
       "note": "home team not found in stats: \"USL Dunkerque\" | away team not found in stats: \"Rodez Aveyron Football\""
     },
-    "id1000018261527936": {
-      "footballDataId": "F2",
-      "categoryName": "France",
-      "tournamentName": "Ligue 2",
-      "homeRaw": "Red Star FC",
-      "awayRaw": "Stade Lavallois MFC",
-      "home": "Red Star FC",
-      "away": "Stade Lavallois MFC",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Red Star FC\" | away team not found in stats: \"Stade Lavallois MFC\""
-    },
     "id1000018261527862": {
       "footballDataId": "F2",
       "categoryName": "France",
@@ -467,6 +421,18 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"SC Bastia\" | away team not found in stats: \"Amiens SC\""
+    },
+    "id1000018261527936": {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "homeRaw": "Red Star FC",
+      "awayRaw": "Stade Lavallois MFC",
+      "home": "Red Star FC",
+      "away": "Stade Lavallois MFC",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Red Star FC\" | away team not found in stats: \"Stade Lavallois MFC\""
     },
     "id1000018261527938": {
       "footballDataId": "F2",
@@ -492,6 +458,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Paris Saint-Germain\" | away team not found in stats: \"Toulouse FC\""
     },
+    "id1000003870207456": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "Royal Antwerp FC",
+      "awayRaw": "KRC Genk",
+      "home": "Royal Antwerp FC",
+      "away": "KRC Genk"
+    },
     "id1000001861491245": {
       "footballDataId": "E1",
       "categoryName": "England",
@@ -515,6 +491,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Rayo Vallecano\" | away team not found in stats: \"Elche CF\""
+    },
+    "id1000023861731438": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Sporting CP",
+      "awayRaw": "Santa Clara Azores",
+      "home": "Sporting CP",
+      "away": "Santa Clara Azores"
     },
     "id1000021061232007": {
       "footballDataId": null,
@@ -667,18 +653,6 @@
       "home": "FC Arda Kardzhali",
       "away": "PFC Montana 1921"
     },
-    "id1000018261527944": {
-      "footballDataId": "F2",
-      "categoryName": "France",
-      "tournamentName": "Ligue 2",
-      "homeRaw": "Montpellier HSC",
-      "awayRaw": "ESTAC Troyes",
-      "home": "Montpellier HSC",
-      "away": "ESTAC Troyes",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Montpellier HSC\" | away team not found in stats: \"ESTAC Troyes\""
-    },
     "id1000018262716769": {
       "footballDataId": "F2",
       "categoryName": "France",
@@ -690,6 +664,18 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Stade Reims\" | away team not found in stats: \"US Boulogne\""
+    },
+    "id1000018261527944": {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "homeRaw": "Montpellier HSC",
+      "awayRaw": "ESTAC Troyes",
+      "home": "Montpellier HSC",
+      "away": "ESTAC Troyes",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Montpellier HSC\" | away team not found in stats: \"ESTAC Troyes\""
     },
     "id1000000861624536": {
       "footballDataId": "SP1",
@@ -712,6 +698,120 @@
       "awayRaw": "AFC Hermannstadt",
       "home": "ASC Otelul Galati",
       "away": "AFC Hermannstadt"
+    },
+    "id1000018570231908": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "APO Levadiakos FC",
+      "awayRaw": "Aris Thessaloniki",
+      "home": "APO Levadiakos FC",
+      "away": "Aris Thessaloniki",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"APO Levadiakos FC\" | away team not found in stats: \"Aris Thessaloniki\""
+    },
+    "id1000018570231966": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "Asteras Tripolis",
+      "awayRaw": "AE Larissa FC",
+      "home": "Asteras Tripolis",
+      "away": "AE Larissa FC",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.8,
+        "homeGA": 1.6,
+        "awayGF": 0.6,
+        "awayGA": 2.6,
+        "homeCornersFor": 4.6,
+        "homeCornersAgainst": 5,
+        "awayCornersFor": 4,
+        "awayCornersAgainst": 4.6,
+        "homeYCFor": 1.4,
+        "homeYCAgainst": 2.2,
+        "awayYCFor": 2.6,
+        "awayYCAgainst": 1.8
+      },
+      "awayStats": null,
+      "note": "away team not found in stats: \"AE Larissa FC\""
+    },
+    "id1000018570231974": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "Panaitolikos Agrinio",
+      "awayRaw": "Atromitos Athinon",
+      "home": "Panaitolikos Agrinio",
+      "away": "Atromitos Athinon",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Panaitolikos Agrinio\" | away team not found in stats: \"Atromitos Athinon\""
+    },
+    "id1000018570231968": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "AE Kifisia FC",
+      "awayRaw": "Panserraikos FC",
+      "home": "AE Kifisia FC",
+      "away": "Panserraikos FC",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"AE Kifisia FC\" | away team not found in stats: \"Panserraikos FC\""
+    },
+    "id1000018570231816": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "Olympiacos Piraeus",
+      "awayRaw": "AEK Athens",
+      "home": "Olympiacos Piraeus",
+      "away": "AEK Athens",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Olympiacos Piraeus\" | away team not found in stats: \"AEK Athens\""
+    },
+    "id1000018570231818": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "PAOK Thessaloniki",
+      "awayRaw": "Panathinaikos Athens",
+      "home": "PAOK Thessaloniki",
+      "away": "Panathinaikos Athens",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"PAOK Thessaloniki\" | away team not found in stats: \"Panathinaikos Athens\""
+    },
+    "id1000018570231906": {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "homeRaw": "Volos NPS",
+      "awayRaw": "OFI Crete",
+      "home": "Volos NPS",
+      "away": "OFI Crete",
+      "homeStats": null,
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.4,
+        "awayGF": 1.6,
+        "awayGA": 1.6,
+        "homeCornersFor": 2.6,
+        "homeCornersAgainst": 5.2,
+        "awayCornersFor": 2.2,
+        "awayCornersAgainst": 6.6,
+        "homeYCFor": 1.2,
+        "homeYCAgainst": 3,
+        "awayYCFor": 2.8,
+        "awayYCAgainst": 2.2
+      },
+      "note": "home team not found in stats: \"Volos NPS\""
     },
     "id1000020361376657": {
       "footballDataId": null,
@@ -860,17 +960,37 @@
       "awayStats": null,
       "note": "home team not found in stats: \"TSG Hoffenheim\" | away team not found in stats: \"FSV Mainz\""
     },
-    "id1000003661352713": {
+    "id1000003870207526": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "RAAL La Louviere",
+      "awayRaw": "FCV Dender EH",
+      "home": "RAAL La Louviere",
+      "away": "FCV Dender EH"
+    },
+    "id1000003870207524": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "SV Zulte Waregem",
+      "awayRaw": "Cercle Brugge",
+      "home": "SV Zulte Waregem",
+      "away": "Cercle Brugge"
+    },
+    "id1000003661352709": {
       "footballDataId": "SC0",
       "categoryName": "Scotland",
       "tournamentName": "Premiership",
-      "homeRaw": "Motherwell FC",
-      "awayRaw": "Falkirk FC",
-      "home": "Motherwell FC",
-      "away": "Falkirk FC",
+      "homeRaw": "Hibernian FC",
+      "awayRaw": "Kilmarnock FC",
+      "home": "Hibernian FC",
+      "away": "Kilmarnock FC",
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Motherwell FC\" | away team not found in stats: \"Falkirk FC\""
+      "note": "home team not found in stats: \"Hibernian FC\" | away team not found in stats: \"Kilmarnock FC\""
     },
     "id1000003661352715": {
       "footballDataId": "SC0",
@@ -899,17 +1019,17 @@
       },
       "note": "home team not found in stats: \"Glasgow Rangers\""
     },
-    "id1000003661352709": {
+    "id1000003661352713": {
       "footballDataId": "SC0",
       "categoryName": "Scotland",
       "tournamentName": "Premiership",
-      "homeRaw": "Hibernian FC",
-      "awayRaw": "Kilmarnock FC",
-      "home": "Hibernian FC",
-      "away": "Kilmarnock FC",
+      "homeRaw": "Motherwell FC",
+      "awayRaw": "Falkirk FC",
+      "home": "Motherwell FC",
+      "away": "Falkirk FC",
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Hibernian FC\" | away team not found in stats: \"Kilmarnock FC\""
+      "note": "home team not found in stats: \"Motherwell FC\" | away team not found in stats: \"Falkirk FC\""
     },
     "id1000003661352717": {
       "footballDataId": "SC0",
@@ -980,6 +1100,16 @@
       "home": "FK Dinamo Moscow",
       "away": "FC Orenburg"
     },
+    "id1000023861731432": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Nacional da Madeira",
+      "awayRaw": "Estrela Amadora",
+      "home": "Nacional da Madeira",
+      "away": "Estrela Amadora"
+    },
     "id1000003461526492": {
       "footballDataId": "F1",
       "categoryName": "France",
@@ -1031,6 +1161,16 @@
       "awayRaw": "FC Winterthur",
       "home": "Lausanne-Sport",
       "away": "FC Winterthur"
+    },
+    "id1000003870207458": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "Oud-Heverlee Leuven",
+      "awayRaw": "Standard Liege",
+      "home": "Oud-Heverlee Leuven",
+      "away": "Standard Liege"
     },
     "id1000003561514102": {
       "footballDataId": "D1",
@@ -1128,6 +1268,26 @@
       "home": "Toronto FC",
       "away": "Colorado Rapids"
     },
+    "id1000023861731440": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Moreirense FC",
+      "awayRaw": "SC Braga",
+      "home": "Moreirense FC",
+      "away": "SC Braga"
+    },
+    "id1000023861731434": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Rio Ave FC",
+      "awayRaw": "FC Alverca SAD",
+      "home": "Rio Ave FC",
+      "away": "FC Alverca SAD"
+    },
     "id1000018261527942": {
       "footballDataId": "F2",
       "categoryName": "France",
@@ -1161,6 +1321,16 @@
       "awayRaw": "Young Boys Bern",
       "home": "FC Basel 1893",
       "away": "Young Boys Bern"
+    },
+    "id1000003870207388": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "Union Saint-Gilloise",
+      "awayRaw": "St. Truidense VV",
+      "home": "Union Saint-Gilloise",
+      "away": "St. Truidense VV"
     },
     "id1000000861624520": {
       "footballDataId": "SP1",
@@ -1205,6 +1375,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Lille OSC\" | away team not found in stats: \"Racing Club De Lens\""
+    },
+    "id1000023861731436": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "FC Porto",
+      "awayRaw": "FC Famalicao",
+      "home": "FC Porto",
+      "away": "FC Famalicao"
     },
     "id1000024266298950": {
       "footballDataId": null,
@@ -1773,6 +1953,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Real Oviedo\" | away team not found in stats: \"Sevilla FC\""
     },
+    "id1000003870207460": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "KVC Westerlo",
+      "awayRaw": "Royal Charleroi SC",
+      "home": "KVC Westerlo",
+      "away": "Royal Charleroi SC"
+    },
     "id1000020361376659": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -1827,6 +2017,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Deportivo Alaves\" | away team not found in stats: \"CA Osasuna\""
     },
+    "id1000003870207390": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "Club Brugge",
+      "awayRaw": "RSC Anderlecht",
+      "home": "Club Brugge",
+      "away": "RSC Anderlecht"
+    },
     "id1000004067091110": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -1866,6 +2066,16 @@
       "awayRaw": "Viking FK",
       "home": "Vaalerenga IF",
       "away": "Viking FK"
+    },
+    "id1000024763465899": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Bulgaria",
+      "tournamentName": "Parva Liga",
+      "homeRaw": "FK Septemvri Sofia",
+      "awayRaw": "POFC Botev Vratsa",
+      "home": "FK Septemvri Sofia",
+      "away": "POFC Botev Vratsa"
     },
     "id1000015269744586": {
       "footballDataId": null,
@@ -1927,6 +2137,16 @@
       "home": "Kristiansund BK",
       "away": "Bodoe/Glimt"
     },
+    "id1000002067015090": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "homeRaw": "Sarpsborg 08",
+      "awayRaw": "IK Start",
+      "home": "Sarpsborg 08",
+      "away": "IK Start"
+    },
     "id1000002067015084": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -1937,15 +2157,15 @@
       "home": "HamKam",
       "away": "SK Brann"
     },
-    "id1000002067015090": {
+    "id1000003870207392": {
       "footballDataId": null,
       "note": "No league mapping",
-      "categoryName": "Norway",
-      "tournamentName": "Eliteserien",
-      "homeRaw": "Sarpsborg 08",
-      "awayRaw": "IK Start",
-      "home": "Sarpsborg 08",
-      "away": "IK Start"
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "homeRaw": "KAA Gent",
+      "awayRaw": "Yellow-Red KV Mechelen",
+      "home": "KAA Gent",
+      "away": "Yellow-Red KV Mechelen"
     },
     "id1000020361376671": {
       "footballDataId": null,
@@ -1976,6 +2196,16 @@
       "awayRaw": "FC CFR 1907 Cluj",
       "home": "CS Universitatea Craiova",
       "away": "FC CFR 1907 Cluj"
+    },
+    "id1000023861731444": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "FC Arouca",
+      "awayRaw": "Estoril Praia",
+      "home": "FC Arouca",
+      "away": "Estoril Praia"
     },
     "id1000018268676024": {
       "footballDataId": "F2",
@@ -2016,15 +2246,15 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Girona FC\" | away team not found in stats: \"Villarreal CF\""
     },
-    "id1000002067015096": {
+    "id1000023861731442": {
       "footballDataId": null,
       "note": "No league mapping",
-      "categoryName": "Norway",
-      "tournamentName": "Eliteserien",
-      "homeRaw": "KFUM Oslo",
-      "awayRaw": "Sandefjord Fotball",
-      "home": "KFUM Oslo",
-      "away": "Sandefjord Fotball"
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "homeRaw": "Casa Pia Lisbon",
+      "awayRaw": "SL Benfica",
+      "home": "Casa Pia Lisbon",
+      "away": "SL Benfica"
     },
     "id1000002067015094": {
       "footballDataId": null,
@@ -2035,6 +2265,16 @@
       "awayRaw": "Fredrikstad FK",
       "home": "Aalesunds FK",
       "away": "Fredrikstad FK"
+    },
+    "id1000002067015096": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "homeRaw": "KFUM Oslo",
+      "awayRaw": "Sandefjord Fotball",
+      "home": "KFUM Oslo",
+      "away": "Sandefjord Fotball"
     },
     "id1000000769339344": {
       "footballDataId": null,
@@ -2156,6 +2396,16 @@
       "home": "FSV Mainz",
       "away": "Strasbourg Alsace"
     },
+    "id1000015269744598": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "AFC Hermannstadt",
+      "awayRaw": "FC Farul Constanta",
+      "home": "AFC Hermannstadt",
+      "away": "FC Farul Constanta"
+    },
     "id1000003461526508": {
       "footballDataId": "F1",
       "categoryName": "France",
@@ -2205,18 +2455,6 @@
       "awayStats": null,
       "note": "home team not found in stats: \"FC Augsburg\" | away team not found in stats: \"TSG Hoffenheim\""
     },
-    "id1000003461526494": {
-      "footballDataId": "F1",
-      "categoryName": "France",
-      "tournamentName": "Ligue 1",
-      "homeRaw": "Olympique Marseille",
-      "awayRaw": "FC Metz",
-      "home": "Olympique Marseille",
-      "away": "FC Metz",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Olympique Marseille\" | away team not found in stats: \"FC Metz\""
-    },
     "id1000001761301159": {
       "footballDataId": "E0",
       "categoryName": "England",
@@ -2255,6 +2493,28 @@
       },
       "awayStats": null,
       "note": "away team not found in stats: \"Girona FC\""
+    },
+    "id1000003461526494": {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "homeRaw": "Olympique Marseille",
+      "awayRaw": "FC Metz",
+      "home": "Olympique Marseille",
+      "away": "FC Metz",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Olympique Marseille\" | away team not found in stats: \"FC Metz\""
+    },
+    "id1000020361376677": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "PFK Krylia Sovetov Samara",
+      "awayRaw": "RFK Akhmat Grozny",
+      "home": "PFK Krylia Sovetov Samara",
+      "away": "RFK Akhmat Grozny"
     },
     "id1000001761301141": {
       "footballDataId": "E0",
@@ -2357,6 +2617,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Borussia Dortmund\" | away team not found in stats: \"Bayer Leverkusen\""
+    },
+    "id1000020361952224": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "FK Rubin Kazan",
+      "awayRaw": "FC Orenburg",
+      "home": "FK Rubin Kazan",
+      "away": "FC Orenburg"
     },
     "id1000001761301145": {
       "footballDataId": "E0",
@@ -2469,6 +2739,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"Elche CF\" | away team not found in stats: \"Valencia CF\""
     },
+    "id1000015269744602": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "FC Uta Arad",
+      "awayRaw": "FC Botosani",
+      "home": "FC Uta Arad",
+      "away": "FC Botosani"
+    },
     "id1000003761320203": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -2542,6 +2822,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"FC Barcelona\" | away team not found in stats: \"Espanyol Barcelona\""
     },
+    "id1000020361376685": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "FC Baltika Kaliningrad",
+      "awayRaw": "FC Pari Nizhny Novgorod",
+      "home": "FC Baltika Kaliningrad",
+      "away": "FC Pari Nizhny Novgorod"
+    },
     "id1000003761320199": {
       "footballDataId": null,
       "note": "No league mapping",
@@ -2563,6 +2853,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"AJ Auxerre\" | away team not found in stats: \"FC Nantes\""
+    },
+    "id1000015269744600": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "Fotbal Club FCSB",
+      "awayRaw": "ASC Otelul Galati",
+      "home": "Fotbal Club FCSB",
+      "away": "ASC Otelul Galati"
     },
     "id1000003761320201": {
       "footballDataId": null,
@@ -2629,6 +2929,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Falkirk FC\" | away team not found in stats: \"Glasgow Rangers\""
+    },
+    "id1000020361376679": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "CSKA Moscow",
+      "awayRaw": "FK Sochi",
+      "home": "CSKA Moscow",
+      "away": "FK Sochi"
     },
     "id1000000861624552": {
       "footballDataId": "SP1",
@@ -2770,6 +3080,26 @@
       },
       "note": "home team not found in stats: \"1. FC Cologne\""
     },
+    "id1000020361376675": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "FK Rostov",
+      "awayRaw": "FK Spartak Moscow",
+      "home": "FK Rostov",
+      "away": "FK Spartak Moscow"
+    },
+    "id1000020361376681": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "Lokomotiv Moscow",
+      "awayRaw": "FC Dynamo-Makhachkala",
+      "home": "Lokomotiv Moscow",
+      "away": "FC Dynamo-Makhachkala"
+    },
     "id1000000861624546": {
       "footballDataId": "SP1",
       "categoryName": "Spain",
@@ -2791,6 +3121,16 @@
       "awayRaw": "SC Heerenveen",
       "home": "AZ Alkmaar",
       "away": "SC Heerenveen"
+    },
+    "id1000015269744596": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "FC Unirea 2004 Slobozia",
+      "awayRaw": "FC Petrolul Ploiesti",
+      "home": "FC Unirea 2004 Slobozia",
+      "away": "FC Petrolul Ploiesti"
     },
     "id1000003461526510": {
       "footballDataId": "F1",
@@ -2864,6 +3204,16 @@
       "awayStats": null,
       "note": "home team not found in stats: \"RC Celta de Vigo\" | away team not found in stats: \"Real Oviedo\""
     },
+    "id1000020361376673": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "FK Zenit Saint Petersburg",
+      "awayRaw": "FK Krasnodar",
+      "home": "FK Zenit Saint Petersburg",
+      "away": "FK Krasnodar"
+    },
     "id1000003561514114": {
       "footballDataId": "D1",
       "categoryName": "Germany",
@@ -2875,6 +3225,16 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"FSV Mainz\" | away team not found in stats: \"SC Freiburg\""
+    },
+    "id1000015269785220": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "FC CFR 1907 Cluj",
+      "awayRaw": "FC Dinamo Bucuresti 1948",
+      "home": "FC CFR 1907 Cluj",
+      "away": "FC Dinamo Bucuresti 1948"
     },
     "id1000003461526496": {
       "footballDataId": "F1",
@@ -2899,6 +3259,60 @@
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Athletic Bilbao\" | away team not found in stats: \"Villarreal CF\""
+    },
+    "id1000015269744594": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "Metaloglobus Bucuresti",
+      "awayRaw": "AFK Csikszereda Miercurea Ciuc",
+      "home": "Metaloglobus Bucuresti",
+      "away": "AFK Csikszereda Miercurea Ciuc"
+    },
+    "id1000020361376687": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "homeRaw": "FK Akron Tolyatti",
+      "awayRaw": "FK Dinamo Moscow",
+      "home": "FK Akron Tolyatti",
+      "away": "FK Dinamo Moscow"
+    },
+    "id1000015269785222": {
+      "footballDataId": null,
+      "note": "No league mapping",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "homeRaw": "Rapid Bucuresti 1923",
+      "awayRaw": "ACS Champions FC Arges",
+      "home": "Rapid Bucuresti 1923",
+      "away": "ACS Champions FC Arges"
+    },
+    "id1000001761301153": {
+      "footballDataId": "E0",
+      "categoryName": "England",
+      "tournamentName": "Premier League",
+      "homeRaw": "Manchester United",
+      "awayRaw": "Leeds United",
+      "home": "Manchester United",
+      "away": "Leeds United",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Manchester United\" | away team not found in stats: \"Leeds United\""
+    },
+    "id1000000861624554": {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "homeRaw": "Levante UD",
+      "awayRaw": "Getafe CF",
+      "home": "Levante UD",
+      "away": "Getafe CF",
+      "homeStats": null,
+      "awayStats": null,
+      "note": "home team not found in stats: \"Levante UD\" | away team not found in stats: \"Getafe CF\""
     }
   }
 }
