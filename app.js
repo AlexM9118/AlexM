@@ -1,18 +1,13 @@
 const el = (id) => document.getElementById(id);
 
 const SAFE_THRESHOLD = 0.62;
-
-// lines you asked for goals
 const GOALS_LINES = [1.5, 2.5, 3.5, 4.5];
-// useful default lines for corners/cards
 const CORNERS_LINES = [8.5, 9.5, 10.5];
 const CARDS_LINES = [3.5, 4.5, 5.5];
 
 function setStatus(text, ok = true) {
-  const t = el("statusText");
-  const d = el("statusDot");
-  if (t) t.textContent = text;
-  if (d) d.style.background = ok ? "var(--accent)" : "var(--bad)";
+  el("statusText").textContent = text;
+  el("statusDot").style.background = ok ? "var(--accent)" : "var(--bad)";
 }
 
 async function getJson(path) {
@@ -27,6 +22,22 @@ function fmtTime(iso) {
   return d.replace("T", " ").replace("Z", " UTC");
 }
 
+function pct01(x) {
+  if (!Number.isFinite(Number(x))) return "—";
+  return `${(Number(x) * 100).toFixed(1)}%`;
+}
+
+function oddsFromProb(p) {
+  const x = Number(p);
+  if (!Number.isFinite(x) || x <= 0) return null;
+  return 1 / x;
+}
+
+function fmtOdds(x) {
+  if (!Number.isFinite(Number(x))) return "—";
+  return Number(x).toFixed(2);
+}
+
 function uniqBy(arr, keyFn) {
   const m = new Map();
   for (const x of arr || []) {
@@ -36,76 +47,22 @@ function uniqBy(arr, keyFn) {
   return Array.from(m.values());
 }
 
-function byStr(a, b) {
-  return String(a).localeCompare(String(b));
-}
-
-function fmtNum(x, digits = 2) {
-  if (x == null || !Number.isFinite(Number(x))) return "—";
-  return Number(x).toFixed(digits);
-}
-
-function pct01(x) {
-  if (x == null || !Number.isFinite(Number(x))) return "—";
-  return `${(Number(x) * 100).toFixed(1)}%`;
-}
-
 function renderRows(containerId, rows) {
   const box = el(containerId);
-  if (!box) return;
-
   box.innerHTML = "";
   if (!rows || !rows.length) {
-    const d = document.createElement("div");
-    d.className = "muted";
-    d.textContent = "—";
-    box.appendChild(d);
+    box.innerHTML = `<div class="muted">—</div>`;
     return;
   }
-
   for (const r of rows) {
-    const row = document.createElement("div");
-    row.className = "row";
-
-    const k = document.createElement("div");
-    k.className = "k";
-    k.textContent = r.label;
-
-    const v = document.createElement("div");
-    v.className = "v";
-    v.textContent = r.value;
-
-    row.appendChild(k);
-    row.appendChild(v);
-    box.appendChild(row);
+    const div = document.createElement("div");
+    div.className = "row";
+    div.innerHTML = `<div class="k">${r.label}</div><div class="v">${r.value}</div>`;
+    box.appendChild(div);
   }
 }
 
-function renderOtherMarkets(markets, usedMarketIds) {
-  const box = el("marketOther");
-  if (!box) return;
-
-  const rest = (markets || []).filter((m) => !usedMarketIds.has(String(m.marketId)));
-  if (!rest.length) {
-    box.textContent = "—";
-    return;
-  }
-
-  const lines = [];
-  for (const m of rest.slice(0, 60)) {
-    const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
-    const prices = uniqOuts
-      .slice(0, 6)
-      .map((o) => o.price)
-      .filter((x) => x != null);
-
-    lines.push(`Market ${m.marketId}: [${prices.join(", ")}]`);
-  }
-  if (rest.length > 60) lines.push(`… plus ${rest.length - 60} more markets`);
-  box.textContent = lines.join("\n");
-}
-
-/* Odds heuristics */
+/* odds heuristics */
 function pickLikely1X2(markets) {
   for (const m of markets || []) {
     const uniqOutcomeIds = Array.from(new Set((m.outcomes || []).map((o) => o.outcomeId)));
@@ -113,124 +70,89 @@ function pickLikely1X2(markets) {
   }
   return null;
 }
-function pickLikelyBTTS(markets, excludeIds = new Set()) {
+function pickLikelyBTTS(markets) {
   for (const m of markets || []) {
-    if (excludeIds.has(String(m.marketId))) continue;
-
     const uniqOuts = uniqBy(m.outcomes || [], (o) => o.outcomeId);
-    const uniqOutcomeIds = Array.from(new Set(uniqOuts.map((o) => o.outcomeId)));
-    if (uniqOutcomeIds.length !== 2) continue;
-
+    if (uniqOuts.length !== 2) continue;
     const prices = uniqOuts.map((o) => o.price).filter((x) => typeof x === "number");
     if (prices.length !== 2) continue;
-
     const min = Math.min(...prices);
     const max = Math.max(...prices);
-
     if (min >= 1.15 && max <= 3.8) return m;
   }
   return null;
 }
 
-/* Poisson helpers */
-function factorial(n) {
-  let f = 1;
-  for (let i = 2; i <= n; i++) f *= i;
-  return f;
-}
-function poissonPMF(k, lambda) {
-  return Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);
-}
-function poissonCDF(k, lambda) {
-  let s = 0;
-  for (let i = 0; i <= k; i++) s += poissonPMF(i, lambda);
-  return s;
-}
+/* Poisson */
+function factorial(n) { let f = 1; for (let i=2;i<=n;i++) f*=i; return f; }
+function poissonPMF(k, lambda) { return Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k); }
+function poissonCDF(k, lambda) { let s=0; for (let i=0;i<=k;i++) s+=poissonPMF(i,lambda); return s; }
 function probTotalOver(line, lambdaTotal) {
-  // Over 2.5 => total >= 3
   const threshold = Math.floor(line) + 1;
   return 1 - poissonCDF(threshold - 1, lambdaTotal);
 }
-function probBTTS(lambdaHome, lambdaAway) {
-  const pH0 = Math.exp(-lambdaHome);
-  const pA0 = Math.exp(-lambdaAway);
-  const p00 = Math.exp(-(lambdaHome + lambdaAway));
+function probBTTS(lh, la) {
+  const pH0 = Math.exp(-lh);
+  const pA0 = Math.exp(-la);
+  const p00 = Math.exp(-(lh+la));
   return 1 - pH0 - pA0 + p00;
 }
-
-function safeAvg(a, b) {
-  const x = Number(a), y = Number(b);
+function safeAvg(a,b){
+  const x=Number(a), y=Number(b);
   if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
-  return (x + y) / 2;
+  return (x+y)/2;
 }
-
-function estimateLambdasGoals(entry) {
-  const hs = entry?.homeStats;
-  const as = entry?.awayStats;
+function estGoals(entry){
+  const hs = entry?.homeStats, as = entry?.awayStats;
   if (!hs || !as) return null;
-
-  const minHome = Number(hs.homeMatches || 0);
-  const minAway = Number(as.awayMatches || 0);
-  if (minHome < 1 || minAway < 1) return null;
-
-  const lamHome = safeAvg(hs.homeGF, as.awayGA);
-  const lamAway = safeAvg(as.awayGF, hs.homeGA);
-  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
-
-  return { lamHome, lamAway, lamTotal: lamHome + lamAway, minHome, minAway };
+  if ((hs.homeMatches||0) < 1 || (as.awayMatches||0) < 1) return null;
+  const lh = safeAvg(hs.homeGF, as.awayGA);
+  const la = safeAvg(as.awayGF, hs.homeGA);
+  if (!Number.isFinite(lh) || !Number.isFinite(la)) return null;
+  return { lh, la, lt: lh+la };
 }
-
-function estimateLambdasCorners(entry) {
-  const hs = entry?.homeStats;
-  const as = entry?.awayStats;
+function estCorners(entry){
+  const hs = entry?.homeStats, as = entry?.awayStats;
   if (!hs || !as) return null;
-
-  const lamHome = safeAvg(hs.homeCornersFor, as.awayCornersAgainst);
-  const lamAway = safeAvg(as.awayCornersFor, hs.homeCornersAgainst);
-
-  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
-
-  // If corners are missing in CSV, these will be 0 or null. Guard:
-  if (lamHome === 0 && lamAway === 0) return null;
-
-  return { lamHome, lamAway, lamTotal: lamHome + lamAway };
+  const lh = safeAvg(hs.homeCornersFor, as.awayCornersAgainst);
+  const la = safeAvg(as.awayCornersFor, hs.homeCornersAgainst);
+  if (!Number.isFinite(lh) || !Number.isFinite(la)) return null;
+  if (lh===0 && la===0) return null;
+  return { lt: lh+la };
 }
-
-function estimateLambdasCards(entry) {
-  const hs = entry?.homeStats;
-  const as = entry?.awayStats;
+function estCards(entry){
+  const hs = entry?.homeStats, as = entry?.awayStats;
   if (!hs || !as) return null;
-
-  const lamHome = safeAvg(hs.homeYCFor, as.awayYCAgainst);
-  const lamAway = safeAvg(as.awayYCFor, hs.homeYCAgainst);
-
-  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
-  if (lamHome === 0 && lamAway === 0) return null;
-
-  return { lamHome, lamAway, lamTotal: lamHome + lamAway };
+  const lh = safeAvg(hs.homeYCFor, as.awayYCAgainst);
+  const la = safeAvg(as.awayYCFor, hs.homeYCAgainst);
+  if (!Number.isFinite(lh) || !Number.isFinite(la)) return null;
+  if (lh===0 && la===0) return null;
+  return { lt: lh+la };
 }
 
-/* Data state */
-let UI = { index: null, leagues: [], matches: [] };
+/* UI state */
+let UI = { index:null, leagues:[], matches:[] };
 let HIST = null;
-let current = { leagueId: null, day: null, fixtureId: null };
+let current = { leagueId:null, day:null, fixtureId:null };
 
-async function loadUiData() {
-  setStatus("Loading UI data...");
+function getHistEntry(fixtureId){
+  return HIST?.byFixtureId?.[String(fixtureId)] || null;
+}
 
-  const idx = await getJson("./data/ui/index.json");
+async function loadAll(){
+  setStatus("Loading...");
+  UI.index = await getJson("./data/ui/index.json");
   const leaguesObj = await getJson("./data/ui/leagues.json");
   const matchesObj = await getJson("./data/ui/matches.json");
   HIST = await getJson("./data/ui/history_stats.json");
 
-  UI.index = idx;
-  UI.leagues = (leaguesObj.leagues || []).map((l) => ({
+  UI.leagues = (leaguesObj.leagues || []).map(l => ({
     id: String(l.id),
     name: l.name || l.id,
     categoryName: l.categoryName || ""
   }));
 
-  UI.matches = (matchesObj.matches || []).map((m) => ({
+  UI.matches = (matchesObj.matches || []).map(m => ({
     fixtureId: String(m.fixtureId),
     tournamentId: m.tournamentId != null ? String(m.tournamentId) : null,
     tournamentName: m.tournamentName || "",
@@ -242,360 +164,386 @@ async function loadUiData() {
   }));
 
   current.leagueId = UI.leagues[0]?.id || null;
-  current.day = idx.days?.[0] || null;
+  current.day = UI.index.days?.[0] || null;
 
   setStatus("Ready");
 }
 
-function renderLeagueSelect() {
+function renderLeagueSel(){
   const sel = el("leagueSel");
-  if (!sel) return;
   sel.innerHTML = "";
-
-  const list = UI.leagues.slice().sort((a, b) => byStr(a.categoryName + a.name, b.categoryName + b.name));
-  for (const l of list) {
+  const list = UI.leagues.slice().sort((a,b)=>(a.categoryName+a.name).localeCompare(b.categoryName+b.name));
+  for (const l of list){
     const opt = document.createElement("option");
     opt.value = l.id;
     opt.textContent = l.categoryName ? `${l.categoryName} - ${l.name}` : l.name;
     sel.appendChild(opt);
   }
-  if (current.leagueId) sel.value = current.leagueId;
+  sel.value = current.leagueId || list[0]?.id;
 }
 
-function renderDaySelect() {
+function renderDaySel(){
   const sel = el("daySel");
-  if (!sel) return;
   sel.innerHTML = "";
-
-  const days = UI.index?.days || [];
-  for (const d of days) {
+  for (const d of (UI.index.days || [])){
     const opt = document.createElement("option");
     opt.value = d;
     opt.textContent = d;
     sel.appendChild(opt);
   }
-  if (current.day) sel.value = current.day;
+  sel.value = current.day || UI.index.days?.[0];
 }
 
-function filteredMatches() {
-  return UI.matches.filter((m) => {
+function filteredMatches(){
+  return UI.matches.filter(m => {
     if (current.leagueId && String(m.tournamentId) !== String(current.leagueId)) return false;
     if (current.day && String(m.day) !== String(current.day)) return false;
     return true;
   });
 }
 
-function renderMatchesList() {
+function renderMatchesList(){
   const box = el("matchesList");
-  if (!box) return;
-
   box.innerHTML = "";
   const list = filteredMatches();
 
-  if (!list.length) {
-    box.textContent = "Nu există meciuri pentru liga/ziua selectată.";
+  if (!list.length){
+    box.innerHTML = `<div class="muted">No matches for selected filters.</div>`;
     return;
   }
 
-  for (const m of list) {
-    const item = document.createElement("div");
-    item.className = "match-item" + (m.fixtureId === current.fixtureId ? " active" : "");
-    item.addEventListener("click", () => {
+  for (const m of list){
+    const div = document.createElement("div");
+    div.className = "match-item" + (m.fixtureId === current.fixtureId ? " active":"");
+    div.innerHTML = `<div class="teams">${m.home} vs ${m.away}</div><div class="meta">${m.tournamentName} • ${fmtTime(m.startTime)}</div>`;
+    div.addEventListener("click", async () => {
       current.fixtureId = m.fixtureId;
       renderMatchesList();
-      loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
+      await loadAndRenderMatch();
     });
-
-    const teams = document.createElement("div");
-    teams.className = "teams";
-    teams.textContent = `${m.home} vs ${m.away}`;
-
-    const meta = document.createElement("div");
-    meta.className = "meta";
-    meta.textContent = `${m.tournamentName} • ${fmtTime(m.startTime)}`;
-
-    item.appendChild(teams);
-    item.appendChild(meta);
-    box.appendChild(item);
+    box.appendChild(div);
   }
 
-  if (!current.fixtureId && list[0]?.fixtureId) {
+  if (!current.fixtureId && list[0]?.fixtureId){
     current.fixtureId = list[0].fixtureId;
-    renderMatchesList();
   }
 }
 
-function getHistEntry(fixtureId) {
-  return HIST?.byFixtureId?.[String(fixtureId)] || null;
+function setTabs(){
+  document.querySelectorAll(".tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+      document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(`panel-${btn.dataset.tab}`).classList.add("active");
+    });
+  });
 }
 
-function renderHistoryPanels(fixtureId) {
-  const entry = getHistEntry(fixtureId);
-  const homeNote = el("histHomeNote");
-  const awayNote = el("histAwayNote");
+function bar(labelLeft, p, labelRight){
+  const div = document.createElement("div");
+  div.className = "bar";
 
-  if (!entry || !entry.homeStats || !entry.awayStats) {
-    renderRows("histHome", []);
-    renderRows("histAway", []);
-    const msg = entry?.note ? `Note: ${entry.note}` : "No stats available (mapping/team mismatch).";
-    if (homeNote) homeNote.textContent = msg;
-    if (awayNote) awayNote.textContent = msg;
-    return null;
-  }
+  const top = document.createElement("div");
+  top.className = "bar-top";
+  top.innerHTML = `<div>${labelLeft}</div><div>${labelRight}</div>`;
 
-  const hs = entry.homeStats;
-  const as = entry.awayStats;
+  const sub = document.createElement("div");
+  sub.className = "bar-sub";
+  sub.innerHTML = `<div>p=${pct01(p)}</div><div>odds≈${fmtOdds(oddsFromProb(p))}</div>`;
 
-  renderRows("histHome", [
-    { label: `Home matches (last ${HIST.lookback || 5})`, value: String(hs.homeMatches ?? "—") },
-    { label: "GF (home)", value: fmtNum(hs.homeGF, 2) },
-    { label: "GA (home)", value: fmtNum(hs.homeGA, 2) },
-    { label: "Corners For (home)", value: fmtNum(hs.homeCornersFor, 2) },
-    { label: "Corners Against (home)", value: fmtNum(hs.homeCornersAgainst, 2) },
-    { label: "YC For (home)", value: fmtNum(hs.homeYCFor, 2) },
-    { label: "YC Against (home)", value: fmtNum(hs.homeYCAgainst, 2) }
-  ]);
+  const meter = document.createElement("div");
+  meter.className = "meter";
+  const fill = document.createElement("div");
+  fill.style.width = `${Math.max(0, Math.min(100, p*100))}%`;
+  meter.appendChild(fill);
 
-  renderRows("histAway", [
-    { label: `Away matches (last ${HIST.lookback || 5})`, value: String(as.awayMatches ?? "—") },
-    { label: "GF (away)", value: fmtNum(as.awayGF, 2) },
-    { label: "GA (away)", value: fmtNum(as.awayGA, 2) },
-    { label: "Corners For (away)", value: fmtNum(as.awayCornersFor, 2) },
-    { label: "Corners Against (away)", value: fmtNum(as.awayCornersAgainst, 2) },
-    { label: "YC For (away)", value: fmtNum(as.awayYCFor, 2) },
-    { label: "YC Against (away)", value: fmtNum(as.awayYCAgainst, 2) }
-  ]);
-
-  const mapInfo = entry.footballDataId ? `League mapping: ${entry.footballDataId}` : "";
-  if (homeNote) homeNote.textContent = mapInfo;
-  if (awayNote) awayNote.textContent = mapInfo;
-
-  return entry;
+  div.appendChild(top);
+  div.appendChild(sub);
+  div.appendChild(meter);
+  return div;
 }
 
-function buildModelRows(entry) {
-  const rows = [];
-  const note = [];
+function renderModelPanels(entry){
+  // goals
+  const goalsBox = el("goalsBox"); goalsBox.innerHTML = "";
+  const bttsBox = el("bttsBox"); bttsBox.innerHTML = "";
+  const cornersBox = el("cornersBox"); cornersBox.innerHTML = "";
+  const cardsBox = el("cardsBox"); cardsBox.innerHTML = "";
 
-  const g = estimateLambdasGoals(entry);
-  if (g) {
-    const pYes = probBTTS(g.lamHome, g.lamAway);
+  const goals = estGoals(entry);
+  if (goals){
+    for (const L of GOALS_LINES){
+      const pOver = probTotalOver(L, goals.lt);
+      const pUnder = 1 - pOver;
+      const best = Math.max(pOver, pUnder);
+      const rec = pOver >= pUnder ? "Over" : "Under";
+      goalsBox.appendChild(bar(`Total Goals ${L} — ${rec}`, best, best >= SAFE_THRESHOLD ? "SAFE" : "AVOID"));
+    }
+    const pYes = probBTTS(goals.lh, goals.la);
     const pNo = 1 - pYes;
-    const recBTTS = pYes >= pNo ? "BTTS YES" : "BTTS NO";
-    rows.push({ label: `BTTS (MODEL) — ${recBTTS}`, value: `Yes ${pct01(pYes)} | No ${pct01(pNo)}` });
-
-    for (const L of GOALS_LINES) {
-      const pOver = probTotalOver(L, g.lamTotal);
-      const pUnder = 1 - pOver;
-      const rec = pOver >= pUnder ? "OVER" : "UNDER";
-      const conf = Math.max(pOver, pUnder);
-      rows.push({
-        label: `Goals ${L} — ${rec}`,
-        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
-      });
-    }
-    note.push(`Goals λH=${g.lamHome.toFixed(2)} λA=${g.lamAway.toFixed(2)} (λT=${g.lamTotal.toFixed(2)})`);
+    const best = Math.max(pYes, pNo);
+    const rec = pYes >= pNo ? "Yes" : "No";
+    bttsBox.appendChild(bar(`BTTS — ${rec}`, best, best >= SAFE_THRESHOLD ? "SAFE" : "AVOID"));
+    el("modelNote").textContent = `Goals λT≈${goals.lt.toFixed(2)} (λH≈${goals.lh.toFixed(2)} λA≈${goals.la.toFixed(2)})`;
   } else {
-    note.push("Goals model: N/A (insufficient last5 samples)");
+    goalsBox.innerHTML = `<div class="muted small">Model goals unavailable (insufficient last5 samples).</div>`;
+    bttsBox.innerHTML = `<div class="muted small">BTTS model unavailable.</div>`;
   }
 
-  const c = estimateLambdasCorners(entry);
-  if (c) {
-    for (const L of CORNERS_LINES) {
-      const pOver = probTotalOver(L, c.lamTotal);
+  const corners = estCorners(entry);
+  if (corners){
+    el("cornersHint").textContent = `λT≈${corners.lt.toFixed(2)} (from corners stats)`;
+    for (const L of CORNERS_LINES){
+      const pOver = probTotalOver(L, corners.lt);
       const pUnder = 1 - pOver;
-      const rec = pOver >= pUnder ? "OVER" : "UNDER";
-      const conf = Math.max(pOver, pUnder);
-      rows.push({
-        label: `Corners ${L} — ${rec}`,
-        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
-      });
+      const best = Math.max(pOver, pUnder);
+      const rec = pOver >= pUnder ? "Over" : "Under";
+      cornersBox.appendChild(bar(`Corners ${L} — ${rec}`, best, best >= SAFE_THRESHOLD ? "SAFE" : "AVOID"));
     }
-    note.push(`Corners λT≈${c.lamTotal.toFixed(2)}`);
   } else {
-    note.push("Corners model: N/A (no corners data in CSV)");
+    el("cornersHint").textContent = "No corners data in CSV (or zeros).";
+    cornersBox.innerHTML = `<div class="muted small">N/A</div>`;
   }
 
-  const y = estimateLambdasCards(entry);
-  if (y) {
-    for (const L of CARDS_LINES) {
-      const pOver = probTotalOver(L, y.lamTotal);
+  const cards = estCards(entry);
+  if (cards){
+    el("cardsHint").textContent = `λT≈${cards.lt.toFixed(2)} (from cards stats)`;
+    for (const L of CARDS_LINES){
+      const pOver = probTotalOver(L, cards.lt);
       const pUnder = 1 - pOver;
-      const rec = pOver >= pUnder ? "OVER" : "UNDER";
-      const conf = Math.max(pOver, pUnder);
-      rows.push({
-        label: `Cards ${L} — ${rec}`,
-        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
-      });
+      const best = Math.max(pOver, pUnder);
+      const rec = pOver >= pUnder ? "Over" : "Under";
+      cardsBox.appendChild(bar(`Cards ${L} — ${rec}`, best, best >= SAFE_THRESHOLD ? "SAFE" : "AVOID"));
     }
-    note.push(`Cards λT≈${y.lamTotal.toFixed(2)}`);
   } else {
-    note.push("Cards model: N/A (no cards data in CSV)");
+    el("cardsHint").textContent = "No cards data in CSV (or zeros).";
+    cardsBox.innerHTML = `<div class="muted small">N/A</div>`;
   }
-
-  return { rows, note: note.join(" • ") };
 }
 
-function bestSafePicksForDay(day) {
+async function renderRecommendation(day){
+  const recTitle = el("recTitle");
+  const recSub = el("recSub");
+  const recList = el("recList");
+
+  recTitle.textContent = `Ziua: ${day}`;
+  recSub.textContent = `Selecții doar dacă p ≥ ${(SAFE_THRESHOLD*100).toFixed(0)}%.`;
+  recList.innerHTML = "";
+
   const list = UI.matches.filter(m => String(m.day) === String(day));
   const picks = [];
 
-  for (const m of list) {
+  for (const m of list){
     const entry = getHistEntry(m.fixtureId);
-    if (!entry || !entry.homeStats || !entry.awayStats) continue;
-
-    const g = estimateLambdasGoals(entry);
-    if (!g) continue;
+    const goals = estGoals(entry);
+    if (!goals) continue;
 
     // BTTS
-    const pYes = probBTTS(g.lamHome, g.lamAway);
+    const pYes = probBTTS(goals.lh, goals.la);
     const pNo = 1 - pYes;
-    if (Math.max(pYes, pNo) >= SAFE_THRESHOLD) {
-      picks.push({
-        fixtureId: m.fixtureId,
-        match: `${m.home} vs ${m.away}`,
-        market: "BTTS",
-        selection: pYes >= pNo ? "YES" : "NO",
-        p: Math.max(pYes, pNo)
-      });
+    const best = Math.max(pYes, pNo);
+    if (best >= SAFE_THRESHOLD){
+      picks.push({ fixtureId: m.fixtureId, match: `${m.home} vs ${m.away}`, market: "BTTS", sel: (pYes>=pNo)?"YES":"NO", p: best });
     }
 
-    // Totals goals
-    for (const L of GOALS_LINES) {
-      const pOver = probTotalOver(L, g.lamTotal);
+    // Goals lines
+    for (const L of GOALS_LINES){
+      const pOver = probTotalOver(L, goals.lt);
       const pUnder = 1 - pOver;
-      const bestP = Math.max(pOver, pUnder);
-      if (bestP >= SAFE_THRESHOLD) {
-        picks.push({
-          fixtureId: m.fixtureId,
-          match: `${m.home} vs ${m.away}`,
-          market: `Goals ${L}`,
-          selection: pOver >= pUnder ? "OVER" : "UNDER",
-          p: bestP
-        });
+      const best2 = Math.max(pOver, pUnder);
+      if (best2 >= SAFE_THRESHOLD){
+        picks.push({ fixtureId: m.fixtureId, match: `${m.home} vs ${m.away}`, market: `Goals ${L}`, sel: (pOver>=pUnder)?"OVER":"UNDER", p: best2 });
       }
     }
   }
 
-  // sort by confidence desc
-  picks.sort((a,b)=> b.p - a.p);
-  return picks.slice(0, 6);
-}
+  picks.sort((a,b)=>b.p-a.p);
+  const top = picks.slice(0, 6);
 
-function renderDailyPicks(day) {
-  const noteEl = el("dailyPicksNote");
-  const picks = bestSafePicksForDay(day);
+  el("recCount").textContent = String(top.length);
 
-  if (!picks.length) {
-    renderRows("dailyPicks", []);
-    if (noteEl) noteEl.textContent = `No SAFE picks for ${day} (threshold ${(SAFE_THRESHOLD*100).toFixed(0)}%).`;
+  if (!top.length){
+    el("recAvgP").textContent = "—";
+    el("recFairOdds").textContent = "—";
+    el("recNote").textContent = "No SAFE picks for this day.";
     return;
   }
 
-  renderRows("dailyPicks", picks.map(p => ({
-    label: `${p.match} — ${p.market}`,
-    value: `${p.selection} • ${pct01(p.p)}`
-  })));
+  const avgP = top.reduce((s,x)=>s+x.p,0) / top.length;
+  el("recAvgP").textContent = pct01(avgP);
 
-  if (noteEl) noteEl.textContent = `Top ${picks.length} SAFE picks for ${day} (threshold ${(SAFE_THRESHOLD*100).toFixed(0)}%).`;
+  // fair combined odds = product(1/p)
+  let fair = 1;
+  for (const x of top) fair *= oddsFromProb(x.p);
+  el("recFairOdds").textContent = fmtOdds(fair);
+
+  // build cards (need fixturePath)
+  for (const p of top){
+    let link = null;
+    try {
+      const fx = await getJson(`./data/ui/match/${p.fixtureId}.json`);
+      link = fx.fixturePath || null;
+    } catch {}
+
+    const div = document.createElement("div");
+    div.className = "pick";
+
+    const left = document.createElement("div");
+    const title = document.createElement("div");
+    title.className = "pick-title";
+    title.textContent = `${p.match}`;
+
+    const meta = document.createElement("div");
+    meta.className = "pick-meta";
+    meta.textContent = `${p.market}: ${p.sel} • p=${pct01(p.p)} • odds≈${fmtOdds(oddsFromProb(p.p))}`;
+
+    left.appendChild(title);
+    left.appendChild(meta);
+
+    const right = document.createElement("div");
+    right.className = "pick-right";
+    right.innerHTML = `<div class="p">${pct01(p.p)}</div>`;
+    if (link){
+      const a = document.createElement("a");
+      a.href = link;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = "Open";
+      right.appendChild(a);
+    }
+
+    const topRow = document.createElement("div");
+    topRow.className = "pick-top";
+    topRow.appendChild(left);
+    topRow.appendChild(right);
+
+    div.appendChild(topRow);
+    recList.appendChild(div);
+  }
+
+  el("recNote").textContent = "Odds≈ sunt fair odds din model (1/p), nu cotele Superbet.";
 }
 
-async function loadAndRenderMatch() {
+async function loadAndRenderMatch(){
   if (!current.fixtureId) return;
 
-  setStatus("Loading match...");
+  const m = UI.matches.find(x => x.fixtureId === current.fixtureId);
+  const fx = await getJson(`./data/ui/match/${current.fixtureId}.json`);
 
-  const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
-  const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
-
-  el("matchTitle").textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
-  el("matchMeta").textContent =
-    `${matchData.categoryName || baseMatch.categoryName} • ` +
-    `${matchData.tournamentName || baseMatch.tournamentName} • ` +
-    `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
-
-  const href = matchData.fixturePath || "#";
-  el("openBookBtn").setAttribute("href", href);
+  el("matchTitle").textContent = `${fx.home || m.home} vs ${fx.away || m.away}`;
+  el("matchMeta").textContent = `${fx.categoryName || m.categoryName} • ${fx.tournamentName || m.tournamentName} • ${fmtTime(fx.startTime || m.startTime)}`;
+  const href = fx.fixturePath || "#";
+  el("openBookBtn").href = href;
   el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
 
-  const markets = matchData.markets || [];
-  const used = new Set();
-
-  // 1X2 odds
+  // odds panels (small)
+  const markets = fx.markets || [];
   const m1x2 = pickLikely1X2(markets);
-  if (m1x2) {
-    used.add(String(m1x2.marketId));
-    const outs = uniqBy(m1x2.outcomes || [], (o) => o.outcomeId).slice(0, 3);
-    renderRows("market1x2", outs.map((o, idx) => ({
-      label: idx === 0 ? "Home" : idx === 1 ? "Draw" : "Away",
-      value: o.price != null ? String(o.price) : "—"
-    })));
-  } else {
-    renderRows("market1x2", []);
-  }
+  if (m1x2){
+    const outs = uniqBy(m1x2.outcomes || [], o=>o.outcomeId).slice(0,3);
+    renderRows("market1x2", outs.map((o,i)=>({ label: i===0?"Home":i===1?"Draw":"Away", value: String(o.price ?? "—") })));
+  } else renderRows("market1x2", []);
 
-  // BTTS odds
-  const mbtts = pickLikelyBTTS(markets, used);
-  if (mbtts) {
-    used.add(String(mbtts.marketId));
-    const outs = uniqBy(mbtts.outcomes || [], (o) => o.outcomeId).slice(0, 2);
-    outs.sort((a, b) => (a.price ?? 9e9) - (b.price ?? 9e9));
+  const mb = pickLikelyBTTS(markets);
+  if (mb){
+    const outs = uniqBy(mb.outcomes || [], o=>o.outcomeId).slice(0,2).sort((a,b)=>(a.price??9e9)-(b.price??9e9));
     renderRows("marketBtts", [
-      { label: "Yes", value: outs[0]?.price != null ? String(outs[0].price) : "—" },
-      { label: "No", value: outs[1]?.price != null ? String(outs[1].price) : "—" }
+      { label:"Yes", value:String(outs[0]?.price ?? "—") },
+      { label:"No",  value:String(outs[1]?.price ?? "—") }
     ]);
-  } else {
-    renderRows("marketBtts", []);
-  }
+  } else renderRows("marketBtts", []);
 
+  // raw
+  const used = new Set();
   renderOtherMarkets(markets, used);
 
-  // history + model
-  const entry = renderHistoryPanels(current.fixtureId);
-  const model = buildModelRows(entry);
-  renderRows("modelBox", model.rows);
-  el("modelNote").textContent = model.note;
+  // model panels
+  const entry = getHistEntry(current.fixtureId);
+  renderModelPanels(entry);
 
-  setStatus("Ready");
+  // history panels on right
+  const hs = entry?.homeStats;
+  const as = entry?.awayStats;
+  if (hs && as){
+    renderRows("histHome", [
+      { label:`Home matches (last ${HIST.lookback||5})`, value:String(hs.homeMatches ?? "—") },
+      { label:"GF(home)", value:fmtNum(hs.homeGF,2) },
+      { label:"GA(home)", value:fmtNum(hs.homeGA,2) },
+      { label:"Corners For", value:fmtNum(hs.homeCornersFor,2) },
+      { label:"YC For", value:fmtNum(hs.homeYCFor,2) }
+    ]);
+    renderRows("histAway", [
+      { label:`Away matches (last ${HIST.lookback||5})`, value:String(as.awayMatches ?? "—") },
+      { label:"GF(away)", value:fmtNum(as.awayGF,2) },
+      { label:"GA(away)", value:fmtNum(as.awayGA,2) },
+      { label:"Corners For", value:fmtNum(as.awayCornersFor,2) },
+      { label:"YC For", value:fmtNum(as.awayYCFor,2) }
+    ]);
+    el("histHomeNote").textContent = entry.footballDataId ? `League: ${entry.footballDataId}` : "";
+    el("histAwayNote").textContent = entry.footballDataId ? `League: ${entry.footballDataId}` : "";
+  } else {
+    renderRows("histHome", []);
+    renderRows("histAway", []);
+    el("histHomeNote").textContent = entry?.note || "No stats for this match.";
+    el("histAwayNote").textContent = entry?.note || "No stats for this match.";
+  }
 }
 
-async function init() {
-  try {
-    await loadUiData();
+async function init(){
+  try{
+    await loadAll();
 
-    renderLeagueSelect();
-    renderDaySelect();
+    renderLeagueSel();
+    renderDaySel();
+    setTabs();
+
+    // initial list
     renderMatchesList();
 
-    // daily picks for selected day
-    renderDailyPicks(current.day);
+    // pick first match
+    const list = filteredMatches();
+    if (!current.fixtureId && list[0]?.fixtureId) current.fixtureId = list[0].fixtureId;
+    renderMatchesList();
 
+    await renderRecommendation(current.day);
     await loadAndRenderMatch();
 
-    el("leagueSel").addEventListener("change", () => {
+    el("leagueSel").addEventListener("change", async () => {
       current.leagueId = el("leagueSel").value;
       current.fixtureId = null;
       renderMatchesList();
+      const list2 = filteredMatches();
+      if (list2[0]?.fixtureId) current.fixtureId = list2[0].fixtureId;
+      renderMatchesList();
+      await loadAndRenderMatch();
     });
 
-    el("daySel").addEventListener("change", () => {
+    el("daySel").addEventListener("change", async () => {
       current.day = el("daySel").value;
       current.fixtureId = null;
       renderMatchesList();
-      renderDailyPicks(current.day);
+      const list2 = filteredMatches();
+      if (list2[0]?.fixtureId) current.fixtureId = list2[0].fixtureId;
+      renderMatchesList();
+      await renderRecommendation(current.day);
+      await loadAndRenderMatch();
     });
 
     el("refreshBtn").addEventListener("click", async () => {
       current.fixtureId = null;
-      await loadUiData();
-      renderLeagueSelect();
-      renderDaySelect();
+      await loadAll();
+      renderLeagueSel();
+      renderDaySel();
       renderMatchesList();
-      renderDailyPicks(current.day);
+      const list2 = filteredMatches();
+      if (list2[0]?.fixtureId) current.fixtureId = list2[0].fixtureId;
+      renderMatchesList();
+      await renderRecommendation(current.day);
       await loadAndRenderMatch();
     });
 
-  } catch (e) {
+  } catch(e){
     setStatus(e.message || String(e), false);
   }
 }
