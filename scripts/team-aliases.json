@@ -17,6 +17,67 @@
     "Wolverhampton Wanderers": "Wolves",
     "Wolves": "Wolves",
 
-    "Atletico Madrid": "Ath Madrid"
+    "Atletico Madrid": "Ath Madrid",
+
+    // -------- FRANCE (Ligue 1) --------
+    "Paris Saint-Germain": "PSG",
+    "Olympique Marseille": "Marseille",
+    "Olympique Lyon": "Lyon",
+    "Racing Club De Lens": "Lens",
+    "Stade Brest 29": "Brest",
+    "Stade Rennais FC": "Rennes",
+    "Strasbourg Alsace": "Strasbourg",
+    "OGC Nice": "Nice",
+    "Angers SCO": "Angers",
+    "AJ Auxerre": "Auxerre",
+    "Paris FC": "Paris FC",
+
+    // -------- SPAIN (LaLiga / LaLiga 2) --------
+    "Rayo Vallecano": "Vallecano",
+    "Real Sociedad San Sebastian": "Sociedad",
+    "Real Betis Seville": "Betis",
+    "RCD Mallorca": "Mallorca",
+    "RC Celta de Vigo": "Celta",
+    "CA Osasuna": "Osasuna",
+    "Athletic Bilbao": "Ath Bilbao",
+
+    // critical fix (avoid wrong mapping to Barcelona)
+    "Espanyol Barcelona": "Espanyol",
+
+    // LaLiga 2 examples
+    "Albacete Balompie": "Albacete",
+
+    // -------- GERMANY (Bundesliga) --------
+    "Bayer Leverkusen": "Leverkusen",
+    "Borussia Dortmund": "Dortmund",
+    "Eintracht Frankfurt": "Frankfurt",
+    "VfB Stuttgart": "Stuttgart",
+    "VFL Wolfsburg": "Wolfsburg",
+    "TSG Hoffenheim": "Hoffenheim",
+    "FSV Mainz": "Mainz",
+    "1. FC Heidenheim": "Heidenheim",
+
+    // football-data uses abbreviations for these:
+    "Borussia Monchengladbach": "M'gladbach",
+    "1. FC Cologne": "FC Koln",
+    "Hamburger SV": "Hamburg",
+
+    // -------- ITALY (Serie A) --------
+    "Hellas Verona": "Verona",
+    "Lazio Rome": "Lazio",
+    "Inter Milano": "Inter",
+    "Juventus Turin": "Juventus",
+    "Como 1907": "Como",
+
+    // -------- ROMANIA (Superliga) --------
+    "Fotbal Club FCSB": "FCSB",
+    "FC CFR 1907 Cluj": "CFR Cluj",
+    "Rapid Bucuresti 1923": "FC Rapid Bucuresti",
+    "FC Petrolul Ploiesti": "Petrolul",
+    "FC Unirea 2004 Slobozia": "Unirea Slobozia",
+    "FC Botosani": "Botosani",
+    "ASC Otelul Galati": "Otelul",
+    "AFC Hermannstadt": "FC Hermannstadt",
+    "Metaloglobus Bucuresti": "Metaloglobus"
   }
 }
