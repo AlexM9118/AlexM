@@ -18,11 +18,16 @@ function findFootballDataId(mapCfg, categoryName, tournamentName){
   return null;
 }
 
-function loadAliases(){
-  const p = path.join("scripts", "team-aliases.json");
+function loadAliasesFile(p){
   if (!fs.existsSync(p)) return { aliases: {} };
   const obj = readJson(p);
-  return obj && obj.aliases ? obj : { aliases: {} };
+  if (obj && obj.aliases && typeof obj.aliases === "object") return obj;
+  return { aliases: {} };
+}
+
+function mergeAliases(manualAliases, generatedAliases){
+  // manual overrides generated
+  return { ...generatedAliases, ...manualAliases };
 }
 
 function normTeamName(name, aliases){
@@ -53,7 +58,10 @@ function main(){
   const matchesObj = readJson(matchesPath);
   const matches = matchesObj.matches || [];
 
-  const { aliases } = loadAliases();
+  const manual = loadAliasesFile(path.join("scripts", "team-aliases.json")).aliases;
+  const generated = loadAliasesFile(path.join("scripts", "team-aliases.generated.json")).aliases;
+
+  const aliases = mergeAliases(manual, generated);
 
   const out = {
     generatedAtUTC: new Date().toISOString(),
