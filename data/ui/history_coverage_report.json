@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-26T02:14:02.064Z",
+  "generatedAtUTC": "2026-03-26T11:36:17.513Z",
   "lookback": 5,
   "matchesTotal": 285,
   "leagues": [
@@ -11,11 +11,11 @@
         "SP1"
       ],
       "total": 20,
-      "ok": 7,
-      "okPct": 35,
+      "ok": 18,
+      "okPct": 90,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 13,
+      "missingTeams": 2,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -27,11 +27,11 @@
         "I1"
       ],
       "total": 20,
-      "ok": 11,
-      "okPct": 55,
+      "ok": 20,
+      "okPct": 100,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 9,
+      "missingTeams": 0,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -43,11 +43,11 @@
         "F1"
       ],
       "total": 18,
-      "ok": 2,
-      "okPct": 11.1,
+      "ok": 14,
+      "okPct": 77.8,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 16,
+      "missingTeams": 4,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -59,11 +59,11 @@
         "D1"
       ],
       "total": 18,
-      "ok": 4,
-      "okPct": 22.2,
+      "ok": 13,
+      "okPct": 72.2,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 14,
+      "missingTeams": 5,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -103,11 +103,11 @@
         "ROU"
       ],
       "total": 15,
-      "ok": 0,
-      "okPct": 0,
+      "ok": 4,
+      "okPct": 26.7,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 15,
+      "missingTeams": 11,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -135,11 +135,11 @@
         "SP2"
       ],
       "total": 14,
-      "ok": 9,
-      "okPct": 64.3,
+      "ok": 11,
+      "okPct": 78.6,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 5,
+      "missingTeams": 3,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -404,38 +404,13 @@
   ],
   "topMissingTeams": [
     {
-      "leagueKey": "Spain | LaLiga 2",
-      "teamName": "Albacete Balompie",
-      "count": 2
-    },
-    {
       "leagueKey": "Romania | Superliga",
       "teamName": "FC Botosani",
       "count": 2
     },
     {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "Fotbal Club FCSB",
-      "count": 2
-    },
-    {
       "leagueKey": "France | Ligue 1",
       "teamName": "Paris Saint-Germain",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "Rayo Vallecano",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "Real Sociedad San Sebastian",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "ASC Otelul Galati",
       "count": 2
     },
     {
@@ -445,77 +420,12 @@
     },
     {
       "leagueKey": "Germany | Bundesliga",
-      "teamName": "Bayer Leverkusen",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "VFL Wolfsburg",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "Hamburger SV",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
       "teamName": "Borussia Monchengladbach",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "1. FC Heidenheim",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "TSG Hoffenheim",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "FSV Mainz",
       "count": 2
     },
     {
       "leagueKey": "Scotland | Premiership",
       "teamName": "Glasgow Rangers",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "RCD Mallorca",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Strasbourg Alsace",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "OGC Nice",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy | Serie A",
-      "teamName": "Hellas Verona",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "VfB Stuttgart",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "Borussia Dortmund",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "Real Betis Seville",
       "count": 2
     },
     {
@@ -529,43 +439,8 @@
       "count": 2
     },
     {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Stade Brest 29",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Stade Rennais FC",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy | Serie A",
-      "teamName": "Lazio Rome",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Racing Club De Lens",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "Athletic Bilbao",
-      "count": 2
-    },
-    {
       "leagueKey": "Romania | Superliga",
       "teamName": "Metaloglobus Bucuresti",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Angers SCO",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Olympique Lyon",
       "count": 2
     },
     {
@@ -574,23 +449,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "RC Celta de Vigo",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "FC Unirea 2004 Slobozia",
-      "count": 2
-    },
-    {
       "leagueKey": "France | Ligue 1",
       "teamName": "Paris FC",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "AJ Auxerre",
       "count": 2
     },
     {
@@ -614,43 +474,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy | Serie A",
-      "teamName": "Inter Milano",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Olympique Marseille",
-      "count": 2
-    },
-    {
-      "leagueKey": "Spain | LaLiga",
-      "teamName": "CA Osasuna",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy | Serie A",
-      "teamName": "Como 1907",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "FC Petrolul Ploiesti",
-      "count": 2
-    },
-    {
       "leagueKey": "Romania | Superliga",
       "teamName": "AFK Csikszereda Miercurea Ciuc",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy | Serie A",
-      "teamName": "Juventus Turin",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "FC CFR 1907 Cluj",
       "count": 2
     },
     {
