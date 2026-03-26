@@ -1,5 +1,1076 @@
 {
+  "generatedAtUTC": "2026-03-26T01:04:01.972Z",
+  "autoMinScore": 0.7,
   "aliases": {
-    "New York City FC": "New York City"
-  }
+    "AD Ceuta": "Ceuta",
+    "Burgos CF": "Burgos",
+    "Cadiz CF": "Cadiz",
+    "CD Castellon": "Castellon",
+    "CD Leganes": "Leganes",
+    "CD Mirandes": "Mirandes",
+    "Cordoba CF": "Cordoba",
+    "FC Andorra": "Andorra",
+    "Granada CF": "Granada",
+    "Malaga CF": "Malaga",
+    "RC Deportivo De La Coruna": "La Coruna",
+    "Real Valladolid": "Valladolid",
+    "Real Zaragoza": "Zaragoza",
+    "SD Eibar": "Eibar",
+    "SD Huesca": "Huesca",
+    "UD Almeria": "Almeria",
+    "UD Las Palmas": "Las Palmas",
+    "Charlton Athletic": "Charlton",
+    "Middlesbrough FC": "Middlesbrough",
+    "Millwall FC": "Millwall",
+    "Portsmouth FC": "Portsmouth",
+    "Watford FC": "Watford",
+    "Wrexham AFC": "Wrexham",
+    "AFC Hermannstadt": "FC Hermannstadt",
+    "FC Dinamo Bucuresti 1948": "Dinamo Bucuresti",
+    "FC Farul Constanta": "Farul Constanta",
+    "FC Uta Arad": "UTA Arad",
+    "FC Salzburg": "Salzburg",
+    "Grazer AK 1902": "Grazer AK",
+    "SK Sturm Graz": "Sturm Graz",
+    "SV Ried": "Ried",
+    "Amiens SC": "Amiens",
+    "FC Annecy": "Annecy",
+    "Le Mans FC": "Le Mans",
+    "Red Star FC": "Red Star",
+    "SC Bastia": "Bastia",
+    "FC Lorient": "Lorient",
+    "FC Metz": "Metz",
+    "FC Nantes": "Nantes",
+    "Le Havre AC": "Le Havre",
+    "Toulouse FC": "Toulouse",
+    "Atletico Madrid": "Real Madrid",
+    "Deportivo Alaves": "Alaves",
+    "Elche CF": "Elche",
+    "FC Barcelona": "Barcelona",
+    "Getafe CF": "Getafe",
+    "Girona FC": "Girona",
+    "Levante UD": "Levante",
+    "Real Oviedo": "Oviedo",
+    "Sevilla FC": "Sevilla",
+    "Valencia CF": "Valencia",
+    "Villarreal CF": "Villarreal",
+    "Panserraikos FC": "Panserraikos",
+    "AC Milan": "Milan",
+    "Atalanta BC": "Atalanta",
+    "Bologna FC": "Bologna",
+    "Pisa SC": "Pisa",
+    "Torino FC": "Torino",
+    "FC Augsburg": "Augsburg",
+    "FC St. Pauli": "St Pauli",
+    "SC Freiburg": "Freiburg",
+    "Aberdeen FC": "Aberdeen",
+    "Dundee FC": "Dundee",
+    "Falkirk FC": "Falkirk",
+    "Hibernian FC": "Hibernian",
+    "Kilmarnock FC": "Kilmarnock",
+    "Livingston FC": "Livingston",
+    "Motherwell FC": "Motherwell",
+    "St Mirren FC": "St Mirren",
+    "FC Lugano": "Lugano",
+    "FC Luzern": "Luzern",
+    "FC Sion": "Sion",
+    "FC Thun": "Thun",
+    "FC Winterthur": "Winterthur",
+    "FC Zurich": "Zurich",
+    "Young Boys Bern": "Young Boys",
+    "Charlotte FC": "Charlotte",
+    "Inter Miami CF": "Inter Miami",
+    "Minnesota United FC": "Minnesota United",
+    "New York City FC": "New York City",
+    "Orlando City SC": "Orlando City",
+    "Saint Louis City SC": "St. Louis City",
+    "Vancouver Whitecaps FC": "Vancouver Whitecaps",
+    "Fredrikstad FK": "Fredrikstad",
+    "Molde FK": "Molde",
+    "Viking FK": "Viking",
+    "AFC Bournemouth": "Bournemouth",
+    "Arsenal FC": "Arsenal",
+    "Brentford FC": "Brentford",
+    "Burnley FC": "Burnley",
+    "Chelsea FC": "Chelsea",
+    "Everton FC": "Everton",
+    "Fulham FC": "Fulham",
+    "Liverpool FC": "Liverpool",
+    "Sunderland AFC": "Sunderland",
+    "West Ham United": "West Ham"
+  },
+  "review": [
+    {
+      "footballDataId": "SP2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "oddsName": "Albacete Balompie",
+      "bestMatch": "Albacete",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "oddsName": "Racing Santander",
+      "bestMatch": "Santander",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Birmingham City",
+      "bestMatch": "Birmingham",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Blackburn Rovers",
+      "bestMatch": "Blackburn",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Coventry City",
+      "bestMatch": "Coventry",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Derby County",
+      "bestMatch": "Derby",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Hull City",
+      "bestMatch": "Hull",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Leicester City",
+      "bestMatch": "Leicester",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Norwich City",
+      "bestMatch": "Norwich",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Oxford United",
+      "bestMatch": "Oxford",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Stoke City",
+      "bestMatch": "Stoke",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E1",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "oddsName": "Swansea City",
+      "bestMatch": "Swansea",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "ROU",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "oddsName": "FC CFR 1907 Cluj",
+      "bestMatch": "CFR Cluj",
+      "score": 0.6666666666666666,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "ROU",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "oddsName": "FC Petrolul Ploiesti",
+      "bestMatch": "Petrolul",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "ROU",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "oddsName": "FC Unirea 2004 Slobozia",
+      "bestMatch": "Unirea Slobozia",
+      "score": 0.6666666666666666,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "ROU",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "oddsName": "Fotbal Club FCSB",
+      "bestMatch": "FCSB",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "ROU",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "oddsName": "Rapid Bucuresti 1923",
+      "bestMatch": "FC Rapid Bucuresti",
+      "score": 0.6666666666666666,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "AUT",
+      "categoryName": "Austria",
+      "tournamentName": "Bundesliga",
+      "oddsName": "LASK Linz",
+      "bestMatch": "LASK",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "AUT",
+      "categoryName": "Austria",
+      "tournamentName": "Bundesliga",
+      "oddsName": "SCR Altach",
+      "bestMatch": "Altach",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "AUT",
+      "categoryName": "Austria",
+      "tournamentName": "Bundesliga",
+      "oddsName": "TSV Hartberg",
+      "bestMatch": "Hartberg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "AUT",
+      "categoryName": "Austria",
+      "tournamentName": "Bundesliga",
+      "oddsName": "WSG Tirol",
+      "bestMatch": "Tirol",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "EA Guingamp",
+      "bestMatch": "Guingamp",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "ESTAC Troyes",
+      "bestMatch": "Troyes",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "Grenoble Foot",
+      "bestMatch": "Grenoble",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "Montpellier HSC",
+      "bestMatch": "Montpellier",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "Nancy-Lorraine",
+      "bestMatch": "Nancy",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "Stade Reims",
+      "bestMatch": "Reims",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "US Boulogne",
+      "bestMatch": "Boulogne",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "oddsName": "USL Dunkerque",
+      "bestMatch": "Dunkerque",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "AJ Auxerre",
+      "bestMatch": "Auxerre",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Angers SCO",
+      "bestMatch": "Angers",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "AS Monaco",
+      "bestMatch": "Monaco",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Lille OSC",
+      "bestMatch": "Lille",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "OGC Nice",
+      "bestMatch": "Nice",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Olympique Lyon",
+      "bestMatch": "Lyon",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Olympique Marseille",
+      "bestMatch": "Marseille",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Racing Club De Lens",
+      "bestMatch": "Lens",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "F1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "oddsName": "Strasbourg Alsace",
+      "bestMatch": "Strasbourg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "CA Osasuna",
+      "bestMatch": "Osasuna",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "Espanyol Barcelona",
+      "bestMatch": "Barcelona",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "Rayo Vallecano",
+      "bestMatch": "Vallecano",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "RC Celta de Vigo",
+      "bestMatch": "Celta",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "RCD Mallorca",
+      "bestMatch": "Mallorca",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "Real Betis Seville",
+      "bestMatch": "Betis",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SP1",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "oddsName": "Real Sociedad San Sebastian",
+      "bestMatch": "Sociedad",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "1 FC Kaiserslautern",
+      "bestMatch": "Kaiserslautern",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "1. FC Magdeburg",
+      "bestMatch": "Magdeburg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "Arminia Bielefeld",
+      "bestMatch": "Bielefeld",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "Dynamo Dresden",
+      "bestMatch": "Dresden",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "Eintracht Braunschweig",
+      "bestMatch": "Braunschweig",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "Hannover 96",
+      "bestMatch": "Hannover",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "Hertha BSC",
+      "bestMatch": "Hertha",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "SC Paderborn 07",
+      "bestMatch": "Paderborn",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "SV 07 Elversberg",
+      "bestMatch": "Elversberg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "SV Darmstadt 98",
+      "bestMatch": "Darmstadt",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D2",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "oddsName": "VfL Bochum",
+      "bestMatch": "Bochum",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "AE Kifisia FC",
+      "bestMatch": "Kifisia",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "AEK Athens",
+      "bestMatch": "AEK",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "Aris Thessaloniki",
+      "bestMatch": "Aris",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "Atromitos Athinon",
+      "bestMatch": "Atromitos",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "Panathinaikos Athens",
+      "bestMatch": "Panathinaikos",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "G1",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "oddsName": "PAOK Thessaloniki",
+      "bestMatch": "PAOK",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "ACF Fiorentina",
+      "bestMatch": "Fiorentina",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "AS Roma",
+      "bestMatch": "Roma",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Cagliari Calcio",
+      "bestMatch": "Cagliari",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Como 1907",
+      "bestMatch": "Como",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Genoa CFC",
+      "bestMatch": "Genoa",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Hellas Verona",
+      "bestMatch": "Verona",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Inter Milano",
+      "bestMatch": "Inter",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Juventus Turin",
+      "bestMatch": "Juventus",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Lazio Rome",
+      "bestMatch": "Lazio",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Parma Calcio",
+      "bestMatch": "Parma",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Sassuolo Calcio",
+      "bestMatch": "Sassuolo",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "SSC Napoli",
+      "bestMatch": "Napoli",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "Udinese Calcio",
+      "bestMatch": "Udinese",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "US Cremonese",
+      "bestMatch": "Cremonese",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "I1",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "oddsName": "US Lecce",
+      "bestMatch": "Lecce",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "BK Hacken",
+      "bestMatch": "Hacken",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "Degerfors IF",
+      "bestMatch": "Degerfors",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "Hammarby IF",
+      "bestMatch": "Hammarby",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "IF Brommapojkarna",
+      "bestMatch": "Brommapojkarna",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "IF Elfsborg",
+      "bestMatch": "Elfsborg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "IFK Goteborg",
+      "bestMatch": "Goteborg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "IK Sirius",
+      "bestMatch": "Sirius",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "Kalmar FF",
+      "bestMatch": "Kalmar",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWE",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "oddsName": "Mjallby AIF",
+      "bestMatch": "Mjallby",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "1. FC Heidenheim",
+      "bestMatch": "Heidenheim",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "Bayer Leverkusen",
+      "bestMatch": "Leverkusen",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "Borussia Dortmund",
+      "bestMatch": "Dortmund",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "FSV Mainz",
+      "bestMatch": "Mainz",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "TSG Hoffenheim",
+      "bestMatch": "Hoffenheim",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "VfB Stuttgart",
+      "bestMatch": "Stuttgart",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "D1",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "oddsName": "VFL Wolfsburg",
+      "bestMatch": "Wolfsburg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SC0",
+      "categoryName": "Scotland",
+      "tournamentName": "Premiership",
+      "oddsName": "Celtic Glasgow",
+      "bestMatch": "Celtic",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SC0",
+      "categoryName": "Scotland",
+      "tournamentName": "Premiership",
+      "oddsName": "Glasgow Rangers",
+      "bestMatch": "Rangers",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWZ",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "oddsName": "FC Basel 1893",
+      "bestMatch": "Basel",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWZ",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "oddsName": "FC St. Gallen 1879",
+      "bestMatch": "St. Gallen",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWZ",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "oddsName": "Grasshopper Club Zurich",
+      "bestMatch": "Zurich",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWZ",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "oddsName": "Lausanne-Sport",
+      "bestMatch": "Lausanne",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "SWZ",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "oddsName": "Servette Geneva",
+      "bestMatch": "Servette",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "NOR",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "oddsName": "IK Start",
+      "bestMatch": "Start",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "NOR",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "oddsName": "Kristiansund BK",
+      "bestMatch": "Kristiansund",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "NOR",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "oddsName": "Rosenborg BK",
+      "bestMatch": "Rosenborg",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "NOR",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "oddsName": "Sandefjord Fotball",
+      "bestMatch": "Sandefjord",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "NOR",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "oddsName": "SK Brann",
+      "bestMatch": "Brann",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E0",
+      "categoryName": "England",
+      "tournamentName": "Premier League",
+      "oddsName": "Leeds United",
+      "bestMatch": "Leeds",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E0",
+      "categoryName": "England",
+      "tournamentName": "Premier League",
+      "oddsName": "Newcastle United",
+      "bestMatch": "Newcastle",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    },
+    {
+      "footballDataId": "E0",
+      "categoryName": "England",
+      "tournamentName": "Premier League",
+      "oddsName": "Tottenham Hotspur",
+      "bestMatch": "Tottenham",
+      "score": 0.65,
+      "exactNormalizedMatch": null
+    }
+  ]
 }

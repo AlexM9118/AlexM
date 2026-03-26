@@ -1,5 +1,48 @@
 {
-  "generatedAtUTC": "2026-03-26T00:55:30.532Z",
+  "generatedAtUTC": "2026-03-26T01:04:01.934Z",
+  "algo": {
+    "stopwords": [
+      "fc",
+      "cf",
+      "sc",
+      "ac",
+      "afc",
+      "cd",
+      "ad",
+      "ud",
+      "sd",
+      "rc",
+      "bc",
+      "sv",
+      "ss",
+      "fk",
+      "club",
+      "de",
+      "la",
+      "del",
+      "da",
+      "do",
+      "dos",
+      "das",
+      "the",
+      "real",
+      "atletico",
+      "athletic",
+      "san",
+      "santa",
+      "saint",
+      "st",
+      "sporting",
+      "deportivo",
+      "a",
+      "b",
+      "c",
+      "ii",
+      "iii"
+    ],
+    "autoMinScore": 0.7,
+    "reviewMinScore": 0.55
+  },
   "leagues": [
     {
       "footballDataId": "SP2",
@@ -9,135 +52,135 @@
       "fdTeamsCount": 22,
       "suggestions": [
         {
-          "oddsName": "Sporting Gijon",
-          "bestMatch": "Sp Gijon",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "RC Deportivo De La Coruna",
-          "bestMatch": "La Coruna",
-          "score": 0.4,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Real Sociedad San Sebastian B",
           "bestMatch": "Sociedad B",
-          "score": 0.4,
+          "score": 0.5,
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "AD Ceuta",
-          "bestMatch": "Ceuta",
+          "oddsName": "Sporting Gijon",
+          "bestMatch": "Sp Gijon",
           "score": 0.5,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Albacete Balompie",
           "bestMatch": "Albacete",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Burgos CF",
-          "bestMatch": "Burgos",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Cadiz CF",
-          "bestMatch": "Cadiz",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "CD Castellon",
-          "bestMatch": "Castellon",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "CD Leganes",
-          "bestMatch": "Leganes",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "CD Mirandes",
-          "bestMatch": "Mirandes",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Cordoba CF",
-          "bestMatch": "Cordoba",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Andorra",
-          "bestMatch": "Andorra",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Granada CF",
-          "bestMatch": "Granada",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Malaga CF",
-          "bestMatch": "Malaga",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Racing Santander",
           "bestMatch": "Santander",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "AD Ceuta",
+          "bestMatch": "Ceuta",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Burgos CF",
+          "bestMatch": "Burgos",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Cadiz CF",
+          "bestMatch": "Cadiz",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "CD Castellon",
+          "bestMatch": "Castellon",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "CD Leganes",
+          "bestMatch": "Leganes",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "CD Mirandes",
+          "bestMatch": "Mirandes",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Cordoba CF",
+          "bestMatch": "Cordoba",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Andorra",
+          "bestMatch": "Andorra",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Granada CF",
+          "bestMatch": "Granada",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Malaga CF",
+          "bestMatch": "Malaga",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "RC Deportivo De La Coruna",
+          "bestMatch": "La Coruna",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Real Valladolid",
           "bestMatch": "Valladolid",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Real Zaragoza",
           "bestMatch": "Zaragoza",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SD Eibar",
           "bestMatch": "Eibar",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SD Huesca",
           "bestMatch": "Huesca",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "UD Almeria",
           "bestMatch": "Almeria",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "UD Las Palmas",
           "bestMatch": "Las Palmas",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Cultural Leonesa",
           "bestMatch": "Cultural Leonesa",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Cultural Leonesa"
         }
       ]
@@ -156,129 +199,129 @@
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "West Bromwich Albion",
-          "bestMatch": "West Brom",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Preston North End",
-          "bestMatch": "Preston",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Sheffield Wednesday",
           "bestMatch": "Sheffield United",
           "score": 0.3333333333333333,
           "exactNormalizedMatch": null
         },
         {
+          "oddsName": "West Bromwich Albion",
+          "bestMatch": "West Brom",
+          "score": 0.4,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Preston North End",
+          "bestMatch": "Preston",
+          "score": 0.4833333333333333,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "Birmingham City",
           "bestMatch": "Birmingham",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Blackburn Rovers",
           "bestMatch": "Blackburn",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Charlton Athletic",
-          "bestMatch": "Charlton",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Coventry City",
           "bestMatch": "Coventry",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Derby County",
           "bestMatch": "Derby",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hull City",
           "bestMatch": "Hull",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Leicester City",
           "bestMatch": "Leicester",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Middlesbrough FC",
-          "bestMatch": "Middlesbrough",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Millwall FC",
-          "bestMatch": "Millwall",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Norwich City",
           "bestMatch": "Norwich",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Oxford United",
           "bestMatch": "Oxford",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Portsmouth FC",
-          "bestMatch": "Portsmouth",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Stoke City",
           "bestMatch": "Stoke",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Swansea City",
           "bestMatch": "Swansea",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Charlton Athletic",
+          "bestMatch": "Charlton",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Middlesbrough FC",
+          "bestMatch": "Middlesbrough",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Millwall FC",
+          "bestMatch": "Millwall",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Portsmouth FC",
+          "bestMatch": "Portsmouth",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Watford FC",
           "bestMatch": "Watford",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Wrexham AFC",
           "bestMatch": "Wrexham",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Bristol City",
           "bestMatch": "Bristol City",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Bristol City"
         },
         {
           "oddsName": "Sheffield United",
           "bestMatch": "Sheffield United",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Sheffield United"
         }
       ]
@@ -299,30 +342,6 @@
         {
           "oddsName": "FC Universitatea Cluj",
           "bestMatch": "CFR Cluj",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "AFC Hermannstadt",
-          "bestMatch": "FC Hermannstadt",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "ASC Otelul Galati",
-          "bestMatch": "Otelul",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Petrolul Ploiesti",
-          "bestMatch": "Petrolul",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Fotbal Club FCSB",
-          "bestMatch": "FCSB",
           "score": 0.3333333333333333,
           "exactNormalizedMatch": null
         },
@@ -341,49 +360,73 @@
         {
           "oddsName": "ACS Champions FC Arges",
           "bestMatch": "FC Arges",
-          "score": 0.5,
+          "score": 0.4833333333333333,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "ASC Otelul Galati",
+          "bestMatch": "Otelul",
+          "score": 0.4833333333333333,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Petrolul Ploiesti",
+          "bestMatch": "Petrolul",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Fotbal Club FCSB",
+          "bestMatch": "FCSB",
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC CFR 1907 Cluj",
           "bestMatch": "CFR Cluj",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Dinamo Bucuresti 1948",
-          "bestMatch": "Dinamo Bucuresti",
-          "score": 0.5,
+          "score": 0.6666666666666666,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC Unirea 2004 Slobozia",
           "bestMatch": "Unirea Slobozia",
-          "score": 0.5,
+          "score": 0.6666666666666666,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Rapid Bucuresti 1923",
           "bestMatch": "FC Rapid Bucuresti",
-          "score": 0.5,
+          "score": 0.6666666666666666,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Dinamo Bucuresti 1948",
+          "bestMatch": "Dinamo Bucuresti",
+          "score": 0.8166666666666667,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "AFC Hermannstadt",
+          "bestMatch": "FC Hermannstadt",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC Farul Constanta",
           "bestMatch": "Farul Constanta",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC Uta Arad",
           "bestMatch": "UTA Arad",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC Botosani",
           "bestMatch": "FC Botosani",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "FC Botosani"
         }
       ]
@@ -404,67 +447,67 @@
         {
           "oddsName": "FK Austria Wien",
           "bestMatch": "Austria Vienna",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Salzburg",
-          "bestMatch": "Salzburg",
-          "score": 0.5,
+          "score": 0.3333333333333333,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "LASK Linz",
           "bestMatch": "LASK",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SCR Altach",
           "bestMatch": "Altach",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SV Ried",
-          "bestMatch": "Ried",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "TSV Hartberg",
           "bestMatch": "Hartberg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "WSG Tirol",
           "bestMatch": "Tirol",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Grazer AK 1902",
           "bestMatch": "Grazer AK",
-          "score": 0.6666666666666666,
+          "score": 0.8166666666666667,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SK Sturm Graz",
           "bestMatch": "Sturm Graz",
-          "score": 0.6666666666666666,
+          "score": 0.8166666666666667,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Salzburg",
+          "bestMatch": "Salzburg",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SV Ried",
+          "bestMatch": "Ried",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SK Rapid",
           "bestMatch": "SK Rapid",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "SK Rapid"
         },
         {
           "oddsName": "Wolfsberger AC",
           "bestMatch": "Wolfsberger AC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Wolfsberger AC"
         }
       ]
@@ -478,110 +521,110 @@
       "suggestions": [
         {
           "oddsName": "Stade Lavallois MFC",
-          "bestMatch": "Amiens",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "AS Saint-Etienne",
-          "bestMatch": "St Etienne",
-          "score": 0.25,
+          "bestMatch": "Laval",
+          "score": 0.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Clermont Foot 63",
           "bestMatch": "Clermont",
-          "score": 0.3333333333333333,
+          "score": 0.4833333333333333,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Rodez Aveyron Football",
           "bestMatch": "Rodez",
-          "score": 0.3333333333333333,
+          "score": 0.4833333333333333,
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "Amiens SC",
-          "bestMatch": "Amiens",
+          "oddsName": "AS Saint-Etienne",
+          "bestMatch": "St Etienne",
           "score": 0.5,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "EA Guingamp",
           "bestMatch": "Guingamp",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "ESTAC Troyes",
           "bestMatch": "Troyes",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Annecy",
-          "bestMatch": "Annecy",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Grenoble Foot",
           "bestMatch": "Grenoble",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Montpellier HSC",
           "bestMatch": "Montpellier",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Nancy-Lorraine",
           "bestMatch": "Nancy",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SC Bastia",
-          "bestMatch": "Bastia",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Stade Reims",
           "bestMatch": "Reims",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "US Boulogne",
           "bestMatch": "Boulogne",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "USL Dunkerque",
           "bestMatch": "Dunkerque",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Amiens SC",
+          "bestMatch": "Amiens",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Annecy",
+          "bestMatch": "Annecy",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Le Mans FC",
           "bestMatch": "Le Mans",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Red Star FC",
           "bestMatch": "Red Star",
-          "score": 0.6666666666666666,
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SC Bastia",
+          "bestMatch": "Bastia",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Pau FC",
           "bestMatch": "Pau FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Pau FC"
         }
       ]
@@ -594,111 +637,111 @@
       "fdTeamsCount": 18,
       "suggestions": [
         {
-          "oddsName": "Paris Saint-Germain",
-          "bestMatch": "Paris FC",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Racing Club De Lens",
-          "bestMatch": "Lens",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Stade Rennais FC",
-          "bestMatch": "Paris FC",
-          "score": 0.25,
+          "bestMatch": "Angers",
+          "score": 0,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Stade Brest 29",
           "bestMatch": "Brest",
-          "score": 0.3333333333333333,
+          "score": 0.4833333333333333,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Paris Saint-Germain",
+          "bestMatch": "Paris FC",
+          "score": 0.5,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "AJ Auxerre",
           "bestMatch": "Auxerre",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Angers SCO",
           "bestMatch": "Angers",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "AS Monaco",
           "bestMatch": "Monaco",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Lorient",
-          "bestMatch": "Lorient",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Metz",
-          "bestMatch": "Metz",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Nantes",
-          "bestMatch": "Nantes",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Lille OSC",
           "bestMatch": "Lille",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "OGC Nice",
           "bestMatch": "Nice",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Olympique Lyon",
           "bestMatch": "Lyon",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Olympique Marseille",
           "bestMatch": "Marseille",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Racing Club De Lens",
+          "bestMatch": "Lens",
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Strasbourg Alsace",
           "bestMatch": "Strasbourg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "Toulouse FC",
-          "bestMatch": "Toulouse",
-          "score": 0.5,
+          "oddsName": "FC Lorient",
+          "bestMatch": "Lorient",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Metz",
+          "bestMatch": "Metz",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Nantes",
+          "bestMatch": "Nantes",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Le Havre AC",
           "bestMatch": "Le Havre",
-          "score": 0.6666666666666666,
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Toulouse FC",
+          "bestMatch": "Toulouse",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Paris FC",
           "bestMatch": "Paris FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Paris FC"
         }
       ]
@@ -711,123 +754,123 @@
       "fdTeamsCount": 20,
       "suggestions": [
         {
-          "oddsName": "RC Celta de Vigo",
-          "bestMatch": "Celta",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Real Sociedad San Sebastian",
-          "bestMatch": "Sociedad",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Athletic Bilbao",
           "bestMatch": "Ath Bilbao",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Atletico Madrid",
-          "bestMatch": "Ath Madrid",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Real Betis Seville",
-          "bestMatch": "Betis",
-          "score": 0.3333333333333333,
+          "score": 0.5,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "CA Osasuna",
           "bestMatch": "Osasuna",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Deportivo Alaves",
-          "bestMatch": "Alaves",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Elche CF",
-          "bestMatch": "Elche",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Espanyol Barcelona",
           "bestMatch": "Barcelona",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Barcelona",
-          "bestMatch": "Barcelona",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Getafe CF",
-          "bestMatch": "Getafe",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Girona FC",
-          "bestMatch": "Girona",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Levante UD",
-          "bestMatch": "Levante",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Rayo Vallecano",
           "bestMatch": "Vallecano",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "RC Celta de Vigo",
+          "bestMatch": "Celta",
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "RCD Mallorca",
           "bestMatch": "Mallorca",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Real Betis Seville",
+          "bestMatch": "Betis",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Real Sociedad San Sebastian",
+          "bestMatch": "Sociedad",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Atletico Madrid",
+          "bestMatch": "Real Madrid",
+          "score": 1,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Deportivo Alaves",
+          "bestMatch": "Alaves",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Elche CF",
+          "bestMatch": "Elche",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Barcelona",
+          "bestMatch": "Barcelona",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Getafe CF",
+          "bestMatch": "Getafe",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Girona FC",
+          "bestMatch": "Girona",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Levante UD",
+          "bestMatch": "Levante",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Real Oviedo",
           "bestMatch": "Oviedo",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Sevilla FC",
           "bestMatch": "Sevilla",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Valencia CF",
           "bestMatch": "Valencia",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Villarreal CF",
           "bestMatch": "Villarreal",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Real Madrid",
           "bestMatch": "Real Madrid",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Real Madrid"
         }
       ]
@@ -846,105 +889,105 @@
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "Karlsruher SC",
-          "bestMatch": "Bielefeld",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "SC Preussen 06 Munster",
           "bestMatch": "Bielefeld",
           "score": 0,
           "exactNormalizedMatch": null
         },
         {
+          "oddsName": "Karlsruher SC",
+          "bestMatch": "Karlsruhe",
+          "score": 0.15,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "1 FC Kaiserslautern",
           "bestMatch": "Kaiserslautern",
-          "score": 0.3333333333333333,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "1. FC Magdeburg",
           "bestMatch": "Magdeburg",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SC Paderborn 07",
-          "bestMatch": "Paderborn",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SV 07 Elversberg",
-          "bestMatch": "Elversberg",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SV Darmstadt 98",
-          "bestMatch": "Darmstadt",
-          "score": 0.3333333333333333,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Arminia Bielefeld",
           "bestMatch": "Bielefeld",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Dynamo Dresden",
           "bestMatch": "Dresden",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Eintracht Braunschweig",
           "bestMatch": "Braunschweig",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hannover 96",
           "bestMatch": "Hannover",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hertha BSC",
           "bestMatch": "Hertha",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SC Paderborn 07",
+          "bestMatch": "Paderborn",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SV 07 Elversberg",
+          "bestMatch": "Elversberg",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SV Darmstadt 98",
+          "bestMatch": "Darmstadt",
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "VfL Bochum",
           "bestMatch": "Bochum",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Fortuna Dusseldorf",
           "bestMatch": "Fortuna Dusseldorf",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Fortuna Dusseldorf"
         },
         {
           "oddsName": "Greuther Furth",
           "bestMatch": "Greuther Furth",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Greuther Furth"
         },
         {
           "oddsName": "Holstein Kiel",
           "bestMatch": "Holstein Kiel",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Holstein Kiel"
         },
         {
           "oddsName": "Schalke 04",
           "bestMatch": "Schalke 04",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Schalke 04"
         }
       ]
@@ -956,12 +999,6 @@
       "oddsTeamsCount": 14,
       "fdTeamsCount": 14,
       "suggestions": [
-        {
-          "oddsName": "AE Larissa FC",
-          "bestMatch": "AEK",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
         {
           "oddsName": "APO Levadiakos FC",
           "bestMatch": "AEK",
@@ -981,9 +1018,9 @@
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "AE Kifisia FC",
-          "bestMatch": "Kifisia",
-          "score": 0.3333333333333333,
+          "oddsName": "AE Larissa FC",
+          "bestMatch": "Aris",
+          "score": 0.15,
           "exactNormalizedMatch": null
         },
         {
@@ -993,51 +1030,57 @@
           "exactNormalizedMatch": null
         },
         {
+          "oddsName": "AE Kifisia FC",
+          "bestMatch": "Kifisia",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "AEK Athens",
           "bestMatch": "AEK",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Aris Thessaloniki",
           "bestMatch": "Aris",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Atromitos Athinon",
           "bestMatch": "Atromitos",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Panathinaikos Athens",
           "bestMatch": "Panathinaikos",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Panserraikos FC",
-          "bestMatch": "Panserraikos",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "PAOK Thessaloniki",
           "bestMatch": "PAOK",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Panserraikos FC",
+          "bestMatch": "Panserraikos",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Asteras Tripolis",
           "bestMatch": "Asteras Tripolis",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Asteras Tripolis"
         },
         {
           "oddsName": "OFI Crete",
           "bestMatch": "OFI Crete",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "OFI Crete"
         }
       ]
@@ -1050,123 +1093,123 @@
       "fdTeamsCount": 20,
       "suggestions": [
         {
-          "oddsName": "AC Milan",
-          "bestMatch": "Milan",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "ACF Fiorentina",
           "bestMatch": "Fiorentina",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "AS Roma",
           "bestMatch": "Roma",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Atalanta BC",
-          "bestMatch": "Atalanta",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Bologna FC",
-          "bestMatch": "Bologna",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Cagliari Calcio",
           "bestMatch": "Cagliari",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Como 1907",
           "bestMatch": "Como",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Genoa CFC",
           "bestMatch": "Genoa",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hellas Verona",
           "bestMatch": "Verona",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Inter Milano",
           "bestMatch": "Inter",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Juventus Turin",
           "bestMatch": "Juventus",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Lazio Rome",
           "bestMatch": "Lazio",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Parma Calcio",
           "bestMatch": "Parma",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Pisa SC",
-          "bestMatch": "Pisa",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Sassuolo Calcio",
           "bestMatch": "Sassuolo",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SSC Napoli",
           "bestMatch": "Napoli",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Torino FC",
-          "bestMatch": "Torino",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Udinese Calcio",
           "bestMatch": "Udinese",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "US Cremonese",
           "bestMatch": "Cremonese",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "US Lecce",
           "bestMatch": "Lecce",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "AC Milan",
+          "bestMatch": "Milan",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Atalanta BC",
+          "bestMatch": "Atalanta",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Bologna FC",
+          "bestMatch": "Bologna",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Pisa SC",
+          "bestMatch": "Pisa",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Torino FC",
+          "bestMatch": "Torino",
+          "score": 1.15,
           "exactNormalizedMatch": null
         }
       ]
@@ -1179,21 +1222,21 @@
       "fdTeamsCount": 35,
       "suggestions": [
         {
-          "oddsName": "Djurgardens IF",
+          "oddsName": "Orgryte IS",
           "bestMatch": "AFC Eskilstuna",
           "score": 0,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Djurgardens IF",
+          "bestMatch": "Djurgarden",
+          "score": 0.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Halmstads BK",
-          "bestMatch": "AFC Eskilstuna",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Orgryte IS",
-          "bestMatch": "AFC Eskilstuna",
-          "score": 0,
+          "bestMatch": "Halmstad",
+          "score": 0.15,
           "exactNormalizedMatch": null
         },
         {
@@ -1205,73 +1248,73 @@
         {
           "oddsName": "BK Hacken",
           "bestMatch": "Hacken",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Degerfors IF",
           "bestMatch": "Degerfors",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hammarby IF",
           "bestMatch": "Hammarby",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "IF Brommapojkarna",
           "bestMatch": "Brommapojkarna",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "IF Elfsborg",
           "bestMatch": "Elfsborg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "IFK Goteborg",
           "bestMatch": "Goteborg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "IK Sirius",
           "bestMatch": "Sirius",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Kalmar FF",
           "bestMatch": "Kalmar",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Mjallby AIF",
           "bestMatch": "Mjallby",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "AIK",
           "bestMatch": "AIK",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "AIK"
         },
         {
           "oddsName": "GAIS",
           "bestMatch": "GAIS",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "GAIS"
         },
         {
           "oddsName": "Malmo FF",
           "bestMatch": "Malmo FF",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Malmo FF"
         }
       ]
@@ -1284,6 +1327,12 @@
       "fdTeamsCount": 18,
       "suggestions": [
         {
+          "oddsName": "1. FC Cologne",
+          "bestMatch": "Augsburg",
+          "score": 0,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "Borussia Monchengladbach",
           "bestMatch": "Augsburg",
           "score": 0,
@@ -1291,20 +1340,8 @@
         },
         {
           "oddsName": "Hamburger SV",
-          "bestMatch": "Augsburg",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "1. FC Cologne",
-          "bestMatch": "FC Koln",
-          "score": 0.25,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "1. FC Heidenheim",
-          "bestMatch": "Heidenheim",
-          "score": 0.3333333333333333,
+          "bestMatch": "Hamburg",
+          "score": 0.15,
           "exactNormalizedMatch": null
         },
         {
@@ -1314,81 +1351,87 @@
           "exactNormalizedMatch": null
         },
         {
+          "oddsName": "1. FC Heidenheim",
+          "bestMatch": "Heidenheim",
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "Bayer Leverkusen",
           "bestMatch": "Leverkusen",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Borussia Dortmund",
           "bestMatch": "Dortmund",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Augsburg",
-          "bestMatch": "Augsburg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FSV Mainz",
           "bestMatch": "Mainz",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "SC Freiburg",
-          "bestMatch": "Freiburg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "TSG Hoffenheim",
           "bestMatch": "Hoffenheim",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "VfB Stuttgart",
           "bestMatch": "Stuttgart",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "VFL Wolfsburg",
           "bestMatch": "Wolfsburg",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Augsburg",
+          "bestMatch": "Augsburg",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC St. Pauli",
           "bestMatch": "St Pauli",
-          "score": 0.6666666666666666,
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "SC Freiburg",
+          "bestMatch": "Freiburg",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Bayern Munich",
           "bestMatch": "Bayern Munich",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Bayern Munich"
         },
         {
           "oddsName": "RB Leipzig",
           "bestMatch": "RB Leipzig",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "RB Leipzig"
         },
         {
           "oddsName": "Union Berlin",
           "bestMatch": "Union Berlin",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Union Berlin"
         },
         {
           "oddsName": "Werder Bremen",
           "bestMatch": "Werder Bremen",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Werder Bremen"
         }
       ]
@@ -1407,69 +1450,69 @@
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "Aberdeen FC",
-          "bestMatch": "Aberdeen",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Celtic Glasgow",
           "bestMatch": "Celtic",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Dundee FC",
-          "bestMatch": "Dundee",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Falkirk FC",
-          "bestMatch": "Falkirk",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Glasgow Rangers",
           "bestMatch": "Rangers",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Aberdeen FC",
+          "bestMatch": "Aberdeen",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Dundee FC",
+          "bestMatch": "Dundee",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Falkirk FC",
+          "bestMatch": "Falkirk",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Hibernian FC",
           "bestMatch": "Hibernian",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Kilmarnock FC",
           "bestMatch": "Kilmarnock",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Livingston FC",
           "bestMatch": "Livingston",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Motherwell FC",
           "bestMatch": "Motherwell",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "St Mirren FC",
           "bestMatch": "St Mirren",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Dundee United",
           "bestMatch": "Dundee United",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Dundee United"
         }
       ]
@@ -1484,73 +1527,73 @@
         {
           "oddsName": "FC Basel 1893",
           "bestMatch": "Basel",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Grasshopper Club Zurich",
-          "bestMatch": "Zurich",
-          "score": 0.3333333333333333,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Lugano",
-          "bestMatch": "Lugano",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Luzern",
-          "bestMatch": "Luzern",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Sion",
-          "bestMatch": "Sion",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "FC St. Gallen 1879",
           "bestMatch": "St. Gallen",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "FC Thun",
-          "bestMatch": "Thun",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Winterthur",
-          "bestMatch": "Winterthur",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "FC Zurich",
+          "oddsName": "Grasshopper Club Zurich",
           "bestMatch": "Zurich",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Lausanne-Sport",
           "bestMatch": "Lausanne",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Servette Geneva",
           "bestMatch": "Servette",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Young Boys Bern",
           "bestMatch": "Young Boys",
-          "score": 0.6666666666666666,
+          "score": 0.8166666666666667,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Lugano",
+          "bestMatch": "Lugano",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Luzern",
+          "bestMatch": "Luzern",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Sion",
+          "bestMatch": "Sion",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Thun",
+          "bestMatch": "Thun",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Winterthur",
+          "bestMatch": "Winterthur",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "FC Zurich",
+          "bestMatch": "Zurich",
+          "score": 1.15,
           "exactNormalizedMatch": null
         }
       ]
@@ -1565,181 +1608,181 @@
         {
           "oddsName": "Atlanta United FC",
           "bestMatch": "Atlanta Utd",
-          "score": 0.25,
+          "score": 0.3333333333333333,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Saint Louis City SC",
           "bestMatch": "St. Louis City",
-          "score": 0.4,
+          "score": 1,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Charlotte FC",
           "bestMatch": "Charlotte",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Inter Miami CF",
           "bestMatch": "Inter Miami",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Minnesota United FC",
           "bestMatch": "Minnesota United",
-          "score": 0.6666666666666666,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Orlando City SC",
-          "bestMatch": "Orlando City",
-          "score": 0.6666666666666666,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Vancouver Whitecaps FC",
-          "bestMatch": "Vancouver Whitecaps",
-          "score": 0.6666666666666666,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "New York City FC",
           "bestMatch": "New York City",
-          "score": 0.75,
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Orlando City SC",
+          "bestMatch": "Orlando City",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Vancouver Whitecaps FC",
+          "bestMatch": "Vancouver Whitecaps",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Austin FC",
           "bestMatch": "Austin FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Austin FC"
         },
         {
           "oddsName": "CF Montreal",
           "bestMatch": "CF Montreal",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "CF Montreal"
         },
         {
           "oddsName": "Chicago Fire",
           "bestMatch": "Chicago Fire",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Chicago Fire"
         },
         {
           "oddsName": "Colorado Rapids",
           "bestMatch": "Colorado Rapids",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Colorado Rapids"
         },
         {
           "oddsName": "Columbus Crew",
           "bestMatch": "Columbus Crew",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Columbus Crew"
         },
         {
           "oddsName": "DC United",
           "bestMatch": "DC United",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "DC United"
         },
         {
           "oddsName": "FC Cincinnati",
           "bestMatch": "FC Cincinnati",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "FC Cincinnati"
         },
         {
           "oddsName": "FC Dallas",
           "bestMatch": "FC Dallas",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "FC Dallas"
         },
         {
           "oddsName": "Houston Dynamo",
           "bestMatch": "Houston Dynamo",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Houston Dynamo"
         },
         {
           "oddsName": "Los Angeles FC",
           "bestMatch": "Los Angeles FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Los Angeles FC"
         },
         {
           "oddsName": "Los Angeles Galaxy",
           "bestMatch": "Los Angeles Galaxy",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Los Angeles Galaxy"
         },
         {
           "oddsName": "Nashville SC",
           "bestMatch": "Nashville SC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Nashville SC"
         },
         {
           "oddsName": "New England Revolution",
           "bestMatch": "New England Revolution",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "New England Revolution"
         },
         {
           "oddsName": "New York Red Bulls",
           "bestMatch": "New York Red Bulls",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "New York Red Bulls"
         },
         {
           "oddsName": "Philadelphia Union",
           "bestMatch": "Philadelphia Union",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Philadelphia Union"
         },
         {
           "oddsName": "Portland Timbers",
           "bestMatch": "Portland Timbers",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Portland Timbers"
         },
         {
           "oddsName": "Real Salt Lake",
           "bestMatch": "Real Salt Lake",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Real Salt Lake"
         },
         {
           "oddsName": "San Diego FC",
           "bestMatch": "San Diego FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "San Diego FC"
         },
         {
           "oddsName": "San Jose Earthquakes",
           "bestMatch": "San Jose Earthquakes",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "San Jose Earthquakes"
         },
         {
           "oddsName": "Seattle Sounders",
           "bestMatch": "Seattle Sounders",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Seattle Sounders"
         },
         {
           "oddsName": "Sporting Kansas City",
           "bestMatch": "Sporting Kansas City",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Sporting Kansas City"
         },
         {
           "oddsName": "Toronto FC",
           "bestMatch": "Toronto FC",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Toronto FC"
         }
       ]
@@ -1752,19 +1795,7 @@
       "fdTeamsCount": 31,
       "suggestions": [
         {
-          "oddsName": "Aalesunds FK",
-          "bestMatch": "Aalesund",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "Lillestroem SK",
-          "bestMatch": "Aalesund",
-          "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Tromsoe IL",
           "bestMatch": "Aalesund",
           "score": 0,
           "exactNormalizedMatch": null
@@ -1776,75 +1807,87 @@
           "exactNormalizedMatch": null
         },
         {
+          "oddsName": "Aalesunds FK",
+          "bestMatch": "Aalesund",
+          "score": 0.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Tromsoe IL",
+          "bestMatch": "Tromso",
+          "score": 0.15,
+          "exactNormalizedMatch": null
+        },
+        {
           "oddsName": "Bodoe/Glimt",
           "bestMatch": "Bodo/Glimt",
           "score": 0.3333333333333333,
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "Fredrikstad FK",
-          "bestMatch": "Fredrikstad",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
           "oddsName": "IK Start",
           "bestMatch": "Start",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Kristiansund BK",
           "bestMatch": "Kristiansund",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Molde FK",
-          "bestMatch": "Molde",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Rosenborg BK",
           "bestMatch": "Rosenborg",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Sandefjord Fotball",
           "bestMatch": "Sandefjord",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "SK Brann",
           "bestMatch": "Brann",
-          "score": 0.5,
+          "score": 0.65,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Fredrikstad FK",
+          "bestMatch": "Fredrikstad",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Molde FK",
+          "bestMatch": "Molde",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Viking FK",
           "bestMatch": "Viking",
-          "score": 0.5,
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "HamKam",
           "bestMatch": "HamKam",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "HamKam"
         },
         {
           "oddsName": "KFUM Oslo",
           "bestMatch": "KFUM Oslo",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "KFUM Oslo"
         },
         {
           "oddsName": "Sarpsborg 08",
           "bestMatch": "Sarpsborg 08",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Sarpsborg 08"
         }
       ]
@@ -1860,12 +1903,6 @@
           "oddsName": "Wolverhampton Wanderers",
           "bestMatch": "Arsenal",
           "score": 0,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Brighton & Hove Albion",
-          "bestMatch": "Brighton",
-          "score": 0.25,
           "exactNormalizedMatch": null
         },
         {
@@ -1887,93 +1924,99 @@
           "exactNormalizedMatch": null
         },
         {
-          "oddsName": "AFC Bournemouth",
-          "bestMatch": "Bournemouth",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Arsenal FC",
-          "bestMatch": "Arsenal",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Brentford FC",
-          "bestMatch": "Brentford",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Burnley FC",
-          "bestMatch": "Burnley",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Chelsea FC",
-          "bestMatch": "Chelsea",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Everton FC",
-          "bestMatch": "Everton",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Fulham FC",
-          "bestMatch": "Fulham",
-          "score": 0.5,
+          "oddsName": "Brighton & Hove Albion",
+          "bestMatch": "Brighton",
+          "score": 0.4,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Leeds United",
           "bestMatch": "Leeds",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Liverpool FC",
-          "bestMatch": "Liverpool",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Newcastle United",
           "bestMatch": "Newcastle",
-          "score": 0.5,
-          "exactNormalizedMatch": null
-        },
-        {
-          "oddsName": "Sunderland AFC",
-          "bestMatch": "Sunderland",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Tottenham Hotspur",
           "bestMatch": "Tottenham",
-          "score": 0.5,
+          "score": 0.65,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "West Ham United",
           "bestMatch": "West Ham",
-          "score": 0.6666666666666666,
+          "score": 0.8166666666666667,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "AFC Bournemouth",
+          "bestMatch": "Bournemouth",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Arsenal FC",
+          "bestMatch": "Arsenal",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Brentford FC",
+          "bestMatch": "Brentford",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Burnley FC",
+          "bestMatch": "Burnley",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Chelsea FC",
+          "bestMatch": "Chelsea",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Everton FC",
+          "bestMatch": "Everton",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Fulham FC",
+          "bestMatch": "Fulham",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Liverpool FC",
+          "bestMatch": "Liverpool",
+          "score": 1.15,
+          "exactNormalizedMatch": null
+        },
+        {
+          "oddsName": "Sunderland AFC",
+          "bestMatch": "Sunderland",
+          "score": 1.15,
           "exactNormalizedMatch": null
         },
         {
           "oddsName": "Aston Villa",
           "bestMatch": "Aston Villa",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Aston Villa"
         },
         {
           "oddsName": "Crystal Palace",
           "bestMatch": "Crystal Palace",
-          "score": 1,
+          "score": 1.3,
           "exactNormalizedMatch": "Crystal Palace"
         }
       ]
