@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-26T11:56:38.258Z",
+  "generatedAtUTC": "2026-03-26T12:09:35.307Z",
   "lookback": 5,
   "matchesTotal": 285,
   "leagues": [
@@ -43,11 +43,11 @@
         "F1"
       ],
       "total": 18,
-      "ok": 14,
-      "okPct": 77.8,
+      "ok": 16,
+      "okPct": 88.9,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 4,
+      "missingTeams": 2,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -59,11 +59,11 @@
         "D1"
       ],
       "total": 18,
-      "ok": 13,
-      "okPct": 72.2,
+      "ok": 16,
+      "okPct": 88.9,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 5,
+      "missingTeams": 2,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -103,11 +103,11 @@
         "ROU"
       ],
       "total": 15,
-      "ok": 5,
-      "okPct": 33.3,
+      "ok": 15,
+      "okPct": 100,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 10,
+      "missingTeams": 0,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -119,11 +119,11 @@
         "USA"
       ],
       "total": 15,
-      "ok": 5,
-      "okPct": 33.3,
+      "ok": 14,
+      "okPct": 93.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 10,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -183,11 +183,11 @@
         "E0"
       ],
       "total": 10,
-      "ok": 8,
-      "okPct": 80,
+      "ok": 9,
+      "okPct": 90,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 2,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -213,11 +213,11 @@
         "F2"
       ],
       "total": 9,
-      "ok": 1,
-      "okPct": 11.1,
+      "ok": 2,
+      "okPct": 22.2,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 8,
+      "missingTeams": 7,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -404,23 +404,8 @@
   ],
   "topMissingTeams": [
     {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "FC Botosani",
-      "count": 2
-    },
-    {
       "leagueKey": "France | Ligue 1",
       "teamName": "Paris Saint-Germain",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "AFC Hermannstadt",
-      "count": 2
-    },
-    {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "Borussia Monchengladbach",
       "count": 2
     },
     {
@@ -434,18 +419,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "ACS Champions FC Arges",
-      "count": 2
-    },
-    {
       "leagueKey": "Scotland | Premiership",
       "teamName": "Heart of Midlothian FC",
-      "count": 2
-    },
-    {
-      "leagueKey": "France | Ligue 1",
-      "teamName": "Paris FC",
       "count": 2
     },
     {
@@ -454,23 +429,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Germany | Bundesliga",
-      "teamName": "1. FC Cologne",
-      "count": 2
-    },
-    {
       "leagueKey": "Scotland | Premiership",
       "teamName": "Celtic Glasgow",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "Rapid Bucuresti 1923",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "AFK Csikszereda Miercurea Ciuc",
       "count": 2
     },
     {
@@ -714,18 +674,8 @@
       "count": 1
     },
     {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "Wolfsberger AC",
-      "count": 1
-    },
-    {
       "leagueKey": "Switzerland | Super League",
       "teamName": "Lausanne-Sport",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "Toronto FC",
       "count": 1
     },
     {
@@ -750,47 +700,7 @@
     },
     {
       "leagueKey": "USA | MLS",
-      "teamName": "CF Montreal",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "Austin FC",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "FC Cincinnati",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
       "teamName": "Atlanta United FC",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "Saint Louis City SC",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "FC Dallas",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "Nashville SC",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "Los Angeles FC",
-      "count": 1
-    },
-    {
-      "leagueKey": "USA | MLS",
-      "teamName": "San Diego FC",
       "count": 1
     },
     {
@@ -864,11 +774,6 @@
       "count": 1
     },
     {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "FC Universitatea Cluj",
-      "count": 1
-    },
-    {
       "leagueKey": "Sweden | Allsvenskan",
       "teamName": "IF Elfsborg",
       "count": 1
@@ -939,16 +844,6 @@
       "count": 1
     },
     {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "CS Universitatea Craiova",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Pau FC",
-      "count": 1
-    },
-    {
       "leagueKey": "Norway | Eliteserien",
       "teamName": "Aalesunds FK",
       "count": 1
@@ -961,11 +856,6 @@
     {
       "leagueKey": "England | Premier League",
       "teamName": "Brighton & Hove Albion",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Premier League",
-      "teamName": "Nottingham Forest",
       "count": 1
     }
   ]
