@@ -1,5 +1,13 @@
 const el = (id) => document.getElementById(id);
 
+const SAFE_THRESHOLD = 0.62;
+
+// lines you asked for goals
+const GOALS_LINES = [1.5, 2.5, 3.5, 4.5];
+// useful default lines for corners/cards
+const CORNERS_LINES = [8.5, 9.5, 10.5];
+const CARDS_LINES = [3.5, 4.5, 5.5];
+
 function setStatus(text, ok = true) {
   const t = el("statusText");
   const d = el("statusDot");
@@ -97,9 +105,7 @@ function renderOtherMarkets(markets, usedMarketIds) {
   box.textContent = lines.join("\n");
 }
 
-/* -----------------------------
-   Odds heuristics
------------------------------- */
+/* Odds heuristics */
 function pickLikely1X2(markets) {
   for (const m of markets || []) {
     const uniqOutcomeIds = Array.from(new Set((m.outcomes || []).map((o) => o.outcomeId)));
@@ -107,7 +113,6 @@ function pickLikely1X2(markets) {
   }
   return null;
 }
-
 function pickLikelyBTTS(markets, excludeIds = new Set()) {
   for (const m of markets || []) {
     if (excludeIds.has(String(m.marketId))) continue;
@@ -127,9 +132,7 @@ function pickLikelyBTTS(markets, excludeIds = new Set()) {
   return null;
 }
 
-/* -----------------------------
-   Poisson model helpers
------------------------------- */
+/* Poisson helpers */
 function factorial(n) {
   let f = 1;
   for (let i = 2; i <= n; i++) f *= i;
@@ -145,11 +148,10 @@ function poissonCDF(k, lambda) {
 }
 function probTotalOver(line, lambdaTotal) {
   // Over 2.5 => total >= 3
-  const threshold = Math.floor(line) + 1; // 1.5->2, 2.5->3, 3.5->4...
+  const threshold = Math.floor(line) + 1;
   return 1 - poissonCDF(threshold - 1, lambdaTotal);
 }
 function probBTTS(lambdaHome, lambdaAway) {
-  // P(H>=1 and A>=1) = 1 - P(H=0) - P(A=0) + P(H=0,A=0)
   const pH0 = Math.exp(-lambdaHome);
   const pA0 = Math.exp(-lambdaAway);
   const p00 = Math.exp(-(lambdaHome + lambdaAway));
@@ -162,12 +164,7 @@ function safeAvg(a, b) {
   return (x + y) / 2;
 }
 
-/**
- * Estimate lambdas from last5 stats:
- * home expected goals ≈ avg(home homeGF, away awayGA)
- * away expected goals ≈ avg(away awayGF, home homeGA)
- */
-function estimateLambdasFromLast5(entry) {
+function estimateLambdasGoals(entry) {
   const hs = entry?.homeStats;
   const as = entry?.awayStats;
   if (!hs || !as) return null;
@@ -183,9 +180,37 @@ function estimateLambdasFromLast5(entry) {
   return { lamHome, lamAway, lamTotal: lamHome + lamAway, minHome, minAway };
 }
 
-/* -----------------------------
-   Data + UI state
------------------------------- */
+function estimateLambdasCorners(entry) {
+  const hs = entry?.homeStats;
+  const as = entry?.awayStats;
+  if (!hs || !as) return null;
+
+  const lamHome = safeAvg(hs.homeCornersFor, as.awayCornersAgainst);
+  const lamAway = safeAvg(as.awayCornersFor, hs.homeCornersAgainst);
+
+  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
+
+  // If corners are missing in CSV, these will be 0 or null. Guard:
+  if (lamHome === 0 && lamAway === 0) return null;
+
+  return { lamHome, lamAway, lamTotal: lamHome + lamAway };
+}
+
+function estimateLambdasCards(entry) {
+  const hs = entry?.homeStats;
+  const as = entry?.awayStats;
+  if (!hs || !as) return null;
+
+  const lamHome = safeAvg(hs.homeYCFor, as.awayYCAgainst);
+  const lamAway = safeAvg(as.awayYCFor, hs.homeYCAgainst);
+
+  if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
+  if (lamHome === 0 && lamAway === 0) return null;
+
+  return { lamHome, lamAway, lamTotal: lamHome + lamAway };
+}
+
+/* Data state */
 let UI = { index: null, leagues: [], matches: [] };
 let HIST = null;
 let current = { leagueId: null, day: null, fixtureId: null };
@@ -199,7 +224,6 @@ async function loadUiData() {
   HIST = await getJson("./data/ui/history_stats.json");
 
   UI.index = idx;
-
   UI.leagues = (leaguesObj.leagues || []).map((l) => ({
     id: String(l.id),
     name: l.name || l.id,
@@ -226,25 +250,23 @@ async function loadUiData() {
 function renderLeagueSelect() {
   const sel = el("leagueSel");
   if (!sel) return;
-
   sel.innerHTML = "";
-  const list = UI.leagues.slice().sort((a, b) => byStr(a.categoryName + a.name, b.categoryName + b.name));
 
+  const list = UI.leagues.slice().sort((a, b) => byStr(a.categoryName + a.name, b.categoryName + b.name));
   for (const l of list) {
     const opt = document.createElement("option");
     opt.value = l.id;
     opt.textContent = l.categoryName ? `${l.categoryName} - ${l.name}` : l.name;
     sel.appendChild(opt);
   }
-
   if (current.leagueId) sel.value = current.leagueId;
 }
 
 function renderDaySelect() {
   const sel = el("daySel");
   if (!sel) return;
-
   sel.innerHTML = "";
+
   const days = UI.index?.days || [];
   for (const d of days) {
     const opt = document.createElement("option");
@@ -252,7 +274,6 @@ function renderDaySelect() {
     opt.textContent = d;
     sel.appendChild(opt);
   }
-
   if (current.day) sel.value = current.day;
 }
 
@@ -272,10 +293,7 @@ function renderMatchesList() {
   const list = filteredMatches();
 
   if (!list.length) {
-    const d = document.createElement("div");
-    d.className = "muted";
-    d.textContent = "Nu există meciuri pentru liga/ziua selectată.";
-    box.appendChild(d);
+    box.textContent = "Nu există meciuri pentru liga/ziua selectată.";
     return;
   }
 
@@ -307,9 +325,12 @@ function renderMatchesList() {
   }
 }
 
-function renderHistoryPanels(fixtureId) {
-  const entry = HIST?.byFixtureId?.[String(fixtureId)] || null;
+function getHistEntry(fixtureId) {
+  return HIST?.byFixtureId?.[String(fixtureId)] || null;
+}
 
+function renderHistoryPanels(fixtureId) {
+  const entry = getHistEntry(fixtureId);
   const homeNote = el("histHomeNote");
   const awayNote = el("histAwayNote");
 
@@ -352,89 +373,150 @@ function renderHistoryPanels(fixtureId) {
   return entry;
 }
 
-function renderModel(entry) {
-  const noteEl = el("modelTotalsNote");
-
-  if (!entry) {
-    renderRows("modelTotals", []);
-    if (noteEl) noteEl.textContent = "";
-    return;
-  }
-
-  const est = estimateLambdasFromLast5(entry);
-  if (!est) {
-    renderRows("modelTotals", []);
-    if (noteEl) noteEl.textContent = "Not enough history samples to compute model (need at least 1 home + 1 away in last 5).";
-    return;
-  }
-
+function buildModelRows(entry) {
   const rows = [];
+  const note = [];
 
-  // BTTS model
-  const pBttsYes = probBTTS(est.lamHome, est.lamAway);
-  const pBttsNo = 1 - pBttsYes;
-  rows.push({
-    label: `BTTS (MODEL) — ${(pBttsYes >= pBttsNo) ? "YES" : "NO"}`,
-    value: `Yes ${pct01(pBttsYes)} | No ${pct01(pBttsNo)}`
-  });
+  const g = estimateLambdasGoals(entry);
+  if (g) {
+    const pYes = probBTTS(g.lamHome, g.lamAway);
+    const pNo = 1 - pYes;
+    const recBTTS = pYes >= pNo ? "BTTS YES" : "BTTS NO";
+    rows.push({ label: `BTTS (MODEL) — ${recBTTS}`, value: `Yes ${pct01(pYes)} | No ${pct01(pNo)}` });
 
-  // Total goals lines
-  const lines = [1.5, 2.5, 3.5, 4.5];
-  for (const L of lines) {
-    const pOver = probTotalOver(L, est.lamTotal);
-    const pUnder = 1 - pOver;
-    const rec = (pOver >= pUnder) ? "OVER" : "UNDER";
-    const conf = Math.max(pOver, pUnder);
-
-    rows.push({
-      label: `Total Goals ${L} — ${rec}`,
-      value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
-    });
+    for (const L of GOALS_LINES) {
+      const pOver = probTotalOver(L, g.lamTotal);
+      const pUnder = 1 - pOver;
+      const rec = pOver >= pUnder ? "OVER" : "UNDER";
+      const conf = Math.max(pOver, pUnder);
+      rows.push({
+        label: `Goals ${L} — ${rec}`,
+        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
+      });
+    }
+    note.push(`Goals λH=${g.lamHome.toFixed(2)} λA=${g.lamAway.toFixed(2)} (λT=${g.lamTotal.toFixed(2)})`);
+  } else {
+    note.push("Goals model: N/A (insufficient last5 samples)");
   }
 
-  renderRows("modelTotals", rows);
-
-  if (noteEl) {
-    noteEl.textContent =
-      `λHome≈${est.lamHome.toFixed(2)}  λAway≈${est.lamAway.toFixed(2)}  λTotal≈${est.lamTotal.toFixed(2)} ` +
-      `(based on last5: homeHome=${est.minHome}, awayAway=${est.minAway})`;
+  const c = estimateLambdasCorners(entry);
+  if (c) {
+    for (const L of CORNERS_LINES) {
+      const pOver = probTotalOver(L, c.lamTotal);
+      const pUnder = 1 - pOver;
+      const rec = pOver >= pUnder ? "OVER" : "UNDER";
+      const conf = Math.max(pOver, pUnder);
+      rows.push({
+        label: `Corners ${L} — ${rec}`,
+        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
+      });
+    }
+    note.push(`Corners λT≈${c.lamTotal.toFixed(2)}`);
+  } else {
+    note.push("Corners model: N/A (no corners data in CSV)");
   }
+
+  const y = estimateLambdasCards(entry);
+  if (y) {
+    for (const L of CARDS_LINES) {
+      const pOver = probTotalOver(L, y.lamTotal);
+      const pUnder = 1 - pOver;
+      const rec = pOver >= pUnder ? "OVER" : "UNDER";
+      const conf = Math.max(pOver, pUnder);
+      rows.push({
+        label: `Cards ${L} — ${rec}`,
+        value: `Over ${pct01(pOver)} | Under ${pct01(pUnder)} | Conf ${pct01(conf)}`
+      });
+    }
+    note.push(`Cards λT≈${y.lamTotal.toFixed(2)}`);
+  } else {
+    note.push("Cards model: N/A (no cards data in CSV)");
+  }
+
+  return { rows, note: note.join(" • ") };
+}
+
+function bestSafePicksForDay(day) {
+  const list = UI.matches.filter(m => String(m.day) === String(day));
+  const picks = [];
+
+  for (const m of list) {
+    const entry = getHistEntry(m.fixtureId);
+    if (!entry || !entry.homeStats || !entry.awayStats) continue;
+
+    const g = estimateLambdasGoals(entry);
+    if (!g) continue;
+
+    // BTTS
+    const pYes = probBTTS(g.lamHome, g.lamAway);
+    const pNo = 1 - pYes;
+    if (Math.max(pYes, pNo) >= SAFE_THRESHOLD) {
+      picks.push({
+        fixtureId: m.fixtureId,
+        match: `${m.home} vs ${m.away}`,
+        market: "BTTS",
+        selection: pYes >= pNo ? "YES" : "NO",
+        p: Math.max(pYes, pNo)
+      });
+    }
+
+    // Totals goals
+    for (const L of GOALS_LINES) {
+      const pOver = probTotalOver(L, g.lamTotal);
+      const pUnder = 1 - pOver;
+      const bestP = Math.max(pOver, pUnder);
+      if (bestP >= SAFE_THRESHOLD) {
+        picks.push({
+          fixtureId: m.fixtureId,
+          match: `${m.home} vs ${m.away}`,
+          market: `Goals ${L}`,
+          selection: pOver >= pUnder ? "OVER" : "UNDER",
+          p: bestP
+        });
+      }
+    }
+  }
+
+  // sort by confidence desc
+  picks.sort((a,b)=> b.p - a.p);
+  return picks.slice(0, 6);
+}
+
+function renderDailyPicks(day) {
+  const noteEl = el("dailyPicksNote");
+  const picks = bestSafePicksForDay(day);
+
+  if (!picks.length) {
+    renderRows("dailyPicks", []);
+    if (noteEl) noteEl.textContent = `No SAFE picks for ${day} (threshold ${(SAFE_THRESHOLD*100).toFixed(0)}%).`;
+    return;
+  }
+
+  renderRows("dailyPicks", picks.map(p => ({
+    label: `${p.match} — ${p.market}`,
+    value: `${p.selection} • ${pct01(p.p)}`
+  })));
+
+  if (noteEl) noteEl.textContent = `Top ${picks.length} SAFE picks for ${day} (threshold ${(SAFE_THRESHOLD*100).toFixed(0)}%).`;
 }
 
 async function loadAndRenderMatch() {
-  if (!current.fixtureId) {
-    if (el("matchTitle")) el("matchTitle").textContent = "Alege un meci";
-    if (el("matchMeta")) el("matchMeta").textContent = "—";
-    if (el("openBookBtn")) el("openBookBtn").setAttribute("href", "#");
-
-    renderRows("market1x2", []);
-    renderRows("marketBtts", []);
-    renderRows("modelTotals", []);
-    if (el("modelTotalsNote")) el("modelTotalsNote").textContent = "";
-    if (el("marketOther")) el("marketOther").textContent = "—";
-    renderRows("histHome", []);
-    renderRows("histAway", []);
-    return;
-  }
+  if (!current.fixtureId) return;
 
   setStatus("Loading match...");
 
   const baseMatch = UI.matches.find((x) => x.fixtureId === current.fixtureId);
   const matchData = await getJson(`./data/ui/match/${current.fixtureId}.json`);
 
-  if (el("matchTitle")) el("matchTitle").textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
-  if (el("matchMeta")) {
-    el("matchMeta").textContent =
-      `${matchData.categoryName || baseMatch.categoryName} • ` +
-      `${matchData.tournamentName || baseMatch.tournamentName} • ` +
-      `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
-  }
+  el("matchTitle").textContent = `${matchData.home || baseMatch.home} vs ${matchData.away || baseMatch.away}`;
+  el("matchMeta").textContent =
+    `${matchData.categoryName || baseMatch.categoryName} • ` +
+    `${matchData.tournamentName || baseMatch.tournamentName} • ` +
+    `${fmtTime(matchData.startTime || baseMatch.startTime)}`;
 
   const href = matchData.fixturePath || "#";
-  if (el("openBookBtn")) {
-    el("openBookBtn").setAttribute("href", href);
-    el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
-  }
+  el("openBookBtn").setAttribute("href", href);
+  el("openBookBtn").style.opacity = href === "#" ? "0.5" : "1";
 
   const markets = matchData.markets || [];
   const used = new Set();
@@ -470,7 +552,9 @@ async function loadAndRenderMatch() {
 
   // history + model
   const entry = renderHistoryPanels(current.fixtureId);
-  renderModel(entry);
+  const model = buildModelRows(entry);
+  renderRows("modelBox", model.rows);
+  el("modelNote").textContent = model.note;
 
   setStatus("Ready");
 }
@@ -478,43 +562,39 @@ async function loadAndRenderMatch() {
 async function init() {
   try {
     await loadUiData();
+
     renderLeagueSelect();
     renderDaySelect();
     renderMatchesList();
+
+    // daily picks for selected day
+    renderDailyPicks(current.day);
+
     await loadAndRenderMatch();
 
-    const leagueSel = el("leagueSel");
-    const daySel = el("daySel");
-    const refreshBtn = el("refreshBtn");
+    el("leagueSel").addEventListener("change", () => {
+      current.leagueId = el("leagueSel").value;
+      current.fixtureId = null;
+      renderMatchesList();
+    });
 
-    if (leagueSel) {
-      leagueSel.addEventListener("change", () => {
-        current.leagueId = leagueSel.value;
-        current.fixtureId = null;
-        renderMatchesList();
-        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-      });
-    }
+    el("daySel").addEventListener("change", () => {
+      current.day = el("daySel").value;
+      current.fixtureId = null;
+      renderMatchesList();
+      renderDailyPicks(current.day);
+    });
 
-    if (daySel) {
-      daySel.addEventListener("change", () => {
-        current.day = daySel.value;
-        current.fixtureId = null;
-        renderMatchesList();
-        loadAndRenderMatch().catch((e) => setStatus(e.message || String(e), false));
-      });
-    }
+    el("refreshBtn").addEventListener("click", async () => {
+      current.fixtureId = null;
+      await loadUiData();
+      renderLeagueSelect();
+      renderDaySelect();
+      renderMatchesList();
+      renderDailyPicks(current.day);
+      await loadAndRenderMatch();
+    });
 
-    if (refreshBtn) {
-      refreshBtn.addEventListener("click", async () => {
-        current.fixtureId = null;
-        await loadUiData();
-        renderLeagueSelect();
-        renderDaySelect();
-        renderMatchesList();
-        await loadAndRenderMatch();
-      });
-    }
   } catch (e) {
     setStatus(e.message || String(e), false);
   }
