@@ -11,7 +11,7 @@
   <header class="topbar">
     <div class="brand">
       <div class="title">Alex AI Bet</div>
-      <div class="subtitle">Odds (OddsPapi → Superbet) + Model (Poisson from last 5)</div>
+      <div class="subtitle">Odds (OddsPapi) + Model SAFE (Poisson last 5)</div>
     </div>
 
     <div class="top-actions">
@@ -57,8 +57,13 @@
         </div>
       </section>
 
-      <!-- Markets + Model -->
       <section class="grid">
+        <div class="card">
+          <div class="card-title">Recomandarea zilei (SAFE)</div>
+          <div id="dailyPicks" class="rows"></div>
+          <div class="muted small" id="dailyPicksNote"></div>
+        </div>
+
         <div class="card">
           <div class="card-title">1X2 (odds)</div>
           <div id="market1x2" class="rows"></div>
@@ -70,18 +75,12 @@
         </div>
 
         <div class="card">
-          <div class="card-title">Total Goals (MODEL – Poisson, last 5)</div>
-          <div id="modelTotals" class="rows"></div>
-          <div class="muted small" id="modelTotalsNote"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Alte piețe (raw)</div>
-          <div id="marketOther" class="other"></div>
+          <div class="card-title">Model (SAFE) — Goals/BTTS/Corners/Cards</div>
+          <div id="modelBox" class="rows"></div>
+          <div class="muted small" id="modelNote"></div>
         </div>
       </section>
 
-      <!-- History panels -->
       <section class="grid">
         <div class="card">
           <div class="card-title">History (last 5) — Home (acasă)</div>
@@ -95,11 +94,18 @@
           <div class="muted small" id="histAwayNote"></div>
         </div>
       </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="card-title">Alte piețe (raw)</div>
+          <div id="marketOther" class="other"></div>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer class="footer">
-    Alex AI Bet • Model uses last-5 averages (GF/GA) • Probabilities are indicative.
+    Alex AI Bet • SAFE threshold 62% • Probabilities are indicative
   </footer>
 
   <script src="./app.js"></script>
