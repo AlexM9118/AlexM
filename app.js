@@ -98,7 +98,7 @@ function renderOtherMarkets(markets, usedMarketIds) {
 }
 
 /* -----------------------------
-   Odds heuristics (unchanged)
+   Odds heuristics
 ------------------------------ */
 function pickLikely1X2(markets) {
   for (const m of markets || []) {
@@ -139,7 +139,6 @@ function poissonPMF(k, lambda) {
   return Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);
 }
 function poissonCDF(k, lambda) {
-  // P(X <= k)
   let s = 0;
   for (let i = 0; i <= k; i++) s += poissonPMF(i, lambda);
   return s;
@@ -148,6 +147,13 @@ function probTotalOver(line, lambdaTotal) {
   // Over 2.5 => total >= 3
   const threshold = Math.floor(line) + 1; // 1.5->2, 2.5->3, 3.5->4...
   return 1 - poissonCDF(threshold - 1, lambdaTotal);
+}
+function probBTTS(lambdaHome, lambdaAway) {
+  // P(H>=1 and A>=1) = 1 - P(H=0) - P(A=0) + P(H=0,A=0)
+  const pH0 = Math.exp(-lambdaHome);
+  const pA0 = Math.exp(-lambdaAway);
+  const p00 = Math.exp(-(lambdaHome + lambdaAway));
+  return 1 - pH0 - pA0 + p00;
 }
 
 function safeAvg(a, b) {
@@ -166,15 +172,12 @@ function estimateLambdasFromLast5(entry) {
   const as = entry?.awayStats;
   if (!hs || !as) return null;
 
-  // require some minimal sample
   const minHome = Number(hs.homeMatches || 0);
   const minAway = Number(as.awayMatches || 0);
-
   if (minHome < 1 || minAway < 1) return null;
 
   const lamHome = safeAvg(hs.homeGF, as.awayGA);
   const lamAway = safeAvg(as.awayGF, hs.homeGA);
-
   if (!Number.isFinite(lamHome) || !Number.isFinite(lamAway)) return null;
 
   return { lamHome, lamAway, lamTotal: lamHome + lamAway, minHome, minAway };
@@ -185,7 +188,6 @@ function estimateLambdasFromLast5(entry) {
 ------------------------------ */
 let UI = { index: null, leagues: [], matches: [] };
 let HIST = null;
-
 let current = { leagueId: null, day: null, fixtureId: null };
 
 async function loadUiData() {
@@ -350,7 +352,7 @@ function renderHistoryPanels(fixtureId) {
   return entry;
 }
 
-function renderModelTotals(entry) {
+function renderModel(entry) {
   const noteEl = el("modelTotalsNote");
 
   if (!entry) {
@@ -366,9 +368,18 @@ function renderModelTotals(entry) {
     return;
   }
 
-  const lines = [1.5, 2.5, 3.5, 4.5];
   const rows = [];
 
+  // BTTS model
+  const pBttsYes = probBTTS(est.lamHome, est.lamAway);
+  const pBttsNo = 1 - pBttsYes;
+  rows.push({
+    label: `BTTS (MODEL) — ${(pBttsYes >= pBttsNo) ? "YES" : "NO"}`,
+    value: `Yes ${pct01(pBttsYes)} | No ${pct01(pBttsNo)}`
+  });
+
+  // Total goals lines
+  const lines = [1.5, 2.5, 3.5, 4.5];
   for (const L of lines) {
     const pOver = probTotalOver(L, est.lamTotal);
     const pUnder = 1 - pOver;
@@ -384,7 +395,9 @@ function renderModelTotals(entry) {
   renderRows("modelTotals", rows);
 
   if (noteEl) {
-    noteEl.textContent = `λHome≈${est.lamHome.toFixed(2)}  λAway≈${est.lamAway.toFixed(2)}  λTotal≈${est.lamTotal.toFixed(2)} (based on last5: homeHome=${est.minHome}, awayAway=${est.minAway})`;
+    noteEl.textContent =
+      `λHome≈${est.lamHome.toFixed(2)}  λAway≈${est.lamAway.toFixed(2)}  λTotal≈${est.lamTotal.toFixed(2)} ` +
+      `(based on last5: homeHome=${est.minHome}, awayAway=${est.minAway})`;
   }
 }
 
@@ -457,7 +470,7 @@ async function loadAndRenderMatch() {
 
   // history + model
   const entry = renderHistoryPanels(current.fixtureId);
-  renderModelTotals(entry);
+  renderModel(entry);
 
   setStatus("Ready");
 }
