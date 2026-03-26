@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-26T11:47:44.918Z",
+  "generatedAtUTC": "2026-03-26T11:56:38.258Z",
   "lookback": 5,
   "matchesTotal": 285,
   "leagues": [
@@ -103,11 +103,11 @@
         "ROU"
       ],
       "total": 15,
-      "ok": 4,
-      "okPct": 26.7,
+      "ok": 5,
+      "okPct": 33.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 11,
+      "missingTeams": 10,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -436,11 +436,6 @@
     {
       "leagueKey": "Romania | Superliga",
       "teamName": "ACS Champions FC Arges",
-      "count": 2
-    },
-    {
-      "leagueKey": "Romania | Superliga",
-      "teamName": "Metaloglobus Bucuresti",
       "count": 2
     },
     {
