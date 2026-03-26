@@ -30,9 +30,54 @@ function mergeAliases(manualAliases, generatedAliases){
   return { ...generatedAliases, ...manualAliases };
 }
 
+// --- NEW: generic cleanup for common team suffix/prefix noise ---
+function normalizeTeamGeneric(name){
+  let s = String(name || "").trim();
+  if (!s) return s;
+
+  // remove punctuation variants
+  s = s.replace(/[’'.]/g, "");
+
+  // remove common trailing tokens (mostly harmless, big impact for Italy)
+  const drop = [
+    " Calcio",
+    " FC",
+    " CF",
+    " AC",
+    " AFC",
+    " SC",
+    " CFC",
+    " HSC",
+    " OSC",
+    " BC",
+    " FK",
+    " SK",
+    " BK"
+  ];
+
+  for (const t of drop){
+    if (s.toLowerCase().endsWith(t.trim().toLowerCase())){
+      s = s.slice(0, s.length - t.length).trim();
+    }
+  }
+
+  // remove common leading tokens (optional)
+  const lead = ["SSC ", "US ", "AS ", "ACF ", "FC ", "CF "];
+  for (const p of lead){
+    if (s.toLowerCase().startsWith(p.toLowerCase())){
+      s = s.slice(p.length).trim();
+    }
+  }
+
+  // compress spaces
+  s = s.replace(/\s+/g, " ").trim();
+  return s;
+}
+
 function normTeamName(name, aliases){
-  const n = String(name || "").trim();
-  return aliases[n] || n;
+  const raw = String(name || "").trim();
+  const aliased = aliases[raw] || raw;
+  return normalizeTeamGeneric(aliased);
 }
 
 function pickTeamStats(statsFile, teamName){
@@ -60,7 +105,6 @@ function main(){
 
   const manual = loadAliasesFile(path.join("scripts", "team-aliases.json")).aliases;
   const generated = loadAliasesFile(path.join("scripts", "team-aliases.generated.json")).aliases;
-
   const aliases = mergeAliases(manual, generated);
 
   const out = {
@@ -70,7 +114,6 @@ function main(){
     byFixtureId: {}
   };
 
-  // cache stats per footballDataId
   const statsCache = new Map();
 
   for (const m of matches){
@@ -78,7 +121,6 @@ function main(){
     const categoryName = m.categoryName || "";
     const tournamentName = m.tournamentName || "";
 
-    // Normalize team names using aliases (OddsPapi -> football-data)
     const homeRaw = m.home || "";
     const awayRaw = m.away || "";
     const home = normTeamName(homeRaw, aliases);
@@ -101,13 +143,8 @@ function main(){
 
     if (!statsCache.has(fdId)){
       const p = path.join("data","stats",`${fdId}.json`);
-      if (!fs.existsSync(p)){
-        statsCache.set(fdId, null);
-      } else {
-        const statsFile = readJson(p);
-        statsCache.set(fdId, statsFile);
-        out.lookback = out.lookback ?? statsFile.lookback ?? null;
-      }
+      statsCache.set(fdId, fs.existsSync(p) ? readJson(p) : null);
+      out.lookback = out.lookback ?? statsCache.get(fdId)?.lookback ?? null;
     }
 
     const statsFile = statsCache.get(fdId);
