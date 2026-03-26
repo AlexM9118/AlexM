@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-26T11:56:17.230Z",
+  "generatedAtUTC": "2026-03-26T12:09:02.440Z",
   "lookback": 5,
   "aliasesUsed": 162,
   "byFixtureId": {
@@ -11,6 +11,10 @@
       "awayRaw": "CD Mirandes",
       "home": "Cordoba",
       "away": "Mirandes",
+      "homePicked": "Cordoba",
+      "awayPicked": "Mirandes",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -53,6 +57,10 @@
       "awayRaw": "Cadiz CF",
       "home": "Ceuta",
       "away": "Cadiz",
+      "homePicked": "Ceuta",
+      "awayPicked": "Cadiz",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -95,6 +103,10 @@
       "awayRaw": "Burgos CF",
       "home": "Valladolid",
       "away": "Burgos",
+      "homePicked": "Valladolid",
+      "awayPicked": "Burgos",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -137,6 +149,10 @@
       "awayRaw": "SD Huesca",
       "home": "Granada",
       "away": "Huesca",
+      "homePicked": "Granada",
+      "awayPicked": "Huesca",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -179,6 +195,10 @@
       "awayRaw": "CD Leganes",
       "home": "Malaga",
       "away": "Leganes",
+      "homePicked": "Malaga",
+      "awayPicked": "Leganes",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -221,6 +241,10 @@
       "awayRaw": "RC Deportivo De La Coruna",
       "home": "Sporting Gijon",
       "away": "La Coruna",
+      "homePicked": null,
+      "awayPicked": "La Coruna",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -248,6 +272,10 @@
       "awayRaw": "CD Castellon",
       "home": "Albacete",
       "away": "Castellon",
+      "homePicked": "Albacete",
+      "awayPicked": "Castellon",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -290,6 +318,10 @@
       "awayRaw": "UD Las Palmas",
       "home": "Eibar",
       "away": "Las Palmas",
+      "homePicked": "Eibar",
+      "awayPicked": "Las Palmas",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -332,6 +364,10 @@
       "awayRaw": "FC Andorra",
       "home": "Cultural Leonesa",
       "away": "Andorra",
+      "homePicked": "Cultural Leonesa",
+      "awayPicked": "Andorra",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -374,6 +410,10 @@
       "awayRaw": "Racing Santander",
       "home": "Zaragoza",
       "away": "Racing Santander",
+      "homePicked": "Zaragoza",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -401,6 +441,10 @@
       "awayRaw": "Real Sociedad San Sebastian B",
       "home": "Almeria",
       "away": "Real Sociedad San Sebastian B",
+      "homePicked": "Almeria",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -428,6 +472,10 @@
       "awayRaw": "Albacete Balompie",
       "home": "Mirandes",
       "away": "Albacete",
+      "homePicked": "Mirandes",
+      "awayPicked": "Albacete",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -470,6 +518,10 @@
       "awayRaw": "Cordoba CF",
       "home": "La Coruna",
       "away": "Cordoba",
+      "homePicked": "La Coruna",
+      "awayPicked": "Cordoba",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -512,6 +564,10 @@
       "awayRaw": "Cadiz CF",
       "home": "Valladolid",
       "away": "Cadiz",
+      "homePicked": "Valladolid",
+      "awayPicked": "Cadiz",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -554,6 +610,10 @@
       "awayRaw": "Millwall FC",
       "home": "Middlesbrough",
       "away": "Millwall",
+      "homePicked": "Middlesbrough",
+      "awayPicked": "Millwall",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -596,6 +656,10 @@
       "awayRaw": "Swansea City",
       "home": "Sheffield United",
       "away": "Swansea City",
+      "homePicked": "Sheffield United",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -623,6 +687,10 @@
       "awayRaw": "Hull City",
       "home": "Oxford United",
       "away": "Hull City",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Oxford United\" | away team not found in stats: \"Hull City\""
@@ -635,6 +703,10 @@
       "awayRaw": "Wrexham AFC",
       "home": "West Bromwich Albion",
       "away": "Wrexham",
+      "homePicked": null,
+      "awayPicked": "Wrexham",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -662,6 +734,10 @@
       "awayRaw": "Bristol City",
       "home": "Charlton",
       "away": "Bristol City",
+      "homePicked": "Charlton",
+      "awayPicked": "Bristol City",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -704,6 +780,10 @@
       "awayRaw": "Blackburn Rovers",
       "home": "Birmingham City",
       "away": "Blackburn Rovers",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Birmingham City\" | away team not found in stats: \"Blackburn Rovers\""
@@ -716,6 +796,10 @@
       "awayRaw": "Sheffield Wednesday",
       "home": "Stoke City",
       "away": "Sheffield Wednesday",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Stoke City\" | away team not found in stats: \"Sheffield Wednesday\""
@@ -728,6 +812,10 @@
       "awayRaw": "Portsmouth FC",
       "home": "Norwich City",
       "away": "Portsmouth",
+      "homePicked": null,
+      "awayPicked": "Portsmouth",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -755,6 +843,10 @@
       "awayRaw": "Watford FC",
       "home": "Queens Park Rangers",
       "away": "Watford",
+      "homePicked": null,
+      "awayPicked": "Watford",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -782,6 +874,10 @@
       "awayRaw": "Preston North End",
       "home": "Leicester City",
       "away": "Preston North End",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Leicester City\" | away team not found in stats: \"Preston North End\""
@@ -804,7 +900,7 @@
       "homeRaw": "PFC Lokomotiv Plovdiv",
       "awayRaw": "FC Lokomotiv 1929 Sofia",
       "home": "PFC Lokomotiv Plovdiv",
-      "away": "Lokomotiv 1929 Sofia"
+      "away": "FC Lokomotiv 1929 Sofia"
     },
     "id1000023861731446": {
       "footballDataId": null,
@@ -822,9 +918,28 @@
       "tournamentName": "Superliga",
       "homeRaw": "FC Botosani",
       "awayRaw": "Fotbal Club FCSB",
-      "home": "Botosani",
+      "home": "FC Botosani",
       "away": "FCSB",
-      "homeStats": null,
+      "homePicked": "FC Botosani",
+      "awayPicked": "FCSB",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.2,
+        "awayGF": 0.6,
+        "awayGA": 2.4,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -841,7 +956,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Botosani\""
+      "note": null
     },
     "id1000004569751652": {
       "footballDataId": "AUT",
@@ -851,6 +966,10 @@
       "awayRaw": "SCR Altach",
       "home": "Ried",
       "away": "SCR Altach",
+      "homePicked": "Ried",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -878,6 +997,10 @@
       "awayRaw": "Rodez Aveyron Football",
       "home": "USL Dunkerque",
       "away": "Rodez Aveyron Football",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"USL Dunkerque\" | away team not found in stats: \"Rodez Aveyron Football\""
@@ -890,6 +1013,10 @@
       "awayRaw": "EA Guingamp",
       "home": "Annecy",
       "away": "EA Guingamp",
+      "homePicked": "Annecy",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -917,6 +1044,10 @@
       "awayRaw": "Amiens SC",
       "home": "Bastia",
       "away": "Amiens",
+      "homePicked": "Bastia",
+      "awayPicked": "Amiens",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -958,7 +1089,11 @@
       "homeRaw": "Red Star FC",
       "awayRaw": "Stade Lavallois MFC",
       "home": "Red Star",
-      "away": "Stade Lavallois",
+      "away": "Stade Lavallois MFC",
+      "homePicked": "Red Star",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -976,7 +1111,7 @@
         "awayYCAgainst": 2
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Stade Lavallois\""
+      "note": "away team not found in stats: \"Stade Lavallois MFC\""
     },
     "id1000018261527938": {
       "footballDataId": "F2",
@@ -986,6 +1121,10 @@
       "awayRaw": "Clermont Foot 63",
       "home": "Grenoble Foot",
       "away": "Clermont Foot 63",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Grenoble Foot\" | away team not found in stats: \"Clermont Foot 63\""
@@ -998,6 +1137,10 @@
       "awayRaw": "Toulouse FC",
       "home": "PSG",
       "away": "Toulouse",
+      "homePicked": null,
+      "awayPicked": "Toulouse",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1024,7 +1167,7 @@
       "tournamentName": "Pro League",
       "homeRaw": "Royal Antwerp FC",
       "awayRaw": "KRC Genk",
-      "home": "Royal Antwerp",
+      "home": "Royal Antwerp FC",
       "away": "KRC Genk"
     },
     "id1000001861491245": {
@@ -1035,6 +1178,10 @@
       "awayRaw": "Derby County",
       "home": "Coventry City",
       "away": "Derby County",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Coventry City\" | away team not found in stats: \"Derby County\""
@@ -1047,6 +1194,10 @@
       "awayRaw": "Elche CF",
       "home": "Vallecano",
       "away": "Elche",
+      "homePicked": "Vallecano",
+      "awayPicked": "Elche",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1108,7 +1259,7 @@
       "tournamentName": "Superliga",
       "homeRaw": "FK Napredak Krusevac",
       "awayRaw": "FK TSC Backa Topola",
-      "home": "FK Napredak Kruse",
+      "home": "FK Napredak Krusevac",
       "away": "FK TSC Backa Topola"
     },
     "id1000021061232015": {
@@ -1118,7 +1269,7 @@
       "tournamentName": "Superliga",
       "homeRaw": "FK Radnicki 1923 Kragujevac",
       "awayRaw": "FK Mladost Lucani",
-      "home": "FK Radnicki 1923 Kraguje",
+      "home": "FK Radnicki 1923 Kragujevac",
       "away": "FK Mladost Lucani"
     },
     "id1000021061232011": {
@@ -1189,6 +1340,10 @@
       "awayRaw": "Fortuna Dusseldorf",
       "home": "1 FC Kaiserslautern",
       "away": "Fortuna Dusseldorf",
+      "homePicked": null,
+      "awayPicked": "Fortuna Dusseldorf",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1216,6 +1371,10 @@
       "awayRaw": "SV Darmstadt 98",
       "home": "Arminia Bielefeld",
       "away": "SV Darmstadt 98",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Arminia Bielefeld\" | away team not found in stats: \"SV Darmstadt 98\""
@@ -1226,11 +1385,15 @@
       "tournamentName": "2. Bundesliga",
       "homeRaw": "1. FC Magdeburg",
       "awayRaw": "VfL Bochum",
-      "home": "1 FC Magdeburg",
+      "home": "1. FC Magdeburg",
       "away": "VfL Bochum",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"1 FC Magdeburg\" | away team not found in stats: \"VfL Bochum\""
+      "note": "home team not found in stats: \"1. FC Magdeburg\" | away team not found in stats: \"VfL Bochum\""
     },
     "id1000024763465905": {
       "footballDataId": null,
@@ -1239,7 +1402,7 @@
       "tournamentName": "Parva Liga",
       "homeRaw": "FC Arda Kardzhali",
       "awayRaw": "PFC Montana 1921",
-      "home": "Arda Kardzhali",
+      "home": "FC Arda Kardzhali",
       "away": "PFC Montana 1921"
     },
     "id1000018262716769": {
@@ -1249,7 +1412,11 @@
       "homeRaw": "Stade Reims",
       "awayRaw": "US Boulogne",
       "home": "Stade Reims",
-      "away": "Boulogne",
+      "away": "US Boulogne",
+      "homePicked": null,
+      "awayPicked": "Boulogne",
+      "homePickMethod": null,
+      "awayPickMethod": "normalized",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1275,8 +1442,12 @@
       "tournamentName": "Ligue 2",
       "homeRaw": "Montpellier HSC",
       "awayRaw": "ESTAC Troyes",
-      "home": "Montpellier",
+      "home": "Montpellier HSC",
       "away": "ESTAC Troyes",
+      "homePicked": "Montpellier",
+      "awayPicked": null,
+      "homePickMethod": "normalized",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1304,6 +1475,10 @@
       "awayRaw": "Levante UD",
       "home": "Sociedad",
       "away": "Levante",
+      "homePicked": "Sociedad",
+      "awayPicked": "Levante",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1345,7 +1520,11 @@
       "homeRaw": "ASC Otelul Galati",
       "awayRaw": "AFC Hermannstadt",
       "home": "Otelul",
-      "away": "Hermannstadt",
+      "away": "FC Hermannstadt",
+      "homePicked": "Otelul",
+      "awayPicked": "FC Hermannstadt",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1362,8 +1541,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Hermannstadt\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.4,
+        "awayGF": 1.8,
+        "awayGA": 2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000018570231908": {
       "footballDataId": "G1",
@@ -1371,11 +1565,15 @@
       "tournamentName": "Super League",
       "homeRaw": "APO Levadiakos FC",
       "awayRaw": "Aris Thessaloniki",
-      "home": "APO Levadiakos",
+      "home": "APO Levadiakos FC",
       "away": "Aris Thessaloniki",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"APO Levadiakos\" | away team not found in stats: \"Aris Thessaloniki\""
+      "note": "home team not found in stats: \"APO Levadiakos FC\" | away team not found in stats: \"Aris Thessaloniki\""
     },
     "id1000018570231966": {
       "footballDataId": "G1",
@@ -1384,7 +1582,11 @@
       "homeRaw": "Asteras Tripolis",
       "awayRaw": "AE Larissa FC",
       "home": "Asteras Tripolis",
-      "away": "AE Larissa",
+      "away": "AE Larissa FC",
+      "homePicked": "Asteras Tripolis",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1402,7 +1604,7 @@
         "awayYCAgainst": 1.8
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"AE Larissa\""
+      "note": "away team not found in stats: \"AE Larissa FC\""
     },
     "id1000018570231974": {
       "footballDataId": "G1",
@@ -1412,6 +1614,10 @@
       "awayRaw": "Atromitos Athinon",
       "home": "Panaitolikos Agrinio",
       "away": "Atromitos Athinon",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Panaitolikos Agrinio\" | away team not found in stats: \"Atromitos Athinon\""
@@ -1422,8 +1628,12 @@
       "tournamentName": "Super League",
       "homeRaw": "AE Kifisia FC",
       "awayRaw": "Panserraikos FC",
-      "home": "AE Kifisia",
+      "home": "AE Kifisia FC",
       "away": "Panserraikos",
+      "homePicked": null,
+      "awayPicked": "Panserraikos",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1441,7 +1651,7 @@
         "awayYCFor": 2.6,
         "awayYCAgainst": 2.4
       },
-      "note": "home team not found in stats: \"AE Kifisia\""
+      "note": "home team not found in stats: \"AE Kifisia FC\""
     },
     "id1000018570231816": {
       "footballDataId": "G1",
@@ -1451,6 +1661,10 @@
       "awayRaw": "AEK Athens",
       "home": "Olympiacos Piraeus",
       "away": "AEK Athens",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Olympiacos Piraeus\" | away team not found in stats: \"AEK Athens\""
@@ -1463,6 +1677,10 @@
       "awayRaw": "Panathinaikos Athens",
       "home": "PAOK Thessaloniki",
       "away": "Panathinaikos Athens",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"PAOK Thessaloniki\" | away team not found in stats: \"Panathinaikos Athens\""
@@ -1475,6 +1693,10 @@
       "awayRaw": "OFI Crete",
       "home": "Volos NPS",
       "away": "OFI Crete",
+      "homePicked": null,
+      "awayPicked": "OFI Crete",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1510,8 +1732,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "Sassuolo Calcio",
       "awayRaw": "Cagliari Calcio",
-      "home": "Sassuolo",
-      "away": "Cagliari",
+      "home": "Sassuolo Calcio",
+      "away": "Cagliari Calcio",
+      "homePicked": "Sassuolo",
+      "awayPicked": "Cagliari",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1554,6 +1780,10 @@
       "awayRaw": "IK Sirius",
       "home": "Degerfors IF",
       "away": "IK Sirius",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Degerfors IF\" | away team not found in stats: \"IK Sirius\""
@@ -1566,6 +1796,10 @@
       "awayRaw": "Mjallby AIF",
       "home": "Hammarby IF",
       "away": "Mjallby AIF",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Hammarby IF\" | away team not found in stats: \"Mjallby AIF\""
@@ -1578,6 +1812,10 @@
       "awayRaw": "VFL Wolfsburg",
       "home": "Leverkusen",
       "away": "Wolfsburg",
+      "homePicked": "Leverkusen",
+      "awayPicked": "Wolfsburg",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1620,6 +1858,10 @@
       "awayRaw": "RB Leipzig",
       "home": "Werder Bremen",
       "away": "RB Leipzig",
+      "homePicked": "Werder Bremen",
+      "awayPicked": "RB Leipzig",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1662,6 +1904,10 @@
       "awayRaw": "Bayern Munich",
       "home": "Freiburg",
       "away": "Bayern Munich",
+      "homePicked": "Freiburg",
+      "awayPicked": "Bayern Munich",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1704,6 +1950,10 @@
       "awayRaw": "FC Augsburg",
       "home": "Hamburg",
       "away": "Augsburg",
+      "homePicked": "Hamburg",
+      "awayPicked": "Augsburg",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1744,9 +1994,28 @@
       "tournamentName": "Bundesliga",
       "homeRaw": "Borussia Monchengladbach",
       "awayRaw": "1. FC Heidenheim",
-      "home": "Mgladbach",
+      "home": "M'gladbach",
       "away": "Heidenheim",
-      "homeStats": null,
+      "homePicked": "M'gladbach",
+      "awayPicked": "Heidenheim",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 0.8,
+        "awayGF": 1.2,
+        "awayGA": 2.6,
+        "homeCornersFor": 2.6,
+        "homeCornersAgainst": 2.4,
+        "awayCornersFor": 3.6,
+        "awayCornersAgainst": 4.8,
+        "homeYCFor": 1.6,
+        "homeYCAgainst": 2.4,
+        "awayYCFor": 1.4,
+        "awayYCAgainst": 2.6
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1763,7 +2032,7 @@
         "awayYCFor": 1.8,
         "awayYCAgainst": 2.2
       },
-      "note": "home team not found in stats: \"Mgladbach\""
+      "note": null
     },
     "id1000003561514108": {
       "footballDataId": "D1",
@@ -1773,6 +2042,10 @@
       "awayRaw": "FSV Mainz",
       "home": "Hoffenheim",
       "away": "Mainz",
+      "homePicked": "Hoffenheim",
+      "awayPicked": "Mainz",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1835,6 +2108,10 @@
       "awayRaw": "Kilmarnock FC",
       "home": "Hibernian",
       "away": "Kilmarnock",
+      "homePicked": "Hibernian",
+      "awayPicked": "Kilmarnock",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1877,6 +2154,10 @@
       "awayRaw": "Dundee United",
       "home": "Glasgow Rangers",
       "away": "Dundee United",
+      "homePicked": null,
+      "awayPicked": "Dundee United",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -1904,6 +2185,10 @@
       "awayRaw": "Falkirk FC",
       "home": "Motherwell",
       "away": "Falkirk",
+      "homePicked": "Motherwell",
+      "awayPicked": "Falkirk",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1946,6 +2231,10 @@
       "awayRaw": "Aberdeen FC",
       "home": "St Mirren",
       "away": "Aberdeen",
+      "homePicked": "St Mirren",
+      "awayPicked": "Aberdeen",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -1998,6 +2287,10 @@
       "awayRaw": "Real Madrid",
       "home": "Mallorca",
       "away": "Real Madrid",
+      "homePicked": "Mallorca",
+      "awayPicked": "Real Madrid",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2040,7 +2333,7 @@
       "homeRaw": "PSV Eindhoven",
       "awayRaw": "FC Utrecht",
       "home": "PSV Eindhoven",
-      "away": "Utrecht"
+      "away": "FC Utrecht"
     },
     "id1000020361952226": {
       "footballDataId": null,
@@ -2050,7 +2343,7 @@
       "homeRaw": "FK Dinamo Moscow",
       "awayRaw": "FC Orenburg",
       "home": "FK Dinamo Moscow",
-      "away": "Orenburg"
+      "away": "FC Orenburg"
     },
     "id1000023861731432": {
       "footballDataId": null,
@@ -2070,6 +2363,10 @@
       "awayRaw": "OGC Nice",
       "home": "Strasbourg",
       "away": "Nice",
+      "homePicked": "Strasbourg",
+      "awayPicked": "Nice",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2112,6 +2409,10 @@
       "awayRaw": "Blau-Weiss Linz",
       "home": "Grazer AK",
       "away": "Blau-Weiss Linz",
+      "homePicked": "Grazer AK",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2138,10 +2439,29 @@
       "homeRaw": "WSG Tirol",
       "awayRaw": "Wolfsberger AC",
       "home": "WSG Tirol",
-      "away": "Wolfsberger",
+      "away": "Wolfsberger AC",
+      "homePicked": null,
+      "awayPicked": "Wolfsberger AC",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"WSG Tirol\" | away team not found in stats: \"Wolfsberger\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 1.6,
+        "awayGF": 0.6,
+        "awayGA": 2.2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": "home team not found in stats: \"WSG Tirol\""
     },
     "id1000002361061563": {
       "footballDataId": "I1",
@@ -2150,7 +2470,11 @@
       "homeRaw": "Hellas Verona",
       "awayRaw": "ACF Fiorentina",
       "home": "Verona",
-      "away": "Fiorentina",
+      "away": "ACF Fiorentina",
+      "homePicked": "Verona",
+      "awayPicked": "Fiorentina",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2193,6 +2517,10 @@
       "awayRaw": "FC Thun",
       "home": "Lugano",
       "away": "Thun",
+      "homePicked": "Lugano",
+      "awayPicked": "Thun",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2235,6 +2563,10 @@
       "awayRaw": "FC Winterthur",
       "home": "Lausanne-Sport",
       "away": "Winterthur",
+      "homePicked": null,
+      "awayPicked": "Winterthur",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -2272,6 +2604,10 @@
       "awayRaw": "Borussia Dortmund",
       "home": "Stuttgart",
       "away": "Dortmund",
+      "homePicked": "Stuttgart",
+      "awayPicked": "Dortmund",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2314,6 +2650,10 @@
       "awayRaw": "Espanyol Barcelona",
       "home": "Betis",
       "away": "Espanyol",
+      "homePicked": "Betis",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2339,9 +2679,28 @@
       "tournamentName": "Superliga",
       "homeRaw": "ACS Champions FC Arges",
       "awayRaw": "FC Dinamo Bucuresti 1948",
-      "home": "Arges",
+      "home": "FC Arges",
       "away": "Dinamo Bucuresti",
-      "homeStats": null,
+      "homePicked": "FC Arges",
+      "awayPicked": "Dinamo Bucuresti",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.8,
+        "homeGA": 0.6,
+        "awayGF": 1.2,
+        "awayGA": 1,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 2,
         "awayMatches": 2,
@@ -2358,7 +2717,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Arges\""
+      "note": null
     },
     "id1000024763465903": {
       "footballDataId": null,
@@ -2378,7 +2737,7 @@
       "homeRaw": "SC Telstar",
       "awayRaw": "FC Groningen",
       "home": "SC Telstar",
-      "away": "Groningen"
+      "away": "FC Groningen"
     },
     "id1000003761320179": {
       "footballDataId": null,
@@ -2408,6 +2767,10 @@
       "awayRaw": "Stade Rennais FC",
       "home": "Brest",
       "away": "Rennes",
+      "homePicked": "Brest",
+      "awayPicked": "Rennes",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2448,9 +2811,28 @@
       "tournamentName": "MLS",
       "homeRaw": "Toronto FC",
       "awayRaw": "Colorado Rapids",
-      "home": "Toronto",
+      "home": "Toronto FC",
       "away": "Colorado Rapids",
-      "homeStats": null,
+      "homePicked": "Toronto FC",
+      "awayPicked": "Colorado Rapids",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.8,
+        "homeGA": 1.2,
+        "awayGF": 1,
+        "awayGA": 2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2467,7 +2849,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Toronto\""
+      "note": null
     },
     "id1000023861731440": {
       "footballDataId": null,
@@ -2476,7 +2858,7 @@
       "tournamentName": "Liga Portugal",
       "homeRaw": "Moreirense FC",
       "awayRaw": "SC Braga",
-      "home": "Moreirense",
+      "home": "Moreirense FC",
       "away": "SC Braga"
     },
     "id1000023861731434": {
@@ -2486,8 +2868,8 @@
       "tournamentName": "Liga Portugal",
       "homeRaw": "Rio Ave FC",
       "awayRaw": "FC Alverca SAD",
-      "home": "Rio Ave",
-      "away": "Alverca SAD"
+      "home": "Rio Ave FC",
+      "away": "FC Alverca SAD"
     },
     "id1000018261527942": {
       "footballDataId": "F2",
@@ -2496,10 +2878,14 @@
       "homeRaw": "Nancy-Lorraine",
       "awayRaw": "AS Saint-Etienne",
       "home": "Nancy-Lorraine",
-      "away": "Saint-Etienne",
+      "away": "AS Saint-Etienne",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Nancy-Lorraine\" | away team not found in stats: \"Saint-Etienne\""
+      "note": "home team not found in stats: \"Nancy-Lorraine\" | away team not found in stats: \"AS Saint-Etienne\""
     },
     "id1000004461515150": {
       "footballDataId": "D2",
@@ -2508,7 +2894,11 @@
       "homeRaw": "Dynamo Dresden",
       "awayRaw": "Hertha BSC",
       "home": "Dynamo Dresden",
-      "away": "Hertha",
+      "away": "Hertha BSC",
+      "homePicked": null,
+      "awayPicked": "Hertha",
+      "homePickMethod": null,
+      "awayPickMethod": "normalized",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -2534,8 +2924,12 @@
       "tournamentName": "Super League",
       "homeRaw": "FC Basel 1893",
       "awayRaw": "Young Boys Bern",
-      "home": "Basel 1893",
+      "home": "FC Basel 1893",
       "away": "Young Boys",
+      "homePicked": null,
+      "awayPicked": "Young Boys",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -2553,7 +2947,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Basel 1893\""
+      "note": "home team not found in stats: \"FC Basel 1893\""
     },
     "id1000002361061551": {
       "footballDataId": "I1",
@@ -2562,7 +2956,11 @@
       "homeRaw": "Lazio Rome",
       "awayRaw": "Parma Calcio",
       "home": "Lazio",
-      "away": "Parma",
+      "away": "Parma Calcio",
+      "homePicked": "Lazio",
+      "awayPicked": "Parma",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2605,7 +3003,7 @@
       "homeRaw": "Union Saint-Gilloise",
       "awayRaw": "St. Truidense VV",
       "home": "Union Saint-Gilloise",
-      "away": "St Truidense VV"
+      "away": "St. Truidense VV"
     },
     "id1000000861624520": {
       "footballDataId": "SP1",
@@ -2615,6 +3013,10 @@
       "awayRaw": "FC Barcelona",
       "home": "Ath Madrid",
       "away": "Barcelona",
+      "homePicked": "Ath Madrid",
+      "awayPicked": "Barcelona",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2657,7 +3059,7 @@
       "homeRaw": "Ajax Amsterdam",
       "awayRaw": "FC Twente Enschede",
       "home": "Ajax Amsterdam",
-      "away": "Twente Enschede"
+      "away": "FC Twente Enschede"
     },
     "id1000003761320177": {
       "footballDataId": null,
@@ -2675,8 +3077,12 @@
       "tournamentName": "Ligue 1",
       "homeRaw": "Lille OSC",
       "awayRaw": "Racing Club De Lens",
-      "home": "Lille",
+      "home": "Lille OSC",
       "away": "Lens",
+      "homePicked": "Lille",
+      "awayPicked": "Lens",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2718,8 +3124,8 @@
       "tournamentName": "Liga Portugal",
       "homeRaw": "FC Porto",
       "awayRaw": "FC Famalicao",
-      "home": "Porto",
-      "away": "Famalicao"
+      "home": "FC Porto",
+      "away": "FC Famalicao"
     },
     "id1000024266298950": {
       "footballDataId": "USA",
@@ -2729,6 +3135,10 @@
       "awayRaw": "Sporting Kansas City",
       "home": "Real Salt Lake",
       "away": "Sporting Kansas City",
+      "homePicked": "Real Salt Lake",
+      "awayPicked": "Sporting Kansas City",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2770,7 +3180,11 @@
       "homeRaw": "New England Revolution",
       "awayRaw": "CF Montreal",
       "home": "New England Revolution",
-      "away": "Montreal",
+      "away": "CF Montreal",
+      "homePicked": "New England Revolution",
+      "awayPicked": "CF Montreal",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2787,8 +3201,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Montreal\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1,
+        "homeGA": 1.6,
+        "awayGF": 1.4,
+        "awayGA": 2.8,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298958": {
       "footballDataId": "USA",
@@ -2797,7 +3226,11 @@
       "homeRaw": "Inter Miami CF",
       "awayRaw": "Austin FC",
       "home": "Inter Miami",
-      "away": "Austin",
+      "away": "Austin FC",
+      "homePicked": "Inter Miami",
+      "awayPicked": "Austin FC",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2814,8 +3247,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Austin\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1,
+        "homeGA": 1.2,
+        "awayGF": 1,
+        "awayGA": 2.4,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298962": {
       "footballDataId": "USA",
@@ -2824,7 +3272,11 @@
       "homeRaw": "New York Red Bulls",
       "awayRaw": "FC Cincinnati",
       "home": "New York Red Bulls",
-      "away": "Cincinnati",
+      "away": "FC Cincinnati",
+      "homePicked": "New York Red Bulls",
+      "awayPicked": "FC Cincinnati",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2841,8 +3293,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Cincinnati\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 1.8,
+        "awayGF": 1,
+        "awayGA": 2.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298954": {
       "footballDataId": "USA",
@@ -2852,6 +3319,10 @@
       "awayRaw": "Philadelphia Union",
       "home": "Charlotte",
       "away": "Philadelphia Union",
+      "homePicked": "Charlotte",
+      "awayPicked": "Philadelphia Union",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2892,8 +3363,12 @@
       "tournamentName": "MLS",
       "homeRaw": "Atlanta United FC",
       "awayRaw": "Columbus Crew",
-      "home": "Atlanta United",
+      "home": "Atlanta United FC",
       "away": "Columbus Crew",
+      "homePicked": null,
+      "awayPicked": "Columbus Crew",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -2911,7 +3386,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Atlanta United\""
+      "note": "home team not found in stats: \"Atlanta United FC\""
     },
     "id1000024266298960": {
       "footballDataId": "USA",
@@ -2920,7 +3395,11 @@
       "homeRaw": "New York City FC",
       "awayRaw": "Saint Louis City SC",
       "home": "New York City",
-      "away": "St Louis City",
+      "away": "St. Louis City",
+      "homePicked": "New York City",
+      "awayPicked": "St. Louis City",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2937,8 +3416,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"St Louis City\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.2,
+        "homeGA": 1.6,
+        "awayGF": 1.6,
+        "awayGA": 1.2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298956": {
       "footballDataId": "USA",
@@ -2947,7 +3441,11 @@
       "homeRaw": "DC United",
       "awayRaw": "FC Dallas",
       "home": "DC United",
-      "away": "Dallas",
+      "away": "FC Dallas",
+      "homePicked": "DC United",
+      "awayPicked": "FC Dallas",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2964,8 +3462,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Dallas\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2.2,
+        "homeGA": 1.8,
+        "awayGF": 1,
+        "awayGA": 1.8,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298964": {
       "footballDataId": "USA",
@@ -2974,7 +3487,11 @@
       "homeRaw": "Chicago Fire",
       "awayRaw": "Nashville SC",
       "home": "Chicago Fire",
-      "away": "Nashville",
+      "away": "Nashville SC",
+      "homePicked": "Chicago Fire",
+      "awayPicked": "Nashville SC",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -2991,8 +3508,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Nashville\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 3.2,
+        "homeGA": 1.6,
+        "awayGF": 0.6,
+        "awayGA": 1.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000024266298966": {
       "footballDataId": "USA",
@@ -3002,6 +3534,10 @@
       "awayRaw": "Seattle Sounders",
       "home": "Houston Dynamo",
       "away": "Seattle Sounders",
+      "homePicked": "Houston Dynamo",
+      "awayPicked": "Seattle Sounders",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3042,9 +3578,28 @@
       "tournamentName": "MLS",
       "homeRaw": "Los Angeles FC",
       "awayRaw": "Orlando City SC",
-      "home": "Los Angeles",
+      "home": "Los Angeles FC",
       "away": "Orlando City",
-      "homeStats": null,
+      "homePicked": "Los Angeles FC",
+      "awayPicked": "Orlando City",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2,
+        "homeGA": 0.2,
+        "awayGF": 2,
+        "awayGA": 1,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3061,7 +3616,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Los Angeles\""
+      "note": null
     },
     "id1000024266298974": {
       "footballDataId": "USA",
@@ -3071,6 +3626,10 @@
       "awayRaw": "Portland Timbers",
       "home": "Vancouver Whitecaps",
       "away": "Portland Timbers",
+      "homePicked": "Vancouver Whitecaps",
+      "awayPicked": "Portland Timbers",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3113,6 +3672,10 @@
       "awayRaw": "Minnesota United FC",
       "home": "Los Angeles Galaxy",
       "away": "Minnesota United",
+      "homePicked": "Los Angeles Galaxy",
+      "awayPicked": "Minnesota United",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3154,7 +3717,11 @@
       "homeRaw": "San Jose Earthquakes",
       "awayRaw": "San Diego FC",
       "home": "San Jose Earthquakes",
-      "away": "San Diego",
+      "away": "San Diego FC",
+      "homePicked": "San Jose Earthquakes",
+      "awayPicked": "San Diego FC",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3171,8 +3738,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"San Diego\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2.2,
+        "homeGA": 1,
+        "awayGF": 2.8,
+        "awayGA": 1.4,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000003761320189": {
       "footballDataId": null,
@@ -3191,7 +3773,7 @@
       "tournamentName": "Premier League",
       "homeRaw": "FC Pari Nizhny Novgorod",
       "awayRaw": "FK Rostov",
-      "home": "Pari Nizhny Novgorod",
+      "home": "FC Pari Nizhny Novgorod",
       "away": "FK Rostov"
     },
     "id1000004461515134": {
@@ -3202,6 +3784,10 @@
       "awayRaw": "SC Preussen 06 Munster",
       "home": "Holstein Kiel",
       "away": "SC Preussen 06 Munster",
+      "homePicked": "Holstein Kiel",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3228,7 +3814,11 @@
       "homeRaw": "Schalke 04",
       "awayRaw": "Karlsruher SC",
       "home": "Schalke 04",
-      "away": "Karlsruher",
+      "away": "Karlsruher SC",
+      "homePicked": "Schalke 04",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3246,7 +3836,7 @@
         "awayYCAgainst": 2.8
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Karlsruher\""
+      "note": "away team not found in stats: \"Karlsruher SC\""
     },
     "id1000004461515146": {
       "footballDataId": "D2",
@@ -3256,6 +3846,10 @@
       "awayRaw": "1 FC Nuremberg",
       "home": "Eintracht Braunschweig",
       "away": "1 FC Nuremberg",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Eintracht Braunschweig\" | away team not found in stats: \"1 FC Nuremberg\""
@@ -3268,6 +3862,10 @@
       "awayRaw": "SV 07 Elversberg",
       "home": "Hannover 96",
       "away": "SV 07 Elversberg",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"Hannover 96\" | away team not found in stats: \"SV 07 Elversberg\""
@@ -3280,6 +3878,10 @@
       "awayRaw": "SC Paderborn 07",
       "home": "Greuther Furth",
       "away": "SC Paderborn 07",
+      "homePicked": "Greuther Furth",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3317,6 +3919,10 @@
       "awayRaw": "Athletic Bilbao",
       "home": "Getafe",
       "away": "Ath Bilbao",
+      "homePicked": "Getafe",
+      "awayPicked": "Ath Bilbao",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3359,6 +3965,10 @@
       "awayRaw": "Metaloglobus Bucuresti",
       "home": "UTA Arad",
       "away": "Metaloglobus Bucharest",
+      "homePicked": "UTA Arad",
+      "awayPicked": "Metaloglobus Bucharest",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3400,10 +4010,14 @@
       "homeRaw": "Kalmar FF",
       "awayRaw": "Vasteraas SK",
       "home": "Kalmar FF",
-      "away": "Vasteraas",
+      "away": "Vasteraas SK",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Kalmar FF\" | away team not found in stats: \"Vasteraas\""
+      "note": "home team not found in stats: \"Kalmar FF\" | away team not found in stats: \"Vasteraas SK\""
     },
     "id1000004067091100": {
       "footballDataId": "SWE",
@@ -3412,7 +4026,11 @@
       "homeRaw": "AIK",
       "awayRaw": "Halmstads BK",
       "home": "AIK",
-      "away": "Halmstads",
+      "away": "Halmstads BK",
+      "homePicked": "AIK",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3430,7 +4048,7 @@
         "awayYCAgainst": 0
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Halmstads\""
+      "note": "away team not found in stats: \"Halmstads BK\""
     },
     "id1000003761320185": {
       "footballDataId": null,
@@ -3439,7 +4057,7 @@
       "tournamentName": "Eredivisie",
       "homeRaw": "FC Volendam",
       "awayRaw": "Feyenoord Rotterdam",
-      "home": "Volendam",
+      "home": "FC Volendam",
       "away": "Feyenoord Rotterdam"
     },
     "id1000003761320181": {
@@ -3460,6 +4078,10 @@
       "awayRaw": "FK Austria Wien",
       "home": "LASK Linz",
       "away": "FK Austria Wien",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"LASK Linz\" | away team not found in stats: \"FK Austria Wien\""
@@ -3472,6 +4094,10 @@
       "awayRaw": "FC Salzburg",
       "home": "TSV Hartberg",
       "away": "Salzburg",
+      "homePicked": null,
+      "awayPicked": "Salzburg",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -3497,8 +4123,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "US Cremonese",
       "awayRaw": "Bologna FC",
-      "home": "Cremonese",
+      "home": "US Cremonese",
       "away": "Bologna",
+      "homePicked": "Cremonese",
+      "awayPicked": "Bologna",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3541,6 +4171,10 @@
       "awayRaw": "Olympique Lyon",
       "home": "Angers",
       "away": "Lyon",
+      "homePicked": "Angers",
+      "awayPicked": "Lyon",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3582,7 +4216,11 @@
       "homeRaw": "Livingston FC",
       "awayRaw": "Heart of Midlothian FC",
       "home": "Livingston",
-      "away": "Heart of Midlothian",
+      "away": "Heart of Midlothian FC",
+      "homePicked": "Livingston",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3600,7 +4238,7 @@
         "awayYCAgainst": 2
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Heart of Midlothian\""
+      "note": "away team not found in stats: \"Heart of Midlothian FC\""
     },
     "id1000003561514106": {
       "footballDataId": "D1",
@@ -3610,6 +4248,10 @@
       "awayRaw": "FC St. Pauli",
       "home": "Union Berlin",
       "away": "St Pauli",
+      "homePicked": "Union Berlin",
+      "awayPicked": "St Pauli",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3651,8 +4293,8 @@
       "tournamentName": "Premier League",
       "homeRaw": "FC Dynamo-Makhachkala",
       "awayRaw": "FC Baltika Kaliningrad",
-      "home": "Dynamo-Makhachkala",
-      "away": "Baltika Kaliningrad"
+      "home": "FC Dynamo-Makhachkala",
+      "away": "FC Baltika Kaliningrad"
     },
     "id1000024763465909": {
       "footballDataId": null,
@@ -3672,6 +4314,10 @@
       "awayRaw": "RC Celta de Vigo",
       "home": "Valencia",
       "away": "Celta",
+      "homePicked": "Valencia",
+      "awayPicked": "Celta",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3714,6 +4360,10 @@
       "awayRaw": "FC Unirea 2004 Slobozia",
       "home": "Farul Constanta",
       "away": "Unirea Slobozia",
+      "homePicked": "Farul Constanta",
+      "awayPicked": "Unirea Slobozia",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3756,6 +4406,10 @@
       "awayRaw": "Malmo FF",
       "home": "Orgryte IS",
       "away": "Malmo FF",
+      "homePicked": null,
+      "awayPicked": "Malmo FF",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -3793,6 +4447,10 @@
       "awayRaw": "SK Sturm Graz",
       "home": "SK Rapid",
       "away": "Sturm Graz",
+      "homePicked": "SK Rapid",
+      "awayPicked": "Sturm Graz",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3835,6 +4493,10 @@
       "awayRaw": "FC Nantes",
       "home": "Metz",
       "away": "Nantes",
+      "homePicked": "Metz",
+      "awayPicked": "Nantes",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3876,7 +4538,11 @@
       "homeRaw": "FC Lorient",
       "awayRaw": "Paris FC",
       "home": "Lorient",
-      "away": "Paris",
+      "away": "Paris FC",
+      "homePicked": "Lorient",
+      "awayPicked": "Paris FC",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3893,8 +4559,23 @@
         "awayYCFor": 1.4,
         "awayYCAgainst": 2.4
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Paris\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.2,
+        "homeGA": 1.8,
+        "awayGF": 0.8,
+        "awayGA": 0.6,
+        "homeCornersFor": 5.2,
+        "homeCornersAgainst": 4.2,
+        "awayCornersFor": 3,
+        "awayCornersAgainst": 8,
+        "homeYCFor": 2,
+        "homeYCAgainst": 2,
+        "awayYCFor": 2.4,
+        "awayYCAgainst": 1.2
+      },
+      "note": null
     },
     "id1000003461526484": {
       "footballDataId": "F1",
@@ -3904,6 +4585,10 @@
       "awayRaw": "AJ Auxerre",
       "home": "Le Havre",
       "away": "Auxerre",
+      "homePicked": "Le Havre",
+      "awayPicked": "Auxerre",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3945,10 +4630,29 @@
       "homeRaw": "Eintracht Frankfurt",
       "awayRaw": "1. FC Cologne",
       "home": "Frankfurt",
-      "away": "Koln",
+      "away": "FC Koln",
+      "homePicked": null,
+      "awayPicked": "FC Koln",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Frankfurt\" | away team not found in stats: \"Koln\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 1.8,
+        "awayGF": 1,
+        "awayGA": 2,
+        "homeCornersFor": 4.8,
+        "homeCornersAgainst": 4.8,
+        "awayCornersFor": 6.2,
+        "awayCornersAgainst": 3.8,
+        "homeYCFor": 2.4,
+        "homeYCAgainst": 2.8,
+        "awayYCFor": 1.8,
+        "awayYCAgainst": 2.6
+      },
+      "note": "home team not found in stats: \"Frankfurt\""
     },
     "id1000003661352707": {
       "footballDataId": "SC0",
@@ -3958,6 +4662,10 @@
       "awayRaw": "Celtic Glasgow",
       "home": "Dundee",
       "away": "Celtic Glasgow",
+      "homePicked": "Dundee",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3985,6 +4693,10 @@
       "awayRaw": "Torino FC",
       "home": "Pisa",
       "away": "Torino",
+      "homePicked": "Pisa",
+      "awayPicked": "Torino",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4027,6 +4739,10 @@
       "awayRaw": "Sevilla FC",
       "home": "Oviedo",
       "away": "Sevilla",
+      "homePicked": "Oviedo",
+      "awayPicked": "Sevilla",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4069,7 +4785,7 @@
       "homeRaw": "KVC Westerlo",
       "awayRaw": "Royal Charleroi SC",
       "home": "KVC Westerlo",
-      "away": "Royal Charleroi"
+      "away": "Royal Charleroi SC"
     },
     "id1000020361376659": {
       "footballDataId": null,
@@ -4089,7 +4805,7 @@
       "homeRaw": "PFC Ludogorets 1945 Razgrad",
       "awayRaw": "FC CSKA 1948",
       "home": "PFC Ludogorets 1945 Razgrad",
-      "away": "CSKA 1948"
+      "away": "FC CSKA 1948"
     },
     "id1000015269785214": {
       "footballDataId": "ROU",
@@ -4097,11 +4813,45 @@
       "tournamentName": "Superliga",
       "homeRaw": "Rapid Bucuresti 1923",
       "awayRaw": "FC Universitatea Cluj",
-      "home": "Rapid Bucuresti",
-      "away": "U Cluj",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"U Cluj\""
+      "home": "FC Rapid Bucuresti",
+      "away": "U. Cluj",
+      "homePicked": "FC Rapid Bucuresti",
+      "awayPicked": "U. Cluj",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.4,
+        "awayGF": 1.6,
+        "awayGA": 1.2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2.8,
+        "homeGA": 0.6,
+        "awayGF": 2.2,
+        "awayGA": 1,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000002361061547": {
       "footballDataId": "I1",
@@ -4110,7 +4860,11 @@
       "homeRaw": "Inter Milano",
       "awayRaw": "AS Roma",
       "home": "Inter",
-      "away": "Roma",
+      "away": "AS Roma",
+      "homePicked": "Inter",
+      "awayPicked": "Roma",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4151,8 +4905,12 @@
       "tournamentName": "Ligue 1",
       "homeRaw": "AS Monaco",
       "awayRaw": "Olympique Marseille",
-      "home": "Monaco",
+      "home": "AS Monaco",
       "away": "Marseille",
+      "homePicked": "Monaco",
+      "awayPicked": "Marseille",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4195,6 +4953,10 @@
       "awayRaw": "CA Osasuna",
       "home": "Alaves",
       "away": "Osasuna",
+      "homePicked": "Alaves",
+      "awayPicked": "Osasuna",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4235,8 +4997,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "Udinese Calcio",
       "awayRaw": "Como 1907",
-      "home": "Udinese",
+      "home": "Udinese Calcio",
       "away": "Como",
+      "homePicked": "Udinese",
+      "awayPicked": "Como",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4289,6 +5055,10 @@
       "awayRaw": "IFK Goteborg",
       "home": "IF Elfsborg",
       "away": "IFK Goteborg",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"IF Elfsborg\" | away team not found in stats: \"IFK Goteborg\""
@@ -4301,6 +5071,10 @@
       "awayRaw": "IF Brommapojkarna",
       "home": "BK Hacken",
       "away": "IF Brommapojkarna",
+      "homePicked": null,
+      "awayPicked": null,
+      "homePickMethod": null,
+      "awayPickMethod": null,
       "homeStats": null,
       "awayStats": null,
       "note": "home team not found in stats: \"BK Hacken\" | away team not found in stats: \"IF Brommapojkarna\""
@@ -4313,6 +5087,10 @@
       "awayRaw": "FC Sion",
       "home": "Grasshopper Club Zurich",
       "away": "Sion",
+      "homePicked": null,
+      "awayPicked": "Sion",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4340,6 +5118,10 @@
       "awayRaw": "Viking FK",
       "home": "Vaalerenga IF",
       "away": "Viking",
+      "homePicked": null,
+      "awayPicked": "Viking",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4365,8 +5147,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "US Lecce",
       "awayRaw": "Atalanta BC",
-      "home": "Lecce",
+      "home": "US Lecce",
       "away": "Atalanta",
+      "homePicked": "Lecce",
+      "awayPicked": "Atalanta",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4418,7 +5204,11 @@
       "homeRaw": "FC Petrolul Ploiesti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
       "home": "Petrolul",
-      "away": "Csikszereda M Ciuc",
+      "away": "Csikszereda M. Ciuc",
+      "homePicked": "Petrolul",
+      "awayPicked": "Csikszereda M. Ciuc",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4435,8 +5225,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Csikszereda M Ciuc\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 0.4,
+        "awayGF": 1.2,
+        "awayGA": 1.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000004067091104": {
       "footballDataId": "SWE",
@@ -4446,6 +5251,10 @@
       "awayRaw": "Djurgardens IF",
       "home": "GAIS",
       "away": "Djurgardens IF",
+      "homePicked": "GAIS",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4471,8 +5280,12 @@
       "tournamentName": "Super League",
       "homeRaw": "FC St. Gallen 1879",
       "awayRaw": "FC Zurich",
-      "home": "St Gallen 1879",
+      "home": "FC St. Gallen 1879",
       "away": "Zurich",
+      "homePicked": null,
+      "awayPicked": "Zurich",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4490,7 +5303,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"St Gallen 1879\""
+      "note": "home team not found in stats: \"FC St. Gallen 1879\""
     },
     "id1000021567763312": {
       "footballDataId": "SWZ",
@@ -4500,6 +5313,10 @@
       "awayRaw": "FC Luzern",
       "home": "Servette Geneva",
       "away": "Luzern",
+      "homePicked": null,
+      "awayPicked": "Luzern",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4526,7 +5343,11 @@
       "homeRaw": "Molde FK",
       "awayRaw": "Lillestroem SK",
       "home": "Molde",
-      "away": "Lillestroem",
+      "away": "Lillestroem SK",
+      "homePicked": "Molde",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4544,7 +5365,7 @@
         "awayYCAgainst": 0
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Lillestroem\""
+      "note": "away team not found in stats: \"Lillestroem SK\""
     },
     "id1000002067015086": {
       "footballDataId": "NOR",
@@ -4552,8 +5373,12 @@
       "tournamentName": "Eliteserien",
       "homeRaw": "Kristiansund BK",
       "awayRaw": "Bodoe/Glimt",
-      "home": "Kristiansund",
+      "home": "Kristiansund BK",
       "away": "Bodoe/Glimt",
+      "homePicked": "Kristiansund",
+      "awayPicked": null,
+      "homePickMethod": "normalized",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4581,6 +5406,10 @@
       "awayRaw": "IK Start",
       "home": "Sarpsborg 08",
       "away": "IK Start",
+      "homePicked": "Sarpsborg 08",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4608,6 +5437,10 @@
       "awayRaw": "SK Brann",
       "home": "HamKam",
       "away": "SK Brann",
+      "homePicked": "HamKam",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4634,7 +5467,11 @@
       "homeRaw": "Juventus Turin",
       "awayRaw": "Genoa CFC",
       "home": "Juventus",
-      "away": "Genoa",
+      "away": "Genoa CFC",
+      "homePicked": "Juventus",
+      "awayPicked": "Genoa",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4696,7 +5533,11 @@
       "homeRaw": "Tromsoe IL",
       "awayRaw": "Rosenborg BK",
       "home": "Tromsoe IL",
-      "away": "Rosenborg",
+      "away": "Rosenborg BK",
+      "homePicked": null,
+      "awayPicked": "Rosenborg",
+      "homePickMethod": null,
+      "awayPickMethod": "normalized",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4722,9 +5563,28 @@
       "tournamentName": "Superliga",
       "homeRaw": "CS Universitatea Craiova",
       "awayRaw": "FC CFR 1907 Cluj",
-      "home": "Univ Craiova",
+      "home": "Univ. Craiova",
       "away": "CFR Cluj",
-      "homeStats": null,
+      "homePicked": "Univ. Craiova",
+      "awayPicked": "CFR Cluj",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.2,
+        "homeGA": 0.4,
+        "awayGF": 1.4,
+        "awayGA": 1.2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4741,7 +5601,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Univ Craiova\""
+      "note": null
     },
     "id1000023861731444": {
       "footballDataId": null,
@@ -4750,7 +5610,7 @@
       "tournamentName": "Liga Portugal",
       "homeRaw": "FC Arouca",
       "awayRaw": "Estoril Praia",
-      "home": "Arouca",
+      "home": "FC Arouca",
       "away": "Estoril Praia"
     },
     "id1000002361061555": {
@@ -4759,8 +5619,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "SSC Napoli",
       "awayRaw": "AC Milan",
-      "home": "Napoli",
+      "home": "SSC Napoli",
       "away": "Milan",
+      "homePicked": "Napoli",
+      "awayPicked": "Milan",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4802,7 +5666,11 @@
       "homeRaw": "Le Mans FC",
       "awayRaw": "Pau FC",
       "home": "Le Mans",
-      "away": "Pau",
+      "away": "Pau FC",
+      "homePicked": "Le Mans",
+      "awayPicked": "Pau FC",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4819,8 +5687,23 @@
         "awayYCFor": 3.2,
         "awayYCAgainst": 2.2
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Pau\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1,
+        "homeGA": 1.8,
+        "awayGF": 1.8,
+        "awayGA": 1.4,
+        "homeCornersFor": 5.4,
+        "homeCornersAgainst": 4,
+        "awayCornersFor": 2.6,
+        "awayCornersAgainst": 5.2,
+        "homeYCFor": 1.4,
+        "homeYCAgainst": 2.2,
+        "awayYCFor": 2.2,
+        "awayYCAgainst": 2.8
+      },
+      "note": null
     },
     "id1000000861624524": {
       "footballDataId": "SP1",
@@ -4830,6 +5713,10 @@
       "awayRaw": "Villarreal CF",
       "home": "Girona",
       "away": "Villarreal",
+      "homePicked": "Girona",
+      "awayPicked": "Villarreal",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4880,8 +5767,12 @@
       "tournamentName": "Eliteserien",
       "homeRaw": "Aalesunds FK",
       "awayRaw": "Fredrikstad FK",
-      "home": "Aalesunds",
+      "home": "Aalesunds FK",
       "away": "Fredrikstad",
+      "homePicked": null,
+      "awayPicked": "Fredrikstad",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -4899,7 +5790,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Aalesunds\""
+      "note": "home team not found in stats: \"Aalesunds FK\""
     },
     "id1000002067015096": {
       "footballDataId": "NOR",
@@ -4909,6 +5800,10 @@
       "awayRaw": "Sandefjord Fotball",
       "home": "KFUM Oslo",
       "away": "Sandefjord Fotball",
+      "homePicked": "KFUM Oslo",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5015,8 +5910,8 @@
       "tournamentName": "UEFA Europa League",
       "homeRaw": "FC Porto",
       "awayRaw": "Nottingham Forest",
-      "home": "Porto",
-      "away": "Nottm Forest"
+      "home": "FC Porto",
+      "away": "Nott'm Forest"
     },
     "id1003448069339974": {
       "footballDataId": null,
@@ -5026,7 +5921,7 @@
       "homeRaw": "Crystal Palace",
       "awayRaw": "ACF Fiorentina",
       "home": "Crystal Palace",
-      "away": "Fiorentina"
+      "away": "ACF Fiorentina"
     },
     "id1003448069339972": {
       "footballDataId": null,
@@ -5035,7 +5930,7 @@
       "tournamentName": "UEFA Conference League",
       "homeRaw": "FC Shakhtar Donetsk",
       "awayRaw": "AZ Alkmaar",
-      "home": "Shakhtar Done",
+      "home": "FC Shakhtar Donetsk",
       "away": "AZ Alkmaar"
     },
     "id1003448069339978": {
@@ -5054,9 +5949,28 @@
       "tournamentName": "Superliga",
       "homeRaw": "AFC Hermannstadt",
       "awayRaw": "FC Farul Constanta",
-      "home": "Hermannstadt",
+      "home": "FC Hermannstadt",
       "away": "Farul Constanta",
-      "homeStats": null,
+      "homePicked": "FC Hermannstadt",
+      "awayPicked": "Farul Constanta",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.4,
+        "awayGF": 1.8,
+        "awayGA": 2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5073,7 +5987,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Hermannstadt\""
+      "note": null
     },
     "id1000003461526508": {
       "footballDataId": "F1",
@@ -5081,9 +5995,28 @@
       "tournamentName": "Ligue 1",
       "homeRaw": "Paris FC",
       "awayRaw": "AS Monaco",
-      "home": "Paris",
-      "away": "Monaco",
-      "homeStats": null,
+      "home": "Paris FC",
+      "away": "AS Monaco",
+      "homePicked": "Paris FC",
+      "awayPicked": "Monaco",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.2,
+        "homeGA": 1.8,
+        "awayGF": 0.8,
+        "awayGA": 0.6,
+        "homeCornersFor": 5.2,
+        "homeCornersAgainst": 4.2,
+        "awayCornersFor": 3,
+        "awayCornersAgainst": 8,
+        "homeYCFor": 2,
+        "homeYCAgainst": 2,
+        "awayYCFor": 2.4,
+        "awayYCAgainst": 1.2
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5100,7 +6033,7 @@
         "awayYCFor": 2.4,
         "awayYCAgainst": 1.2
       },
-      "note": "home team not found in stats: \"Paris\""
+      "note": null
     },
     "id1000003761320211": {
       "footballDataId": null,
@@ -5109,8 +6042,8 @@
       "tournamentName": "Eredivisie",
       "homeRaw": "FC Twente Enschede",
       "awayRaw": "FC Volendam",
-      "home": "Twente Enschede",
-      "away": "Volendam"
+      "home": "FC Twente Enschede",
+      "away": "FC Volendam"
     },
     "id1000003561514122": {
       "footballDataId": "D1",
@@ -5120,6 +6053,10 @@
       "awayRaw": "TSG Hoffenheim",
       "home": "Augsburg",
       "away": "Hoffenheim",
+      "homePicked": "Augsburg",
+      "awayPicked": "Hoffenheim",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5160,8 +6097,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "AS Roma",
       "awayRaw": "Pisa SC",
-      "home": "Roma",
+      "home": "AS Roma",
       "away": "Pisa",
+      "homePicked": "Roma",
+      "awayPicked": "Pisa",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5204,6 +6145,10 @@
       "awayRaw": "Wolverhampton Wanderers",
       "home": "West Ham",
       "away": "Wolves",
+      "homePicked": "West Ham",
+      "awayPicked": "Wolves",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5246,6 +6191,10 @@
       "awayRaw": "Girona FC",
       "home": "Real Madrid",
       "away": "Girona",
+      "homePicked": "Real Madrid",
+      "awayPicked": "Girona",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5288,6 +6237,10 @@
       "awayRaw": "FC Metz",
       "home": "Marseille",
       "away": "Metz",
+      "homePicked": "Marseille",
+      "awayPicked": "Metz",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5340,6 +6293,10 @@
       "awayRaw": "AFC Bournemouth",
       "home": "Arsenal",
       "away": "Bournemouth",
+      "homePicked": "Arsenal",
+      "awayPicked": "Bournemouth",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5382,6 +6339,10 @@
       "awayRaw": "Deportivo Alaves",
       "home": "Sociedad",
       "away": "Alaves",
+      "homePicked": "Sociedad",
+      "awayPicked": "Alaves",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5422,8 +6383,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "Cagliari Calcio",
       "awayRaw": "US Cremonese",
-      "home": "Cagliari",
-      "away": "Cremonese",
+      "home": "Cagliari Calcio",
+      "away": "US Cremonese",
+      "homePicked": "Cagliari",
+      "awayPicked": "Cremonese",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5466,6 +6431,10 @@
       "awayRaw": "Hellas Verona",
       "home": "Torino",
       "away": "Verona",
+      "homePicked": "Torino",
+      "awayPicked": "Verona",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5507,7 +6476,11 @@
       "homeRaw": "RB Leipzig",
       "awayRaw": "Borussia Monchengladbach",
       "home": "RB Leipzig",
-      "away": "Mgladbach",
+      "away": "M'gladbach",
+      "homePicked": "RB Leipzig",
+      "awayPicked": "M'gladbach",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5524,8 +6497,23 @@
         "awayYCFor": 1.8,
         "awayYCAgainst": 1.2
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Mgladbach\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 0.8,
+        "awayGF": 1.2,
+        "awayGA": 2.6,
+        "homeCornersFor": 2.6,
+        "homeCornersAgainst": 2.4,
+        "awayCornersFor": 3.6,
+        "awayCornersAgainst": 4.8,
+        "homeYCFor": 1.6,
+        "homeYCAgainst": 2.4,
+        "awayYCFor": 1.4,
+        "awayYCAgainst": 2.6
+      },
+      "note": null
     },
     "id1000003561514120": {
       "footballDataId": "D1",
@@ -5535,6 +6523,10 @@
       "awayRaw": "Eintracht Frankfurt",
       "home": "Wolfsburg",
       "away": "Frankfurt",
+      "homePicked": "Wolfsburg",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5562,6 +6554,10 @@
       "awayRaw": "Union Berlin",
       "home": "Heidenheim",
       "away": "Union Berlin",
+      "homePicked": "Heidenheim",
+      "awayPicked": "Union Berlin",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5604,6 +6600,10 @@
       "awayRaw": "Bayer Leverkusen",
       "home": "Dortmund",
       "away": "Leverkusen",
+      "homePicked": "Dortmund",
+      "awayPicked": "Leverkusen",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5646,7 +6646,7 @@
       "homeRaw": "FK Rubin Kazan",
       "awayRaw": "FC Orenburg",
       "home": "FK Rubin Kazan",
-      "away": "Orenburg"
+      "away": "FC Orenburg"
     },
     "id1000001761301145": {
       "footballDataId": "E0",
@@ -5656,6 +6656,10 @@
       "awayRaw": "Brighton & Hove Albion",
       "home": "Burnley",
       "away": "Brighton & Hove Albion",
+      "homePicked": "Burnley",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5683,6 +6687,10 @@
       "awayRaw": "Everton FC",
       "home": "Brentford",
       "away": "Everton",
+      "homePicked": "Brentford",
+      "awayPicked": "Everton",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5723,8 +6731,12 @@
       "tournamentName": "Premiership",
       "homeRaw": "Heart of Midlothian FC",
       "awayRaw": "Motherwell FC",
-      "home": "Heart of Midlothian",
+      "home": "Heart of Midlothian FC",
       "away": "Motherwell",
+      "homePicked": null,
+      "awayPicked": "Motherwell",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -5742,7 +6754,7 @@
         "awayYCFor": 1.8,
         "awayYCAgainst": 3
       },
-      "note": "home team not found in stats: \"Heart of Midlothian\""
+      "note": "home team not found in stats: \"Heart of Midlothian FC\""
     },
     "id1000003661352719": {
       "footballDataId": "SC0",
@@ -5752,6 +6764,10 @@
       "awayRaw": "Hibernian FC",
       "home": "Aberdeen",
       "away": "Hibernian",
+      "homePicked": "Aberdeen",
+      "awayPicked": "Hibernian",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5794,6 +6810,10 @@
       "awayRaw": "Dundee FC",
       "home": "Kilmarnock",
       "away": "Dundee",
+      "homePicked": "Kilmarnock",
+      "awayPicked": "Dundee",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5836,6 +6856,10 @@
       "awayRaw": "Livingston FC",
       "home": "Dundee United",
       "away": "Livingston",
+      "homePicked": "Dundee United",
+      "awayPicked": "Livingston",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5878,6 +6902,10 @@
       "awayRaw": "St Mirren FC",
       "home": "Celtic Glasgow",
       "away": "St Mirren",
+      "homePicked": null,
+      "awayPicked": "St Mirren",
+      "homePickMethod": null,
+      "awayPickMethod": "raw",
       "homeStats": null,
       "awayStats": {
         "homeMatches": 5,
@@ -5905,6 +6933,10 @@
       "awayRaw": "Valencia CF",
       "home": "Elche",
       "away": "Valencia",
+      "homePicked": "Elche",
+      "awayPicked": "Valencia",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5946,7 +6978,11 @@
       "homeRaw": "FC Uta Arad",
       "awayRaw": "FC Botosani",
       "home": "UTA Arad",
-      "away": "Botosani",
+      "away": "FC Botosani",
+      "homePicked": "UTA Arad",
+      "awayPicked": "FC Botosani",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5963,8 +6999,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Botosani\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.2,
+        "awayGF": 0.6,
+        "awayGA": 2.4,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000003761320203": {
       "footballDataId": null,
@@ -5973,7 +7024,7 @@
       "tournamentName": "Eredivisie",
       "homeRaw": "FC Utrecht",
       "awayRaw": "SC Telstar",
-      "home": "Utrecht",
+      "home": "FC Utrecht",
       "away": "SC Telstar"
     },
     "id1000003461526514": {
@@ -5984,6 +7035,10 @@
       "awayRaw": "Paris Saint-Germain",
       "home": "Lens",
       "away": "PSG",
+      "homePicked": "Lens",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6010,7 +7065,11 @@
       "homeRaw": "AC Milan",
       "awayRaw": "Udinese Calcio",
       "home": "Milan",
-      "away": "Udinese",
+      "away": "Udinese Calcio",
+      "homePicked": "Milan",
+      "awayPicked": "Udinese",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6053,6 +7112,10 @@
       "awayRaw": "Fulham FC",
       "home": "Liverpool",
       "away": "Fulham",
+      "homePicked": "Liverpool",
+      "awayPicked": "Fulham",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6095,6 +7158,10 @@
       "awayRaw": "Bayern Munich",
       "home": "St Pauli",
       "away": "Bayern Munich",
+      "homePicked": "St Pauli",
+      "awayPicked": "Bayern Munich",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6137,6 +7204,10 @@
       "awayRaw": "Espanyol Barcelona",
       "home": "Barcelona",
       "away": "Espanyol",
+      "homePicked": "Barcelona",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6163,8 +7234,8 @@
       "tournamentName": "Premier League",
       "homeRaw": "FC Baltika Kaliningrad",
       "awayRaw": "FC Pari Nizhny Novgorod",
-      "home": "Baltika Kaliningrad",
-      "away": "Pari Nizhny Novgorod"
+      "home": "FC Baltika Kaliningrad",
+      "away": "FC Pari Nizhny Novgorod"
     },
     "id1000003761320199": {
       "footballDataId": null,
@@ -6184,6 +7255,10 @@
       "awayRaw": "FC Nantes",
       "home": "Auxerre",
       "away": "Nantes",
+      "homePicked": "Auxerre",
+      "awayPicked": "Nantes",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6226,6 +7301,10 @@
       "awayRaw": "ASC Otelul Galati",
       "home": "FCSB",
       "away": "Otelul",
+      "homePicked": "FCSB",
+      "awayPicked": "Otelul",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6267,7 +7346,7 @@
       "tournamentName": "Eredivisie",
       "homeRaw": "FC Groningen",
       "awayRaw": "Go Ahead Eagles",
-      "home": "Groningen",
+      "home": "FC Groningen",
       "away": "Go Ahead Eagles"
     },
     "id1000002361061565": {
@@ -6278,6 +7357,10 @@
       "awayRaw": "Juventus Turin",
       "home": "Atalanta",
       "away": "Juventus",
+      "homePicked": "Atalanta",
+      "awayPicked": "Juventus",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6320,6 +7403,10 @@
       "awayRaw": "Atletico Madrid",
       "home": "Sevilla",
       "away": "Ath Madrid",
+      "homePicked": "Sevilla",
+      "awayPicked": "Ath Madrid",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6372,6 +7459,10 @@
       "awayRaw": "Angers SCO",
       "home": "Rennes",
       "away": "Angers",
+      "homePicked": "Rennes",
+      "awayPicked": "Angers",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6422,8 +7513,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "Genoa CFC",
       "awayRaw": "Sassuolo Calcio",
-      "home": "Genoa",
-      "away": "Sassuolo",
+      "home": "Genoa CFC",
+      "away": "Sassuolo Calcio",
+      "homePicked": "Genoa",
+      "awayPicked": "Sassuolo",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6466,6 +7561,10 @@
       "awayRaw": "Glasgow Rangers",
       "home": "Falkirk",
       "away": "Glasgow Rangers",
+      "homePicked": "Falkirk",
+      "awayPicked": null,
+      "homePickMethod": "raw",
+      "awayPickMethod": null,
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6503,6 +7602,10 @@
       "awayRaw": "Real Betis Seville",
       "home": "Osasuna",
       "away": "Betis",
+      "homePicked": "Osasuna",
+      "awayPicked": "Betis",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6565,6 +7668,10 @@
       "awayRaw": "Tottenham Hotspur",
       "home": "Sunderland",
       "away": "Tottenham",
+      "homePicked": "Sunderland",
+      "awayPicked": "Tottenham",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6605,9 +7712,28 @@
       "tournamentName": "Premier League",
       "homeRaw": "Nottingham Forest",
       "awayRaw": "Aston Villa",
-      "home": "Nottm Forest",
+      "home": "Nott'm Forest",
       "away": "Aston Villa",
-      "homeStats": null,
+      "homePicked": "Nott'm Forest",
+      "awayPicked": "Aston Villa",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.2,
+        "homeGA": 0.4,
+        "awayGF": 1.8,
+        "awayGA": 1.4,
+        "homeCornersFor": 5.8,
+        "homeCornersAgainst": 4.8,
+        "awayCornersFor": 4.6,
+        "awayCornersAgainst": 6.8,
+        "homeYCFor": 1.2,
+        "homeYCAgainst": 1.8,
+        "awayYCFor": 1.6,
+        "awayYCAgainst": 1.2
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6624,7 +7750,7 @@
         "awayYCFor": 1.6,
         "awayYCAgainst": 2
       },
-      "note": "home team not found in stats: \"Nottm Forest\""
+      "note": null
     },
     "id1000001761301149": {
       "footballDataId": "E0",
@@ -6634,6 +7760,10 @@
       "awayRaw": "Newcastle United",
       "home": "Crystal Palace",
       "away": "Newcastle",
+      "homePicked": "Crystal Palace",
+      "awayPicked": "Newcastle",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6674,8 +7804,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "Parma Calcio",
       "awayRaw": "SSC Napoli",
-      "home": "Parma",
-      "away": "Napoli",
+      "home": "Parma Calcio",
+      "away": "SSC Napoli",
+      "homePicked": "Parma",
+      "awayPicked": "Napoli",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6716,9 +7850,28 @@
       "tournamentName": "Bundesliga",
       "homeRaw": "1. FC Cologne",
       "awayRaw": "Werder Bremen",
-      "home": "Koln",
+      "home": "FC Koln",
       "away": "Werder Bremen",
-      "homeStats": null,
+      "homePicked": "FC Koln",
+      "awayPicked": "Werder Bremen",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.6,
+        "homeGA": 1.8,
+        "awayGF": 1,
+        "awayGA": 2,
+        "homeCornersFor": 4.8,
+        "homeCornersAgainst": 4.8,
+        "awayCornersFor": 6.2,
+        "awayCornersAgainst": 3.8,
+        "homeYCFor": 2.4,
+        "homeYCAgainst": 2.8,
+        "awayYCFor": 1.8,
+        "awayYCAgainst": 2.6
+      },
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6735,7 +7888,7 @@
         "awayYCFor": 2.6,
         "awayYCAgainst": 1.6
       },
-      "note": "home team not found in stats: \"Koln\""
+      "note": null
     },
     "id1000020361376675": {
       "footballDataId": null,
@@ -6755,7 +7908,7 @@
       "homeRaw": "Lokomotiv Moscow",
       "awayRaw": "FC Dynamo-Makhachkala",
       "home": "Lokomotiv Moscow",
-      "away": "Dynamo-Makhachkala"
+      "away": "FC Dynamo-Makhachkala"
     },
     "id1000000861624546": {
       "footballDataId": "SP1",
@@ -6765,6 +7918,10 @@
       "awayRaw": "Rayo Vallecano",
       "home": "Mallorca",
       "away": "Vallecano",
+      "homePicked": "Mallorca",
+      "awayPicked": "Vallecano",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6817,6 +7974,10 @@
       "awayRaw": "FC Petrolul Ploiesti",
       "home": "Unirea Slobozia",
       "away": "Petrolul",
+      "homePicked": "Unirea Slobozia",
+      "awayPicked": "Petrolul",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6858,7 +8019,11 @@
       "homeRaw": "Toulouse FC",
       "awayRaw": "Lille OSC",
       "home": "Toulouse",
-      "away": "Lille",
+      "away": "Lille OSC",
+      "homePicked": "Toulouse",
+      "awayPicked": "Lille",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6901,6 +8066,10 @@
       "awayRaw": "Strasbourg Alsace",
       "home": "Brest",
       "away": "Strasbourg",
+      "homePicked": "Brest",
+      "awayPicked": "Strasbourg",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6943,6 +8112,10 @@
       "awayRaw": "Le Havre AC",
       "home": "Nice",
       "away": "Le Havre",
+      "homePicked": "Nice",
+      "awayPicked": "Le Havre",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -6985,6 +8158,10 @@
       "awayRaw": "Manchester City",
       "home": "Chelsea",
       "away": "Man City",
+      "homePicked": "Chelsea",
+      "awayPicked": "Man City",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7027,6 +8204,10 @@
       "awayRaw": "Hamburger SV",
       "home": "Stuttgart",
       "away": "Hamburg",
+      "homePicked": "Stuttgart",
+      "awayPicked": "Hamburg",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7068,7 +8249,11 @@
       "homeRaw": "Bologna FC",
       "awayRaw": "US Lecce",
       "home": "Bologna",
-      "away": "Lecce",
+      "away": "US Lecce",
+      "homePicked": "Bologna",
+      "awayPicked": "Lecce",
+      "homePickMethod": "raw",
+      "awayPickMethod": "normalized",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7111,6 +8296,10 @@
       "awayRaw": "Real Oviedo",
       "home": "Celta",
       "away": "Oviedo",
+      "homePicked": "Celta",
+      "awayPicked": "Oviedo",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7163,6 +8352,10 @@
       "awayRaw": "SC Freiburg",
       "home": "Mainz",
       "away": "Freiburg",
+      "homePicked": "Mainz",
+      "awayPicked": "Freiburg",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7205,6 +8398,10 @@
       "awayRaw": "FC Dinamo Bucuresti 1948",
       "home": "CFR Cluj",
       "away": "Dinamo Bucuresti",
+      "homePicked": "CFR Cluj",
+      "awayPicked": "Dinamo Bucuresti",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7247,6 +8444,10 @@
       "awayRaw": "Inter Milano",
       "home": "Como",
       "away": "Inter",
+      "homePicked": "Como",
+      "awayPicked": "Inter",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7289,6 +8490,10 @@
       "awayRaw": "FC Lorient",
       "home": "Lyon",
       "away": "Lorient",
+      "homePicked": "Lyon",
+      "awayPicked": "Lorient",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7331,6 +8536,10 @@
       "awayRaw": "Villarreal CF",
       "home": "Ath Bilbao",
       "away": "Villarreal",
+      "homePicked": "Ath Bilbao",
+      "awayPicked": "Villarreal",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7372,7 +8581,11 @@
       "homeRaw": "Metaloglobus Bucuresti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
       "home": "Metaloglobus Bucharest",
-      "away": "Csikszereda M Ciuc",
+      "away": "Csikszereda M. Ciuc",
+      "homePicked": "Metaloglobus Bucharest",
+      "awayPicked": "Csikszereda M. Ciuc",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7389,8 +8602,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Csikszereda M Ciuc\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 0.4,
+        "awayGF": 1.2,
+        "awayGA": 1.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000020361376687": {
       "footballDataId": null,
@@ -7408,11 +8636,45 @@
       "tournamentName": "Superliga",
       "homeRaw": "Rapid Bucuresti 1923",
       "awayRaw": "ACS Champions FC Arges",
-      "home": "Rapid Bucuresti",
-      "away": "Arges",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"Arges\""
+      "home": "FC Rapid Bucuresti",
+      "away": "FC Arges",
+      "homePicked": "FC Rapid Bucuresti",
+      "awayPicked": "FC Arges",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.4,
+        "awayGF": 1.6,
+        "awayGA": 1.2,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.8,
+        "homeGA": 0.6,
+        "awayGF": 1.2,
+        "awayGA": 1,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000002361061573": {
       "footballDataId": "I1",
@@ -7420,8 +8682,12 @@
       "tournamentName": "Serie A",
       "homeRaw": "ACF Fiorentina",
       "awayRaw": "Lazio Rome",
-      "home": "Fiorentina",
+      "home": "ACF Fiorentina",
       "away": "Lazio",
+      "homePicked": "Fiorentina",
+      "awayPicked": "Lazio",
+      "homePickMethod": "normalized",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7464,6 +8730,10 @@
       "awayRaw": "Leeds United",
       "home": "Man United",
       "away": "Leeds",
+      "homePicked": "Man United",
+      "awayPicked": "Leeds",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -7506,6 +8776,10 @@
       "awayRaw": "Getafe CF",
       "home": "Levante",
       "away": "Getafe",
+      "homePicked": "Levante",
+      "awayPicked": "Getafe",
+      "homePickMethod": "raw",
+      "awayPickMethod": "raw",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
