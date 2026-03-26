@@ -1,7 +1,7 @@
 {
-  "generatedAtUTC": "2026-03-26T11:47:18.092Z",
+  "generatedAtUTC": "2026-03-26T11:56:17.230Z",
   "lookback": 5,
-  "aliasesUsed": 172,
+  "aliasesUsed": 162,
   "byFixtureId": {
     "id1000005461623716": {
       "footballDataId": "SP2",
@@ -3358,7 +3358,7 @@
       "homeRaw": "FC Uta Arad",
       "awayRaw": "Metaloglobus Bucuresti",
       "home": "UTA Arad",
-      "away": "Metaloglobus",
+      "away": "Metaloglobus Bucharest",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -3375,8 +3375,23 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Metaloglobus\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.6,
+        "homeGA": 1.2,
+        "awayGF": 0.8,
+        "awayGA": 2.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
+      "note": null
     },
     "id1000004067091114": {
       "footballDataId": "SWE",
@@ -4403,7 +4418,7 @@
       "homeRaw": "FC Petrolul Ploiesti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
       "home": "Petrolul",
-      "away": "Csikszereda",
+      "away": "Csikszereda M Ciuc",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4421,7 +4436,7 @@
         "awayYCAgainst": 0
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"Csikszereda\""
+      "note": "away team not found in stats: \"Csikszereda M Ciuc\""
     },
     "id1000004067091104": {
       "footballDataId": "SWE",
@@ -4707,7 +4722,7 @@
       "tournamentName": "Superliga",
       "homeRaw": "CS Universitatea Craiova",
       "awayRaw": "FC CFR 1907 Cluj",
-      "home": "Craiova",
+      "home": "Univ Craiova",
       "away": "CFR Cluj",
       "homeStats": null,
       "awayStats": {
@@ -4726,7 +4741,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"Craiova\""
+      "note": "home team not found in stats: \"Univ Craiova\""
     },
     "id1000023861731444": {
       "footballDataId": null,
@@ -7356,11 +7371,26 @@
       "tournamentName": "Superliga",
       "homeRaw": "Metaloglobus Bucuresti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
-      "home": "Metaloglobus",
-      "away": "Csikszereda",
-      "homeStats": null,
+      "home": "Metaloglobus Bucharest",
+      "away": "Csikszereda M Ciuc",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.6,
+        "homeGA": 1.2,
+        "awayGF": 0.8,
+        "awayGA": 2.6,
+        "homeCornersFor": 0,
+        "homeCornersAgainst": 0,
+        "awayCornersFor": 0,
+        "awayCornersAgainst": 0,
+        "homeYCFor": 0,
+        "homeYCAgainst": 0,
+        "awayYCFor": 0,
+        "awayYCAgainst": 0
+      },
       "awayStats": null,
-      "note": "home team not found in stats: \"Metaloglobus\" | away team not found in stats: \"Csikszereda\""
+      "note": "away team not found in stats: \"Csikszereda M Ciuc\""
     },
     "id1000020361376687": {
       "footballDataId": null,
