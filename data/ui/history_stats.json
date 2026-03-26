@@ -1,7 +1,7 @@
 {
-  "generatedAtUTC": "2026-03-26T11:35:23.049Z",
+  "generatedAtUTC": "2026-03-26T11:47:18.092Z",
   "lookback": 5,
-  "aliasesUsed": 151,
+  "aliasesUsed": 172,
   "byFixtureId": {
     "id1000005461623716": {
       "footballDataId": "SP2",
@@ -2339,7 +2339,7 @@
       "tournamentName": "Superliga",
       "homeRaw": "ACS Champions FC Arges",
       "awayRaw": "FC Dinamo Bucuresti 1948",
-      "home": "ACS Champions FC Arges",
+      "home": "Arges",
       "away": "Dinamo Bucuresti",
       "homeStats": null,
       "awayStats": {
@@ -2358,7 +2358,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"ACS Champions FC Arges\""
+      "note": "home team not found in stats: \"Arges\""
     },
     "id1000024763465903": {
       "footballDataId": null,
@@ -4083,10 +4083,10 @@
       "homeRaw": "Rapid Bucuresti 1923",
       "awayRaw": "FC Universitatea Cluj",
       "home": "Rapid Bucuresti",
-      "away": "Universitatea Cluj",
+      "away": "U Cluj",
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"Universitatea Cluj\""
+      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"U Cluj\""
     },
     "id1000002361061547": {
       "footballDataId": "I1",
@@ -4403,7 +4403,7 @@
       "homeRaw": "FC Petrolul Ploiesti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
       "home": "Petrolul",
-      "away": "AFK Csikszereda Miercurea Ciuc",
+      "away": "Csikszereda",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4421,7 +4421,7 @@
         "awayYCAgainst": 0
       },
       "awayStats": null,
-      "note": "away team not found in stats: \"AFK Csikszereda Miercurea Ciuc\""
+      "note": "away team not found in stats: \"Csikszereda\""
     },
     "id1000004067091104": {
       "footballDataId": "SWE",
@@ -4707,7 +4707,7 @@
       "tournamentName": "Superliga",
       "homeRaw": "CS Universitatea Craiova",
       "awayRaw": "FC CFR 1907 Cluj",
-      "home": "CS Universitatea Craiova",
+      "home": "Craiova",
       "away": "CFR Cluj",
       "homeStats": null,
       "awayStats": {
@@ -4726,7 +4726,7 @@
         "awayYCFor": 0,
         "awayYCAgainst": 0
       },
-      "note": "home team not found in stats: \"CS Universitatea Craiova\""
+      "note": "home team not found in stats: \"Craiova\""
     },
     "id1000023861731444": {
       "footballDataId": null,
@@ -7357,10 +7357,10 @@
       "homeRaw": "Metaloglobus Bucuresti",
       "awayRaw": "AFK Csikszereda Miercurea Ciuc",
       "home": "Metaloglobus",
-      "away": "AFK Csikszereda Miercurea Ciuc",
+      "away": "Csikszereda",
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Metaloglobus\" | away team not found in stats: \"AFK Csikszereda Miercurea Ciuc\""
+      "note": "home team not found in stats: \"Metaloglobus\" | away team not found in stats: \"Csikszereda\""
     },
     "id1000020361376687": {
       "footballDataId": null,
@@ -7379,10 +7379,10 @@
       "homeRaw": "Rapid Bucuresti 1923",
       "awayRaw": "ACS Champions FC Arges",
       "home": "Rapid Bucuresti",
-      "away": "ACS Champions FC Arges",
+      "away": "Arges",
       "homeStats": null,
       "awayStats": null,
-      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"ACS Champions FC Arges\""
+      "note": "home team not found in stats: \"Rapid Bucuresti\" | away team not found in stats: \"Arges\""
     },
     "id1000002361061573": {
       "footballDataId": "I1",
