@@ -26,70 +26,61 @@ function loadAliasesFile(p){
 }
 
 function mergeAliases(manualAliases, generatedAliases){
-  // manual overrides generated
-  return { ...generatedAliases, ...manualAliases };
+  return { ...generatedAliases, ...manualAliases }; // manual overrides generated
 }
 
-// --- NEW: generic cleanup for common team suffix/prefix noise ---
+// generic cleanup (helps Italy/others)
 function normalizeTeamGeneric(name){
   let s = String(name || "").trim();
   if (!s) return s;
 
-  // remove punctuation variants
   s = s.replace(/[’'.]/g, "");
-
-  // remove common trailing tokens (mostly harmless, big impact for Italy)
-  const drop = [
-    " Calcio",
-    " FC",
-    " CF",
-    " AC",
-    " AFC",
-    " SC",
-    " CFC",
-    " HSC",
-    " OSC",
-    " BC",
-    " FK",
-    " SK",
-    " BK"
-  ];
-
-  for (const t of drop){
-    if (s.toLowerCase().endsWith(t.trim().toLowerCase())){
-      s = s.slice(0, s.length - t.length).trim();
-    }
-  }
-
-  // remove common leading tokens (optional)
+  // remove leading tokens
   const lead = ["SSC ", "US ", "AS ", "ACF ", "FC ", "CF "];
   for (const p of lead){
     if (s.toLowerCase().startsWith(p.toLowerCase())){
       s = s.slice(p.length).trim();
     }
   }
-
-  // compress spaces
+  // remove trailing tokens
+  const drop = [" Calcio"," FC"," CF"," AC"," AFC"," SC"," CFC"," HSC"," OSC"," BC"," FK"," SK"," BK"];
+  for (const t of drop){
+    if (s.toLowerCase().endsWith(t.trim().toLowerCase())){
+      s = s.slice(0, s.length - t.length).trim();
+    }
+  }
   s = s.replace(/\s+/g, " ").trim();
   return s;
 }
 
-function normTeamName(name, aliases){
-  const raw = String(name || "").trim();
-  const aliased = aliases[raw] || raw;
-  return normalizeTeamGeneric(aliased);
+function applyAliases(rawName, aliases){
+  const raw = String(rawName || "").trim();
+  return aliases[raw] || raw;
 }
 
-function pickTeamStats(statsFile, teamName){
-  const teamStats = statsFile?.teamStats || {};
-  if (!teamName) return null;
-
-  // exact match first
-  if (teamStats[teamName]) return teamStats[teamName];
-
-  // case-insensitive key match
-  const key = Object.keys(teamStats).find(k => lc(k) === lc(teamName));
+function pickTeamStatsExactOrCI(teamStats, name){
+  if (!name) return null;
+  if (teamStats[name]) return teamStats[name];
+  const key = Object.keys(teamStats).find(k => lc(k) === lc(name));
   return key ? teamStats[key] : null;
+}
+
+function pickTeamStatsMulti(statsFile, rawName){
+  const teamStats = statsFile?.teamStats || {};
+  if (!rawName) return null;
+
+  // 1) exact/raw (after aliases), no normalization
+  const a1 = pickTeamStatsExactOrCI(teamStats, rawName);
+  if (a1) return { stats: a1, pickedName: rawName, method: "raw" };
+
+  // 2) normalized generic
+  const n = normalizeTeamGeneric(rawName);
+  if (n && n !== rawName){
+    const a2 = pickTeamStatsExactOrCI(teamStats, n);
+    if (a2) return { stats: a2, pickedName: n, method: "normalized" };
+  }
+
+  return null;
 }
 
 function main(){
@@ -100,8 +91,7 @@ function main(){
   if (!fs.existsSync(matchesPath)) throw new Error("Missing data/ui/matches.json");
 
   const mapCfg = readJson(mapPath);
-  const matchesObj = readJson(matchesPath);
-  const matches = matchesObj.matches || [];
+  const matches = readJson(matchesPath).matches || [];
 
   const manual = loadAliasesFile(path.join("scripts", "team-aliases.json")).aliases;
   const generated = loadAliasesFile(path.join("scripts", "team-aliases.generated.json")).aliases;
@@ -121,12 +111,14 @@ function main(){
     const categoryName = m.categoryName || "";
     const tournamentName = m.tournamentName || "";
 
-    const homeRaw = m.home || "";
-    const awayRaw = m.away || "";
-    const home = normTeamName(homeRaw, aliases);
-    const away = normTeamName(awayRaw, aliases);
-
     const fdId = findFootballDataId(mapCfg, categoryName, tournamentName);
+    const homeRaw = String(m.home || "").trim();
+    const awayRaw = String(m.away || "").trim();
+
+    // Apply aliases (manual + generated). IMPORTANT: don't normalize yet.
+    const homeAliased = applyAliases(homeRaw, aliases);
+    const awayAliased = applyAliases(awayRaw, aliases);
+
     if (!fdId){
       out.byFixtureId[fixtureId] = {
         footballDataId: null,
@@ -135,8 +127,8 @@ function main(){
         tournamentName,
         homeRaw,
         awayRaw,
-        home,
-        away
+        home: homeAliased,
+        away: awayAliased
       };
       continue;
     }
@@ -156,20 +148,20 @@ function main(){
         tournamentName,
         homeRaw,
         awayRaw,
-        home,
-        away
+        home: homeAliased,
+        away: awayAliased
       };
       continue;
     }
 
-    const homeStats = pickTeamStats(statsFile, home);
-    const awayStats = pickTeamStats(statsFile, away);
+    const hPick = pickTeamStatsMulti(statsFile, homeAliased);
+    const aPick = pickTeamStatsMulti(statsFile, awayAliased);
 
     let note = null;
-    if (!homeStats || !awayStats){
+    if (!hPick || !aPick){
       const miss = [];
-      if (!homeStats) miss.push(`home team not found in stats: "${home}"`);
-      if (!awayStats) miss.push(`away team not found in stats: "${away}"`);
+      if (!hPick) miss.push(`home team not found in stats: "${homeAliased}"`);
+      if (!aPick) miss.push(`away team not found in stats: "${awayAliased}"`);
       note = miss.join(" | ");
     }
 
@@ -179,10 +171,14 @@ function main(){
       tournamentName,
       homeRaw,
       awayRaw,
-      home,
-      away,
-      homeStats: homeStats || null,
-      awayStats: awayStats || null,
+      home: homeAliased,
+      away: awayAliased,
+      homePicked: hPick?.pickedName || null,
+      awayPicked: aPick?.pickedName || null,
+      homePickMethod: hPick?.method || null,
+      awayPickMethod: aPick?.method || null,
+      homeStats: hPick?.stats || null,
+      awayStats: aPick?.stats || null,
       note
     };
   }
