@@ -1,27 +1,36 @@
 {
   "mappings": [
-    { "match": { "categoryName": "England", "tournamentName": "Premier League" }, "footballDataId": "E0" },
-    { "match": { "categoryName": "England", "tournamentName": "Championship" },   "footballDataId": "E1" },
+    { "match": { "categoryName": "England",  "tournamentName": "Premier League" }, "footballDataId": "E0" },
+    { "match": { "categoryName": "England",  "tournamentName": "Championship" },   "footballDataId": "E1" },
 
-    { "match": { "categoryName": "Scotland", "tournamentName": "Premiership" },   "footballDataId": "SC0" },
-    { "match": { "categoryName": "Scotland", "tournamentName": "Division 1" },    "footballDataId": "SC1" },
+    { "match": { "categoryName": "France",   "tournamentName": "Ligue 1" },        "footballDataId": "F1" },
+    { "match": { "categoryName": "France",   "tournamentName": "Ligue 2" },        "footballDataId": "F2" },
 
-    { "match": { "categoryName": "Germany", "tournamentName": "Bundesliga" },     "footballDataId": "D1" },
-    { "match": { "categoryName": "Germany", "tournamentName": "2. Bundesliga" },  "footballDataId": "D2" },
+    { "match": { "categoryName": "Germany",  "tournamentName": "Bundesliga" },     "footballDataId": "D1" },
+    { "match": { "categoryName": "Germany",  "tournamentName": "2. Bundesliga" },  "footballDataId": "D2" },
 
-    { "match": { "categoryName": "Italy", "tournamentName": "Serie A" },          "footballDataId": "I1" },
-    { "match": { "categoryName": "Italy", "tournamentName": "Serie B" },          "footballDataId": "I2" },
+    { "match": { "categoryName": "Italy",    "tournamentName": "Serie A" },        "footballDataId": "I1" },
+    { "match": { "categoryName": "Italy",    "tournamentName": "Serie B" },        "footballDataId": "I2" },
 
-    { "match": { "categoryName": "Spain", "tournamentName": "LaLiga" },           "footballDataId": "SP1" },
-    { "match": { "categoryName": "Spain", "tournamentName": "LaLiga 2" },         "footballDataId": "SP2" },
+    { "match": { "categoryName": "Spain",    "tournamentName": "LaLiga" },         "footballDataId": "SP1" },
+    { "match": { "categoryName": "Spain",    "tournamentName": "LaLiga 2" },       "footballDataId": "SP2" },
 
-    { "match": { "categoryName": "France", "tournamentName": "Ligue 1" },         "footballDataId": "F1" },
-    { "match": { "categoryName": "France", "tournamentName": "Ligue 2" },         "footballDataId": "F2" },
-
-    { "match": { "categoryName": "Belgium", "tournamentName": "First Division A" }, "footballDataId": "B1" },
+    { "match": { "categoryName": "Belgium",  "tournamentName": "First Division A" }, "footballDataId": "B1" },
     { "match": { "categoryName": "Portugal", "tournamentName": "Primeira Liga" },    "footballDataId": "P1" },
 
-    { "match": { "categoryName": "Turkey", "tournamentName": "Super Lig" },       "footballDataId": "T1" },
-    { "match": { "categoryName": "Greece", "tournamentName": "Super League" },    "footballDataId": "G1" }
+    { "match": { "categoryName": "Turkey",   "tournamentName": "Super Lig" },      "footballDataId": "T1" },
+    { "match": { "categoryName": "Greece",   "tournamentName": "Super League" },   "footballDataId": "G1" },
+
+    { "match": { "categoryName": "Scotland", "tournamentName": "Premiership" },    "footballDataId": "SC0" },
+    { "match": { "categoryName": "Scotland", "tournamentName": "Division 1" },     "footballDataId": "SC1" },
+
+    { "match": { "categoryName": "Romania",  "tournamentName": "Superliga" },      "footballDataId": "ROU" },
+
+    { "match": { "categoryName": "Austria",  "tournamentName": "Bundesliga" },     "footballDataId": "AUT" },
+    { "match": { "categoryName": "Norway",   "tournamentName": "Eliteserien" },    "footballDataId": "NOR" },
+    { "match": { "categoryName": "Poland",   "tournamentName": "Ekstraklasa" },    "footballDataId": "POL" },
+    { "match": { "categoryName": "Sweden",   "tournamentName": "Allsvenskan" },    "footballDataId": "SWE" },
+    { "match": { "categoryName": "Switzerland", "tournamentName": "Super League" }, "footballDataId": "SWZ" },
+    { "match": { "categoryName": "USA",      "tournamentName": "MLS" },            "footballDataId": "USA" }
   ]
 }
