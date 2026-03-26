@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-26T01:49:45.826Z",
+  "generatedAtUTC": "2026-03-26T02:01:30.715Z",
   "lookback": 5,
   "matchesTotal": 285,
   "leagues": [
@@ -27,11 +27,11 @@
         "I1"
       ],
       "total": 20,
-      "ok": 1,
-      "okPct": 5,
+      "ok": 11,
+      "okPct": 55,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 19,
+      "missingTeams": 9,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -103,11 +103,11 @@
         "ROU"
       ],
       "total": 15,
-      "ok": 2,
-      "okPct": 13.3,
+      "ok": 0,
+      "okPct": 0,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 13,
+      "missingTeams": 15,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -119,11 +119,11 @@
         "USA"
       ],
       "total": 15,
-      "ok": 14,
-      "okPct": 93.3,
+      "ok": 5,
+      "okPct": 33.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 1,
+      "missingTeams": 10,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -183,11 +183,11 @@
         "E0"
       ],
       "total": 10,
-      "ok": 9,
-      "okPct": 90,
+      "ok": 8,
+      "okPct": 80,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 1,
+      "missingTeams": 2,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -213,11 +213,11 @@
         "F2"
       ],
       "total": 9,
-      "ok": 2,
-      "okPct": 22.2,
+      "ok": 1,
+      "okPct": 11.1,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 7,
+      "missingTeams": 8,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -414,6 +414,11 @@
       "count": 2
     },
     {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
       "leagueKey": "France ",
       "teamName": " Ligue 1",
       "count": 2
@@ -434,13 +439,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
       "count": 2
     },
     {
@@ -504,11 +504,6 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
       "leagueKey": "Germany ",
       "teamName": " Bundesliga",
       "count": 2
@@ -549,16 +544,6 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
-      "leagueKey": "France ",
-      "teamName": " Ligue 1",
-      "count": 2
-    },
-    {
       "leagueKey": "France ",
       "teamName": " Ligue 1",
       "count": 2
@@ -571,11 +556,6 @@
     {
       "leagueKey": "Romania ",
       "teamName": " Superliga",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
       "count": 2
     },
     {
@@ -609,6 +589,11 @@
       "count": 2
     },
     {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
       "leagueKey": "Germany ",
       "teamName": " Bundesliga",
       "count": 2
@@ -634,16 +619,6 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
-      "leagueKey": "France ",
-      "teamName": " Ligue 1",
-      "count": 2
-    },
-    {
       "leagueKey": "France ",
       "teamName": " Ligue 1",
       "count": 2
@@ -659,16 +634,6 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
       "leagueKey": "Romania ",
       "teamName": " Superliga",
       "count": 2
@@ -684,18 +649,8 @@
       "count": 2
     },
     {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
-      "count": 2
-    },
-    {
       "leagueKey": "Romania ",
       "teamName": " Superliga",
-      "count": 2
-    },
-    {
-      "leagueKey": "Italy ",
-      "teamName": " Serie A",
       "count": 2
     },
     {
@@ -854,16 +809,6 @@
       "count": 1
     },
     {
-      "leagueKey": "France ",
-      "teamName": " Ligue 2",
-      "count": 1
-    },
-    {
-      "leagueKey": "France ",
-      "teamName": " Ligue 2",
-      "count": 1
-    },
-    {
       "leagueKey": "Greece ",
       "teamName": " Super League",
       "count": 1
@@ -936,6 +881,11 @@
     {
       "leagueKey": "Sweden ",
       "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
       "count": 1
     },
     {
@@ -954,8 +904,8 @@
       "count": 1
     },
     {
-      "leagueKey": "France ",
-      "teamName": " Ligue 2",
+      "leagueKey": "USA ",
+      "teamName": " MLS",
       "count": 1
     },
     {
@@ -964,8 +914,8 @@
       "count": 1
     },
     {
-      "leagueKey": "Germany ",
-      "teamName": " 2. Bundesliga",
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
       "count": 1
     },
     {
@@ -976,6 +926,46 @@
     {
       "leagueKey": "Switzerland ",
       "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
       "count": 1
     },
     {
@@ -1129,21 +1119,16 @@
       "count": 1
     },
     {
-      "leagueKey": "Norway ",
-      "teamName": " Eliteserien",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway ",
-      "teamName": " Eliteserien",
-      "count": 1
-    },
-    {
       "leagueKey": "Romania ",
       "teamName": " Superliga",
       "count": 1
     },
     {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
       "leagueKey": "Norway ",
       "teamName": " Eliteserien",
       "count": 1
@@ -1151,6 +1136,11 @@
     {
       "leagueKey": "Norway ",
       "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
       "count": 1
     },
     {
