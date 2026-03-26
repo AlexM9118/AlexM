@@ -1,7 +1,7 @@
 {
-  "generatedAtUTC": "2026-03-26T01:35:14.365Z",
+  "generatedAtUTC": "2026-03-26T01:49:23.489Z",
   "lookback": 5,
-  "aliasesUsed": 97,
+  "aliasesUsed": 107,
   "byFixtureId": {
     "id1000005461623716": {
       "footballDataId": "SP2",
@@ -2238,23 +2238,23 @@
       "tournamentName": "LaLiga",
       "homeRaw": "Atletico Madrid",
       "awayRaw": "FC Barcelona",
-      "home": "Real Madrid",
+      "home": "Ath Madrid",
       "away": "Barcelona",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
-        "homeGF": 2.6,
-        "homeGA": 1.2,
-        "awayGF": 1.8,
-        "awayGA": 0.8,
-        "homeCornersFor": 6.4,
-        "homeCornersAgainst": 3.4,
-        "awayCornersFor": 6.8,
-        "awayCornersAgainst": 4,
+        "homeGF": 2.2,
+        "homeGA": 1,
+        "awayGF": 0.8,
+        "awayGA": 1.4,
+        "homeCornersFor": 8,
+        "homeCornersAgainst": 2.6,
+        "awayCornersFor": 5,
+        "awayCornersAgainst": 5.2,
         "homeYCFor": 1.8,
-        "homeYCAgainst": 4.4,
-        "awayYCFor": 1.8,
-        "awayYCAgainst": 2
+        "homeYCAgainst": 1.4,
+        "awayYCFor": 2.4,
+        "awayYCAgainst": 1.8
       },
       "awayStats": {
         "homeMatches": 5,
@@ -4376,7 +4376,7 @@
       "homeRaw": "FC Barcelona",
       "awayRaw": "Atletico Madrid",
       "home": "Barcelona",
-      "away": "Real Madrid"
+      "away": "Ath Madrid"
     },
     "id1003448069339976": {
       "footballDataId": null,
@@ -4588,7 +4588,7 @@
       "homeRaw": "West Ham United",
       "awayRaw": "Wolverhampton Wanderers",
       "home": "West Ham",
-      "away": "Wolverhampton Wanderers",
+      "away": "Wolves",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -4605,8 +4605,23 @@
         "awayYCFor": 2,
         "awayYCAgainst": 2
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Wolverhampton Wanderers\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 1.6,
+        "awayGF": 0.6,
+        "awayGA": 1.2,
+        "homeCornersFor": 2.2,
+        "homeCornersAgainst": 5.8,
+        "awayCornersFor": 4.6,
+        "awayCornersAgainst": 4.4,
+        "homeYCFor": 2.2,
+        "homeYCAgainst": 1.8,
+        "awayYCFor": 2.6,
+        "awayYCAgainst": 1.8
+      },
+      "note": null
     },
     "id1000000861624556": {
       "footballDataId": "SP1",
@@ -5479,7 +5494,7 @@
       "homeRaw": "Sevilla FC",
       "awayRaw": "Atletico Madrid",
       "home": "Sevilla",
-      "away": "Real Madrid",
+      "away": "Ath Madrid",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5499,18 +5514,18 @@
       "awayStats": {
         "homeMatches": 5,
         "awayMatches": 5,
-        "homeGF": 2.6,
-        "homeGA": 1.2,
-        "awayGF": 1.8,
-        "awayGA": 0.8,
-        "homeCornersFor": 6.4,
-        "homeCornersAgainst": 3.4,
-        "awayCornersFor": 6.8,
-        "awayCornersAgainst": 4,
+        "homeGF": 2.2,
+        "homeGA": 1,
+        "awayGF": 0.8,
+        "awayGA": 1.4,
+        "homeCornersFor": 8,
+        "homeCornersAgainst": 2.6,
+        "awayCornersFor": 5,
+        "awayCornersAgainst": 5.2,
         "homeYCFor": 1.8,
-        "homeYCAgainst": 4.4,
-        "awayYCFor": 1.8,
-        "awayYCAgainst": 2
+        "homeYCAgainst": 1.4,
+        "awayYCFor": 2.4,
+        "awayYCAgainst": 1.8
       },
       "note": null
     },
@@ -5634,7 +5649,7 @@
       "homeRaw": "Sunderland AFC",
       "awayRaw": "Tottenham Hotspur",
       "home": "Sunderland",
-      "away": "Tottenham Hotspur",
+      "away": "Tottenham",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5651,8 +5666,23 @@
         "awayYCFor": 3.4,
         "awayYCAgainst": 1.8
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Tottenham Hotspur\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1,
+        "homeGA": 2.8,
+        "awayGF": 1.2,
+        "awayGA": 2,
+        "homeCornersFor": 5.2,
+        "homeCornersAgainst": 5.4,
+        "awayCornersFor": 4.4,
+        "awayCornersAgainst": 3.8,
+        "homeYCFor": 2.4,
+        "homeYCAgainst": 2,
+        "awayYCFor": 1.6,
+        "awayYCAgainst": 1.6
+      },
+      "note": null
     },
     "id1000001761301155": {
       "footballDataId": "E0",
@@ -5703,7 +5733,7 @@
       "homeRaw": "Crystal Palace",
       "awayRaw": "Newcastle United",
       "home": "Crystal Palace",
-      "away": "Newcastle United",
+      "away": "Newcastle",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5720,8 +5750,23 @@
         "awayYCFor": 2.6,
         "awayYCAgainst": 2
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Newcastle United\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 1.4,
+        "homeGA": 2.2,
+        "awayGF": 1,
+        "awayGA": 1.4,
+        "homeCornersFor": 6.6,
+        "homeCornersAgainst": 3.8,
+        "awayCornersFor": 7.2,
+        "awayCornersAgainst": 5.2,
+        "homeYCFor": 1.6,
+        "homeYCAgainst": 3.2,
+        "awayYCFor": 2.8,
+        "awayYCAgainst": 2
+      },
+      "note": null
     },
     "id1000002361061579": {
       "footballDataId": "I1",
@@ -5889,7 +5934,7 @@
       "homeRaw": "Chelsea FC",
       "awayRaw": "Manchester City",
       "home": "Chelsea",
-      "away": "Manchester City",
+      "away": "Man City",
       "homeStats": {
         "homeMatches": 5,
         "awayMatches": 5,
@@ -5906,8 +5951,23 @@
         "awayYCFor": 2,
         "awayYCAgainst": 1.4
       },
-      "awayStats": null,
-      "note": "away team not found in stats: \"Manchester City\""
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2,
+        "homeGA": 0.8,
+        "awayGF": 1.2,
+        "awayGA": 1.2,
+        "homeCornersFor": 5,
+        "homeCornersAgainst": 3.6,
+        "awayCornersFor": 6.4,
+        "awayCornersAgainst": 3,
+        "homeYCFor": 1.4,
+        "homeYCAgainst": 3.8,
+        "awayYCFor": 3,
+        "awayYCAgainst": 1.8
+      },
+      "note": null
     },
     "id1000003561514118": {
       "footballDataId": "D1",
@@ -6157,11 +6217,41 @@
       "tournamentName": "Premier League",
       "homeRaw": "Manchester United",
       "awayRaw": "Leeds United",
-      "home": "Manchester United",
-      "away": "Leeds United",
-      "homeStats": null,
-      "awayStats": null,
-      "note": "home team not found in stats: \"Manchester United\" | away team not found in stats: \"Leeds United\""
+      "home": "Man United",
+      "away": "Leeds",
+      "homeStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 2.4,
+        "homeGA": 0.8,
+        "awayGF": 1.6,
+        "awayGA": 1.4,
+        "homeCornersFor": 4.8,
+        "homeCornersAgainst": 4,
+        "awayCornersFor": 3.6,
+        "awayCornersAgainst": 6.4,
+        "homeYCFor": 2,
+        "homeYCAgainst": 2,
+        "awayYCFor": 1.8,
+        "awayYCAgainst": 1.8
+      },
+      "awayStats": {
+        "homeMatches": 5,
+        "awayMatches": 5,
+        "homeGF": 0.6,
+        "homeGA": 1.4,
+        "awayGF": 1.4,
+        "awayGA": 1.6,
+        "homeCornersFor": 5.8,
+        "homeCornersAgainst": 5.8,
+        "awayCornersFor": 2.8,
+        "awayCornersAgainst": 6.2,
+        "homeYCFor": 1,
+        "homeYCAgainst": 1.6,
+        "awayYCFor": 2.8,
+        "awayYCAgainst": 2
+      },
+      "note": null
     },
     "id1000000861624554": {
       "footballDataId": "SP1",
