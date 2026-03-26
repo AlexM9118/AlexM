@@ -15,6 +15,7 @@ on:
           - build_ui
           - report
           - aliases
+          - coverage
           - fixtures_smoke
       tournament_ids:
         description: "Comma-separated tournamentIds (for odds job)"
@@ -122,6 +123,13 @@ jobs:
         run: node scripts/build-team-alias-suggestions.js
 
       # ----------------------------
+      # History/model coverage report (no API calls)
+      # ----------------------------
+      - name: Build history coverage report (no API calls)
+        if: ${{ inputs.job == 'coverage' }}
+        run: node scripts/build-history-coverage-report.js
+
+      # ----------------------------
       # Fixtures smoke test (finished) - optional
       # ----------------------------
       - name: Fixtures smoke test (finished)
@@ -141,8 +149,6 @@ jobs:
         run: |
           echo "---- data/ui ----"
           ls -la data/ui || true
-          echo "---- scripts ----"
-          ls -la scripts || true
 
       # ----------------------------
       # Commit outputs
@@ -163,8 +169,9 @@ jobs:
           # UI normalized outputs
           git add data/ui || true
 
-          # report output
+          # report outputs
           git add data/ui/two_way_report.json || true
+          git add data/ui/history_coverage_report.json || true
 
           # fixtures smoke outputs
           git add data/oddspapi_fixtures_smoke_raw.txt data/oddspapi_fixtures_smoke.json || true
