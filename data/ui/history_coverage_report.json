@@ -1,0 +1,1192 @@
+{
+  "generatedAtUTC": "2026-03-26T01:24:39.280Z",
+  "lookback": 5,
+  "matchesTotal": 285,
+  "leagues": [
+    {
+      "leagueKey": "Spain | LaLiga",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga",
+      "footballDataIds": [
+        "SP1"
+      ],
+      "total": 20,
+      "ok": 7,
+      "okPct": 35,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 13,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Italy | Serie A",
+      "categoryName": "Italy",
+      "tournamentName": "Serie A",
+      "footballDataIds": [
+        "I1"
+      ],
+      "total": 20,
+      "ok": 1,
+      "okPct": 5,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 19,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "France | Ligue 1",
+      "categoryName": "France",
+      "tournamentName": "Ligue 1",
+      "footballDataIds": [
+        "F1"
+      ],
+      "total": 18,
+      "ok": 2,
+      "okPct": 11.1,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 16,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "categoryName": "Germany",
+      "tournamentName": "Bundesliga",
+      "footballDataIds": [
+        "D1"
+      ],
+      "total": 18,
+      "ok": 4,
+      "okPct": 22.2,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 14,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Netherlands | Eredivisie",
+      "categoryName": "Netherlands",
+      "tournamentName": "Eredivisie",
+      "footballDataIds": [],
+      "total": 18,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 18,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Russia | Premier League",
+      "categoryName": "Russia",
+      "tournamentName": "Premier League",
+      "footballDataIds": [],
+      "total": 16,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 16,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "categoryName": "Romania",
+      "tournamentName": "Superliga",
+      "footballDataIds": [
+        "ROU"
+      ],
+      "total": 15,
+      "ok": 2,
+      "okPct": 13.3,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 13,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "USA | MLS",
+      "categoryName": "USA",
+      "tournamentName": "MLS",
+      "footballDataIds": [
+        "USA"
+      ],
+      "total": 15,
+      "ok": 14,
+      "okPct": 93.3,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 1,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Spain | LaLiga 2",
+      "categoryName": "Spain",
+      "tournamentName": "LaLiga 2",
+      "footballDataIds": [
+        "SP2"
+      ],
+      "total": 14,
+      "ok": 9,
+      "okPct": 64.3,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 5,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Scotland | Premiership",
+      "categoryName": "Scotland",
+      "tournamentName": "Premiership",
+      "footballDataIds": [
+        "SC0"
+      ],
+      "total": 12,
+      "ok": 6,
+      "okPct": 50,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 6,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "England | Championship",
+      "categoryName": "England",
+      "tournamentName": "Championship",
+      "footballDataIds": [
+        "E1"
+      ],
+      "total": 11,
+      "ok": 2,
+      "okPct": 18.2,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 9,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "England | Premier League",
+      "categoryName": "England",
+      "tournamentName": "Premier League",
+      "footballDataIds": [
+        "E0"
+      ],
+      "total": 10,
+      "ok": 4,
+      "okPct": 40,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 6,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Portugal | Liga Portugal",
+      "categoryName": "Portugal",
+      "tournamentName": "Liga Portugal",
+      "footballDataIds": [],
+      "total": 9,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 9,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "France | Ligue 2",
+      "categoryName": "France",
+      "tournamentName": "Ligue 2",
+      "footballDataIds": [
+        "F2"
+      ],
+      "total": 9,
+      "ok": 2,
+      "okPct": 22.2,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 7,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Germany | 2. Bundesliga",
+      "categoryName": "Germany",
+      "tournamentName": "2. Bundesliga",
+      "footballDataIds": [
+        "D2"
+      ],
+      "total": 9,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 9,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Bulgaria | Parva Liga",
+      "categoryName": "Bulgaria",
+      "tournamentName": "Parva Liga",
+      "footballDataIds": [],
+      "total": 8,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 8,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Belgium | Pro League",
+      "categoryName": "Belgium",
+      "tournamentName": "Pro League",
+      "footballDataIds": [],
+      "total": 8,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 8,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Serbia | Superliga",
+      "categoryName": "Serbia",
+      "tournamentName": "Superliga",
+      "footballDataIds": [],
+      "total": 8,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 8,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Sweden | Allsvenskan",
+      "categoryName": "Sweden",
+      "tournamentName": "Allsvenskan",
+      "footballDataIds": [
+        "SWE"
+      ],
+      "total": 8,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 8,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Norway | Eliteserien",
+      "categoryName": "Norway",
+      "tournamentName": "Eliteserien",
+      "footballDataIds": [
+        "NOR"
+      ],
+      "total": 8,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 8,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Greece | Super League",
+      "categoryName": "Greece",
+      "tournamentName": "Super League",
+      "footballDataIds": [
+        "G1"
+      ],
+      "total": 7,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 7,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Austria | Bundesliga",
+      "categoryName": "Austria",
+      "tournamentName": "Bundesliga",
+      "footballDataIds": [
+        "AUT"
+      ],
+      "total": 6,
+      "ok": 1,
+      "okPct": 16.7,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 5,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "Switzerland | Super League",
+      "categoryName": "Switzerland",
+      "tournamentName": "Super League",
+      "footballDataIds": [
+        "SWZ"
+      ],
+      "total": 6,
+      "ok": 1,
+      "okPct": 16.7,
+      "noLeagueMap": 0,
+      "missingStatsFile": 0,
+      "missingTeams": 5,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "International Clubs | UEFA Champions League",
+      "categoryName": "International Clubs",
+      "tournamentName": "UEFA Champions League",
+      "footballDataIds": [],
+      "total": 4,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 4,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "International Clubs | UEFA Europa League",
+      "categoryName": "International Clubs",
+      "tournamentName": "UEFA Europa League",
+      "footballDataIds": [],
+      "total": 4,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 4,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    },
+    {
+      "leagueKey": "International Clubs | UEFA Conference League",
+      "categoryName": "International Clubs",
+      "tournamentName": "UEFA Conference League",
+      "footballDataIds": [],
+      "total": 4,
+      "ok": 0,
+      "okPct": 0,
+      "noLeagueMap": 4,
+      "missingStatsFile": 0,
+      "missingTeams": 0,
+      "notEnoughSamples": 0,
+      "other": 0
+    }
+  ],
+  "topMissingTeams": [
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga 2",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Scotland ",
+      "teamName": " Premiership",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Scotland ",
+      "teamName": " Premiership",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " Bundesliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Scotland ",
+      "teamName": " Premiership",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 1",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy ",
+      "teamName": " Serie A",
+      "count": 2
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "Spain ",
+      "teamName": " LaLiga 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Championship",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Greece ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Switzerland ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "France ",
+      "teamName": " Ligue 2",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Switzerland ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "USA ",
+      "teamName": " MLS",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Germany ",
+      "teamName": " 2. Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Austria ",
+      "teamName": " Bundesliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Switzerland ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Sweden ",
+      "teamName": " Allsvenskan",
+      "count": 1
+    },
+    {
+      "leagueKey": "Switzerland ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Switzerland ",
+      "teamName": " Super League",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Romania ",
+      "teamName": " Superliga",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "Norway ",
+      "teamName": " Eliteserien",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    },
+    {
+      "leagueKey": "England ",
+      "teamName": " Premier League",
+      "count": 1
+    }
+  ]
+}
