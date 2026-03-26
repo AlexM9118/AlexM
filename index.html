@@ -11,101 +11,149 @@
   <header class="topbar">
     <div class="brand">
       <div class="title">Alex AI Bet</div>
-      <div class="subtitle">Odds (OddsPapi) + Model SAFE (Poisson last 5)</div>
+      <div class="subtitle">SAFE Model (Poisson last 5) + Odds (OddsPapi)</div>
     </div>
 
     <div class="top-actions">
       <a class="toplink" href="./tools/coverage/">Coverage Browser</a>
-      <button class="iconbtn" id="refreshBtn" title="Reload data">Reload</button>
+      <button class="iconbtn" id="refreshBtn">Reload</button>
     </div>
   </header>
 
-  <main class="layout">
+  <main class="layout3">
+    <!-- LEFT: Sidebar -->
     <aside class="sidebar card">
       <div class="side-title">Selectează liga</div>
       <select id="leagueSel"></select>
 
-      <div class="side-row">
-        <div class="side-title">Zi</div>
-        <select id="daySel"></select>
-      </div>
+      <div class="side-title" style="margin-top:10px;">Zi</div>
+      <select id="daySel"></select>
 
-      <div class="side-title">Meciuri</div>
+      <div class="side-title" style="margin-top:12px;">Meciuri</div>
       <div id="matchesList" class="matches"></div>
 
       <div class="side-footer muted">
         Odds: <code>data/ui/*</code><br/>
-        History stats: <code>data/ui/history_stats.json</code>
+        Model: <code>data/ui/history_stats.json</code>
       </div>
     </aside>
 
-    <section class="main">
-      <section class="card header-card">
-        <div class="match-head">
-          <div>
-            <div class="match-title" id="matchTitle">Alege un meci</div>
-            <div class="match-meta muted" id="matchMeta">—</div>
-          </div>
-          <div class="match-actions">
-            <a class="btn" id="openBookBtn" href="#" target="_blank" rel="noreferrer">Deschide pe Superbet</a>
-          </div>
+    <!-- CENTER: Daily recommendation -->
+    <section class="card center">
+      <div class="center-head">
+        <div>
+          <div class="card-kicker">RECOMANDAREA ZILEI (SAFE)</div>
+          <div class="card-title-big" id="recTitle">—</div>
+          <div class="muted small" id="recSub">—</div>
         </div>
-
-        <div class="status" id="statusBox">
+        <div class="status">
           <span class="dot" id="statusDot"></span>
           <span id="statusText">Ready</span>
         </div>
-      </section>
+      </div>
 
-      <section class="grid">
-        <div class="card">
-          <div class="card-title">Recomandarea zilei (SAFE)</div>
-          <div id="dailyPicks" class="rows"></div>
-          <div class="muted small" id="dailyPicksNote"></div>
+      <div class="summary-grid">
+        <div class="summary">
+          <div class="k">Selecții</div>
+          <div class="v" id="recCount">—</div>
+        </div>
+        <div class="summary">
+          <div class="k">Prob. medie</div>
+          <div class="v" id="recAvgP">—</div>
+        </div>
+        <div class="summary">
+          <div class="k">Cota “fair” totală</div>
+          <div class="v" id="recFairOdds">—</div>
+        </div>
+      </div>
+
+      <div class="list" id="recList"></div>
+
+      <div class="muted small" style="margin-top:10px;" id="recNote"></div>
+
+      <hr class="sep"/>
+
+      <div class="match-mini">
+        <div>
+          <div class="mini-title" id="matchTitle">Alege un meci</div>
+          <div class="muted small" id="matchMeta">—</div>
+        </div>
+        <a class="btn" id="openBookBtn" href="#" target="_blank" rel="noreferrer">Deschide pe Superbet</a>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <div class="k">1X2 (odds)</div>
+          <div class="rows" id="market1x2"></div>
+        </div>
+        <div class="mini-card">
+          <div class="k">BTTS (odds)</div>
+          <div class="rows" id="marketBtts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Detailed analysis -->
+    <section class="card right">
+      <div class="right-head">
+        <div>
+          <div class="card-title">Analize detaliate (SAFE Model)</div>
+          <div class="muted small" id="modelNote">—</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="goals">Goals</button>
+        <button class="tab" data-tab="cards">Cards</button>
+        <button class="tab" data-tab="corners">Corners</button>
+        <button class="tab" data-tab="btts">BTTS</button>
+      </div>
+
+      <div class="tabpanels">
+        <div class="panel active" id="panel-goals">
+          <div class="panel-title">Total Goals (1.5 / 2.5 / 3.5 / 4.5)</div>
+          <div id="goalsBox" class="bars"></div>
         </div>
 
-        <div class="card">
-          <div class="card-title">1X2 (odds)</div>
-          <div id="market1x2" class="rows"></div>
+        <div class="panel" id="panel-cards">
+          <div class="panel-title">Yellow Cards (3.5 / 4.5 / 5.5)</div>
+          <div class="muted small" id="cardsHint"></div>
+          <div id="cardsBox" class="bars"></div>
         </div>
 
-        <div class="card">
-          <div class="card-title">BTTS (odds)</div>
-          <div id="marketBtts" class="rows"></div>
+        <div class="panel" id="panel-corners">
+          <div class="panel-title">Corners (8.5 / 9.5 / 10.5)</div>
+          <div class="muted small" id="cornersHint"></div>
+          <div id="cornersBox" class="bars"></div>
         </div>
 
-        <div class="card">
-          <div class="card-title">Model (SAFE) — Goals/BTTS/Corners/Cards</div>
-          <div id="modelBox" class="rows"></div>
-          <div class="muted small" id="modelNote"></div>
+        <div class="panel" id="panel-btts">
+          <div class="panel-title">BTTS (Yes / No)</div>
+          <div id="bttsBox" class="bars"></div>
         </div>
-      </section>
+      </div>
 
-      <section class="grid">
-        <div class="card">
-          <div class="card-title">History (last 5) — Home (acasă)</div>
-          <div id="histHome" class="rows"></div>
+      <div class="panel-title" style="margin-top:14px;">History (last 5)</div>
+      <div class="history-grid">
+        <div class="mini-card">
+          <div class="k">Home (acasă)</div>
+          <div class="rows" id="histHome"></div>
           <div class="muted small" id="histHomeNote"></div>
         </div>
-
-        <div class="card">
-          <div class="card-title">History (last 5) — Away (deplasare)</div>
-          <div id="histAway" class="rows"></div>
+        <div class="mini-card">
+          <div class="k">Away (deplasare)</div>
+          <div class="rows" id="histAway"></div>
           <div class="muted small" id="histAwayNote"></div>
         </div>
-      </section>
+      </div>
 
-      <section class="grid">
-        <div class="card">
-          <div class="card-title">Alte piețe (raw)</div>
-          <div id="marketOther" class="other"></div>
-        </div>
-      </section>
+      <div class="panel-title" style="margin-top:14px;">Alte piețe (raw)</div>
+      <pre class="other" id="marketOther">—</pre>
     </section>
   </main>
 
   <footer class="footer">
-    Alex AI Bet • SAFE threshold 62% • Probabilities are indicative
+    SAFE threshold: 62% • Model: Poisson from last 5 home/away • Date cached in repo via Actions
   </footer>
 
   <script src="./app.js"></script>
