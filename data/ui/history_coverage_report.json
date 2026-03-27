@@ -1,5 +1,5 @@
 {
-  "generatedAtUTC": "2026-03-27T11:39:32.250Z",
+  "generatedAtUTC": "2026-03-27T11:53:56.360Z",
   "lookback": 5,
   "matchesTotal": 285,
   "leagues": [
@@ -27,11 +27,11 @@
         "I1"
       ],
       "total": 20,
-      "ok": 20,
-      "okPct": 100,
+      "ok": 11,
+      "okPct": 55,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 0,
+      "missingTeams": 9,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -59,11 +59,11 @@
         "D1"
       ],
       "total": 18,
-      "ok": 16,
-      "okPct": 88.9,
+      "ok": 4,
+      "okPct": 22.2,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 2,
+      "missingTeams": 14,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -103,11 +103,11 @@
         "ROU"
       ],
       "total": 15,
-      "ok": 15,
-      "okPct": 100,
+      "ok": 2,
+      "okPct": 13.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 0,
+      "missingTeams": 13,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -135,11 +135,11 @@
         "SP2"
       ],
       "total": 14,
-      "ok": 11,
-      "okPct": 78.6,
+      "ok": 13,
+      "okPct": 92.9,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 3,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -167,11 +167,11 @@
         "E1"
       ],
       "total": 11,
-      "ok": 2,
-      "okPct": 18.2,
+      "ok": 10,
+      "okPct": 90.9,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 9,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -183,11 +183,11 @@
         "E0"
       ],
       "total": 10,
-      "ok": 9,
-      "okPct": 90,
+      "ok": 10,
+      "okPct": 100,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 1,
+      "missingTeams": 0,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -213,11 +213,11 @@
         "F2"
       ],
       "total": 9,
-      "ok": 2,
-      "okPct": 22.2,
+      "ok": 9,
+      "okPct": 100,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 7,
+      "missingTeams": 0,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -229,11 +229,11 @@
         "D2"
       ],
       "total": 9,
-      "ok": 0,
-      "okPct": 0,
+      "ok": 8,
+      "okPct": 88.9,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 9,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -287,11 +287,11 @@
         "SWE"
       ],
       "total": 8,
-      "ok": 0,
-      "okPct": 0,
+      "ok": 6,
+      "okPct": 75,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 8,
+      "missingTeams": 2,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -303,11 +303,11 @@
         "NOR"
       ],
       "total": 8,
-      "ok": 0,
-      "okPct": 0,
+      "ok": 8,
+      "okPct": 100,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 8,
+      "missingTeams": 0,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -319,11 +319,11 @@
         "G1"
       ],
       "total": 7,
-      "ok": 0,
-      "okPct": 0,
+      "ok": 2,
+      "okPct": 28.6,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 7,
+      "missingTeams": 5,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -335,11 +335,11 @@
         "AUT"
       ],
       "total": 6,
-      "ok": 1,
-      "okPct": 16.7,
+      "ok": 5,
+      "okPct": 83.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 5,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -351,11 +351,11 @@
         "SWZ"
       ],
       "total": 6,
-      "ok": 1,
-      "okPct": 16.7,
+      "ok": 5,
+      "okPct": 83.3,
       "noLeagueMap": 0,
       "missingStatsFile": 0,
-      "missingTeams": 5,
+      "missingTeams": 1,
       "notEnoughSamples": 0,
       "other": 0
     },
@@ -404,8 +404,53 @@
   ],
   "topMissingTeams": [
     {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "Fotbal Club FCSB",
+      "count": 2
+    },
+    {
       "leagueKey": "France | Ligue 1",
       "teamName": "Paris Saint-Germain",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "ASC Otelul Galati",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "Bayer Leverkusen",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "VFL Wolfsburg",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "Hamburger SV",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "Borussia Monchengladbach",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "1. FC Heidenheim",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "TSG Hoffenheim",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "FSV Mainz",
       "count": 2
     },
     {
@@ -414,8 +459,38 @@
       "count": 2
     },
     {
+      "leagueKey": "Italy | Serie A",
+      "teamName": "Hellas Verona",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "VfB Stuttgart",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "Borussia Dortmund",
+      "count": 2
+    },
+    {
       "leagueKey": "Spain | LaLiga",
       "teamName": "Espanyol Barcelona",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "ACS Champions FC Arges",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy | Serie A",
+      "teamName": "Lazio Rome",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "Metaloglobus Bucuresti",
       "count": 2
     },
     {
@@ -424,8 +499,18 @@
       "count": 2
     },
     {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "FC Unirea 2004 Slobozia",
+      "count": 2
+    },
+    {
       "leagueKey": "Germany | Bundesliga",
       "teamName": "Eintracht Frankfurt",
+      "count": 2
+    },
+    {
+      "leagueKey": "Germany | Bundesliga",
+      "teamName": "1. FC Cologne",
       "count": 2
     },
     {
@@ -434,53 +519,43 @@
       "count": 2
     },
     {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "Rapid Bucuresti 1923",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy | Serie A",
+      "teamName": "Inter Milano",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy | Serie A",
+      "teamName": "Como 1907",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "FC Petrolul Ploiesti",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "AFK Csikszereda Miercurea Ciuc",
+      "count": 2
+    },
+    {
+      "leagueKey": "Italy | Serie A",
+      "teamName": "Juventus Turin",
+      "count": 2
+    },
+    {
+      "leagueKey": "Romania | Superliga",
+      "teamName": "FC CFR 1907 Cluj",
+      "count": 2
+    },
+    {
       "leagueKey": "Spain | LaLiga 2",
       "teamName": "Sporting Gijon",
-      "count": 1
-    },
-    {
-      "leagueKey": "Spain | LaLiga 2",
-      "teamName": "Racing Santander",
-      "count": 1
-    },
-    {
-      "leagueKey": "Spain | LaLiga 2",
-      "teamName": "Real Sociedad San Sebastian B",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Swansea City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Oxford United",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Hull City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "West Bromwich Albion",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Birmingham City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Blackburn Rovers",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Stoke City",
       "count": 1
     },
     {
@@ -489,113 +564,8 @@
       "count": 1
     },
     {
-      "leagueKey": "England | Championship",
-      "teamName": "Norwich City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Queens Park Rangers",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Leicester City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Preston North End",
-      "count": 1
-    },
-    {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "SCR Altach",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "USL Dunkerque",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Rodez Aveyron Football",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "EA Guingamp",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Stade Lavallois MFC",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Grenoble Foot",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Clermont Foot 63",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Coventry City",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Championship",
-      "teamName": "Derby County",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "1 FC Kaiserslautern",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "Arminia Bielefeld",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "SV Darmstadt 98",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "1. FC Magdeburg",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "VfL Bochum",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Stade Reims",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "ESTAC Troyes",
-      "count": 1
-    },
-    {
       "leagueKey": "Greece | Super League",
       "teamName": "APO Levadiakos FC",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
-      "teamName": "Aris Thessaloniki",
       "count": 1
     },
     {
@@ -610,92 +580,12 @@
     },
     {
       "leagueKey": "Greece | Super League",
-      "teamName": "Atromitos Athinon",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
-      "teamName": "AE Kifisia FC",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
       "teamName": "Olympiacos Piraeus",
       "count": 1
     },
     {
       "leagueKey": "Greece | Super League",
-      "teamName": "AEK Athens",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
-      "teamName": "PAOK Thessaloniki",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
-      "teamName": "Panathinaikos Athens",
-      "count": 1
-    },
-    {
-      "leagueKey": "Greece | Super League",
       "teamName": "Volos NPS",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Degerfors IF",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "IK Sirius",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Hammarby IF",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Mjallby AIF",
-      "count": 1
-    },
-    {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "Blau-Weiss Linz",
-      "count": 1
-    },
-    {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "WSG Tirol",
-      "count": 1
-    },
-    {
-      "leagueKey": "Switzerland | Super League",
-      "teamName": "Lausanne-Sport",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "Nancy-Lorraine",
-      "count": 1
-    },
-    {
-      "leagueKey": "France | Ligue 2",
-      "teamName": "AS Saint-Etienne",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "Dynamo Dresden",
-      "count": 1
-    },
-    {
-      "leagueKey": "Switzerland | Super League",
-      "teamName": "FC Basel 1893",
       "count": 1
     },
     {
@@ -709,53 +599,8 @@
       "count": 1
     },
     {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "Karlsruher SC",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "Eintracht Braunschweig",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "1 FC Nuremberg",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "Hannover 96",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "SV 07 Elversberg",
-      "count": 1
-    },
-    {
-      "leagueKey": "Germany | 2. Bundesliga",
-      "teamName": "SC Paderborn 07",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Kalmar FF",
-      "count": 1
-    },
-    {
       "leagueKey": "Sweden | Allsvenskan",
       "teamName": "Vasteraas SK",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Halmstads BK",
-      "count": 1
-    },
-    {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "LASK Linz",
       "count": 1
     },
     {
@@ -764,48 +609,13 @@
       "count": 1
     },
     {
-      "leagueKey": "Austria | Bundesliga",
-      "teamName": "TSV Hartberg",
-      "count": 1
-    },
-    {
       "leagueKey": "Sweden | Allsvenskan",
       "teamName": "Orgryte IS",
       "count": 1
     },
     {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "IF Elfsborg",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "IFK Goteborg",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "BK Hacken",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "IF Brommapojkarna",
-      "count": 1
-    },
-    {
-      "leagueKey": "Switzerland | Super League",
-      "teamName": "Grasshopper Club Zurich",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Vaalerenga IF",
-      "count": 1
-    },
-    {
-      "leagueKey": "Sweden | Allsvenskan",
-      "teamName": "Djurgardens IF",
+      "leagueKey": "Romania | Superliga",
+      "teamName": "FC Universitatea Cluj",
       "count": 1
     },
     {
@@ -814,48 +624,8 @@
       "count": 1
     },
     {
-      "leagueKey": "Switzerland | Super League",
-      "teamName": "Servette Geneva",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Lillestroem SK",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Bodoe/Glimt",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "IK Start",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "SK Brann",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Tromsoe IL",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Aalesunds FK",
-      "count": 1
-    },
-    {
-      "leagueKey": "Norway | Eliteserien",
-      "teamName": "Sandefjord Fotball",
-      "count": 1
-    },
-    {
-      "leagueKey": "England | Premier League",
-      "teamName": "Brighton & Hove Albion",
+      "leagueKey": "Romania | Superliga",
+      "teamName": "CS Universitatea Craiova",
       "count": 1
     }
   ]
