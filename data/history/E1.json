@@ -3,6 +3,138 @@
   "name": "England - Championship",
   "matches": [
     {
+      "date": "2026-04-07",
+      "home": "Wrexham",
+      "away": "Southampton",
+      "fthg": 1,
+      "ftag": 5,
+      "hc": 3,
+      "ac": 4,
+      "hy": 2,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Portsmouth",
+      "away": "Oxford",
+      "fthg": 2,
+      "ftag": 2,
+      "hc": 6,
+      "ac": 5,
+      "hy": 2,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Millwall",
+      "away": "Norwich",
+      "fthg": 1,
+      "ftag": 2,
+      "hc": 2,
+      "ac": 5,
+      "hy": 1,
+      "ay": 2
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Blackburn",
+      "away": "West Brom",
+      "fthg": 0,
+      "ftag": 0,
+      "hc": 4,
+      "ac": 2,
+      "hy": 3,
+      "ay": 2
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Bristol City",
+      "away": "Sheffield United",
+      "fthg": 1,
+      "ftag": 0,
+      "hc": 0,
+      "ac": 5,
+      "hy": 1,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Derby",
+      "away": "Stoke",
+      "fthg": 2,
+      "ftag": 0,
+      "hc": 5,
+      "ac": 3,
+      "hy": 2,
+      "ay": 1
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Ipswich",
+      "away": "Birmingham",
+      "fthg": 2,
+      "ftag": 1,
+      "hc": 6,
+      "ac": 4,
+      "hy": 1,
+      "ay": 1
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Preston",
+      "away": "QPR",
+      "fthg": 1,
+      "ftag": 1,
+      "hc": 2,
+      "ac": 6,
+      "hy": 1,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Sheffield Weds",
+      "away": "Leicester",
+      "fthg": 1,
+      "ftag": 1,
+      "hc": 1,
+      "ac": 10,
+      "hy": 0,
+      "ay": 0
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Watford",
+      "away": "Charlton",
+      "fthg": 1,
+      "ftag": 1,
+      "hc": 17,
+      "ac": 3,
+      "hy": 2,
+      "ay": 2
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Swansea",
+      "away": "Middlesbrough",
+      "fthg": 2,
+      "ftag": 2,
+      "hc": 2,
+      "ac": 10,
+      "hy": 3,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-06",
+      "home": "Hull",
+      "away": "Coventry",
+      "fthg": 0,
+      "ftag": 0,
+      "hc": 2,
+      "ac": 4,
+      "hy": 1,
+      "ay": 1
+    },
+    {
       "date": "2026-04-03",
       "home": "Middlesbrough",
       "away": "Millwall",

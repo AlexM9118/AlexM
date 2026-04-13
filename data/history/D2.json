@@ -3,6 +3,105 @@
   "name": "Germany - Bundesliga 2",
   "matches": [
     {
+      "date": "2026-04-05",
+      "home": "Braunschweig",
+      "away": "Nurnberg",
+      "fthg": 1,
+      "ftag": 1,
+      "hc": 9,
+      "ac": 4,
+      "hy": 1,
+      "ay": 2
+    },
+    {
+      "date": "2026-04-05",
+      "home": "Greuther Furth",
+      "away": "Paderborn",
+      "fthg": 0,
+      "ftag": 2,
+      "hc": 3,
+      "ac": 4,
+      "hy": 1,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-05",
+      "home": "Hannover",
+      "away": "Elversberg",
+      "fthg": 1,
+      "ftag": 1,
+      "hc": 10,
+      "ac": 4,
+      "hy": 3,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-05",
+      "home": "Holstein Kiel",
+      "away": "Preußen Münster",
+      "fthg": 0,
+      "ftag": 0,
+      "hc": 11,
+      "ac": 3,
+      "hy": 3,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-05",
+      "home": "Schalke 04",
+      "away": "Karlsruhe",
+      "fthg": 1,
+      "ftag": 0,
+      "hc": 2,
+      "ac": 3,
+      "hy": 3,
+      "ay": 1
+    },
+    {
+      "date": "2026-04-04",
+      "home": "Bielefeld",
+      "away": "Darmstadt",
+      "fthg": 2,
+      "ftag": 1,
+      "hc": 8,
+      "ac": 4,
+      "hy": 2,
+      "ay": 5
+    },
+    {
+      "date": "2026-04-04",
+      "home": "Kaiserslautern",
+      "away": "Fortuna Dusseldorf",
+      "fthg": 3,
+      "ftag": 0,
+      "hc": 9,
+      "ac": 6,
+      "hy": 0,
+      "ay": 0
+    },
+    {
+      "date": "2026-04-04",
+      "home": "Magdeburg",
+      "away": "Bochum",
+      "fthg": 4,
+      "ftag": 1,
+      "hc": 4,
+      "ac": 3,
+      "hy": 2,
+      "ay": 3
+    },
+    {
+      "date": "2026-04-04",
+      "home": "Dresden",
+      "away": "Hertha",
+      "fthg": 0,
+      "ftag": 1,
+      "hc": 6,
+      "ac": 3,
+      "hy": 2,
+      "ay": 2
+    },
+    {
       "date": "2026-03-22",
       "home": "Bochum",
       "away": "Holstein Kiel",
