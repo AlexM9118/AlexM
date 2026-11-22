@@ -119,11 +119,11 @@
       "strDescriptionEN": null,
       "strHomeTeam": "Chapecoense",
       "strAwayTeam": "Cruzeiro",
-      "intHomeScore": null,
+      "intHomeScore": "1",
       "intHomeScoreExtra": null,
       "intAwayScoreExtra": null,
       "intRound": "36",
-      "intAwayScore": null,
+      "intAwayScore": "2",
       "intSpectators": null,
       "strOfficial": "",
       "strWeather": null,
@@ -152,7 +152,7 @@
       "strMap": null,
       "strTweet1": null,
       "strVideo": null,
-      "strStatus": "NS",
+      "strStatus": "FT",
       "strPostponed": "no",
       "strLocked": "unlocked"
     }
